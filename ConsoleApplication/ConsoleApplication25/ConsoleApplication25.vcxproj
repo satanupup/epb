@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}</ProjectGuid>
+    <ProjectGuid>{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication21</RootNamespace>
-    <ProjectName>判斷數組是否按照順序排列</ProjectName>
+    <RootNamespace>ConsoleApplication25</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

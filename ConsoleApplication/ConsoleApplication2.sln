@@ -39,7 +39,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "三種調用虛函數的方
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "虛構造函數和析構函數", "ConsoleApplication20\ConsoleApplication20.vcxproj", "{C65887FD-4D7A-49D5-9632-F0B358FC6D23}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication21", "ConsoleApplication21\ConsoleApplication21.vcxproj", "{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "判斷數組是否按照順序排列", "ConsoleApplication21\ConsoleApplication21.vcxproj", "{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "判斷數組排列方式然後執行不同函數", "ConsoleApplication22\ConsoleApplication22.vcxproj", "{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "數組在對像中的傳參", "ConsoleApplication23\ConsoleApplication23.vcxproj", "{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "數組對像", "ConsoleApplication24\ConsoleApplication24.vcxproj", "{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication25", "ConsoleApplication25\ConsoleApplication25.vcxproj", "{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +175,30 @@ Global
 		{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}.Release|Win32.ActiveCfg = Release|Win32
 		{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}.Release|Win32.Build.0 = Release|Win32
 		{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}.Release|Win32.Deploy.0 = Release|Win32
+		{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}.Debug|Win32.Build.0 = Debug|Win32
+		{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}.Debug|Win32.Deploy.0 = Debug|Win32
+		{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}.Release|Win32.ActiveCfg = Release|Win32
+		{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}.Release|Win32.Build.0 = Release|Win32
+		{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}.Release|Win32.Deploy.0 = Release|Win32
+		{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}.Debug|Win32.Build.0 = Debug|Win32
+		{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}.Debug|Win32.Deploy.0 = Debug|Win32
+		{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}.Release|Win32.ActiveCfg = Release|Win32
+		{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}.Release|Win32.Build.0 = Release|Win32
+		{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}.Release|Win32.Deploy.0 = Release|Win32
+		{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}.Debug|Win32.Build.0 = Debug|Win32
+		{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}.Debug|Win32.Deploy.0 = Debug|Win32
+		{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}.Release|Win32.ActiveCfg = Release|Win32
+		{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}.Release|Win32.Build.0 = Release|Win32
+		{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}.Release|Win32.Deploy.0 = Release|Win32
+		{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}.Debug|Win32.Build.0 = Debug|Win32
+		{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}.Debug|Win32.Deploy.0 = Debug|Win32
+		{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}.Release|Win32.ActiveCfg = Release|Win32
+		{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}.Release|Win32.Build.0 = Release|Win32
+		{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,19 +1,30 @@
 #include <iostream>
 using namespace std;
-float average(int *,int);
+bool add(int a[],int n);
 int main()
 {
-	int a[100];
-	float average;
-	int num=100;
-	
-	for (int i=0;i<100;i++)
+	int a[]={22,44,66,88,1,32,64};
+	bool check = add(a,4);
+	if(check==true)
 	{
-		a[i]=num;
-		num++;
-		cout<<a[i]<<endl;
+		cout<<"數組有按照順序排列"<<endl;
 	}
-	cout<<"";
+	else 
+	{
+		cout<<"數組沒有按照順序排列"<<endl;
+	}
+
 	system("pause");
 	return 0;
 };
+bool add(int a[],int n)
+{
+	for(int i=1;i<n;i++)
+	{
+		if(a[i]<a[i-1])
+		{
+			return false;
+		}
+	}		
+	return true;
+}
