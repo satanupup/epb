@@ -13,6 +13,7 @@ int main()
 		num++;
 		cout<<a[i]<<endl;
 	}
+	cout<<"";
 	system("pause");
 	return 0;
 };
