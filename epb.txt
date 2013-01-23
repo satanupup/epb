@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 xbzx我是茄子cq
 <<<<<<< HEAD
+=======
+xbzx嚙誹是嚙碼嚙締cq
+my name is a pp
+my name is a Ann
+>>>>>>> tamama
 my name is b pp
 test1234
 =======
