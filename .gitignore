@@ -1,13 +1,20 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
+*.bat
+*.pidb
+*.suo
+*.unityproj
+*.userprefs
+*.pdb
+*.exe
+*.idb
+*.ilk
+*.log
+*.sdf
+*.obj
+*.tlog
+*.lastbuildstate
+bin
+obj
+tmp
+output_log.txt
+Thumbs.db*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
