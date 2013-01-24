@@ -15,12 +15,13 @@ private:
 };
 int main()
 {
-	area one[4]={area(10,10),area(13,34),area(20,30),area(40,40)};	
-	cout<<one[0].get()<<endl;
-	one[0].set(30,40);
-	for(int i=0;i<4;i++)
-	cout<<one[i].get()<<endl;
-
+	for(int i=0;i<10000;i++)
+	{
+		area *one=new area(4,5*i);
+		cout<<"area["<<i<<"]:";
+		cout<<one->get()<<endl;
+		delete one;
+	}
 
 	system("pause");
 	return 0;

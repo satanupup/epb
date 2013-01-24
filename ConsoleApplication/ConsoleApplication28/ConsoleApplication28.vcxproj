@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}</ProjectGuid>
+    <ProjectGuid>{31FF3CF0-E219-45E1-A070-44B8D7D2F746}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication25</RootNamespace>
-    <ProjectName>在數組對像中初始化成員變量</ProjectName>
+    <RootNamespace>ConsoleApplication28</RootNamespace>
+    <ProjectName>枚舉常量與數組</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
