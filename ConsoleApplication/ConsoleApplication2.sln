@@ -65,7 +65,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "字符串處理函數", "Co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "打印楊輝三角形", "ConsoleApplication33\ConsoleApplication33.vcxproj", "{7313B531-C196-43D4-917A-18695741CC6B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication34", "ConsoleApplication34\ConsoleApplication34.vcxproj", "{F28E1833-5720-4822-A7C2-CA6609310D68}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表", "ConsoleApplication34\ConsoleApplication34.vcxproj", "{F28E1833-5720-4822-A7C2-CA6609310D68}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication35", "ConsoleApplication35\ConsoleApplication35.vcxproj", "{AACA44FB-6E52-4EF0-B717-728C0DCADC69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -271,6 +273,10 @@ Global
 		{F28E1833-5720-4822-A7C2-CA6609310D68}.Release|Win32.ActiveCfg = Release|Win32
 		{F28E1833-5720-4822-A7C2-CA6609310D68}.Release|Win32.Build.0 = Release|Win32
 		{F28E1833-5720-4822-A7C2-CA6609310D68}.Release|Win32.Deploy.0 = Release|Win32
+		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Debug|Win32.Build.0 = Debug|Win32
+		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Release|Win32.ActiveCfg = Release|Win32
+		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
