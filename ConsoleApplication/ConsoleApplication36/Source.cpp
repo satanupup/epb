@@ -130,17 +130,11 @@ void Delete(book*head,int num)
 }
 void insert(book*head,int num,float price)
 {
-	book*list=new book;
-	book*l;
-	while(head)
-	{
-		l=head;
-		head=head->next;		
-	}
-	l->next=list;
+	book*list=new book;	
 	list->num=num;
 	list->price=price;
-	list->next=NULL;
+	list->next=head;
+	::head=list;
 }
 int main()
 {

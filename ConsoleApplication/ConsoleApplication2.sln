@@ -67,7 +67,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "打印楊輝三角形", "Co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表", "ConsoleApplication34\ConsoleApplication34.vcxproj", "{F28E1833-5720-4822-A7C2-CA6609310D68}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication35", "ConsoleApplication35\ConsoleApplication35.vcxproj", "{AACA44FB-6E52-4EF0-B717-728C0DCADC69}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表的顯示刪除插入", "ConsoleApplication35\ConsoleApplication35.vcxproj", "{AACA44FB-6E52-4EF0-B717-728C0DCADC69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表前插法", "ConsoleApplication36\ConsoleApplication36.vcxproj", "{872C05F9-6BD9-4078-B015-E7E5178EBA35}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表中間插法", "ConsoleApplication37\ConsoleApplication37.vcxproj", "{F37E887E-4350-4121-9529-162B49385BC4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "鏈表統計", "ConsoleApplication38\ConsoleApplication38.vcxproj", "{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "使用鏈表圖書例子", "ConsoleApplication39\ConsoleApplication39.vcxproj", "{53862A21-2802-4D32-AC0C-5302CEF802FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication40", "ConsoleApplication40\ConsoleApplication40.vcxproj", "{4F11354D-4221-4D1F-8386-0547CABECD3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -277,6 +287,26 @@ Global
 		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Debug|Win32.Build.0 = Debug|Win32
 		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Release|Win32.ActiveCfg = Release|Win32
 		{AACA44FB-6E52-4EF0-B717-728C0DCADC69}.Release|Win32.Build.0 = Release|Win32
+		{872C05F9-6BD9-4078-B015-E7E5178EBA35}.Debug|Win32.ActiveCfg = Debug|Win32
+		{872C05F9-6BD9-4078-B015-E7E5178EBA35}.Debug|Win32.Build.0 = Debug|Win32
+		{872C05F9-6BD9-4078-B015-E7E5178EBA35}.Release|Win32.ActiveCfg = Release|Win32
+		{872C05F9-6BD9-4078-B015-E7E5178EBA35}.Release|Win32.Build.0 = Release|Win32
+		{F37E887E-4350-4121-9529-162B49385BC4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F37E887E-4350-4121-9529-162B49385BC4}.Debug|Win32.Build.0 = Debug|Win32
+		{F37E887E-4350-4121-9529-162B49385BC4}.Release|Win32.ActiveCfg = Release|Win32
+		{F37E887E-4350-4121-9529-162B49385BC4}.Release|Win32.Build.0 = Release|Win32
+		{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}.Debug|Win32.Build.0 = Debug|Win32
+		{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}.Release|Win32.ActiveCfg = Release|Win32
+		{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}.Release|Win32.Build.0 = Release|Win32
+		{53862A21-2802-4D32-AC0C-5302CEF802FD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53862A21-2802-4D32-AC0C-5302CEF802FD}.Debug|Win32.Build.0 = Debug|Win32
+		{53862A21-2802-4D32-AC0C-5302CEF802FD}.Release|Win32.ActiveCfg = Release|Win32
+		{53862A21-2802-4D32-AC0C-5302CEF802FD}.Release|Win32.Build.0 = Release|Win32
+		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Debug|Win32.Build.0 = Debug|Win32
+		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Release|Win32.ActiveCfg = Release|Win32
+		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
