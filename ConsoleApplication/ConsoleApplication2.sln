@@ -77,7 +77,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "鏈表統計", "ConsoleAppl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "使用鏈表圖書例子", "ConsoleApplication39\ConsoleApplication39.vcxproj", "{53862A21-2802-4D32-AC0C-5302CEF802FD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication40", "ConsoleApplication40\ConsoleApplication40.vcxproj", "{4F11354D-4221-4D1F-8386-0547CABECD3F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "純虛函數與抽像類", "ConsoleApplication40\ConsoleApplication40.vcxproj", "{4F11354D-4221-4D1F-8386-0547CABECD3F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "抽像類實例", "ConsoleApplication41\ConsoleApplication41.vcxproj", "{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "複雜的抽像結構", "ConsoleApplication42\ConsoleApplication42.vcxproj", "{ACA94EA2-A218-4524-839E-CF36D5BF7A22}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication43", "ConsoleApplication43\ConsoleApplication43.vcxproj", "{E1893074-BE34-46A3-B7F8-142A00CD459D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -307,6 +313,24 @@ Global
 		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Debug|Win32.Build.0 = Debug|Win32
 		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Release|Win32.ActiveCfg = Release|Win32
 		{4F11354D-4221-4D1F-8386-0547CABECD3F}.Release|Win32.Build.0 = Release|Win32
+		{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}.Debug|Win32.Build.0 = Debug|Win32
+		{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}.Debug|Win32.Deploy.0 = Debug|Win32
+		{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}.Release|Win32.ActiveCfg = Release|Win32
+		{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}.Release|Win32.Build.0 = Release|Win32
+		{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}.Release|Win32.Deploy.0 = Release|Win32
+		{ACA94EA2-A218-4524-839E-CF36D5BF7A22}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ACA94EA2-A218-4524-839E-CF36D5BF7A22}.Debug|Win32.Build.0 = Debug|Win32
+		{ACA94EA2-A218-4524-839E-CF36D5BF7A22}.Debug|Win32.Deploy.0 = Debug|Win32
+		{ACA94EA2-A218-4524-839E-CF36D5BF7A22}.Release|Win32.ActiveCfg = Release|Win32
+		{ACA94EA2-A218-4524-839E-CF36D5BF7A22}.Release|Win32.Build.0 = Release|Win32
+		{ACA94EA2-A218-4524-839E-CF36D5BF7A22}.Release|Win32.Deploy.0 = Release|Win32
+		{E1893074-BE34-46A3-B7F8-142A00CD459D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E1893074-BE34-46A3-B7F8-142A00CD459D}.Debug|Win32.Build.0 = Debug|Win32
+		{E1893074-BE34-46A3-B7F8-142A00CD459D}.Debug|Win32.Deploy.0 = Debug|Win32
+		{E1893074-BE34-46A3-B7F8-142A00CD459D}.Release|Win32.ActiveCfg = Release|Win32
+		{E1893074-BE34-46A3-B7F8-142A00CD459D}.Release|Win32.Build.0 = Release|Win32
+		{E1893074-BE34-46A3-B7F8-142A00CD459D}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
