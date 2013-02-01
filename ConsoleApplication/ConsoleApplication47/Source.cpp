@@ -75,6 +75,7 @@ int main()
 			print(a,b);
 		}
 	}
+	cout<<"hello world"<<endl;
 	system("pause");
 	return 0;
 }
