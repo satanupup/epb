@@ -14,6 +14,7 @@
     <ProjectGuid>{E1893074-BE34-46A3-B7F8-142A00CD459D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ConsoleApplication43</RootNamespace>
+    <ProjectName>靜態成員變量</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
