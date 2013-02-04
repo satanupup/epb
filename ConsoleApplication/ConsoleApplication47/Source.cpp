@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
 using namespace std;
+float(*fp)(float&,float&);
+void(*p)(float&,float&);
 float triangle(float &x,float &y)
 {
-	return x*y*0.5;
+	return x*y*(float)0.5;
 }
 float rectangle(float &x,float &y)
 {
@@ -22,7 +24,8 @@ void print(float &x,float &y)
 }
 bool check(string str)
 {
-	for(int i=0;i<str.length();i++)
+	int barnumber = str.length();
+	for(int i=0;i<barnumber;i++)
 	{
 		if((str[i]>'9'||str[i]<'0')&&(str[i]!='.'))
 		{
@@ -41,7 +44,7 @@ void get(float &x,float &y)
 		cout<<"input is no number ,please Re-enter!!!" <<endl;
 		cin>>str1;
 	}
-	x=atof(str1.c_str());
+	x=(float)atof(str1.c_str());
 	cout<<"please input y is new number: ";
 	string str2;
 	cin>>str2;
@@ -50,7 +53,7 @@ void get(float &x,float &y)
 		cout<<"input is no number ,please Re-enter!!!" <<endl;
 		cin>>str2;
 	}
-	y=atof(str2.c_str());
+	y=(float)atof(str2.c_str());
 
 }
 int main()
@@ -66,16 +69,53 @@ int main()
 		{
 		case 1:
 			cout<<"The length and width of the value set before: ";
+			/*
 			print(a,b);
 			get(a,b);
 			cout<<"The value of the set after a long and wide: ";
-			print(a,b);
+			print(a,b);*/
+			p=get;
 			break;
 		case 2:
+			//print(a,b);
+			//cout<<"Triangle is area : ";
+			//<<triangle(a,b)<<endl;
+			fp=triangle;
+			break;
+		case 3:
+			//print(a,b);
+		//	cout<<"rectangle is area : ";
+			//<<rectangle(a,b)<<endl;
+			fp=rectangle;
+			break;
+		case 4:
+			cout<<"The value of the exchange before long and wide: ";
+			/*
+			print(a,b);
+			swap(a,b);
+			cout<<"Exchange value after the length and width of the: ";
+			print(a,b);
+			*/
+			p=swap;
+			break;
+		default:
+			quit=true;
+			break;
+		}
+		if(choice == 1 || choice == 4)
+		{
+			print(a,b);
+			p(a,b);
 			print(a,b);
 		}
+		else if(choice == 2 || choice == 3)
+		{
+			print(a,b);
+			cout<<"area is : "<<fp(a,b)<<endl;
+		}
 	}
-	cout<<"hello world"<<endl;
+
+
 	system("pause");
 	return 0;
 }
