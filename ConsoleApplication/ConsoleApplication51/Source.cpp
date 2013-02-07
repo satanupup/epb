@@ -21,7 +21,7 @@ void print(void(*p)(float&,float&),float&x,float&y)
 }
 void swap(float&x,float&y)
 {
-	int z;
+	float z;
 	z=x;
 	x=y;
 	y=z;

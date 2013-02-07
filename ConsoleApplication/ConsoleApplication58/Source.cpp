@@ -1,7 +1,7 @@
 #include <iostream> 
 #include <iomanip> 
 using namespace std; 
-            
+
 /*
 下面我們列出幾個常用的I/O控制器與其說明：
 boolalpha						讓bool輸出時顯示true與false
@@ -32,20 +32,16 @@ noshowpos 						關閉showpos的使用
 noskipws						關閉skipws的使用 
 nouppercase						關閉uppercase的使用
 
-*/                                                                    
-int main() {
-    cout << oct << 50 << endl    // 8進位顯示 
-         << hex << 50 << endl;   // 16進位顯示 
-                                                                                
-    // 九九乘法表 
-    for(int j = 1; j < 10; j++) { 
-       for(int i = 2; i < 10; i++) { 
-           cout << i << "*" << j << "=" << dec << setw(2) << i*j; 
-           cout << "  "; 
-       } 
-       cout << endl; 
-    }
- 
-	system("pause");      
+*/
+int main() { 
+    bool boolnum; 
+
+    boolnum = true; 
+    cout << boolalpha << boolnum << endl; 
+
+    boolnum = false; 
+    cout << boolalpha << boolnum << endl; 
+	
+	system("pause");  
     return 0; 
 }

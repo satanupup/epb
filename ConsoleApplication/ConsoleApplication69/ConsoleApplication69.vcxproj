@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{91BC360F-A201-47CE-A773-C73CA5008380}</ProjectGuid>
+    <ProjectGuid>{C1B5F6CF-1550-4672-ADEC-15E11B218D82}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication57</RootNamespace>
-    <ProjectName>IO格式控制器</ProjectName>
+    <RootNamespace>ConsoleApplication69</RootNamespace>
+    <ProjectName>seekg</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
