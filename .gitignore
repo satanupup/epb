@@ -11,6 +11,9 @@
 *.sdf
 *.obj
 *.tlog
+*.ipch
+*.new
+*.mp4
 *.lastbuildstate
 bin
 obj
