@@ -2,10 +2,8 @@
 #include <fstream> 
 using namespace std; 
 
-int main(int argc, char* argv[]) { 
-    char ch; 
-	
-       
+int main() { 
+    char ch;        
 	cout << "«ü¥O: copy <input> <output>" << endl; 
 
     ifstream fin("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\a.txt", ios::in | ios::binary); 

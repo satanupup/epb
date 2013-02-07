@@ -4,6 +4,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
+#include <fstream> 
+#include <iomanip> 
 using namespace std;
 
 
@@ -129,10 +131,8 @@ void Rewrite_the_buffer2()
 	size_t result;
 	long lSize;
 	char * buffer;
-	//char src[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player.swf";
-	//char dst[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player2.swf";
-	char src[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\Hisaishi2.mp4";
-	char dst[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\Hisaishi3.mp4";
+	char src[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player.swf";
+	char dst[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player2.swf";
 	errno_t err;	// 回傳錯誤的數值 	
 	if (( err = fopen_s(&fp,src, "rb")) != NULL)	
 		 exit(1);
@@ -167,46 +167,101 @@ void Rewrite_the_buffer2()
 	
 }
 
-void rat()
+//Encryption 加密
+int enc()
 {	
-	char *str = "apple";
 	
-	int len;
-	len=strlen(str);
-	cout<<len<<endl;
-  
-	cout<<"1"<<str<<endl;
+    char ch;        
+	cout << "指令: copy <input> <output>\n" << endl; 
 
-//	str = (char*) malloc (sizeof(char)*len);
-		
-	cout<<"2"<<str<<endl;
+    ifstream fin("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player.swf", ios::in | ios::binary); 
+    ofstream fout("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player2.swf", ios::out | ios::binary); 
+	
+
+	fout.seekp(1234,ios::beg); 
+
+    if(!fin) { 
+        cout << "檔案讀入失敗" << endl; 
+        return 1; 
+    } 
+
+    if(!fout) { 
+        cout << "檔案輸出失敗" << endl; 
+        return 1; 
+    } 
+
+    while(!fin.eof()) { 
+        fin.get(ch); 
+        if(!fin.eof()) 
+            fout.put(ch); 
+    } 
+
+	char cc[1024];
+
+	sprintf_s(cc,"%s","aa");
 
 
-  for (int i=0; i<len; i++)
-  {
-	//  str[i] = str[i] * -1;
-  }
-  
-  cout<<"3"<<str<<endl;
-  
-  for (int i=0; i<len; i++)
-  {
-//	  str[i] = str[i] * -1;
-  }
-  
-  cout<<"4"<<str<<endl;
+	EncodeDecode(cc);
 
+    fout.write((char*) cc, sizeof(cc)); 
+
+    fin.close(); 
+    fout.close(); 
+
+
+	return 0;
+}
+//Decryption 解密
+int dec()
+{		
+    char ch;        
+	cout << "指令: copy <input> <output>\n" << endl; 
+	
+    //ifstream fin("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player2.swf", ios::in | ios::binary); 
+    //ofstream fout("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\player3.swf", ios::out | ios::binary); 
+    ifstream fin("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\Hisaishi2.mp4", ios::in | ios::binary); 
+    ofstream fout("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\Hisaishi3.mp4", ios::out | ios::binary); 
+	
+	fin.seekg(1234,ios::beg); 
+
+    if(!fin) { 
+        cout << "檔案讀入失敗" << endl; 
+        return 1; 
+    } 
+
+    if(!fout) { 
+        cout << "檔案輸出失敗" << endl; 
+        return 1; 
+    } 
+
+    while(!fin.eof()) { 
+        fin.get(ch); 
+        if(!fin.eof()) 
+            fout.put(ch); 
+    } 
+
+	char cc[1024];
+
+	sprintf_s(cc,"%s","aa");
+
+
+	EncodeDecode(cc);
+
+    fout.write((char*) cc, sizeof(cc)); 
+
+    fin.close(); 
+    fout.close(); 
+
+	return 0;
 }
 
 int main()
-{
-
-	
+{	
 	bool quit = false;
 	int choice;
 	while(quit == false)
 	{
-		cout<<"please input: (0)quit\t(1)dynamically_allocated_memory_buffer\t(2)Rewrite_the_buffer\t(3)Rewrite_the_buffer2\t(4)rat\t"<<endl;
+		cout<<"please input: (0)quit\t(1)dynamically_allocated_memory_buffer\t(2)Rewrite_the_buffer\t(3)Rewrite_the_buffer2\t(4)enc\t(5)dec\t"<<endl;
 		cin>>choice;
 		switch(choice)
 		{
@@ -223,10 +278,13 @@ int main()
 			Rewrite_the_buffer2();
 			break;
 		case 4:	
-			rat();
+			enc();
+			break;
+		case 5:
+			dec();
 			break;
 		default:
-			cout<<"please input 1,2,3,4 or 0"<<endl;
+			cout<<"please input 1,2,3,4,5 or 0"<<endl;
 			break;
 		}
 	}
