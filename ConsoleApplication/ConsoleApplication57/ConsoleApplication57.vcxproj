@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4BFB05AE-DA78-4E06-8F1E-E0DD13FF4B7C}</ProjectGuid>
+    <ProjectGuid>{91BC360F-A201-47CE-A773-C73CA5008380}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication55</RootNamespace>
-    <ProjectName>重載運算子</ProjectName>
+    <RootNamespace>ConsoleApplication57</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

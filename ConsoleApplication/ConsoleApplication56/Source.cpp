@@ -3,7 +3,6 @@ using namespace std;
 
 class Point { 
     int x, y; 
-
 public: 
     Point() { 
         x = y = 0; 
@@ -14,8 +13,15 @@ public:
         this->y = y; 
     } 
 
+    friend istream &operator>>(istream &s, Point &p); 
     friend ostream &operator<<(ostream &s, Point p); 
 }; 
+
+istream &operator>>(istream &s, Point &p) { 
+    cout << "¿é¤JÂI®y¼Ğ: "; 
+    s >> p.x >> p.y; 
+    return s; 
+} 
 
 ostream &operator<<(ostream &s, Point p) { 
     s << "("<< p.x << ", " << p.y << ")"; 
@@ -23,11 +29,11 @@ ostream &operator<<(ostream &s, Point p) {
 } 
 
 int main() { 
-    Point p1(1, 3), p2(10, 5); 
+    Point p1; 
 
-    cout << "p1: " << p1 << endl
-         << "p2: " << p2 << endl; 
- 
-	system("pause");   
+    cin >> p1; 
+    cout << "p1: " << p1 << endl; 
+	
+	system("pause");  
     return 0; 
-}
+} 
