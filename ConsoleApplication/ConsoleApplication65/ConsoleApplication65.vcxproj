@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{91BC360F-A201-47CE-A773-C73CA5008380}</ProjectGuid>
+    <ProjectGuid>{54F7C48C-B2D4-4540-86E3-2BAA033C2AC0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication57</RootNamespace>
-    <ProjectName>IO格式控制器</ProjectName>
+    <RootNamespace>ConsoleApplication65</RootNamespace>
+    <ProjectName>copy檔案並轉大寫</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
