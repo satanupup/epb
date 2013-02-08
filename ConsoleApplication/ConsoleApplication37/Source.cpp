@@ -10,6 +10,7 @@ public:
 };
 
 book*head=NULL;
+
 bool check(string str)
 {
 	int rrnum=str.length();
