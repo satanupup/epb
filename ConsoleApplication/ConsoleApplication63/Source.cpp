@@ -3,8 +3,7 @@
 using namespace std; 
 
 int main(int argc, char* argv[]) { 
-    char ch; 
-
+    
     ofstream fout("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\temp.txt"); 
     if(!fout) { 
         cout << "無法寫入檔案\n"; 

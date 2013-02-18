@@ -2,6 +2,7 @@
 using namespace std;
 
 
+static char *mapHyphen(char *str);
 int main()
 {/*//把兩個數組相加
 	char a[20]="This is a ";
@@ -36,6 +37,27 @@ int main()
 	//計算字符串長度,該長度不包括結束符'\0'
 	char a[]="THIS IS A SPARTA";	
 	cout<<strlen(a)<<endl;*/
+
+	/*	
+	char        *key;
+	key = "abc-cba";
+	printf(key);
+	key = mapHyphen("-");	
+	printf(key);
+	*/
 	system("pause");
 	return 0;
 };
+
+
+static char *mapHyphen(char *str)
+{	
+    char    *cp;
+    for (cp = str; *cp; cp++) {
+        if (cp == "-") {
+            cp = "_";	
+			str = cp;
+        }
+	}
+    return str;
+}
