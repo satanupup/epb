@@ -6,12 +6,12 @@
 using namespace std;
 void read()
 {
-	FILE *fp; 
+	FILE *fp;
 	size_t result;
 	long lSize;
 	char * buffer;
-	errno_t err;	// 回傳錯誤的數值 
-	if (( err = fopen_s(&fp,"C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\a.txt", "rb")) != NULL)	
+	errno_t err;	// 回傳錯誤的數值
+	if (( err = fopen_s(&fp,"C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\a.txt", "rb")) != NULL)
 	{
 	 printf("cant open the file");
 	 exit(1);

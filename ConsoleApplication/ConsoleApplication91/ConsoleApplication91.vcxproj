@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A0231457-952A-4649-85C1-E1FA11EE9F03}</ProjectGuid>
+    <ProjectGuid>{B80453BD-7E03-46E5-B8A3-CF7C9C9F27A9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication86</RootNamespace>
-    <ProjectName>string型字符串的替換</ProjectName>
+    <RootNamespace>ConsoleApplication91</RootNamespace>
+    <ProjectName>char型字符串的拷貝</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

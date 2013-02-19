@@ -3,11 +3,10 @@
 using namespace std;
 int main()
 {
-	string str1 = "gh";
-	string str2 = "abcdef";
-	str1.replace(0,1,str2,4,2);
+	string str1 = "12789";
+	string str2 = "3456";
+	str1.insert(2,str2,0,4);
 	cout<<str1<<endl;
-	cout<<str2<<endl;
 	system("pause");
 	return 0;
 }

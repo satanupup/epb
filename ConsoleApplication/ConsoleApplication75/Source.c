@@ -39,7 +39,7 @@ void main(int argc, char **argv)
 		printf("Read file Error!\n");
 	}*/
 	
-
+	
 	fseek(avif,0,0);	//文件指針指向文件頭
 
 	file_R_L=find_00dc(0,avif);
@@ -49,6 +49,8 @@ void main(int argc, char **argv)
 	//從avi文件中提取jpg圖片
 	Getjpg_avi(file_R_L,file_R_H,avif,"out0.jpg");
 	
+	printf("file_test_1\n");
+
 	file_R_L=file_R_H;
 	file_R_H=find_00dc(file_R_L,avif);
 	printf("This picture is begin at 0x%x,And end at 0x%x.\n",file_R_L,file_R_H);
@@ -68,40 +70,6 @@ char Getjpg_avi(unsigned long file_R_L,unsigned long file_R_H,FILE *avif,char *o
 	
 	errno_t err;	
 	FILE *jpgf;	
-
-	///
-	/*
-	
-	
-    TCHAR chBuf[512];
-    ZeroMemory(chBuf,512);     
-    if (GetModuleFileName(NULL,chBuf,512))  //獲取的是當前EXE所在路徑
-    {
-		wprintf(chBuf);
-		printf("\n");
-    }
-	
-	//計算字符串長度,該長度不包括結束符'\0'
-	char a[]="THIS IS A SPARTA";	
-	cout<<strlen(a)<<endl;
-	
-	char a[512]="This is a ";
-	char b[]="..\\..\\..\\ConsoleApplication\\Debug\\out";
-	cout<<strcat(a,b)<<endl;
-	cout<<a;
-	*/
-	//
-	/*
-	char a[512]="";	
-
-	sprintf(a,"","..\\..\\..\\ConsoleApplication\\Debug\\out");
-
-	char * bra = outfname;
-	
-	for(int i=0;i<512;i++)
-		 bra[i] = a[i] ;
-	*/
-
 	err = fopen_s(&jpgf,outfname,"wb");
 	printf(outfname);
 	fseek(avif,file_R_L+4,0);	//the start of a picture
