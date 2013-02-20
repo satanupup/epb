@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph DataVirtualized="True" Layout="Sugiyama" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1)" Category="CodeSchema_Assembly" Bounds="518.596591950262,299.646641725318,229.65,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Class_function_pointer_(1).exe" />
+    <Node Id="(@10)" Category="CodeSchema_Assembly" Bounds="480.486666666667,806.108402546298,474.72,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="To_reduce_the_issue_of_confusion_between_two_opinions_generated.exe" />
+    <Node Id="(@100)" Category="CodeSchema_Assembly" Bounds="1062.59353317333,862.068402626298,176.89,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_string_copy.exe" />
+    <Node Id="(@11)" Category="CodeSchema_Assembly" Bounds="1103.4902,-188.142797192536,197.47,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Multiple_inheritance.exe" />
+    <Node Id="(@12)" Category="CodeSchema_Assembly" Bounds="921.114782920894,-7.65019835253577,215.246666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="The_heap_array_on_like.exe" />
+    <Node Id="(@13)" Category="CodeSchema_Assembly" Bounds="544.459975243737,411.566642211386,246.416666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Pass_argument_array_on_like.exe" />
+    <Node Id="(@14)" Category="CodeSchema_Assembly" Bounds="-0.000249800000091227,196.852313398601,216.276666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Static_member_variable.exe" />
+    <Node Id="(@15)" Category="CodeSchema_Assembly" Bounds="872.95009992,862.068402626298,159.643333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Print_Triangle.exe" />
+    <Node Id="(@16)" Category="CodeSchema_Assembly" Bounds="505.786666666667,526.308402171752,179.333333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Read_the_file_file.exe" />
+    <Node Id="(@17)" Category="CodeSchema_Assembly" Bounds="465.397554842933,131.766503793184,210.38,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Written_to_the_file_file.exe" />
+    <Node Id="(@18)" Category="CodeSchema_Assembly" Bounds="908.626766586666,750.148402466298,435.64,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="The_streaming_read_into_the_user's_input_and_output_file_file.exe" />
+    <Node Id="(@19)" Category="CodeSchema_Assembly" Bounds="1041.67012528453,293.008306509619,236.726666666666,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Read_a_random_access_file.exe" />
+    <Node Id="(@2)" Category="CodeSchema_Assembly" Bounds="258.946491950262,299.646631865673,229.65,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Class_function_pointer_(3).exe" />
+    <Node Id="(@20)" Category="CodeSchema_Assembly" Bounds="-0.000199840000334461,628.815178586839,286.383333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Use_a_linked_list_of_books_example.exe" />
+    <Node Id="(@21)" Category="CodeSchema_Assembly" Bounds="876.23009992,-88.3823003275298,197.26,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Static_build_runtime.exe" />
+    <Node Id="(@22)" Category="CodeSchema_Assembly" Bounds="946.808249039452,-244.102897192536,278.146666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Dynamic_binding_at_compile_time.exe" />
+    <Node Id="(@23)" Category="CodeSchema_Assembly" Bounds="861.693358617863,460.888540563613,260.013333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Static_binding_at_compile_time.exe" />
+    <Node Id="(@24)" Category="CodeSchema_Assembly" Bounds="340.176616706667,638.228402306298,317.113333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Ambiguity_of_multiple_inheritance_prone.exe" />
+    <Node Id="(@25)" Category="CodeSchema_Assembly" Bounds="537.44319382339,355.606641858586,238.746666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="avi_kept_out_of_the_picture.exe" />
+    <Node Id="(@26)" Category="CodeSchema_Assembly" Bounds="268.706427157006,355.606731542096,238.736666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Complex_abstract_structure.exe" />
+    <Node Id="(@27)" Category="CodeSchema_Assembly" Bounds="286.849825283597,467.526931541066,256.856666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="copy_files_and_turn_uppercase.exe" />
+    <Node Id="(@28)" Category="CodeSchema_Assembly" Bounds="453.666961688655,19.8464752371708,192.896666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_string_delete.exe" />
+    <Node Id="(@29)" Category="CodeSchema_Assembly" Bounds="-0.000349720000698994,964.575495153654,114.15,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="fwrite.exe" />
+    <Node Id="(@3)" Category="CodeSchema_Assembly" Bounds="1241.580000882,181.088309137549,221.046666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Read_from_a_binary_file..exe" />
+    <Node Id="(@30)" Category="CodeSchema_Assembly" Bounds="144.149750199999,964.575495153654,115.156666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="seekg.exe" />
+    <Node Id="(@31)" Category="CodeSchema_Assembly" Bounds="769.986816546666,918.028402706298,182.463333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_type_string.exe" />
+    <Node Id="(@32)" Category="CodeSchema_Assembly" Bounds="0,572.855178586839,267.893333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="a_copy_of_the_string_type_string.exe" />
+    <Node Id="(@33)" Category="CodeSchema_Assembly" Bounds="1137.99,516.848640499468,284.763333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="part_of_the_merger_of_string_string.exe" />
+    <Node Id="(@34)" Category="CodeSchema_Assembly" Bounds="152.036366906667,908.615395153654,144.16,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_string.exe" />
+    <Node Id="(@35)" Category="CodeSchema_Assembly" Bounds="640.624449053368,-144.360589531731,276.766666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="part_of_the_merger_of_char_string.exe" />
+    <Node Id="(@36)" Category="CodeSchema_Assembly" Bounds="820.876741911338,404.928440563613,254.313333333334,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Acquired_EXE_where_the_path.exe" />
+    <Node Id="(@37)" Category="CodeSchema_Assembly" Bounds="765.013333333334,694.188402386298,365.736666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Dynamic_linked_list_of_intermediate_interpolation.exe" />
+    <Node Id="(@38)" Category="CodeSchema_Assembly" Bounds="316.383233413333,582.268402251752,288.213333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Multidimensional_array_initialization.exe" />
+    <Node Id="(@39)" Category="CodeSchema_Assembly" Bounds="985.206666666667,806.108402546298,511.113333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="The_function_pointer_can_also_be_used_as_the_parameters_of_the_function.exe" />
+    <Node Id="(@4)" Category="CodeSchema_Assembly" Bounds="982.450249799999,918.028402706298,190.653333333334,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Virtual_function_00.exe" />
+    <Node Id="(@40)" Category="CodeSchema_Assembly" Bounds="1039.54674191134,628.768840563613,331.726666666666,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Comparison_of_three_call_a_virtual_function.exe" />
+    <Node Id="(@41)" Category="CodeSchema_Assembly" Bounds="493.059950039859,187.726528484233,218.85,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Static_member_function.exe" />
+    <Node Id="(@42)" Category="CodeSchema_Assembly" Bounds="687.29004996,638.228402306298,322.256666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Multithreaded_encryption_and_decryption.exe" />
+    <Node Id="(@43)" Category="CodeSchema_Assembly" Bounds="236.459950039999,1020.53559515365,206.98,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_string_insertion.exe" />
+    <Node Id="(@44)" Category="CodeSchema_Assembly" Bounds="1076.35333386253,348.968406509619,240.233333333334,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Two_ambiguous_attribution.exe" />
+    <Node Id="(@45)" Category="CodeSchema_Assembly" Bounds="505.189860348286,243.686532078118,224.266666666667,25.9600000000001" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_string_comparison.exe" />
+    <Node Id="(@46)" Category="CodeSchema_Assembly" Bounds="759.456666666666,223.84,226.806666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_type_string_strcmp.exe" />
+    <Node Id="(@47)" Category="CodeSchema_Assembly" Bounds="1016.26339368274,237.048296461363,227.366666666667,25.9600000000001" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_type_string_lookup.exe" />
+    <Node Id="(@48)" Category="CodeSchema_Assembly" Bounds="741.91,104.269851647464,219.37,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_type_string_lookup.exe" />
+    <Node Id="(@49)" Category="CodeSchema_Assembly" Bounds="452.236666666666,750.148402466298,426.39,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Determine_whether_the_array_in_accordance_with_the_order.exe" />
+    <Node Id="(@5)" Category="CodeSchema_Assembly" Bounds="806.190000176399,348.968406509619,240.163333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Overloaded_operators%202.exe" />
+    <Node Id="(@50 @101 @116)" Category="CodeSchema_Method" Bounds="1242.16401501312,-50.3023464725358,64.09515336,25.96" DelayedCrossGroupLinksState="Fetched" Label="main" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@52)" Category="CodeSchema_Assembly" Bounds="473.440049959999,1020.53550098699,207.663333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_string_of_merger.exe" />
+    <Node Id="(@53)" Category="CodeSchema_Assembly" Bounds="1412.02129958756,-180.530198352536,199.196666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="boolalpha_controller.exe" />
+    <Node Id="(@54)" Category="CodeSchema_Assembly" Bounds="-0.000149879999838731,420.692712119625,241.976666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="The_IO_format_of_controller.exe" />
+    <Node Id="(@55)" Category="CodeSchema_Assembly" Bounds="297.893183862534,523.487031541066,177.893333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Function_pointer.exe" />
+    <Node Id="(@56)" Category="CodeSchema_Assembly" Bounds="0,852.655295153653,450.486666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Use_typedef_to_simplify_the_declaration_of_the_function_pointer.exe" />
+    <Node Id="(@57)" Category="CodeSchema_Assembly" Bounds="444.306616706666,964.575400986987,131.503333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="operator.exe" />
+    <Node Id="(@58)" Category="CodeSchema_Assembly" Bounds="957.220025284529,572.808740563613,293.96,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Inherited_constructor_and_destructor.exe" />
+    <Node Id="(@59)" Category="CodeSchema_Assembly" Bounds="1254.95501560932,-244.102897192536,279.8,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Virtual_constructor_and_destructor.exe" />
+    <Node Id="(@6)" Category="CodeSchema_Assembly" Bounds="-0.000149880000876124,1020.53559515365,206.46,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="ConsoleApplication88.exe" />
+    <Node Id="(@60)" Category="CodeSchema_Assembly" Bounds="1160.75,684.728940563613,371.48,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="To_pass_parameters_to_the_base_class_constructor.exe" />
+    <Node Id="(@61)" Category="CodeSchema_Assembly" Bounds="926.263333333334,516.848640563613,181.726666666666,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Copy_constructor.exe" />
+    <Node Id="(@62)" Category="CodeSchema_Assembly" Bounds="651.79007506,-42.7049669083128,194.44,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Linked_list_statistics.exe" />
+    <Node Id="(@63)" Category="CodeSchema_Assembly" Bounds="289.306516786666,964.575495153654,125,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="pounds.exe" />
+    <Node Id="(@64)" Category="CodeSchema_Assembly" Bounds="1151.70666666667,447.68,264.37,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Private_static_member_variables.exe" />
+    <Node Id="(@65)" Category="CodeSchema_Assembly" Bounds="246.276516786245,187.72652961138,216.783333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="create_empty_data_files.exe" />
+    <Node Id="(@66 @101 @116)" Category="CodeSchema_Method" Bounds="295.697857737787,-17.7234617284737,64.0849007833739,25.96" DelayedCrossGroupLinksState="Fetched" Label="main" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="(@68)" Category="CodeSchema_Assembly" Bounds="-4.2632564145606E-14,140.892213718345,199.466666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Random_access_files.exe" />
+    <Node Id="(@69)" Category="CodeSchema_Assembly" Bounds="1281.18012528453,572.808740146668,298.613333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Pointer_structure_and_confirm_figures.exe" />
+    <Node Id="(@7)" Category="CodeSchema_Assembly" Bounds="1485.79039968,862.068402626298,111.563333333334,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="fread.exe" />
+    <Node Id="(@70)" Category="CodeSchema_Assembly" Bounds="2.8421709430404E-14,84.8595751530401,177.043333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Formatting_flags.exe" />
+    <Node Id="(@71)" Category="CodeSchema_Assembly" Bounds="1346.58666666667,335.76,240.306666666666,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="String_processing_functions.exe" />
+    <Node Id="(@72)" Category="CodeSchema_Assembly" Bounds="-9.99200006503997E-05,796.695195153653,422.236666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Judge_array_arrangement_then_perform_different_functions.exe" />
+    <Node Id="(@73)" Category="CodeSchema_Assembly" Bounds="-0.000249800000716505,364.732612439369,238.706666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="The_use_of_static_members.exe" />
+    <Node Id="(@74)" Category="CodeSchema_Assembly" Bounds="377.373333333334,694.188402386298,357.64,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="In_the_array_of_variables_like_initialize_members.exe" />
+    <Node Id="(@75)" Category="CodeSchema_Assembly" Bounds="715.120000000001,526.308402131752,181.143333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Array_of_pointers.exe" />
+    <Node Id="(@76)" Category="CodeSchema_Assembly" Bounds="778.246691951196,293.008396461363,233.423333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Array_of_function_pointers.exe" />
+    <Node Id="(@77)" Category="CodeSchema_Assembly" Bounds="711.103483213333,973.988402786298,208.73,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Overloaded_operators.exe" />
+    <Node Id="(@78)" Category="CodeSchema_Assembly" Bounds="-0.000149880000179792,684.775178586839,310.176666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Pure_virtual_function_and_abstract_class.exe" />
+    <Node Id="(@79)" Category="CodeSchema_Assembly" Bounds="-0.000199840000277618,308.772512759113,228.946666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Instance_of_abstract_class.exe" />
+    <Node Id="(@8)" Category="CodeSchema_Assembly" Bounds="1269.48363309333,862.068402626298,186.306666666666,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="operator_rear_add.exe" />
+    <Node Id="(@80)" Category="CodeSchema_Assembly" Bounds="1203.10368305333,918.028402706298,200.22,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Pointer_to_an_object.exe" />
+    <Node Id="(@81)" Category="CodeSchema_Assembly" Bounds="507.083233413333,862.068402626298,152.926666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Array_object.exe" />
+    <Node Id="(@82)" Category="CodeSchema_Assembly" Bounds="-0.000199839999424967,476.652811799881,256.85,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="The_test_streaming_format_set.exe" />
+    <Node Id="(@83)" Category="CodeSchema_Assembly" Bounds="-0.000399679999318892,908.615395153654,122.036666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="explicit.exe" />
+    <Node Id="(@84)" Category="CodeSchema_Assembly" Bounds="1273.63016034941,237.048309490349,228.296666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_string_replacement.exe" />
+    <Node Id="(@85)" Category="CodeSchema_Assembly" Bounds="573.706666666667,470.348402131752,257.986666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_string_string_replacement.exe" />
+    <Node Id="(@86)" Category="CodeSchema_Assembly" Bounds="991.28,160.229801647464,220.3,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_string_replacement.exe" />
+    <Node Id="(@87)" Category="CodeSchema_Assembly" Bounds="252.586427014953,243.68662961138,222.603333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="string_string_assignment.exe" />
+    <Node Id="(@88)" Category="CodeSchema_Assembly" Bounds="676.508016254227,48.3097516474643,214.606666666667,25.9600000000001" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="char_string_assignment.exe" />
+    <Node Id="(@89)" Category="CodeSchema_Assembly" Bounds="690.01,862.068402626298,152.94,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Dynamic_list.exe" />
+    <Node Id="(@9)" Category="CodeSchema_Assembly" Bounds="232.624905297605,78.3175549502775,202.796666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Inherited_overloaded.exe" />
+    <Node Id="(@90)" Category="CodeSchema_Assembly" Bounds="-1.13686837721616E-13,740.735095153653,347.373333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Array_data_is_written_to_the_file_and_read_out.exe" />
+    <Node Id="(@91)" Category="CodeSchema_Assembly" Bounds="634.596666666666,582.268402226298,292.623333333333,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Written_to_the_file_file_and_read_out.exe" />
+    <Node Id="(@92)" Category="CodeSchema_Assembly" Bounds="326.196466826667,908.615395153654,150.886666666666,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="String_input.exe" />
+    <Node Id="(@97)" Category="CodeSchema_Assembly" Bounds="-0.00024980000063124,252.812413078857,222.586666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Define_a_character_array.exe" />
+    <Node Id="(@98)" Category="CodeSchema_Assembly" Bounds="271.976616706526,411.566831542096,242.483333333334,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Enumeration_constant_array.exe" />
+    <Node Id="(@99)" Category="CodeSchema_Assembly" Bounds="605.810049959999,918.028402706298,134.176666666667,25.96" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="File_copy.exe" />
+    <Node Id="@102" Category="CodeSchema_Namespace" Bounds="1222.18337501312,-91.2226971925358,104.05643336,86.86099072" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="‎::" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@103" Category="CodeSchema_Namespace" Bounds="275.693759812121,-58.5928412041621,104.096216426667,86.9202" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="‎::" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@104" Category="CodeSchema_Namespace" Bounds="-147.154774590392,-220.012200630151,328.9451743148,254.923672237306" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="7" Group="Expanded" Label="‎::" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@105" Category="CodeSchema_Namespace" Bounds="259.799964046806,-467.86945180664,330.185685713989,273.573566088867" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="7" Group="Expanded" Label="‎::" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" UseManualLocation="True" />
+    <Node Id="@106" Category="CodeSchema_Method" Bounds="-27.0373692993436,-123.035764016876,94.7633333333333,25.96" DelayedCrossGroupLinksState="Fetched" Label="showbook" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@107" Category="CodeSchema_Method" Bounds="381.799964046806,-352.255985717773,94.7633333333333,25.96" DelayedCrossGroupLinksState="Fetched" Label="showbook" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@108" Category="CodeSchema_Method" Bounds="-126.297671945279,-179.035990051768,68.388026972918,25.96" DelayedCrossGroupLinksState="Fetched" Label="check" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@109" Category="CodeSchema_Method" Bounds="281.902189030026,-426.909364732491,68.3759808266667,25.96" DelayedCrossGroupLinksState="Fetched" Label="check" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@110" Category="CodeSchema_Method" Bounds="-16.067835766722,-67.035984332874,72.7908978773924,25.96" DelayedCrossGroupLinksState="Fetched" Label="Delete" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@111" Category="CodeSchema_Method" Bounds="392.136199893822,-296.255978356891,72.7770654933333,25.96" DelayedCrossGroupLinksState="Fetched" Label="Delete" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@112" Category="CodeSchema_Method" Bounds="-13.3873692993435,-11.0357640168762,67.4633333333334,25.96" DelayedCrossGroupLinksState="Fetched" Label="insert" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@113" Category="CodeSchema_Method" Bounds="394.81119341237,-240.255985984982,67.4633333333334,25.96" DelayedCrossGroupLinksState="Fetched" Label="insert" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@114" Category="CodeSchema_Method" Bounds="-11.7132839920542,-179.035879504114,64.0843444266667,25.96" DelayedCrossGroupLinksState="Fetched" Label="creat" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@115" Category="CodeSchema_Method" Bounds="396.482721870098,-408.255993575353,64.08298624,25.96" DelayedCrossGroupLinksState="Fetched" Label="creat" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@117" Category="CodeSchema_Method" Bounds="97.7284272742852,-67.0357967754919,64.0615354400001,25.96" DelayedCrossGroupLinksState="Fetched" Label="main" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@118" Category="CodeSchema_Method" Bounds="505.925466636164,-296.255985986285,64.0601972266668,25.96" DelayedCrossGroupLinksState="Fetched" Label="main" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@119" Category="CodeSchema_Class" Bounds="-127.150703066596,-123.055759835143,70.0890773333334,25.999872" DelayedCrossGroupLinksState="Fetched" Label="book" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@120" Category="CodeSchema_Class" Bounds="281.046304062708,-314.969285987756,70.0865910933334,25.99985888" DelayedCrossGroupLinksState="Fetched" Label="book" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" />
+    <Node Id="@51" Category="CodeSchema_Assembly" Bounds="1166.38159169312,-132.182697289336,215.66,147.8209909136" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="string_string_of_merger.exe" UseManualLocation="True" />
+    <Node Id="@67" Category="CodeSchema_Assembly" Bounds="231.816868025455,-99.5529412041621,191.85,147.8804" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="C_to_copy_the_files.exe" UseManualLocation="True" />
+    <Node Id="@94" Category="CodeSchema_Assembly" Bounds="-167.154774590392,-260.972300630151,368.9451743148,315.883872237306" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="Dynamic_linked_list_prepend_law.exe" UseManualLocation="True" />
+    <Node Id="@96" Category="CodeSchema_Assembly" Bounds="239.799964046806,-508.82955180664,370.185685713989,334.533766088867" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="Delete_insert_dynamic_list_display.exe" UseManualLocation="True" />
+    <Node Id="Ddd." Category="Comment" Bounds="279.799964046806,-370.929385987756,50,25.96" Label="ddd." UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="@102" Target="(@50 @101 @116)" Category="Contains" FetchingParent="@102" />
+    <Link Source="@103" Target="(@66 @101 @116)" Category="Contains" FetchingParent="@103" />
+    <Link Source="@104" Target="@106" Category="Contains" FetchingParent="@104" />
+    <Link Source="@104" Target="@108" Category="Contains" FetchingParent="@104" />
+    <Link Source="@104" Target="@110" Category="Contains" FetchingParent="@104" />
+    <Link Source="@104" Target="@112" Category="Contains" FetchingParent="@104" />
+    <Link Source="@104" Target="@114" Category="Contains" FetchingParent="@104" />
+    <Link Source="@104" Target="@117" Category="Contains" FetchingParent="@104" />
+    <Link Source="@104" Target="@119" Category="Contains" FetchingParent="@104" />
+    <Link Source="@105" Target="@107" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="@109" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="@111" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="@113" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="@115" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="@118" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="@120" Category="Contains" FetchingParent="@105" />
+    <Link Source="@105" Target="Ddd." Category="Contains" />
+    <Link Source="@106" Target="@119" Category="References" Bounds="-47.4106063842773,-110.034889221191,21,0" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@107" Target="@120" Category="References" Bounds="359.312297813832,-326.295985717773,30.5215079671638,10.0683881280257" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@110" Target="@119" Category="References" Bounds="-57.3094024658203,-93.0225296020508,52.2188634872437,26.0076446533203" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@111" Target="@120" Category="References" Bounds="360.011026186017,-294.667012523364,32.1251603055976,5.34110826702687" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@112" Target="@119" Category="References" Bounds="-72.0400161743164,-90.6833648681641,79.9802765846252,79.6684770584106" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@113" Target="@120" Category="References" Bounds="343.158329559018,-283.98985072447,65.8427402122579,43.7338650066967" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@114" Target="@108" Category="CodeSchema_Calls" Bounds="-48.2689399719238,-166.034881591797,37.1800003051758,0" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@114" Target="@119" Category="References" Bounds="-57.3094024658203,-153.054885864258,52.2188634872437,26.0076446533203" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@114" Target="@120" Bounds="48.5723421036242,-285.211625764863,231.048109869731,106.167628061899" />
+    <Link Source="@115" Target="@109" Category="CodeSchema_Calls" Bounds="359.15680936686,-406.784382632188,37.3258979525933,6.19255304521744" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@115" Target="@120" Category="References" Bounds="338.680288632589,-382.295985717773,74.2029954941531,61.5791851485938" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@117" Target="@106" Category="CodeSchema_Calls" Bounds="54.3472328186035,-92.9548797607422,50.6895179748535,25.9399948120117" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@117" Target="@110" Category="CodeSchema_Calls" Bounds="66.3777236938477,-54.0348892211914,31.9750061035156,0" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@117" Target="@112" Category="CodeSchema_Calls" Bounds="54.3472328186035,-41.0548896789551,50.6895179748535,25.9399909973145" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@117" Target="@114" Category="CodeSchema_Calls" Bounds="45.3655395507813,-147.635360717773,74.7388458251953,80.620475769043" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@118" Target="@107" Category="CodeSchema_Calls" Bounds="462.395692004087,-322.176414194991,50.3476182999239,25.9204284772174" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@118" Target="@111" Category="CodeSchema_Calls" Bounds="473.913251984948,-283.275981251569,32.0122005491798,4.46370921736161E-06" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@118" Target="@113" Category="CodeSchema_Calls" Bounds="461.914769287284,-270.295985717773,50.6804870767209,25.9394745949476" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@118" Target="@115" Category="CodeSchema_Calls" Bounds="458.329559326172,-376.451843261719,68.7123718261719,80.1958618164063" Language="{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}" Weight="1" />
+    <Link Source="@51" Target="@102" Category="Contains" FetchingParent="@51" />
+    <Link Source="@67" Target="@103" Category="Contains" FetchingParent="@67" />
+    <Link Source="@94" Target="@104" Category="Contains" FetchingParent="@94" />
+    <Link Source="@96" Target="@105" Category="Contains" FetchingParent="@96" />
+    <Link Source="Ddd." Target="@120" Bounds="307.417673987749,-344.969385987755,4.27096503279114,21.177719218823" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Assembly" Label="組件" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="組件" />
+    <Category Id="CodeSchema_Calls" Label="呼叫" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="由下列呼叫" OutgoingActionLabel="呼叫" />
+    <Category Id="CodeSchema_Class" Label="類別" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="類別" />
+    <Category Id="CodeSchema_Member" Label="成員" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="成員" />
+    <Category Id="CodeSchema_Method" Label="方法" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="方法" />
+    <Category Id="CodeSchema_Namespace" Label="命名空間" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="命名空間" />
+    <Category Id="CodeSchema_Type" Label="類型" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="型別" />
+    <Category Id="Comment" Label="註解" Description="表示圖表上的使用者定義註解" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="註解" />
+    <Category Id="Contains" Label="包含" Description="連結的來源是否包含目標物件" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="由下列包含" IsContainment="True" OutgoingActionLabel="包含" />
+    <Category Id="File" Label="檔案" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="File" NavigationActionLabel="檔案" />
+    <Category Id="References" Label="參考" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="由下列參考" OutgoingActionLabel="參考" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="DataVirtualized" Label="虛擬化資料" Description="如果為 true，就表示圖形可以包含代表虛擬化節點/連結 (亦即，實際上並未在圖形中建立) 之資料的節點和連結。" DataType="System.Boolean" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
+    <Property Id="DelayedChildNodesState" Label="延遲子節點狀態" Description="如果未指定延遲子節點狀態，則為 Unspecified。如果群組包含的子節點尚未擷取至圖形，則為 NotFetched。如果群組的所有延遲子節點己擷取，則為 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="DelayedCrossGroupLinksState" Label="延遲跨群組連結狀態" Description="如果未指定延遲跨群組連結狀態，則為 Unspecified。如果此節點上的延遲跨群組連結尚未擷取至圖形，則為 NotFetched。如果所有延遲跨群組連結已擷取，則為 Fetched。" DataType="Microsoft.VisualStudio.GraphModel.DelayedDataState" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="FetchedChildrenCount" DataType="System.Int32" />
+    <Property Id="FetchingParent" DataType="Microsoft.VisualStudio.GraphModel.GraphNodeId" />
+    <Property Id="Group" Label="群組" Description="將節點顯示為群組" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="圖示" Description="圖示" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="Label" Label="標籤" Description="可註釋物件的可顯示標籤" DataType="System.String" />
+    <Property Id="Language" Label="語言" Description="語言" DataType="System.String" />
+    <Property Id="Layout" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="Visibility" Label="可見度" Description="定義圖形中的節點是否為可見" DataType="System.Windows.Visibility" />
+    <Property Id="Weight" Label="寬度" Description="寬度" DataType="System.Double" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="組件" ValueType="Uri" />
+    <Name Id="Member" Label="成員" ValueType="System.Object" />
+    <Name Id="Name" Label="名稱" ValueType="System.String" />
+    <Name Id="Namespace" Label="命名空間" ValueType="System.String" />
+    <Name Id="OverloadingParameters" Label="參數" ValueType="Microsoft.VisualStudio.GraphModel.GraphNodeIdCollection" Formatter="NameValueNoEscape" />
+    <Name Id="Type" Label="類型" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(f87e44af-6bde-4a2d-9910-a8e9c06d145f.OutputPathUri)" />
+    <Alias n="2" Uri="Assembly=$(2af012f1-1cd1-4b01-864a-b1759b6c1029.OutputPathUri)" />
+    <Alias n="3" Uri="Assembly=$(4b27c6ab-ad43-42e8-b02f-22c951a2188f.OutputPathUri)" />
+    <Alias n="4" Uri="Assembly=$(787e9619-c362-4598-a8d0-63f99ea807e5.OutputPathUri)" />
+    <Alias n="5" Uri="Assembly=$(21236c66-cd07-4499-80fa-7cf892b862c2.OutputPathUri)" />
+    <Alias n="6" Uri="Assembly=$(5d2ea920-f584-4e2b-8283-f74590091bd5.OutputPathUri)" />
+    <Alias n="7" Uri="Assembly=$(ba92c04a-ce51-4f2a-8c0a-fe9077e6a892.OutputPathUri)" />
+    <Alias n="8" Uri="Assembly=$(22f1c014-e825-4142-aefe-87a667ee9b17.OutputPathUri)" />
+    <Alias n="9" Uri="Assembly=$(2ceb2ce3-19d3-4d68-9bd6-ebcbc9addef5.OutputPathUri)" />
+    <Alias n="10" Uri="Assembly=$(9cb9867f-9f21-4b11-a858-ec21c522a9d0.OutputPathUri)" />
+    <Alias n="11" Uri="Assembly=$(f838cc42-ff1a-44c2-a648-1b4b9115ba47.OutputPathUri)" />
+    <Alias n="12" Uri="Assembly=$(ab21f5e1-5b0d-47e0-962e-2b5913f89c0e.OutputPathUri)" />
+    <Alias n="13" Uri="Assembly=$(f70c0298-c38c-4cfa-8bf9-bd6e181fe66e.OutputPathUri)" />
+    <Alias n="14" Uri="Assembly=$(e1893074-be34-46a3-b7f8-142a00cd459d.OutputPathUri)" />
+    <Alias n="15" Uri="Assembly=$(7313b531-c196-43d4-917a-18695741cc6b.OutputPathUri)" />
+    <Alias n="16" Uri="Assembly=$(7121365f-f5e1-4f9e-abb6-f9a7620aac2c.OutputPathUri)" />
+    <Alias n="17" Uri="Assembly=$(b5a39e4d-ae97-461d-b90a-8ce951303a63.OutputPathUri)" />
+    <Alias n="18" Uri="Assembly=$(77ca21cd-29f1-4013-8ff4-dad10f47d8fe.OutputPathUri)" />
+    <Alias n="19" Uri="Assembly=$(3cb49a05-2e57-498a-a5d2-375a6d6dff28.OutputPathUri)" />
+    <Alias n="20" Uri="Assembly=$(53862a21-2802-4d32-ac0c-5302cef802fd.OutputPathUri)" />
+    <Alias n="21" Uri="Assembly=$(91bdf45e-dfa9-43ef-b68e-5c0bb6af1206.OutputPathUri)" />
+    <Alias n="22" Uri="Assembly=$(0d85764d-295e-4661-b1b0-4ace28b0c3c9.OutputPathUri)" />
+    <Alias n="23" Uri="Assembly=$(93cab97a-1146-43ed-abe3-90ad2202bf2b.OutputPathUri)" />
+    <Alias n="24" Uri="Assembly=$(5e027342-8348-4937-a0de-c237f1283d10.OutputPathUri)" />
+    <Alias n="25" Uri="Assembly=$(e449be7d-823f-4076-8d45-58ef58ea92d9.OutputPathUri)" />
+    <Alias n="26" Uri="Assembly=$(aca94ea2-a218-4524-839e-cf36d5bf7a22.OutputPathUri)" />
+    <Alias n="27" Uri="Assembly=$(54f7c48c-b2d4-4540-86e3-2baa033c2ac0.OutputPathUri)" />
+    <Alias n="28" Uri="Assembly=$(feb8ea5e-e07d-46df-b426-f0a70c6d9634.OutputPathUri)" />
+    <Alias n="29" Uri="Assembly=$(f66a4aa9-18ce-414d-9bb2-4df7f0f7113a.OutputPathUri)" />
+    <Alias n="30" Uri="Assembly=$(c1b5f6cf-1550-4672-adec-15e11b218d82.OutputPathUri)" />
+    <Alias n="31" Uri="Assembly=$(07941a5d-6588-4f2d-bdea-99b647ccd718.OutputPathUri)" />
+    <Alias n="32" Uri="Assembly=$(ccebb98c-ede1-4db7-a607-6313974a5873.OutputPathUri)" />
+    <Alias n="33" Uri="Assembly=$(603876c1-d8be-4285-ba8b-5a2eafb3a6e5.OutputPathUri)" />
+    <Alias n="34" Uri="Assembly=$(c2dbb971-28a5-40d9-9e8a-daebdd03d5e7.OutputPathUri)" />
+    <Alias n="35" Uri="Assembly=$(d72fb6ad-fa0d-41bb-aeef-0238980564bf.OutputPathUri)" />
+    <Alias n="36" Uri="Assembly=$(ee3d95d7-e728-43d5-a5ca-fc20204f6d12.OutputPathUri)" />
+    <Alias n="37" Uri="Assembly=$(f37e887e-4350-4121-9529-162b49385bc4.OutputPathUri)" />
+    <Alias n="38" Uri="Assembly=$(523cdff4-dee7-44a7-8ebd-aad20f878490.OutputPathUri)" />
+    <Alias n="39" Uri="Assembly=$(5a17de10-947c-4dc3-8dbb-64aaa26de53c.OutputPathUri)" />
+    <Alias n="40" Uri="Assembly=$(ba3be05f-cedb-4479-8169-8ea3fe0c9416.OutputPathUri)" />
+    <Alias n="41" Uri="Assembly=$(ae92e636-9b4b-4bd2-b5aa-14a651573edc.OutputPathUri)" />
+    <Alias n="42" Uri="Assembly=$(559f7f6c-788c-4f57-b8d9-3bef71abbd22.OutputPathUri)" />
+    <Alias n="43" Uri="Assembly=$(0bda8f20-7a07-4529-822d-6d34691ef473.OutputPathUri)" />
+    <Alias n="44" Uri="Assembly=$(8eff20b0-f2a9-4640-babd-d528cbd22395.OutputPathUri)" />
+    <Alias n="45" Uri="Assembly=$(85e188ff-0091-4d73-bd08-d86b5f9e4399.OutputPathUri)" />
+    <Alias n="46" Uri="Assembly=$(b5d0e8e4-49de-4a48-918c-5451109ca074.OutputPathUri)" />
+    <Alias n="47" Uri="Assembly=$(ed8c6270-d911-45be-af46-0a9382725aec.OutputPathUri)" />
+    <Alias n="48" Uri="Assembly=$(904e83cc-bdbb-4a2f-baf6-d3075eb825d3.OutputPathUri)" />
+    <Alias n="49" Uri="Assembly=$(cc00cd8a-e187-4958-b0f0-01b83b4c12a9.OutputPathUri)" />
+    <Alias n="50" Uri="Assembly=$(a6bdbc05-03f4-4288-b7b5-c23d8520f7a1.OutputPathUri)" />
+    <Alias n="51" Id="(@50)" />
+    <Alias n="52" Uri="Assembly=$(172d60da-6189-4e5b-b8bf-749de6229ecc.OutputPathUri)" />
+    <Alias n="53" Uri="Assembly=$(05995abf-e0f5-4c8c-a230-09a10968beda.OutputPathUri)" />
+    <Alias n="54" Uri="Assembly=$(91bc360f-a201-47ce-a773-c73ca5008380.OutputPathUri)" />
+    <Alias n="55" Uri="Assembly=$(54b328cb-00f2-4dea-be6d-0039d3c11f67.OutputPathUri)" />
+    <Alias n="56" Uri="Assembly=$(e426a7ac-3e11-49ab-b4e2-0b43d53230a7.OutputPathUri)" />
+    <Alias n="57" Uri="Assembly=$(b54da35f-311e-41c7-a81b-a7ef73e1b9a3.OutputPathUri)" />
+    <Alias n="58" Uri="Assembly=$(8e4ad380-8dca-448d-b00c-334ce5e92794.OutputPathUri)" />
+    <Alias n="59" Uri="Assembly=$(c65887fd-4d7a-49d5-9632-f0b358fc6d23.OutputPathUri)" />
+    <Alias n="60" Uri="Assembly=$(aa664def-74c9-4b30-9753-0d3e162d0b69.OutputPathUri)" />
+    <Alias n="61" Uri="Assembly=$(44705d31-a76c-4d89-b249-ff81ab1b2593.OutputPathUri)" />
+    <Alias n="62" Uri="Assembly=$(d3f5335a-9cfb-408e-89fb-2115f9c3b5f4.OutputPathUri)" />
+    <Alias n="63" Uri="Assembly=$(952a7b29-7ed4-4767-b01a-cf6561af8f33.OutputPathUri)" />
+    <Alias n="64" Uri="Assembly=$(a7ac945e-22d0-44ae-92d4-25aa924b6473.OutputPathUri)" />
+    <Alias n="65" Uri="Assembly=$(b383da0e-7ca0-45b1-84a1-c6ba1f578d89.OutputPathUri)" />
+    <Alias n="66" Uri="Assembly=$(140447e6-6942-422d-9b61-d73b3957dd88.OutputPathUri)" />
+    <Alias n="67" Id="(@66)" />
+    <Alias n="68" Uri="Assembly=$(c425a1c7-fd21-4d5c-a48e-8d07b3dba744.OutputPathUri)" />
+    <Alias n="69" Uri="Assembly=$(8084ce4e-d872-49f7-841e-b09e2756d06f.OutputPathUri)" />
+    <Alias n="70" Uri="Assembly=$(69e10e9e-a191-4d06-9286-0a30b7b682f6.OutputPathUri)" />
+    <Alias n="71" Uri="Assembly=$(9343bca2-e092-4e43-912b-253ad1248353.OutputPathUri)" />
+    <Alias n="72" Uri="Assembly=$(e81cd5ca-92af-456d-8a86-f47fe3bef8f5.OutputPathUri)" />
+    <Alias n="73" Uri="Assembly=$(e35bbc7f-9d2f-4b88-8706-e9c9fccc834a.OutputPathUri)" />
+    <Alias n="74" Uri="Assembly=$(baeb4390-5046-4ff3-8747-b7f9acc7a917.OutputPathUri)" />
+    <Alias n="75" Uri="Assembly=$(71869d70-87a4-44a0-8b58-7a852ab5396b.OutputPathUri)" />
+    <Alias n="76" Uri="Assembly=$(df699717-7702-4a83-9688-bce3d6a7f0db.OutputPathUri)" />
+    <Alias n="77" Uri="Assembly=$(4bfb05ae-da78-4e06-8f1e-e0dd13ff4b7c.OutputPathUri)" />
+    <Alias n="78" Uri="Assembly=$(4f11354d-4221-4d1f-8386-0547cabecd3f.OutputPathUri)" />
+    <Alias n="79" Uri="Assembly=$(2fbcca08-69ba-47b2-9513-b92deb2301df.OutputPathUri)" />
+    <Alias n="80" Uri="Assembly=$(c26163f8-1430-48ed-8000-18e839f251d2.OutputPathUri)" />
+    <Alias n="81" Uri="Assembly=$(40db6d08-6c0d-48de-9519-9d681dc41f4d.OutputPathUri)" />
+    <Alias n="82" Uri="Assembly=$(73189926-f375-49e5-bb76-40910df2f460.OutputPathUri)" />
+    <Alias n="83" Uri="Assembly=$(509f42bf-93b5-477b-852f-65215e8630b9.OutputPathUri)" />
+    <Alias n="84" Uri="Assembly=$(a0231457-952a-4649-85c1-e1fa11ee9f03.OutputPathUri)" />
+    <Alias n="85" Uri="Assembly=$(610bc4b9-c01a-4919-8317-c953ef2717df.OutputPathUri)" />
+    <Alias n="86" Uri="Assembly=$(b5db90ee-dd07-42ef-9468-4fe748e27dcd.OutputPathUri)" />
+    <Alias n="87" Uri="Assembly=$(04d517cb-d343-45a8-a015-ebd5a9abefa1.OutputPathUri)" />
+    <Alias n="88" Uri="Assembly=$(e0fa97cc-77c2-4f98-80f8-5758b30437c0.OutputPathUri)" />
+    <Alias n="89" Uri="Assembly=$(f28e1833-5720-4822-a7c2-ca6609310d68.OutputPathUri)" />
+    <Alias n="90" Uri="Assembly=$(5991df5c-94e4-4863-b258-79f87787fd00.OutputPathUri)" />
+    <Alias n="91" Uri="Assembly=$(51506db6-e35e-41a0-9b40-a13c138b5853.OutputPathUri)" />
+    <Alias n="92" Uri="Assembly=$(8af759a3-b3a5-4de7-9c6c-b19afc632086.OutputPathUri)" />
+    <Alias n="93" Uri="Assembly=$(872c05f9-6bd9-4078-b015-e7e5178eba35.OutputPathUri)" />
+    <Alias n="94" Id="(@93)" />
+    <Alias n="95" Uri="Assembly=$(aaca44fb-6e52-4ef0-b717-728c0dcadc69.OutputPathUri)" />
+    <Alias n="96" Id="(@95)" />
+    <Alias n="97" Uri="Assembly=$(2455c0ff-4e3a-491f-8cb5-658b40c58b31.OutputPathUri)" />
+    <Alias n="98" Uri="Assembly=$(31ff3cf0-e219-45e1-a070-44b8d7d2f746.OutputPathUri)" />
+    <Alias n="99" Uri="Assembly=$(561e1556-7bd3-4834-80fc-59c91e9f1d1e.OutputPathUri)" />
+    <Alias n="100" Uri="Assembly=$(b80453bd-7e03-46e5-b8a3-cf7c9c9f27a9.OutputPathUri)" />
+    <Alias n="101" Id="Namespace=::" />
+    <Alias n="102" Id="(@50 @101)" />
+    <Alias n="103" Id="(@66 @101)" />
+    <Alias n="104" Id="(@93 @101)" />
+    <Alias n="105" Id="(@95 @101)" />
+    <Alias n="106" Id="(@93 @101 Member=(Name=showbook OverloadingParameters=[(Type=&quot;book *&quot;)]))" />
+    <Alias n="107" Id="(@95 @101 Member=(Name=showbook OverloadingParameters=[(Type=&quot;book *&quot;)]))" />
+    <Alias n="108" Id="(@93 @101 Member=(Name=check OverloadingParameters=[(Type=&quot;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;&quot;)]))" />
+    <Alias n="109" Id="(@95 @101 Member=(Name=check OverloadingParameters=[(Type=&quot;std::basic_string&lt;char,std::char_traits&lt;char&gt;,std::allocator&lt;char&gt; &gt;&quot;)]))" />
+    <Alias n="110" Id="(@93 @101 Member=(Name=Delete OverloadingParameters=[(Type=&quot;book *&quot;),(Type=int)]))" />
+    <Alias n="111" Id="(@95 @101 Member=(Name=Delete OverloadingParameters=[(Type=&quot;book *&quot;),(Type=int)]))" />
+    <Alias n="112" Id="(@93 @101 Member=(Name=insert OverloadingParameters=[(Type=&quot;book *&quot;),(Type=int),(Type=float)]))" />
+    <Alias n="113" Id="(@95 @101 Member=(Name=insert OverloadingParameters=[(Type=&quot;book *&quot;),(Type=int),(Type=float)]))" />
+    <Alias n="114" Id="(@93 @101 Member=creat)" />
+    <Alias n="115" Id="(@95 @101 Member=creat)" />
+    <Alias n="116" Id="Member=main" />
+    <Alias n="117" Id="(@93 @101 @116)" />
+    <Alias n="118" Id="(@95 @101 @116)" />
+    <Alias n="119" Id="(@93 @101 Type=book)" />
+    <Alias n="120" Id="(@95 @101 Type=book)" />
+  </IdentifierAliases>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="分類 1" ValueLabel="有分類">
+      <Condition Expression="HasCategory('Category1')" />
+      <Setter Property="Background" Value="#FFE51400" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="結果" ValueLabel="是">
+      <Condition Expression="HasCategory('QueryResult')" />
+      <Setter Property="Background" Value="#FFBCFFBE" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="組件" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Assembly')" />
+      <Setter Property="Background" Value="#FF094167" />
+      <Setter Property="Stroke" Value="#FF094167" />
+      <Setter Property="Icon" Value="CodeSchema_Assembly" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="命名空間" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Namespace')" />
+      <Setter Property="Background" Value="#FF0E619A" />
+      <Setter Property="Stroke" Value="#FF0E619A" />
+      <Setter Property="Icon" Value="CodeSchema_Namespace" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="介面" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Interface')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Interface" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="結構" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Struct')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Struct" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="列舉" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Enum')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Enum" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="委派" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Delegate')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Delegate" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="類別" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Type')" />
+      <Setter Property="Background" Value="#FF1382CE" />
+      <Setter Property="Stroke" Value="#FF1382CE" />
+      <Setter Property="Icon" Value="CodeSchema_Class" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="屬性" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Property')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Property" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="方法" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Method')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Method" />
+      <Setter Property="LayoutSettings" Value="List" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="事件" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Event')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Event" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="欄位" ValueLabel="有分類">
+      <Condition Expression="HasCategory('CodeSchema_Field')" />
+      <Setter Property="Background" Value="#FFE0E0E0" />
+      <Setter Property="Stroke" Value="#FFE0E0E0" />
+      <Setter Property="Icon" Value="CodeSchema_Field" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Out Parameter" ValueLabel="True">
+      <Condition Expression="CodeSchemaProperty_IsOut = 'True'" />
+      <Setter Property="Icon" Value="CodeSchema_OutParameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Parameter" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_Parameter')" />
+      <Setter Property="Icon" Value="CodeSchema_Parameter" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Local Variable" ValueLabel="True">
+      <Condition Expression="HasCategory('CodeSchema_LocalExpression')" />
+      <Setter Property="Icon" Value="CodeSchema_LocalExpression" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="外部" ValueLabel="有分類">
+      <Condition Expression="HasCategory('Externals')" />
+      <Setter Property="Background" Value="#FF424242" />
+      <Setter Property="Stroke" Value="#FF424242" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Inherits From" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('InheritsFrom') And Target.HasCategory('CodeSchema_Class')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Implements" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="HasCategory('Implements') And Target.HasCategory('CodeSchema_Interface')" />
+      <Setter Property="TargetDecorator" Value="OpenArrow" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Field Read" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Target.HasCategory('CodeSchema_Field') And HasCategory('CodeSchema_FieldRead')" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Comment Link" ValueLabel="True" Visibility="Hidden">
+      <Condition Expression="Source.HasCategory('Comment')" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Cursor Location" ValueLabel="是" Visibility="Hidden">
+      <Condition Expression="IsCursorLocation = 'True'" />
+      <Setter Property="IndicatorWest" Value="CursorLocationIndicator" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="註解" ValueLabel="有註解">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+  <Paths>
+    <Path Id="04d517cb-d343-45a8-a015-ebd5a9abefa1.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_string_assignment.exe" />
+    <Path Id="05995abf-e0f5-4c8c-a230-09a10968beda.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/boolalpha_controller.exe" />
+    <Path Id="07941a5d-6588-4f2d-bdea-99b647ccd718.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_type_string.exe" />
+    <Path Id="0bda8f20-7a07-4529-822d-6d34691ef473.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_string_insertion.exe" />
+    <Path Id="0d85764d-295e-4661-b1b0-4ace28b0c3c9.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Dynamic_binding_at_compile_time.exe" />
+    <Path Id="140447e6-6942-422d-9b61-d73b3957dd88.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/C_to_copy_the_files.exe" />
+    <Path Id="172d60da-6189-4e5b-b8bf-749de6229ecc.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_string_of_merger.exe" />
+    <Path Id="21236c66-cd07-4499-80fa-7cf892b862c2.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Overloaded_operators 2.exe" />
+    <Path Id="22f1c014-e825-4142-aefe-87a667ee9b17.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/operator_rear_add.exe" />
+    <Path Id="2455c0ff-4e3a-491f-8cb5-658b40c58b31.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Define_a_character_array.exe" />
+    <Path Id="2af012f1-1cd1-4b01-864a-b1759b6c1029.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Class_function_pointer_(3).exe" />
+    <Path Id="2ceb2ce3-19d3-4d68-9bd6-ebcbc9addef5.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Inherited_overloaded.exe" />
+    <Path Id="2fbcca08-69ba-47b2-9513-b92deb2301df.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Instance_of_abstract_class.exe" />
+    <Path Id="31ff3cf0-e219-45e1-a070-44b8d7d2f746.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Enumeration_constant_array.exe" />
+    <Path Id="3cb49a05-2e57-498a-a5d2-375a6d6dff28.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Read_a_random_access_file.exe" />
+    <Path Id="40db6d08-6c0d-48de-9519-9d681dc41f4d.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Array_object.exe" />
+    <Path Id="44705d31-a76c-4d89-b249-ff81ab1b2593.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Copy_constructor.exe" />
+    <Path Id="4b27c6ab-ad43-42e8-b02f-22c951a2188f.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Read_from_a_binary_file..exe" />
+    <Path Id="4bfb05ae-da78-4e06-8f1e-e0dd13ff4b7c.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Overloaded_operators.exe" />
+    <Path Id="4f11354d-4221-4d1f-8386-0547cabecd3f.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Pure_virtual_function_and_abstract_class.exe" />
+    <Path Id="509f42bf-93b5-477b-852f-65215e8630b9.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/explicit.exe" />
+    <Path Id="51506db6-e35e-41a0-9b40-a13c138b5853.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Written_to_the_file_file_and_read_out.exe" />
+    <Path Id="523cdff4-dee7-44a7-8ebd-aad20f878490.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Multidimensional_array_initialization.exe" />
+    <Path Id="53862a21-2802-4d32-ac0c-5302cef802fd.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Use_a_linked_list_of_books_example.exe" />
+    <Path Id="54b328cb-00f2-4dea-be6d-0039d3c11f67.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Function_pointer.exe" />
+    <Path Id="54f7c48c-b2d4-4540-86e3-2baa033c2ac0.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/copy_files_and_turn_uppercase.exe" />
+    <Path Id="559f7f6c-788c-4f57-b8d9-3bef71abbd22.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Multithreaded_encryption_and_decryption.exe" />
+    <Path Id="561e1556-7bd3-4834-80fc-59c91e9f1d1e.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/File_copy.exe" />
+    <Path Id="5991df5c-94e4-4863-b258-79f87787fd00.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Array_data_is_written_to_the_file_and_read_out.exe" />
+    <Path Id="5a17de10-947c-4dc3-8dbb-64aaa26de53c.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/The_function_pointer_can_also_be_used_as_the_parameters_of_the_function.exe" />
+    <Path Id="5d2ea920-f584-4e2b-8283-f74590091bd5.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/ConsoleApplication88.exe" />
+    <Path Id="5e027342-8348-4937-a0de-c237f1283d10.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Ambiguity_of_multiple_inheritance_prone.exe" />
+    <Path Id="603876c1-d8be-4285-ba8b-5a2eafb3a6e5.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/part_of_the_merger_of_string_string.exe" />
+    <Path Id="610bc4b9-c01a-4919-8317-c953ef2717df.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_string_string_replacement.exe" />
+    <Path Id="69e10e9e-a191-4d06-9286-0a30b7b682f6.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Formatting_flags.exe" />
+    <Path Id="7121365f-f5e1-4f9e-abb6-f9a7620aac2c.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Read_the_file_file.exe" />
+    <Path Id="71869d70-87a4-44a0-8b58-7a852ab5396b.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Array_of_pointers.exe" />
+    <Path Id="7313b531-c196-43d4-917a-18695741cc6b.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Print_Triangle.exe" />
+    <Path Id="73189926-f375-49e5-bb76-40910df2f460.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/The_test_streaming_format_set.exe" />
+    <Path Id="77ca21cd-29f1-4013-8ff4-dad10f47d8fe.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/The_streaming_read_into_the_user's_input_and_output_file_file.exe" />
+    <Path Id="787e9619-c362-4598-a8d0-63f99ea807e5.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Virtual_function_00.exe" />
+    <Path Id="8084ce4e-d872-49f7-841e-b09e2756d06f.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Pointer_structure_and_confirm_figures.exe" />
+    <Path Id="85e188ff-0091-4d73-bd08-d86b5f9e4399.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_string_comparison.exe" />
+    <Path Id="872c05f9-6bd9-4078-b015-e7e5178eba35.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Dynamic_linked_list_prepend_law.exe" />
+    <Path Id="8af759a3-b3a5-4de7-9c6c-b19afc632086.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/String_input.exe" />
+    <Path Id="8e4ad380-8dca-448d-b00c-334ce5e92794.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Inherited_constructor_and_destructor.exe" />
+    <Path Id="8eff20b0-f2a9-4640-babd-d528cbd22395.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Two_ambiguous_attribution.exe" />
+    <Path Id="904e83cc-bdbb-4a2f-baf6-d3075eb825d3.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_type_string_lookup.exe" />
+    <Path Id="91bc360f-a201-47ce-a773-c73ca5008380.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/The_IO_format_of_controller.exe" />
+    <Path Id="91bdf45e-dfa9-43ef-b68e-5c0bb6af1206.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Static_build_runtime.exe" />
+    <Path Id="9343bca2-e092-4e43-912b-253ad1248353.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/String_processing_functions.exe" />
+    <Path Id="93cab97a-1146-43ed-abe3-90ad2202bf2b.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Static_binding_at_compile_time.exe" />
+    <Path Id="952a7b29-7ed4-4767-b01a-cf6561af8f33.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/pounds.exe" />
+    <Path Id="9cb9867f-9f21-4b11-a858-ec21c522a9d0.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/To_reduce_the_issue_of_confusion_between_two_opinions_generated.exe" />
+    <Path Id="a0231457-952a-4649-85c1-e1fa11ee9f03.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_string_replacement.exe" />
+    <Path Id="a6bdbc05-03f4-4288-b7b5-c23d8520f7a1.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_string_of_merger.exe" />
+    <Path Id="a7ac945e-22d0-44ae-92d4-25aa924b6473.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Private_static_member_variables.exe" />
+    <Path Id="aa664def-74c9-4b30-9753-0d3e162d0b69.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/To_pass_parameters_to_the_base_class_constructor.exe" />
+    <Path Id="aaca44fb-6e52-4ef0-b717-728c0dcadc69.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Delete_insert_dynamic_list_display.exe" />
+    <Path Id="ab21f5e1-5b0d-47e0-962e-2b5913f89c0e.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/The_heap_array_on_like.exe" />
+    <Path Id="aca94ea2-a218-4524-839e-cf36d5bf7a22.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Complex_abstract_structure.exe" />
+    <Path Id="ae92e636-9b4b-4bd2-b5aa-14a651573edc.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Static_member_function.exe" />
+    <Path Id="b383da0e-7ca0-45b1-84a1-c6ba1f578d89.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/create_empty_data_files.exe" />
+    <Path Id="b54da35f-311e-41c7-a81b-a7ef73e1b9a3.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/operator.exe" />
+    <Path Id="b5a39e4d-ae97-461d-b90a-8ce951303a63.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Written_to_the_file_file.exe" />
+    <Path Id="b5d0e8e4-49de-4a48-918c-5451109ca074.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_type_string_strcmp.exe" />
+    <Path Id="b5db90ee-dd07-42ef-9468-4fe748e27dcd.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_string_replacement.exe" />
+    <Path Id="b80453bd-7e03-46e5-b8a3-cf7c9c9f27a9.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_string_copy.exe" />
+    <Path Id="ba3be05f-cedb-4479-8169-8ea3fe0c9416.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Comparison_of_three_call_a_virtual_function.exe" />
+    <Path Id="ba92c04a-ce51-4f2a-8c0a-fe9077e6a892.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/fread.exe" />
+    <Path Id="baeb4390-5046-4ff3-8747-b7f9acc7a917.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/In_the_array_of_variables_like_initialize_members.exe" />
+    <Path Id="c1b5f6cf-1550-4672-adec-15e11b218d82.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/seekg.exe" />
+    <Path Id="c26163f8-1430-48ed-8000-18e839f251d2.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Pointer_to_an_object.exe" />
+    <Path Id="c2dbb971-28a5-40d9-9e8a-daebdd03d5e7.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_string.exe" />
+    <Path Id="c425a1c7-fd21-4d5c-a48e-8d07b3dba744.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Random_access_files.exe" />
+    <Path Id="c65887fd-4d7a-49d5-9632-f0b358fc6d23.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Virtual_constructor_and_destructor.exe" />
+    <Path Id="cc00cd8a-e187-4958-b0f0-01b83b4c12a9.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Determine_whether_the_array_in_accordance_with_the_order.exe" />
+    <Path Id="ccebb98c-ede1-4db7-a607-6313974a5873.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/a_copy_of_the_string_type_string.exe" />
+    <Path Id="d3f5335a-9cfb-408e-89fb-2115f9c3b5f4.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Linked_list_statistics.exe" />
+    <Path Id="d72fb6ad-fa0d-41bb-aeef-0238980564bf.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/part_of_the_merger_of_char_string.exe" />
+    <Path Id="df699717-7702-4a83-9688-bce3d6a7f0db.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Array_of_function_pointers.exe" />
+    <Path Id="e0fa97cc-77c2-4f98-80f8-5758b30437c0.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/char_string_assignment.exe" />
+    <Path Id="e1893074-be34-46a3-b7f8-142a00cd459d.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Static_member_variable.exe" />
+    <Path Id="e35bbc7f-9d2f-4b88-8706-e9c9fccc834a.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/The_use_of_static_members.exe" />
+    <Path Id="e426a7ac-3e11-49ab-b4e2-0b43d53230a7.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Use_typedef_to_simplify_the_declaration_of_the_function_pointer.exe" />
+    <Path Id="e449be7d-823f-4076-8d45-58ef58ea92d9.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/avi_kept_out_of_the_picture.exe" />
+    <Path Id="e81cd5ca-92af-456d-8a86-f47fe3bef8f5.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Judge_array_arrangement_then_perform_different_functions.exe" />
+    <Path Id="ed8c6270-d911-45be-af46-0a9382725aec.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_type_string_lookup.exe" />
+    <Path Id="ee3d95d7-e728-43d5-a5ca-fc20204f6d12.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Acquired_EXE_where_the_path.exe" />
+    <Path Id="f28e1833-5720-4822-a7c2-ca6609310d68.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Dynamic_list.exe" />
+    <Path Id="f37e887e-4350-4121-9529-162b49385bc4.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Dynamic_linked_list_of_intermediate_interpolation.exe" />
+    <Path Id="f66a4aa9-18ce-414d-9bb2-4df7f0f7113a.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/fwrite.exe" />
+    <Path Id="f70c0298-c38c-4cfa-8bf9-bd6e181fe66e.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Pass_argument_array_on_like.exe" />
+    <Path Id="f838cc42-ff1a-44c2-a648-1b4b9115ba47.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Multiple_inheritance.exe" />
+    <Path Id="f87e44af-6bde-4a2d-9910-a8e9c06d145f.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/Class_function_pointer_(1).exe" />
+    <Path Id="feb8ea5e-e07d-46df-b426-f0a70c6d9634.OutputPathUri" Value="file:///C:/c++/epbgit/ConsoleApplication/Debug/string_string_delete.exe" />
+  </Paths>
+</DirectedGraph>

@@ -14,6 +14,8 @@
 *.ipch
 *.new
 *.mp4
+*.sbr
+*.bsc
 *.lastbuildstate
 bin
 obj

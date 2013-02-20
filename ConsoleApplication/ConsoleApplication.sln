@@ -3,225 +3,225 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "explicit", "ConsoleApplication2\ConsoleApplication2.vcxproj", "{509F42BF-93B5-477B-852F-65215E8630B9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "複製構造函數", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{44705D31-A76C-4D89-B249-FF81AB1B2593}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Copy_constructor", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{44705D31-A76C-4D89-B249-FF81AB1B2593}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "operator後置add", "ConsoleApplication3\ConsoleApplication3.vcxproj", "{22F1C014-E825-4142-AEFE-87A667EE9B17}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "operator_rear_add", "ConsoleApplication3\ConsoleApplication3.vcxproj", "{22F1C014-E825-4142-AEFE-87A667EE9B17}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "operator", "ConsoleApplication5\ConsoleApplication5.vcxproj", "{B54DA35F-311E-41C7-A81B-A7EF73E1B9A3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "多重繼承", "ConsoleApplication6\ConsoleApplication6.vcxproj", "{F838CC42-FF1A-44C2-A648-1B4B9115BA47}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multiple_inheritance", "ConsoleApplication6\ConsoleApplication6.vcxproj", "{F838CC42-FF1A-44C2-A648-1B4B9115BA47}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "繼承的構造與析構", "ConsoleApplication7\ConsoleApplication7.vcxproj", "{8E4AD380-8DCA-448D-B00C-334CE5E92794}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inherited_constructor_and_destructor", "ConsoleApplication7\ConsoleApplication7.vcxproj", "{8E4AD380-8DCA-448D-B00C-334CE5E92794}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "向基類構造函數傳遞參數", "ConsoleApplication8\ConsoleApplication8.vcxproj", "{AA664DEF-74C9-4B30-9753-0D3E162D0B69}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "To_pass_parameters_to_the_base_class_constructor", "ConsoleApplication8\ConsoleApplication8.vcxproj", "{AA664DEF-74C9-4B30-9753-0D3E162D0B69}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "多重繼承容易產生兩義性", "ConsoleApplication9\ConsoleApplication9.vcxproj", "{5E027342-8348-4937-A0DE-C237F1283D10}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ambiguity_of_multiple_inheritance_prone", "ConsoleApplication9\ConsoleApplication9.vcxproj", "{5E027342-8348-4937-A0DE-C237F1283D10}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "繼承中的重載", "ConsoleApplication10\ConsoleApplication10.vcxproj", "{2CEB2CE3-19D3-4D68-9BD6-EBCBC9ADDEF5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inherited_overloaded", "ConsoleApplication10\ConsoleApplication10.vcxproj", "{2CEB2CE3-19D3-4D68-9BD6-EBCBC9ADDEF5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "兩義性的歸屬問題", "ConsoleApplication11\ConsoleApplication11.vcxproj", "{8EFF20B0-F2A9-4640-BABD-D528CBD22395}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Two_ambiguous_attribution", "ConsoleApplication11\ConsoleApplication11.vcxproj", "{8EFF20B0-F2A9-4640-BABD-D528CBD22395}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "減少兩意性產生的混淆問題", "ConsoleApplication12\ConsoleApplication12.vcxproj", "{9CB9867F-9F21-4B11-A858-EC21C522A9D0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "To_reduce_the_issue_of_confusion_between_two_opinions_generated", "ConsoleApplication12\ConsoleApplication12.vcxproj", "{9CB9867F-9F21-4B11-A858-EC21C522A9D0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "指向對象的指針", "ConsoleApplication13\ConsoleApplication13.vcxproj", "{C26163F8-1430-48ED-8000-18E839F251D2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer_to_an_object", "ConsoleApplication13\ConsoleApplication13.vcxproj", "{C26163F8-1430-48ED-8000-18E839F251D2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "虛函數00", "ConsoleApplication14\ConsoleApplication14.vcxproj", "{787E9619-C362-4598-A8D0-63F99EA807E5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Virtual_function_00", "ConsoleApplication14\ConsoleApplication14.vcxproj", "{787E9619-C362-4598-A8D0-63F99EA807E5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pounds", "ConsoleApplication15\ConsoleApplication15.vcxproj", "{952A7B29-7ED4-4767-B01A-CF6561AF8F33}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "在編譯時的靜態聯編", "ConsoleApplication16\ConsoleApplication16.vcxproj", "{93CAB97A-1146-43ED-ABE3-90AD2202BF2B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Static_binding_at_compile_time", "ConsoleApplication16\ConsoleApplication16.vcxproj", "{93CAB97A-1146-43ED-ABE3-90AD2202BF2B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "在運行時的靜態聯編", "ConsoleApplication17\ConsoleApplication17.vcxproj", "{91BDF45E-DFA9-43EF-B68E-5C0BB6AF1206}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Static_build_runtime", "ConsoleApplication17\ConsoleApplication17.vcxproj", "{91BDF45E-DFA9-43EF-B68E-5C0BB6AF1206}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "在編譯時的動態聯編", "ConsoleApplication18\ConsoleApplication18.vcxproj", "{0D85764D-295E-4661-B1B0-4ACE28B0C3C9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dynamic_binding_at_compile_time", "ConsoleApplication18\ConsoleApplication18.vcxproj", "{0D85764D-295E-4661-B1B0-4ACE28B0C3C9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "三種調用虛函數的方式比較", "ConsoleApplication19\ConsoleApplication19.vcxproj", "{BA3BE05F-CEDB-4479-8169-8EA3FE0C9416}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Comparison_of_three_call_a_virtual_function", "ConsoleApplication19\ConsoleApplication19.vcxproj", "{BA3BE05F-CEDB-4479-8169-8EA3FE0C9416}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "虛構造函數和析構函數", "ConsoleApplication20\ConsoleApplication20.vcxproj", "{C65887FD-4D7A-49D5-9632-F0B358FC6D23}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Virtual_constructor_and_destructor", "ConsoleApplication20\ConsoleApplication20.vcxproj", "{C65887FD-4D7A-49D5-9632-F0B358FC6D23}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "判斷數組是否按照順序排列", "ConsoleApplication21\ConsoleApplication21.vcxproj", "{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Determine_whether_the_array_in_accordance_with_the_order", "ConsoleApplication21\ConsoleApplication21.vcxproj", "{CC00CD8A-E187-4958-B0F0-01B83B4C12A9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "判斷數組排列方式然後執行不同函數", "ConsoleApplication22\ConsoleApplication22.vcxproj", "{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Judge_array_arrangement_then_perform_different_functions", "ConsoleApplication22\ConsoleApplication22.vcxproj", "{E81CD5CA-92AF-456D-8A86-F47FE3BEF8F5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "數組在對像中的傳參", "ConsoleApplication23\ConsoleApplication23.vcxproj", "{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pass_argument_array_on_like", "ConsoleApplication23\ConsoleApplication23.vcxproj", "{F70C0298-C38C-4CFA-8BF9-BD6E181FE66E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "數組對像", "ConsoleApplication24\ConsoleApplication24.vcxproj", "{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array_object", "ConsoleApplication24\ConsoleApplication24.vcxproj", "{40DB6D08-6C0D-48DE-9519-9D681DC41F4D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "在數組對像中初始化成員變量", "ConsoleApplication25\ConsoleApplication25.vcxproj", "{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "In_the_array_of_variables_like_initialize_members", "ConsoleApplication25\ConsoleApplication25.vcxproj", "{BAEB4390-5046-4FF3-8747-B7F9ACC7A917}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "指針數組", "ConsoleApplication26\ConsoleApplication26.vcxproj", "{71869D70-87A4-44A0-8B58-7A852AB5396B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array_of_pointers", "ConsoleApplication26\ConsoleApplication26.vcxproj", "{71869D70-87A4-44A0-8B58-7A852AB5396B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "堆中數組對像", "ConsoleApplication27\ConsoleApplication27.vcxproj", "{AB21F5E1-5B0D-47E0-962E-2B5913F89C0E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_heap_array_on_like", "ConsoleApplication27\ConsoleApplication27.vcxproj", "{AB21F5E1-5B0D-47E0-962E-2B5913F89C0E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "枚舉常量與數組", "ConsoleApplication28\ConsoleApplication28.vcxproj", "{31FF3CF0-E219-45E1-A070-44B8D7D2F746}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Enumeration_constant_array", "ConsoleApplication28\ConsoleApplication28.vcxproj", "{31FF3CF0-E219-45E1-A070-44B8D7D2F746}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "多維數組的初始化", "ConsoleApplication29\ConsoleApplication29.vcxproj", "{523CDFF4-DEE7-44A7-8EBD-AAD20F878490}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multidimensional_array_initialization", "ConsoleApplication29\ConsoleApplication29.vcxproj", "{523CDFF4-DEE7-44A7-8EBD-AAD20F878490}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "定義字符數組", "ConsoleApplication30\ConsoleApplication30.vcxproj", "{2455C0FF-4E3A-491F-8CB5-658B40C58B31}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Define_a_character_array", "ConsoleApplication30\ConsoleApplication30.vcxproj", "{2455C0FF-4E3A-491F-8CB5-658B40C58B31}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "字符串的輸入問題", "ConsoleApplication31\ConsoleApplication31.vcxproj", "{8AF759A3-B3A5-4DE7-9C6C-B19AFC632086}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String_input", "ConsoleApplication31\ConsoleApplication31.vcxproj", "{8AF759A3-B3A5-4DE7-9C6C-B19AFC632086}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "字符串處理函數", "ConsoleApplication32\ConsoleApplication32.vcxproj", "{9343BCA2-E092-4E43-912B-253AD1248353}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "String_processing_functions", "ConsoleApplication32\ConsoleApplication32.vcxproj", "{9343BCA2-E092-4E43-912B-253AD1248353}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "打印楊輝三角形", "ConsoleApplication33\ConsoleApplication33.vcxproj", "{7313B531-C196-43D4-917A-18695741CC6B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Print_Triangle", "ConsoleApplication33\ConsoleApplication33.vcxproj", "{7313B531-C196-43D4-917A-18695741CC6B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表", "ConsoleApplication34\ConsoleApplication34.vcxproj", "{F28E1833-5720-4822-A7C2-CA6609310D68}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dynamic_list", "ConsoleApplication34\ConsoleApplication34.vcxproj", "{F28E1833-5720-4822-A7C2-CA6609310D68}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表的顯示刪除插入", "ConsoleApplication35\ConsoleApplication35.vcxproj", "{AACA44FB-6E52-4EF0-B717-728C0DCADC69}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Delete_insert_dynamic_list_display", "ConsoleApplication35\ConsoleApplication35.vcxproj", "{AACA44FB-6E52-4EF0-B717-728C0DCADC69}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表前插法", "ConsoleApplication36\ConsoleApplication36.vcxproj", "{872C05F9-6BD9-4078-B015-E7E5178EBA35}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dynamic_linked_list_prepend_law", "ConsoleApplication36\ConsoleApplication36.vcxproj", "{872C05F9-6BD9-4078-B015-E7E5178EBA35}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "動態鏈表中間插法", "ConsoleApplication37\ConsoleApplication37.vcxproj", "{F37E887E-4350-4121-9529-162B49385BC4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dynamic_linked_list_of_intermediate_interpolation", "ConsoleApplication37\ConsoleApplication37.vcxproj", "{F37E887E-4350-4121-9529-162B49385BC4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "鏈表統計", "ConsoleApplication38\ConsoleApplication38.vcxproj", "{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Linked_list_statistics", "ConsoleApplication38\ConsoleApplication38.vcxproj", "{D3F5335A-9CFB-408E-89FB-2115F9C3B5F4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "使用鏈表圖書例子", "ConsoleApplication39\ConsoleApplication39.vcxproj", "{53862A21-2802-4D32-AC0C-5302CEF802FD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Use_a_linked_list_of_books_example", "ConsoleApplication39\ConsoleApplication39.vcxproj", "{53862A21-2802-4D32-AC0C-5302CEF802FD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "純虛函數與抽像類", "ConsoleApplication40\ConsoleApplication40.vcxproj", "{4F11354D-4221-4D1F-8386-0547CABECD3F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pure_virtual_function_and_abstract_class", "ConsoleApplication40\ConsoleApplication40.vcxproj", "{4F11354D-4221-4D1F-8386-0547CABECD3F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "抽像類實例", "ConsoleApplication41\ConsoleApplication41.vcxproj", "{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Instance_of_abstract_class", "ConsoleApplication41\ConsoleApplication41.vcxproj", "{2FBCCA08-69BA-47B2-9513-B92DEB2301DF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "複雜的抽像結構", "ConsoleApplication42\ConsoleApplication42.vcxproj", "{ACA94EA2-A218-4524-839E-CF36D5BF7A22}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Complex_abstract_structure", "ConsoleApplication42\ConsoleApplication42.vcxproj", "{ACA94EA2-A218-4524-839E-CF36D5BF7A22}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "靜態成員變量", "ConsoleApplication43\ConsoleApplication43.vcxproj", "{E1893074-BE34-46A3-B7F8-142A00CD459D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Static_member_variable", "ConsoleApplication43\ConsoleApplication43.vcxproj", "{E1893074-BE34-46A3-B7F8-142A00CD459D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "私有靜態成員變量", "ConsoleApplication44\ConsoleApplication44.vcxproj", "{A7AC945E-22D0-44AE-92D4-25AA924B6473}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Private_static_member_variables", "ConsoleApplication44\ConsoleApplication44.vcxproj", "{A7AC945E-22D0-44AE-92D4-25AA924B6473}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "靜態成員函數", "ConsoleApplication45\ConsoleApplication45.vcxproj", "{AE92E636-9B4B-4BD2-B5AA-14A651573EDC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Static_member_function", "ConsoleApplication45\ConsoleApplication45.vcxproj", "{AE92E636-9B4B-4BD2-B5AA-14A651573EDC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "靜態成員的使用", "ConsoleApplication46\ConsoleApplication46.vcxproj", "{E35BBC7F-9D2F-4B88-8706-E9C9FCCC834A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_use_of_static_members", "ConsoleApplication46\ConsoleApplication46.vcxproj", "{E35BBC7F-9D2F-4B88-8706-E9C9FCCC834A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "函數指針", "ConsoleApplication47\ConsoleApplication47.vcxproj", "{54B328CB-00F2-4DEA-BE6D-0039D3C11F67}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function_pointer", "ConsoleApplication47\ConsoleApplication47.vcxproj", "{54B328CB-00F2-4DEA-BE6D-0039D3C11F67}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fread", "ConsoleApplication48\ConsoleApplication48.vcxproj", "{BA92C04A-CE51-4F2A-8C0A-FE9077E6A892}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fwrite", "ConsoleApplication49\ConsoleApplication49.vcxproj", "{F66A4AA9-18CE-414D-9BB2-4DF7F0F7113A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "函數指針數組", "ConsoleApplication50\ConsoleApplication50.vcxproj", "{DF699717-7702-4A83-9688-BCE3D6A7F0DB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array_of_function_pointers", "ConsoleApplication50\ConsoleApplication50.vcxproj", "{DF699717-7702-4A83-9688-BCE3D6A7F0DB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "函數指針也可作為函數的參數", "ConsoleApplication51\ConsoleApplication51.vcxproj", "{5A17DE10-947C-4DC3-8DBB-64AAA26DE53C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_function_pointer_can_also_be_used_as_the_parameters_of_the_function", "ConsoleApplication51\ConsoleApplication51.vcxproj", "{5A17DE10-947C-4DC3-8DBB-64AAA26DE53C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "使用typedef簡化函數指針的聲明", "ConsoleApplication52\ConsoleApplication52.vcxproj", "{E426A7AC-3E11-49AB-B4E2-0B43D53230A7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Use_typedef_to_simplify_the_declaration_of_the_function_pointer", "ConsoleApplication52\ConsoleApplication52.vcxproj", "{E426A7AC-3E11-49AB-B4E2-0B43D53230A7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "類的函數指針(1)", "ConsoleApplication53\ConsoleApplication53.vcxproj", "{F87E44AF-6BDE-4A2D-9910-A8E9C06D145F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class_function_pointer_(1)", "ConsoleApplication53\ConsoleApplication53.vcxproj", "{F87E44AF-6BDE-4A2D-9910-A8E9C06D145F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "類的函數指針(3)", "ConsoleApplication54\ConsoleApplication54.vcxproj", "{2AF012F1-1CD1-4B01-864A-B1759B6C1029}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class_function_pointer_(3)", "ConsoleApplication54\ConsoleApplication54.vcxproj", "{2AF012F1-1CD1-4B01-864A-B1759B6C1029}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "重載運算子", "ConsoleApplication55\ConsoleApplication55.vcxproj", "{4BFB05AE-DA78-4E06-8F1E-E0DD13FF4B7C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overloaded_operators", "ConsoleApplication55\ConsoleApplication55.vcxproj", "{4BFB05AE-DA78-4E06-8F1E-E0DD13FF4B7C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "重載運算子2", "ConsoleApplication56\ConsoleApplication56.vcxproj", "{21236C66-CD07-4499-80FA-7CF892B862C2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overloaded_operators 2", "ConsoleApplication56\ConsoleApplication56.vcxproj", "{21236C66-CD07-4499-80FA-7CF892B862C2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IO格式控制器", "ConsoleApplication57\ConsoleApplication57.vcxproj", "{91BC360F-A201-47CE-A773-C73CA5008380}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_IO_format_of_controller", "ConsoleApplication57\ConsoleApplication57.vcxproj", "{91BC360F-A201-47CE-A773-C73CA5008380}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IO", "IO", "{BC7DDAD8-6309-4054-AC50-3D17F59A4FD8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "鏈結", "鏈結", "{AA283707-FE82-44E1-947B-A02E7E1E4F21}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Link", "Link", "{AA283707-FE82-44E1-947B-A02E7E1E4F21}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "多態性", "多態性", "{70BA3AFE-E992-43C9-A6BF-43735AC6FB82}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Polymorphism", "Polymorphism", "{70BA3AFE-E992-43C9-A6BF-43735AC6FB82}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "數組陣列", "數組陣列", "{BAD3DDED-E9CE-4F46-B797-87422CD84E1E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "An_array_of_arrays", "An_array_of_arrays", "{BAD3DDED-E9CE-4F46-B797-87422CD84E1E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "繼承", "繼承", "{9394A397-A01B-4469-A743-198ECEF33ED1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inherit", "Inherit", "{9394A397-A01B-4469-A743-198ECEF33ED1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "虛函數", "虛函數", "{454BF707-694B-487B-AE56-4A1ABA878400}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Virtual_function", "Virtual_function", "{454BF707-694B-487B-AE56-4A1ABA878400}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "特殊類成員", "特殊類成員", "{2623C0E6-C03A-4E2A-BA30-2070DF97C5A6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A_member_of_the_special_class", "A_member_of_the_special_class", "{2623C0E6-C03A-4E2A-BA30-2070DF97C5A6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "深入函數", "深入函數", "{8117A670-F29A-4B0A-BBB9-3E177D10BD37}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Depth_function", "Depth_function", "{8117A670-F29A-4B0A-BBB9-3E177D10BD37}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boolalpha控制器", "ConsoleApplication58\ConsoleApplication58.vcxproj", "{05995ABF-E0F5-4C8C-A230-09A10968BEDA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boolalpha_controller", "ConsoleApplication58\ConsoleApplication58.vcxproj", "{05995ABF-E0F5-4C8C-A230-09A10968BEDA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "格式化旗標", "ConsoleApplication59\ConsoleApplication59.vcxproj", "{69E10E9E-A191-4D06-9286-0A30B7B682F6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Formatting_flags", "ConsoleApplication59\ConsoleApplication59.vcxproj", "{69E10E9E-A191-4D06-9286-0A30B7B682F6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "測試串流的格式設定", "ConsoleApplication60\ConsoleApplication60.vcxproj", "{73189926-F375-49E5-BB76-40910DF2F460}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_test_streaming_format_set", "ConsoleApplication60\ConsoleApplication60.vcxproj", "{73189926-F375-49E5-BB76-40910DF2F460}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "讀取文件檔", "ConsoleApplication61\ConsoleApplication61.vcxproj", "{7121365F-F5E1-4F9E-ABB6-F9A7620AAC2C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Read_the_file_file", "ConsoleApplication61\ConsoleApplication61.vcxproj", "{7121365F-F5E1-4F9E-ABB6-F9A7620AAC2C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "寫入文件檔", "ConsoleApplication62\ConsoleApplication62.vcxproj", "{B5A39E4D-AE97-461D-B90A-8CE951303A63}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Written_to_the_file_file", "ConsoleApplication62\ConsoleApplication62.vcxproj", "{B5A39E4D-AE97-461D-B90A-8CE951303A63}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "未格式化檔案IO", "未格式化檔案IO", "{66469008-53B4-495C-B411-9D0E424BD206}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unformatted_file_IO", "Unformatted_file_IO", "{66469008-53B4-495C-B411-9D0E424BD206}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "格式化檔案IO", "格式化檔案IO", "{517E9EFD-71FE-4FCF-9F8D-64032291FC57}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Formatted_file_IO", "Formatted_file_IO", "{517E9EFD-71FE-4FCF-9F8D-64032291FC57}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "寫入文件檔並讀出", "ConsoleApplication63\ConsoleApplication63.vcxproj", "{51506DB6-E35E-41A0-9B40-A13C138B5853}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Written_to_the_file_file_and_read_out", "ConsoleApplication63\ConsoleApplication63.vcxproj", "{51506DB6-E35E-41A0-9B40-A13C138B5853}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用串流讀入使用者的輸入並輸出文件檔", "ConsoleApplication64\ConsoleApplication64.vcxproj", "{77CA21CD-29F1-4013-8FF4-DAD10F47D8FE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "The_streaming_read_into_the_user's_input_and_output_file_file", "ConsoleApplication64\ConsoleApplication64.vcxproj", "{77CA21CD-29F1-4013-8FF4-DAD10F47D8FE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "copy檔案並轉大寫", "ConsoleApplication65\ConsoleApplication65.vcxproj", "{54F7C48C-B2D4-4540-86E3-2BAA033C2AC0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "copy_files_and_turn_uppercase", "ConsoleApplication65\ConsoleApplication65.vcxproj", "{54F7C48C-B2D4-4540-86E3-2BAA033C2AC0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "二進位檔案IO", "二進位檔案IO", "{2C432D24-6E89-4D5E-B2B4-FC6681798FBB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binary_file_IO", "Binary_file_IO", "{2C432D24-6E89-4D5E-B2B4-FC6681798FBB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "讀取二進位檔案", "ConsoleApplication66\ConsoleApplication66.vcxproj", "{4B27C6AB-AD43-42E8-B02F-22C951A2188F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Read_from_a_binary_file.", "ConsoleApplication66\ConsoleApplication66.vcxproj", "{4B27C6AB-AD43-42E8-B02F-22C951A2188F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "檔案複製", "ConsoleApplication67\ConsoleApplication67.vcxproj", "{561E1556-7BD3-4834-80FC-59C91E9F1D1E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "File_copy", "ConsoleApplication67\ConsoleApplication67.vcxproj", "{561E1556-7BD3-4834-80FC-59C91E9F1D1E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "將陣列資料寫入檔案並讀出", "ConsoleApplication68\ConsoleApplication68.vcxproj", "{5991DF5C-94E4-4863-B258-79F87787FD00}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Array_data_is_written_to_the_file_and_read_out", "ConsoleApplication68\ConsoleApplication68.vcxproj", "{5991DF5C-94E4-4863-B258-79F87787FD00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{25C4F0AB-3544-4749-B22B-5D16CCDBECD6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "格式控制與運算子重載", "格式控制與運算子重載", "{09BA6ABD-9A15-4AA2-9DF6-28CA818FE2B7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Format_control_operator_overloading", "Format_control_operator_overloading", "{09BA6ABD-9A15-4AA2-9DF6-28CA818FE2B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fstream", "fstream", "{A751463B-F67F-4C4E-A577-350187E6FC11}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "seekg", "ConsoleApplication69\ConsoleApplication69.vcxproj", "{C1B5F6CF-1550-4672-ADEC-15E11B218D82}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "create空的資料檔案", "ConsoleApplication70\ConsoleApplication70.vcxproj", "{B383DA0E-7CA0-45B1-84A1-C6BA1F578D89}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "create_empty_data_files", "ConsoleApplication70\ConsoleApplication70.vcxproj", "{B383DA0E-7CA0-45B1-84A1-C6BA1F578D89}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "隨機存取檔案", "ConsoleApplication71\ConsoleApplication71.vcxproj", "{C425A1C7-FD21-4D5C-A48E-8D07B3DBA744}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Random_access_files", "ConsoleApplication71\ConsoleApplication71.vcxproj", "{C425A1C7-FD21-4D5C-A48E-8D07B3DBA744}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "讀取隨機存取檔案", "ConsoleApplication72\ConsoleApplication72.vcxproj", "{3CB49A05-2E57-498A-A5D2-375A6D6DFF28}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Read_a_random_access_file", "ConsoleApplication72\ConsoleApplication72.vcxproj", "{3CB49A05-2E57-498A-A5D2-375A6D6DFF28}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "指針結構與確認數字", "ConsoleApplication73\ConsoleApplication73.vcxproj", "{8084CE4E-D872-49F7-841E-B09E2756D06F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer_structure_and_confirm_figures", "ConsoleApplication73\ConsoleApplication73.vcxproj", "{8084CE4E-D872-49F7-841E-B09E2756D06F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "多執行緒加解密", "ConsoleApplication74\ConsoleApplication74.vcxproj", "{559F7F6C-788C-4F57-B8D9-3BEF71ABBD22}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Multithreaded_encryption_and_decryption", "ConsoleApplication74\ConsoleApplication74.vcxproj", "{559F7F6C-788C-4F57-B8D9-3BEF71ABBD22}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "avi存出圖片", "ConsoleApplication75\ConsoleApplication75.vcxproj", "{E449BE7D-823F-4076-8D45-58EF58EA92D9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "avi_kept_out_of_the_picture", "ConsoleApplication75\ConsoleApplication75.vcxproj", "{E449BE7D-823F-4076-8D45-58EF58EA92D9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "獲取的是當前EXE所在路徑", "ConsoleApplication76\ConsoleApplication76.vcxproj", "{EE3D95D7-E728-43D5-A5CA-FC20204F6D12}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Acquired_EXE_where_the_path", "ConsoleApplication76\ConsoleApplication76.vcxproj", "{EE3D95D7-E728-43D5-A5CA-FC20204F6D12}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "字符串", "字符串", "{B533E142-C6D3-4D85-94A7-696CEE983ABA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "String", "String", "{B533E142-C6D3-4D85-94A7-696CEE983ABA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串", "ConsoleApplication77\ConsoleApplication77.vcxproj", "{C2DBB971-28A5-40D9-9E8A-DAEBDD03D5E7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string", "ConsoleApplication77\ConsoleApplication77.vcxproj", "{C2DBB971-28A5-40D9-9E8A-DAEBDD03D5E7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串", "ConsoleApplication78\ConsoleApplication78.vcxproj", "{07941A5D-6588-4F2D-BDEA-99B647CCD718}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_type_string", "ConsoleApplication78\ConsoleApplication78.vcxproj", "{07941A5D-6588-4F2D-BDEA-99B647CCD718}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串_strcmp", "ConsoleApplication79\ConsoleApplication79.vcxproj", "{B5D0E8E4-49DE-4A48-918C-5451109CA074}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_type_string_strcmp", "ConsoleApplication79\ConsoleApplication79.vcxproj", "{B5D0E8E4-49DE-4A48-918C-5451109CA074}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串的赋值", "ConsoleApplication80\ConsoleApplication80.vcxproj", "{E0FA97CC-77C2-4F98-80F8-5758B30437C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string_assignment", "ConsoleApplication80\ConsoleApplication80.vcxproj", "{E0FA97CC-77C2-4F98-80F8-5758B30437C0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的賦值", "ConsoleApplication81\ConsoleApplication81.vcxproj", "{04D517CB-D343-45A8-A015-EBD5A9ABEFA1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_string_assignment", "ConsoleApplication81\ConsoleApplication81.vcxproj", "{04D517CB-D343-45A8-A015-EBD5A9ABEFA1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串的合併", "ConsoleApplication82\ConsoleApplication82.vcxproj", "{172D60DA-6189-4E5B-B8BF-749DE6229ECC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string_of_merger", "ConsoleApplication82\ConsoleApplication82.vcxproj", "{172D60DA-6189-4E5B-B8BF-749DE6229ECC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的合併", "ConsoleApplication83\ConsoleApplication83.vcxproj", "{A6BDBC05-03F4-4288-B7B5-C23D8520F7A1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_string_of_merger", "ConsoleApplication83\ConsoleApplication83.vcxproj", "{A6BDBC05-03F4-4288-B7B5-C23D8520F7A1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串的部分合併", "ConsoleApplication84\ConsoleApplication84.vcxproj", "{D72FB6AD-FA0D-41BB-AEEF-0238980564BF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "part_of_the_merger_of_char_string", "ConsoleApplication84\ConsoleApplication84.vcxproj", "{D72FB6AD-FA0D-41BB-AEEF-0238980564BF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的部分合併", "ConsoleApplication85\ConsoleApplication85.vcxproj", "{603876C1-D8BE-4285-BA8B-5A2EAFB3A6E5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "part_of_the_merger_of_string_string", "ConsoleApplication85\ConsoleApplication85.vcxproj", "{603876C1-D8BE-4285-BA8B-5A2EAFB3A6E5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的替換", "ConsoleApplication86\ConsoleApplication86.vcxproj", "{A0231457-952A-4649-85C1-E1FA11EE9F03}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_string_replacement", "ConsoleApplication86\ConsoleApplication86.vcxproj", "{A0231457-952A-4649-85C1-E1FA11EE9F03}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C 複製檔案", "ConsoleApplication87\ConsoleApplication87.vcxproj", "{140447E6-6942-422D-9B61-D73B3957DD88}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C_to_copy_the_files", "ConsoleApplication87\ConsoleApplication87.vcxproj", "{140447E6-6942-422D-9B61-D73B3957DD88}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication88", "ConsoleApplication88\ConsoleApplication88.vcxproj", "{5D2EA920-F584-4E2B-8283-F74590091BD5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串的替換", "ConsoleApplication89\ConsoleApplication89.vcxproj", "{B5DB90EE-DD07-42EF-9468-4FE748E27DCD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string_replacement", "ConsoleApplication89\ConsoleApplication89.vcxproj", "{B5DB90EE-DD07-42EF-9468-4FE748E27DCD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string型字符串的替換", "ConsoleApplication90\ConsoleApplication90.vcxproj", "{610BC4B9-C01A-4919-8317-C953EF2717DF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string_string_replacement", "ConsoleApplication90\ConsoleApplication90.vcxproj", "{610BC4B9-C01A-4919-8317-C953EF2717DF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串的拷貝", "ConsoleApplication91\ConsoleApplication91.vcxproj", "{B80453BD-7E03-46E5-B8A3-CF7C9C9F27A9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_string_copy", "ConsoleApplication91\ConsoleApplication91.vcxproj", "{B80453BD-7E03-46E5-B8A3-CF7C9C9F27A9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的拷貝", "ConsoleApplication92\ConsoleApplication92.vcxproj", "{CCEBB98C-EDE1-4DB7-A607-6313974A5873}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "a_copy_of_the_string_type_string", "ConsoleApplication92\ConsoleApplication92.vcxproj", "{CCEBB98C-EDE1-4DB7-A607-6313974A5873}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的插入", "ConsoleApplication93\ConsoleApplication93.vcxproj", "{0BDA8F20-7A07-4529-822D-6D34691EF473}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_string_insertion", "ConsoleApplication93\ConsoleApplication93.vcxproj", "{0BDA8F20-7A07-4529-822D-6D34691EF473}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的刪除", "ConsoleApplication94\ConsoleApplication94.vcxproj", "{FEB8EA5E-E07D-46DF-B426-F0A70C6D9634}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_string_delete", "ConsoleApplication94\ConsoleApplication94.vcxproj", "{FEB8EA5E-E07D-46DF-B426-F0A70C6D9634}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char型字符串的查找", "ConsoleApplication95\ConsoleApplication95.vcxproj", "{904E83CC-BDBB-4A2F-BAF6-D3075EB825D3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "char_type_string_lookup", "ConsoleApplication95\ConsoleApplication95.vcxproj", "{904E83CC-BDBB-4A2F-BAF6-D3075EB825D3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string型字符串的查找", "ConsoleApplication96\ConsoleApplication96.vcxproj", "{ED8C6270-D911-45BE-AF46-0A9382725AEC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_type_string_lookup", "ConsoleApplication96\ConsoleApplication96.vcxproj", "{ED8C6270-D911-45BE-AF46-0A9382725AEC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication97", "ConsoleApplication97\ConsoleApplication97.vcxproj", "{85E188FF-0091-4D73-BD08-D86B5F9E4399}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string_string_comparison", "ConsoleApplication97\ConsoleApplication97.vcxproj", "{85E188FF-0091-4D73-BD08-D86B5F9E4399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
