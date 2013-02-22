@@ -17,6 +17,7 @@
 *.sbr
 *.bsc
 *.lastbuildstate
+*.manifest
 bin
 obj
 tmp

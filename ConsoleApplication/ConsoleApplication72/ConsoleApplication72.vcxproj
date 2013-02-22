@@ -14,7 +14,7 @@
     <ProjectGuid>{3CB49A05-2E57-498A-A5D2-375A6D6DFF28}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ConsoleApplication72</RootNamespace>
-    <ProjectName>Read_a_random_access_file</ProjectName>
+    <ProjectName>Read_random_access_file</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
