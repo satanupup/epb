@@ -285,6 +285,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overloaded_input_operator",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication128", "ConsoleApplication128\ConsoleApplication128.vcxproj", "{3A6313C3-8255-40D4-8B07-709407C041B0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "const_objects_and_const_member_function", "ConsoleApplication129\ConsoleApplication129.vcxproj", "{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -1041,6 +1043,12 @@ Global
 		{3A6313C3-8255-40D4-8B07-709407C041B0}.Release|Win32.ActiveCfg = Release|Win32
 		{3A6313C3-8255-40D4-8B07-709407C041B0}.Release|Win32.Build.0 = Release|Win32
 		{3A6313C3-8255-40D4-8B07-709407C041B0}.Release|Win32.Deploy.0 = Release|Win32
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Debug|Win32.Build.0 = Debug|Win32
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Debug|Win32.Deploy.0 = Debug|Win32
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Release|Win32.ActiveCfg = Release|Win32
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Release|Win32.Build.0 = Release|Win32
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1179,5 +1187,6 @@ Global
 		{40BB11A5-21BB-46B2-BBFC-CE1D7A6188AB} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
 		{9A7DFA46-38D1-481E-975C-B0CC379B86FA} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
 		{3A6313C3-8255-40D4-8B07-709407C041B0} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
+		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
 	EndGlobalSection
 EndGlobal
