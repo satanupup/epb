@@ -283,9 +283,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overloaded_since_operator_e
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Overloaded_input_operator", "ConsoleApplication127\ConsoleApplication127.vcxproj", "{9A7DFA46-38D1-481E-975C-B0CC379B86FA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication128", "ConsoleApplication128\ConsoleApplication128.vcxproj", "{3A6313C3-8255-40D4-8B07-709407C041B0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class_String", "ConsoleApplication128\ConsoleApplication128.vcxproj", "{3A6313C3-8255-40D4-8B07-709407C041B0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "const_objects_and_const_member_function", "ConsoleApplication129\ConsoleApplication129.vcxproj", "{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication130", "ConsoleApplication130\ConsoleApplication130.vcxproj", "{642F112C-3D19-4B57-8785-DD74E7CC6D3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code_reuse", "Code_reuse", "{360E4D3C-9D12-4847-9DAE-D6B9C98AB3EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1049,6 +1053,12 @@ Global
 		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Release|Win32.ActiveCfg = Release|Win32
 		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Release|Win32.Build.0 = Release|Win32
 		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33}.Release|Win32.Deploy.0 = Release|Win32
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F}.Debug|Win32.Build.0 = Debug|Win32
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F}.Debug|Win32.Deploy.0 = Debug|Win32
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F}.Release|Win32.ActiveCfg = Release|Win32
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F}.Release|Win32.Build.0 = Release|Win32
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1188,5 +1198,6 @@ Global
 		{9A7DFA46-38D1-481E-975C-B0CC379B86FA} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
 		{3A6313C3-8255-40D4-8B07-709407C041B0} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
 		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
+		{642F112C-3D19-4B57-8785-DD74E7CC6D3F} = {360E4D3C-9D12-4847-9DAE-D6B9C98AB3EB}
 	EndGlobalSection
 EndGlobal
