@@ -14,6 +14,7 @@
     <ProjectGuid>{3E88D92B-0793-46D8-BA60-FF019CF9A825}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ConsoleApplication134</RootNamespace>
+    <ProjectName>class_book</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

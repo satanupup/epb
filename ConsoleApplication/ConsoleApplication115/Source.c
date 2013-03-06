@@ -6,18 +6,16 @@ int main(int argc, char* argv[]) {
     unsigned char ch; 
     int count = 0; 
 	char ch1[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\test.txt";
-    FILE *file = fopen(ch1, "rb");
+    FILE *file;// = fopen(ch1, "rb");
 
-	/*
-    if(argc != 2) { 
-        puts("指令: read <filename>"); 
+	
+	errno_t err;       
+	
+    if(err = fopen_s(&file,ch1, "rb")) { 
+        puts("來源檔案開啟失敗"); 
         return 1; 
-    } */
+    }
 
-    if(!file) { 
-        puts("無法讀取檔案"); 
-        return 1; 
-    } 
 
 
     while(!feof(file)) { 

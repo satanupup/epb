@@ -2,20 +2,26 @@
 #include <stdlib.h>
 
                                                                                 
-int main(int argc, char* argv[]) { 
-	/*
-    if(argc != 3) { 
-        puts("指令: copy <input> <output>"); 
-        return 1; 
-    } */
-    char ch; 
+int main(int argc, char* argv[]) { 	
+    char ch; 		
+	errno_t err;	
 	
 	char ch1[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\a.txt";
 	char ch2[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\b.txt";
 	
-    FILE *file1 = fopen(ch1, "rb"); 
-    FILE *file2 = fopen(ch2, "wb"); 
+    FILE *file1 ;//= fopen(ch1, "rb"); 
+    FILE *file2 ;//= fopen(ch2, "wb"); 
 
+if (( err = fopen_s(&file1,ch1, "rb")) != 0)
+	{
+	 printf("cant open the file");
+	 exit(1);
+	}
+if (( err = fopen_s(&file2,ch1, "wb")) != 0)
+	{
+	 printf("cant open the file");
+	 exit(1);
+	}
     if(!file1) { 
         puts("檔案讀入失敗"); 
         return 1; 

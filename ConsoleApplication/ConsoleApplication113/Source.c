@@ -4,7 +4,6 @@
 int main(int argc, char* argv[]) {
 	
 	errno_t err;
-    char ch;  
     FILE *file;    
 	char name[10];
 	int score;
@@ -30,7 +29,7 @@ int main(int argc, char* argv[]) {
 
 
 	 puts("Name\tScore");
-	 while(fscanf(file, "%s\t%d", name, &score) != EOF) 
+	 while(fscanf_s(file, "%s\t%d", name, &score) != EOF) 
 	 {
 		 printf("%s\t%d\n", name, score);
 	 }

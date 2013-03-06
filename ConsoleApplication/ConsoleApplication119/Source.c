@@ -4,25 +4,23 @@
 
 int main(int argc, char* argv[]) 
 {
+	errno_t err;	// 回傳錯誤的數值
 	char ch1[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\data.txt";
-    FILE *file = fopen(ch1, "wb"); 
+    FILE *file ;//= fopen(ch1, "wb"); 
 	
     int count; 
     struct Student student = {0, "", 0.0}; 
     int i;
-	/*
-    if(argc != 2) { 
-        puts("指令: create <filename>"); 
-        return 1; 
-    } */
 
-    if(!file) { 
-        puts("檔案輸出失敗"); 
-        return 1; 
-    } 
+	
+	if (( err = fopen_s(&file,ch1, "wb")) != 0)
+	{
+	 printf("cant open the file");
+	 exit(1);
+	}
 
     printf("要建立幾筆資料？ "); 
-    scanf("%d", &count); 
+    scanf_s("%d", &count); 
 
     for(i = 0; i < count; i++) { 
         fwrite((char*) &student, sizeof(student), 1, file); 

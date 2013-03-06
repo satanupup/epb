@@ -5,18 +5,16 @@
 int main(int argc, char* argv[]) {
     struct Student student; 
     int count = 0; 
+	errno_t err;	// 回傳錯誤的數值
 	char ch1[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\data.txt";
-    FILE *file = fopen(ch1, "r+b"); 
-	/*
-    if(argc < 2) { 
-        puts("指令: write <filename>"); 
-        return 1; 
-    } */
+    FILE *file ;//= fopen(ch1, "r+b"); 
+	
 
-    if(!file) { 
-        puts("無法讀取檔案"); 
-        return 1; 
-    } 
+	if (( err = fopen_s(&file,ch1, "r+b")) != 0)
+	{
+	 printf("cant open the file");
+	 exit(1);
+	}
 
     while(1) { 
         fread((char*) &student, sizeof(student), 1, file); 
@@ -35,13 +33,13 @@ int main(int argc, char* argv[]) {
 
     while(1) { 
         printf("\n學號? "); 
-        scanf("%d", &(student.studyNumber)); 
+        scanf_s("%d", &(student.studyNumber)); 
         if(student.studyNumber == 0) {
             break; 
         }
         
         printf("輸入姓名 分數\n? ");
-        scanf("%s %lf", student.name, &(student.score)); 
+        scanf_s("%s %lf", student.name, &(student.score)); 
 
         fseek(file, (student.studyNumber - 1) * sizeof(student), SEEK_SET); 
         fwrite((char*) &student, sizeof(student), 1, file); 

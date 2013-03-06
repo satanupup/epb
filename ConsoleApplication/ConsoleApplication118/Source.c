@@ -2,14 +2,21 @@
 #include <stdlib.h>
                                                                                 
 int main(int argc, char* argv[]) {
-    FILE *file = fopen("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\data.txt", "r");
+	
+	errno_t err;	// 回傳錯誤的數值
+	
+	char ch1[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\data.txt";
+	
+
+    FILE *file;// = fopen("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\data.txt", "r");
     char name[30]; 
     int request, account, score; 
      
-    if(!file) { 
-        puts("無法讀取檔案"); 
-        return 1; 
-    } 
+	if (( err = fopen_s(&file,ch1, "r")) != 0)
+	{
+	 printf("cant open the file");
+	 exit(1);
+	}
 
 
     puts("輸入選項:");
@@ -20,7 +27,7 @@ int main(int argc, char* argv[]) {
 
     while(1) { 
         printf("\n選項? "); 
-        scanf("%d", &request); 
+        scanf_s("%d", &request); 
         if(request == 4) {
             break; 
         }
@@ -37,14 +44,14 @@ int main(int argc, char* argv[]) {
                 break; 
         } 
 
-        fscanf(file, "%d\t%s\t%d", &account, name, &score); 
+        fscanf_s(file, "%d\t%s\t%d", &account, name, &score); 
         while(!feof(file)) { 
             if((request == 1) || (request == 2 && score >= 60) || 
                (request == 3 && score < 60)) {
                 printf("%d\t%s\t%d\n", account, name, score);     
             }
 
-            fscanf(file, "%d\t%s\t%d", &account, name, &score); 
+            fscanf_s(file, "%d\t%s\t%d", &account, name, &score); 
         } 
 
         rewind(file);  // 重置游標，也可使用 fseek(file, 0, SEEK_SET);

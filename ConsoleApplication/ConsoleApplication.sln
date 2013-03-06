@@ -295,9 +295,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "buffer_IO", "ConsoleApplica
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dice test", "ConsoleApplication132\ConsoleApplication132.vcxproj", "{05F8EA1E-E00A-46C9-A52D-B2659D69CB6B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication133", "ConsoleApplication133\ConsoleApplication133.vcxproj", "{CA12A3CF-0AFD-4345-B0A5-B9C8574FCF04}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structTEST", "ConsoleApplication133\ConsoleApplication133.vcxproj", "{CA12A3CF-0AFD-4345-B0A5-B9C8574FCF04}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication134", "ConsoleApplication134\ConsoleApplication134.vcxproj", "{3E88D92B-0793-46D8-BA60-FF019CF9A825}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "class_book", "ConsoleApplication134\ConsoleApplication134.vcxproj", "{3E88D92B-0793-46D8-BA60-FF019CF9A825}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication135", "ConsoleApplication135\ConsoleApplication135.vcxproj", "{8B3C0A08-037B-46F8-A97B-BD43417AC053}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1091,6 +1093,12 @@ Global
 		{3E88D92B-0793-46D8-BA60-FF019CF9A825}.Release|Win32.ActiveCfg = Release|Win32
 		{3E88D92B-0793-46D8-BA60-FF019CF9A825}.Release|Win32.Build.0 = Release|Win32
 		{3E88D92B-0793-46D8-BA60-FF019CF9A825}.Release|Win32.Deploy.0 = Release|Win32
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053}.Debug|Win32.Build.0 = Debug|Win32
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053}.Debug|Win32.Deploy.0 = Debug|Win32
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053}.Release|Win32.ActiveCfg = Release|Win32
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053}.Release|Win32.Build.0 = Release|Win32
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1235,5 +1243,6 @@ Global
 		{F7FF86AD-7AEF-4C54-81F0-1A2C11953D33} = {B533E142-C6D3-4D85-94A7-696CEE983ABA}
 		{642F112C-3D19-4B57-8785-DD74E7CC6D3F} = {360E4D3C-9D12-4847-9DAE-D6B9C98AB3EB}
 		{3E88D92B-0793-46D8-BA60-FF019CF9A825} = {360E4D3C-9D12-4847-9DAE-D6B9C98AB3EB}
+		{8B3C0A08-037B-46F8-A97B-BD43417AC053} = {360E4D3C-9D12-4847-9DAE-D6B9C98AB3EB}
 	EndGlobalSection
 EndGlobal

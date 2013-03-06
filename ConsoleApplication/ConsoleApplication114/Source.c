@@ -1,16 +1,21 @@
 #include <stdio.h> 
                                                                                 
 int main(int argc, char* argv[]) {
-    char ch; 
-    char name[10]; 
-    int score; 
 
-    FILE *file = fopen("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\test.txt", "w"); 
-    if(!file) { 
-	// 寫到標準錯誤
-        fprintf(stderr, "無法寫入檔案\n"); 
+	char name[10]; 
+    int score; 
+	//
+	
+	errno_t err;
+    FILE *file;    
+	char ch1[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\test.txt";
+	char ch2[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\test.txt";
+	                        
+	
+    if(err = fopen_s(&file,ch1, "w")) { 
+        puts("來源檔案開啟失敗"); 
         return 1; 
-    } 
+    }
 
     fprintf(file, "%s\t%d\r\n", "Justin", 90);
     fprintf(file, "%s\t%d\r\n", "momor", 80);
@@ -18,16 +23,17 @@ int main(int argc, char* argv[]) {
 
     fclose(file);
 
-    file = fopen("C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\test.txt", "r");; 
-    if(!file) { 
-	// 寫到標準錯誤
-        fprintf(stderr, "無法讀入檔案\n");  
+	
+    if(err = fopen_s(&file,ch2, "r")) { 
+        puts("來源檔案開啟失敗"); 
         return 1; 
-    } 
+    }
     
     
     puts("Name\tScore"); 
-    while(fscanf(file, "%s\t%d", name, &score) != EOF) { 
+	
+    
+    while(fscanf_s(file,"%s\t%d", name, &score) != EOF) { 
         // 寫到標準輸出
         fprintf(stdout, "%s\t%d\n", name, score); 
     } 
