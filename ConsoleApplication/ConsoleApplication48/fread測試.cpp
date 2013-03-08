@@ -6,10 +6,10 @@
 using namespace std;
 void read()
 {
-	FILE *fp;
 	size_t result;
 	long lSize;
 	char * buffer;
+	FILE *fp;
 	errno_t err;	// 回傳錯誤的數值
 	if (( err = fopen_s(&fp,"C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\a.txt", "rb")) != NULL)
 	{

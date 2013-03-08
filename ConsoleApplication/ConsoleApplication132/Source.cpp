@@ -111,7 +111,7 @@ int main()
 	system("pause");
 	return 0;
 }
-
+	
 void Additionalcc(int n)
 {
 	base_generator_type generator(42);

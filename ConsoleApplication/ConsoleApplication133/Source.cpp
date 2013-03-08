@@ -1,6 +1,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+//#include "Header.h"
 
 void EncodeDecode(char *str);
 typedef struct point2d {
@@ -33,7 +34,9 @@ typedef struct HttpQueue {
 
 static void startFileHandler(HttpQueue *q)
 {
-	q->name = "cche\n";
+	//q->name = "cchuuuuuue\n";
+	//char*q = "apple";
+	//std::cout<<*(q); //a
 	char ch=0;
   int len=0, i=0;
   if ((len=strlen(q->name))<=0) return;
@@ -44,16 +47,14 @@ static void startFileHandler(HttpQueue *q)
     {
       case 0: case 3:
 		  printf("0~3\t%d,\t%d\n",len,i);
-        q->name[i];//^ 0xDB;
+        *(q->name+i) = *(q->name+i)^0xDB;
         break;
       default:
 		  printf("\t%d,\t%d\n",len,i);
-        q->name[i];//^ 0xDB;
+        *(q->name+i) = *(q->name+i)^ 0xDB;
         break;
     }
-  }
-  /*
-  
+  }/*  
 
   for (i=0; i+3<len; i+=4)
   {
@@ -70,47 +71,30 @@ typedef struct list{
 	char *name;
 	struct list *nextPtr;
 }list;
+
+
+typedef struct HeadNode{
+	HeadNode *head;
+}HeadNode;
+void abc(HttpQueue *str)
+{
+	str->name = "che";
+//  str->name[i]=str->name[i]^0xDB;
+}
+struct stu
+{
+	int num;
+	char sex;
+	float score;
+}pupil[5]={
+	{101,'M',45.8},
+	{102,'M',62.5},
+	{103,'F',92.5},
+	{104,'F',87.6},
+	{105,'M',58.8},
+};
 int main()
-{		
-	list a,b,c, *startPtr;
-	a.name = "John";
-	b.name = "mary";
-	c.name = "Tony";
-	startPtr = &a;
-	a.nextPtr = &b;
-	b.nextPtr = &c;
-	c.nextPtr = NULL;
-	while(startPtr != NULL)
-	{
-		printf("%s\n",startPtr->name);
-		startPtr = startPtr->nextPtr;
-	}
-
-	HttpQueue q;
-	q.name = "apple\n";
-		
-	while(*q.name != '\0')
-	{
-		printf("%c",*q.name);
-		q.name++;
-	}
-	/*
-	startFileHandler(&q);
-
-	char cc[8];	
-	for(int i=0;i<5;i++)
-		cc[i] = q.name[i];
-	cc[6] = '\0';
-	EncodeDecode(cc);
-	printf(cc);
-	EncodeDecode(cc);
-	printf(cc);
-	*/
-	
-	
-//	char * b = "c";	
-//	EncodeDecode(b);
-
+{	
 	system("pause");
         return 0;
 }

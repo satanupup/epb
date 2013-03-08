@@ -7,28 +7,19 @@
 typedef boost::minstd_rand base_generator_type;
 // This is a reproducible simulation experiment.  See main().
 void experiment(base_generator_type & generator);
-/*
-首先就是擲骰無上限...或者至少255顆
-數量
-骰面
-調整值
-選用則是第二組以上的數量與骰面
-不過神啟只用到D6所以是選擇性加入功能啦_A_
-然後就是公開性
-骰網的用意是為了能公開擲骰
-X 的「X」 擲了「5 d 6 + 13」 ，擲出「1、2、5、5、3」，總合為「29」。
-Quantity
-Dice face
-Adjusted value
-*/
 const int ID_MYBUTTON = 60001;
+const int IDS_LISTBOX = 60007;
+int NumberID = 0;
 
 HWND Role_Name = NULL;
 HWND Dice_reasons = NULL;
 HWND Quantity = NULL;
 HWND Dice_face = NULL;
 HWND Adjusted_value = NULL;
+HWND Tlist= NULL;
+HWND hList		= NULL;
 
+void shellgrouoppget();
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM); 
 
 /* ************************************
@@ -99,29 +90,29 @@ int WINAPI WinMain(HINSTANCE hinstance,
 
 	//不能多開程式
 	TCHAR strappname[] = TEXT("Management"); 
-    HANDLE hmutex = NULL; 
-    //創建互斥對象 
-    hmutex = CreateMutex(NULL, false, strappname); 
-    if (hmutex != NULL) 
-    { 
+	HANDLE hmutex = NULL; 
+	//創建互斥對像 
+	hmutex = CreateMutex(NULL, false, strappname); 
+	if (hmutex != NULL) 
+	{ 
 		if (GetLastError() == ERROR_ALREADY_EXISTS) 
 		{ 
 			MessageBox(NULL,TEXT("另外一程式尚在執行！請關閉此程式"),TEXT("SMSServer"),MB_OK |MB_ICONINFORMATION); 
 			//關閉互斥對象，退出程序 
 			SendMessage (hwnd, WM_DESTROY, 0, 0) ;			
 			CloseHandle(hmutex); 
-        return FALSE; 
+			return FALSE; 
 		} 
-    } 
-    else 
-    { 
-        MessageBox(NULL,TEXT("無法建立Mutex!請重新執行"),TEXT("SMSServer"),MB_OK |MB_ICONINFORMATION); 
-        //關閉互斥對象，退出程序 
+	} 
+	else 
+	{ 
+		MessageBox(NULL,TEXT("無法建立Mutex!請重新執行"),TEXT("SMSServer"),MB_OK |MB_ICONINFORMATION); 
+		//關閉互斥對象，退出程序 
 		SendMessage (hwnd, WM_DESTROY, 0, 0) ;		
 		if(hmutex != NULL)
 			CloseHandle(hmutex); 
-        return FALSE; 
-    }
+		return FALSE; 
+	}
 
 	ShowWindow(hwnd, nCmdShow); 
 	UpdateWindow(hwnd); 
@@ -155,47 +146,44 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 			/*
 			Role Name:
 			Dice reasons:
-			數量 骰面 調整值
 			Role_Name 
 			Dice_reasons
 			Quantity
 			Dice face
-			Adjusted value
-			選用則是第二組以上的數量與骰面
-			不過神啟只用到D6所以是選擇性加入功能啦_A_*/
+			Adjusted value*/
 			//Ctrl+K->Ctrl+D
-			
+
 			bearlib::wreadcfg(0);
 
 			sendCGlobal::ClientVerification();
 			WCHAR strText[512];
-		{
-			//
-		
-		std::string Temporary_str;
-		Temporary_str = "Connection";
-		sendCGlobal::CTransfer_instruction(Temporary_str);	
-						
-		try
-		{
-			boost::asio::io_service io_service;
-			tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
-			boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
-			io_service.run();
-		}
-		catch (std::exception& e)
-		{
-			WCHAR strText[512];
-			MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
-			OutputDebugString(strText);     
-		}
+			{
+				//
 
-		sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
-			  
-			 MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 510 );
-			 MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
-			//
-		}
+				std::string Temporary_str;
+				Temporary_str = "Connection";
+				sendCGlobal::CTransfer_instruction(Temporary_str);	
+
+				try
+				{
+					boost::asio::io_service io_service;
+					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
+					boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
+					io_service.run();
+				}
+				catch (std::exception& e)
+				{
+					WCHAR strText[512];
+					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
+					OutputDebugString(strText);     
+				}
+
+				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
+
+				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 510 );
+				MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
+				//
+			}
 			CreateWindowA("STATIC", "Role Name", WS_CHILD | WS_VISIBLE ,
 				20, 24, 100, 28, hwnd, NULL, 
 				((LPCREATESTRUCT)lParam)->hInstance,
@@ -250,7 +238,18 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL);
 
-			//	SetWindowTextA(Quantity,"cc");
+			hList = CreateWindow(L"LISTBOX",NULL,
+				WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
+				LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
+				20, 120, 400, 300, hwnd, HMENU(IDS_LISTBOX), 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL);
+
+			Tlist = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+				500, 140, 100, 28, hwnd, NULL,
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
 
 		}
 		break;
@@ -258,27 +257,167 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 		// 剖析功能表選取項目:
 		switch (LOWORD(wParam))
 		{
+			NumberID  = SendMessage (hList, LB_GETCURSEL, 0, 0) ;
 		case ID_MYBUTTON:
 			{		
 
-				char   szText[256]; 
+				char   szText[30000]; 
 				SendMessageA(Quantity,WM_GETTEXT,10,(LPARAM)szText); 
 
-				char   szText2[256]; 
+				char   szText2[30000]; 
 				SendMessageA(Dice_face,WM_GETTEXT,10,(LPARAM)szText2); 
 
+				char   szText3[30000]; 
+				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)szText3); 
+				
 				int a,b,c;
 				a = atoi(szText);
 				b = atoi(szText2);
-				c = a + b;
-				char ch1[256];
-				sprintf_s(ch1,"%d",c);
+				c = atoi(szText3);
+			//	c = a + b;
+			//	char ch1[256];
+				//sprintf_s(ch1,"%d",c);
+				std::string sbuf = "";
+				//				MessageBoxA(NULL, ch1 ,"Error" , MB_OK);
 
-				MessageBoxA(NULL, ch1 ,"Error" , MB_OK);
+				base_generator_type generator(42);
+				generator.seed(static_cast<unsigned int>(std::time(0)));
+				base_generator_type saved_generator = generator;
+				typedef boost::uniform_int<> distribution_type;
+				typedef boost::variate_generator<base_generator_type&, distribution_type> gen_type;
+				int face=b;
+				gen_type die_gen(generator, distribution_type(1, face));
+
+				// If you want to use an STL iterator interface, use iterator_adaptors.hpp.
+				boost::generator_iterator<gen_type> die(&die_gen);
+				int cc=0;
+				int sum=0;
+				int teeth=a;
+				int Adjusted=c;
+				int Additional=0;
+				char chbuf[10];
+				std::vector<int> numbers; 
+
+				for(int i = 0; i < teeth+1; i++)
+				{
+					numbers.push_back(*die++); 
+				}
+				numbers.erase(numbers.begin());
+
+				sbuf += "X 的「X」 擲了「" ;	
+				_itoa_s(teeth,chbuf,10); 
+				sbuf += chbuf;
+				sbuf +=  " d " ;				
+				_itoa_s(face,chbuf,10); 
+				sbuf +=  chbuf;
+				sbuf += " + ";	
+				_itoa_s(Adjusted,chbuf,10); 
+				sbuf += chbuf;
+				sbuf += "」 ，擲出「";
+				printf("\nX 的「X」 擲了「%d d %d + %d」 ，擲出「",teeth,face,Adjusted);
+
+				int sizz = numbers.size();
+				for(int i=0;i<sizz;i++)
+				{
+					if(i == sizz-1)
+					{
+						_itoa_s(numbers[i],chbuf,10); 
+						sbuf += chbuf;
+						std::cout <<numbers[i];
+						sum = sum + numbers[i];
+						if(numbers[i] == 6)
+							Additional++;
+					}
+					else
+					{
+						_itoa_s(numbers[i],chbuf,10); 
+						sbuf += chbuf;
+						sbuf += "、";
+						std::cout <<numbers[i]<<"、";
+						sum = sum + numbers[i];
+
+						if(numbers[i] == 6)
+							Additional++;
+					}
+
+				}
 
 
+				boost::generator_iterator<gen_type> die2(&die_gen);
+				if(Additional>0)
+				{
+					sbuf += "追加1d6 ";
+				_itoa_s(Additional,chbuf,10); 
+					sbuf += chbuf;
+					sbuf += "次:";
+					printf("追加1d6 %d次:",Additional);
+				}
+
+				int sum2=0;
+				int aa=0;
+
+				int Additional2=0;//0304
+				boost::generator_iterator<gen_type> die3(&die_gen);// 0304
+
+				int n = 1;
+				for(int i=0;i<Additional;i++)
+				{	  /*
+					base_generator_type generator(42);
+					generator.seed(static_cast<unsigned int>(std::time(0)));
+					base_generator_type saved_generator = generator;
+
+					typedef boost::uniform_int<> distribution_type;
+					typedef boost::variate_generator<base_generator_type&, distribution_type> gen_type;  
+					gen_type die_gen(generator, distribution_type(1, 6));
+
+					boost::generator_iterator<gen_type> die(&die_gen);
+					int aa=0;
+					for(int i=0;i<n;i++)
+					{	  
+						aa = *die++;
+						sbuf += " " ;
+						_itoa_s(aa,chbuf,10); 
+						sbuf += chbuf ; 
+						sbuf += " ";
+						std::cout<<" "<<aa<<" ";
+
+					}*/
+					aa = *die2++;
+					sum2 = sum2 + aa;
+					_itoa_s(aa,chbuf,10); 
+					sbuf += chbuf ;
+					sbuf += " ";
+					std::cout<<aa<<" ";
+
+				}
+				sbuf += "」，總合為「";
+				int csum=0;
+				csum =  sum + Adjusted + sum2;				
+				_itoa_s(csum,chbuf,10); 
+				sbuf += chbuf;
+				sbuf += "」。";
+				printf("」，總合為「%d」。\n",sum + Adjusted + sum2);
+
+				sbuf += "";
+				std::cout << '\n';
+
+				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sbuf.c_str());
+				
+
+				///////////////
 			}
 			break;
+		case IDS_LISTBOX:
+			{	//LBN_DBLCLK
+				if(HIWORD(wParam)==LBN_SELCHANGE)
+				{					
+					if (LB_ERR == (NumberID = SendMessage (hList, LB_GETCURSEL, 0, 0L)))
+						break ;
+						shellgrouoppget();
+				}					
+
+			}
+			break;	
 		default:
 			return DefWindowProc(hwnd, Message, wParam, lParam);
 		}
@@ -315,15 +454,28 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 // This is a reproducible simulation experiment.  See main().
 void experiment(base_generator_type & generator)
 {
-  // Define a uniform random number distribution of integer values between
-  // 1 and 6 inclusive.
-  typedef boost::uniform_int<> distribution_type;
-  typedef boost::variate_generator<base_generator_type&, distribution_type> gen_type;
-  gen_type die_gen(generator, distribution_type(1, 60));
+	// Define a uniform random number distribution of integer values between
+	// 1 and 6 inclusive.
+	typedef boost::uniform_int<> distribution_type;
+	typedef boost::variate_generator<base_generator_type&, distribution_type> gen_type;
+	gen_type die_gen(generator, distribution_type(1, 60));
 
-  // If you want to use an STL iterator interface, use iterator_adaptors.hpp.
-  boost::generator_iterator<gen_type> die(&die_gen);
-  for(int i = 0; i < 10; i++)
-    std::cout << *die++ << " ";
-  std::cout << '\n';
+	// If you want to use an STL iterator interface, use iterator_adaptors.hpp.
+	boost::generator_iterator<gen_type> die(&die_gen);
+	for(int i = 0; i < 10; i++)
+		std::cout << *die++ << " ";
+	std::cout << '\n';
 }
+
+
+void shellgrouoppget()
+{
+
+	//SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
+	//SendMessage(hList,LB_ADDSTRING,0,(LPARAM)"ccccc");		
+	char cc[30000];
+	SendMessageA (hList, LB_GETTEXT, NumberID, (LPARAM)cc);
+	//SendMessage (hList, LB_SETCURSEL, NumberID, 0) ;
+	SetWindowTextA(Tlist,cc);
+}
+
