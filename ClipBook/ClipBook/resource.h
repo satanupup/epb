@@ -10,6 +10,8 @@
 #define IDM_EDIT_PASTE         40003
 #define IDM_EDIT_CLEAR         40004
 #define IDM_EDIT_RESET         40005
+#define ID_MYBUTTON         40006
+
 // 下一個新增物件的預設值
 // 
 #ifdef APSTUDIO_INVOKED

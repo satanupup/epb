@@ -47,6 +47,7 @@
 
 #include <Shlobj.h>
 #include <assert.h>
+#include <strsafe.h>
 
 #pragma   comment(lib,"mpr")
 

@@ -68,6 +68,7 @@ public:
 	void InSert(Date*);
 	void Delete(int num);
 	Date*Find(int number)const;
+	Date*Find(int &increase,int number)const;
 private:
 	Node*head;
 	int count;
@@ -227,9 +228,46 @@ Date*List::Find(int number)const
 	else
 		return pn->GetDate();
 }
-int main()
+Date*List::Find(int &increase,int number)const
 {
-	List pl;
+	Node*pn=0;
+	for(pn=head,increase=0;pn!=NULL;pn=pn->GetNext(),increase++)
+	{
+		if(pn->GetDate()->GetNumber()==number)
+		{
+			break;
+		}
+	}
+	if(pn==NULL)
+	{
+		return NULL;
+	}
+	else
+		return pn->GetDate();
+}
+class Repair:private List
+{
+public:
+	void RInsert(Date*newdate);
+	void Run();
+private:
+	
+};
+void Repair::RInsert(Date*newdate)
+{
+	int num=newdate->GetNumber();
+	int place=0;
+	if(Find(place,num))
+	{
+		cout<<"You enter the number"<<num<<"and the link table";
+		cout<<place+1<<"No. repeat\n";
+	}
+	else
+		InSert(newdate);
+}
+void Repair::Run()
+{
+	//List pl;
 	Date*pDate=0;
 	int number;
 	float price;
@@ -260,14 +298,14 @@ int main()
 						cout<<"please enter book price:";
 						cin>>price;
 						pDate = new Book(number,price);
-						pl.InSert(pDate);
+						RInsert(pDate);
 					}
 					else if (choice == 2)
 					{
 						cout<<"please enter drugs price:";
 						cin>>price;
 						pDate = new Drug(number,price);
-						pl.InSert(pDate);
+						RInsert(pDate);
 					}
 					else
 					{
@@ -277,7 +315,7 @@ int main()
 			}
 			break;
 		case 2:
-			if(pl.GetFirst()==0)
+			if(GetFirst()==0)
 			{
 				cout<<"your merchandise is empty, increasing commodity, \n"<<"press the enter key to return to the main window"<<endl;
 				cin.get();
@@ -285,7 +323,7 @@ int main()
 			}
 			else
 			{
-				pl.show();
+				show();
 				cout<<"please enter return main window"<<endl;
 				cin.get();
 				cin.get();
@@ -294,7 +332,7 @@ int main()
 		case 3:			
 			cout<<"please enter the product number you want to delete"<<endl;
 			cin>>number;
-			pl.Delete(number);
+			Delete(number);
 			cin.get();
 			cin.get();
 			break;
@@ -314,7 +352,7 @@ int main()
 					{
 						cout<<"please enter the number to want to find places Goods:"<<endl;
 						cin>>number;
-						Date*result=pl.Find(number);
+						Date*result=Find(number);
 						if(result==0)
 						{
 							cout<<"This number can not be found. \n";
@@ -326,9 +364,9 @@ int main()
 					{
 						cout<<"please enter the data you wnat to find the serial number:"<<endl;
 						cin>>number;
-						if(pl[number-1])
+						if((*this)[number-1])
 						{
-							pl[number-1]->print();
+							(*this)[number-1]->print();
 						}
 						else
 							cout<<"can not find the data you want to query. \n";						
@@ -339,7 +377,7 @@ int main()
 			}
 			break;
 		case 5:
-			cout<<"The link table Total "<<pl.GetCount()<<" node\n";
+			cout<<"The link table Total "<<GetCount()<<" node\n";
 			cin.get();
 			cin.get();
 			break;
@@ -359,6 +397,11 @@ int main()
 			break;
 		}
 	}
+}
+int main()
+{
+	Repair rp;
+	rp.Run();
 	system("pause");
 	return 0;
 }

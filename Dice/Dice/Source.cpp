@@ -19,7 +19,7 @@ HWND Adjusted_value = NULL;
 HWND Tlist= NULL;
 HWND hList		= NULL;
 
-void shellgrouoppget();
+void shellgrouoppget(HWND hwnd);
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM); 
 
 /* ************************************
@@ -244,11 +244,11 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				20, 120, 400, 300, hwnd, HMENU(IDS_LISTBOX), 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL);
-
+			/*
 			Tlist = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-				500, 140, 100, 28, hwnd, NULL,
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
+			500, 140, 100, 28, hwnd, NULL,
+			((LPCREATESTRUCT)lParam)->hInstance,
+			NULL); */
 
 
 		}
@@ -269,13 +269,13 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				char   szText3[30000]; 
 				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)szText3); 
-				
+
 				int a,b,c;
 				a = atoi(szText);
 				b = atoi(szText2);
 				c = atoi(szText3);
-			//	c = a + b;
-			//	char ch1[256];
+				//	c = a + b;
+				//	char ch1[256];
 				//sprintf_s(ch1,"%d",c);
 				std::string sbuf = "";
 				//				MessageBoxA(NULL, ch1 ,"Error" , MB_OK);
@@ -347,7 +347,7 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				if(Additional>0)
 				{
 					sbuf += "追加1d6 ";
-				_itoa_s(Additional,chbuf,10); 
+					_itoa_s(Additional,chbuf,10); 
 					sbuf += chbuf;
 					sbuf += "次:";
 					printf("追加1d6 %d次:",Additional);
@@ -361,27 +361,7 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				int n = 1;
 				for(int i=0;i<Additional;i++)
-				{	  /*
-					base_generator_type generator(42);
-					generator.seed(static_cast<unsigned int>(std::time(0)));
-					base_generator_type saved_generator = generator;
-
-					typedef boost::uniform_int<> distribution_type;
-					typedef boost::variate_generator<base_generator_type&, distribution_type> gen_type;  
-					gen_type die_gen(generator, distribution_type(1, 6));
-
-					boost::generator_iterator<gen_type> die(&die_gen);
-					int aa=0;
-					for(int i=0;i<n;i++)
-					{	  
-						aa = *die++;
-						sbuf += " " ;
-						_itoa_s(aa,chbuf,10); 
-						sbuf += chbuf ; 
-						sbuf += " ";
-						std::cout<<" "<<aa<<" ";
-
-					}*/
+				{	
 					aa = *die2++;
 					sum2 = sum2 + aa;
 					_itoa_s(aa,chbuf,10); 
@@ -402,7 +382,10 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				std::cout << '\n';
 
 				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sbuf.c_str());
-				
+
+
+				/////////////
+
 
 				///////////////
 			}
@@ -413,7 +396,7 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				{					
 					if (LB_ERR == (NumberID = SendMessage (hList, LB_GETCURSEL, 0, 0L)))
 						break ;
-						shellgrouoppget();
+					shellgrouoppget(hwnd);
 				}					
 
 			}
@@ -468,14 +451,34 @@ void experiment(base_generator_type & generator)
 }
 
 
-void shellgrouoppget()
-{
-
-	//SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
-	//SendMessage(hList,LB_ADDSTRING,0,(LPARAM)"ccccc");		
-	char cc[30000];
+void shellgrouoppget(HWND hwnd)
+{	
+	//strsafe.h的前面定義#define STRSAFE_NO_DEPRECATE  因為設定視警告為錯誤的關係
+	//#define STRSAFE_NO_DEPRECATE
+	static PTSTR 		pText ;
+	HGLOBAL      		hGlobal ;
+	PTSTR        		pGlobal ;	
+	char cc[2048];
 	SendMessageA (hList, LB_GETTEXT, NumberID, (LPARAM)cc);
-	//SendMessage (hList, LB_SETCURSEL, NumberID, 0) ;
 	SetWindowTextA(Tlist,cc);
+
+	TCHAR bb[2048];
+
+	MultiByteToWideChar( CP_ACP, 0, cc, -1, bb, 2048 );
+
+	pText = (PTSTR)malloc ((lstrlen (bb) + 1) * sizeof (TCHAR)) ;
+	lstrcpy ((LPWSTR)pText, (LPCWSTR)bb) ;
+	hGlobal = GlobalAlloc (GHND | GMEM_SHARE, 
+		(lstrlen (pText) + 1) * sizeof (TCHAR)) ;
+	pGlobal = (PTSTR)GlobalLock (hGlobal) ;
+	lstrcpy (pGlobal, pText) ;
+	GlobalUnlock (hGlobal) ;
+
+	OpenClipboard (hwnd) ;
+	EmptyClipboard () ;
+	SetClipboardData (CF_UNICODETEXT, hGlobal) ;
+	CloseClipboard () ;
+
+
 }
 
