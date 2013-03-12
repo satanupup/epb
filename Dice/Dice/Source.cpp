@@ -1,6 +1,14 @@
 
 #include "stdafx.h"
 
+typedef struct dicedate
+{
+	char Role_Name[256];
+	char Dice_reasons[256];
+	char Quantity[256];
+	char Dice_face[256];
+	char Adjusted_value[256];
+}dicedate;
 
 // This is a typedef for a random number generator.
 // Try boost::mt19937 or boost::ecuyer1988 instead of boost::minstd_rand
@@ -8,6 +16,7 @@ typedef boost::minstd_rand base_generator_type;
 // This is a reproducible simulation experiment.  See main().
 void experiment(base_generator_type & generator);
 const int ID_MYBUTTON = 60001;
+const int ID_UPDATE = 60002;
 const int IDS_LISTBOX = 60007;
 int NumberID = 0;
 
@@ -19,6 +28,7 @@ HWND Adjusted_value = NULL;
 HWND Tlist= NULL;
 HWND hList		= NULL;
 
+int split(const std::string& str, std::vector<std::string>& ret_ );
 void shellgrouoppget(HWND hwnd);
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM); 
 
@@ -87,33 +97,6 @@ int WINAPI WinMain(HINSTANCE hinstance,
 	int height = rect.bottom-rect.top;
 	MoveWindow(hwnd,ScreenWidth/2-width/2,ScreenHeight/2-height/2,width,height,TRUE);
 
-
-	//不能多開程式
-	TCHAR strappname[] = TEXT("Management"); 
-	HANDLE hmutex = NULL; 
-	//創建互斥對像 
-	hmutex = CreateMutex(NULL, false, strappname); 
-	if (hmutex != NULL) 
-	{ 
-		if (GetLastError() == ERROR_ALREADY_EXISTS) 
-		{ 
-			MessageBox(NULL,TEXT("另外一程式尚在執行！請關閉此程式"),TEXT("SMSServer"),MB_OK |MB_ICONINFORMATION); 
-			//關閉互斥對象，退出程序 
-			SendMessage (hwnd, WM_DESTROY, 0, 0) ;			
-			CloseHandle(hmutex); 
-			return FALSE; 
-		} 
-	} 
-	else 
-	{ 
-		MessageBox(NULL,TEXT("無法建立Mutex!請重新執行"),TEXT("SMSServer"),MB_OK |MB_ICONINFORMATION); 
-		//關閉互斥對象，退出程序 
-		SendMessage (hwnd, WM_DESTROY, 0, 0) ;		
-		if(hmutex != NULL)
-			CloseHandle(hmutex); 
-		return FALSE; 
-	}
-
 	ShowWindow(hwnd, nCmdShow); 
 	UpdateWindow(hwnd); 
 
@@ -143,25 +126,142 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 	{ 
 	case WM_CREATE: 
 		{
+
+			CreateWindowA("STATIC", "Role Name", WS_CHILD | WS_VISIBLE ,
+				20, 15, 100, 28, hwnd, NULL, 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			CreateWindowA("STATIC", "Dice reasons", WS_CHILD | WS_VISIBLE ,
+				20, 85, 100, 28, hwnd, NULL, 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			CreateWindowA("STATIC", "Quantity", WS_CHILD | WS_VISIBLE ,
+				140, 15, 100, 28, hwnd, NULL, 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			CreateWindowA("STATIC", "Dice face", WS_CHILD | WS_VISIBLE ,
+				260, 15, 100, 28, hwnd, NULL, 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			CreateWindowA("STATIC", "Adjusted value", WS_CHILD | WS_VISIBLE ,
+				380, 15, 100, 28, hwnd, NULL, 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+			Role_Name = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+				20, 50, 100, 28, hwnd, NULL,
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			Dice_reasons = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+				140, 85, 200, 28, hwnd, NULL,
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			Quantity = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+				140, 50, 100, 28, hwnd, NULL,
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			Dice_face = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+				260, 50, 100, 28, hwnd, NULL,
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			Adjusted_value = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+				380, 50, 100, 28, hwnd, NULL,
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL); 
+
+			CreateWindow(TEXT("BUTTON"), TEXT("按鈕1"), WS_CHILD | WS_VISIBLE ,
+				500, 100, 100, 28, hwnd, HMENU(ID_MYBUTTON), 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL);
+
+			CreateWindow(TEXT("BUTTON"), TEXT("Update"), WS_CHILD | WS_VISIBLE ,
+				500, 135, 100, 28, hwnd, HMENU(ID_UPDATE), 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL);
+
+			hList = CreateWindow(L"LISTBOX",NULL,
+				WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
+				LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
+				20, 120, 400, 300, hwnd, HMENU(IDS_LISTBOX), 
+				((LPCREATESTRUCT)lParam)->hInstance,
+				NULL);
 			/*
-			Role Name:
-			Dice reasons:
-			Role_Name 
-			Dice_reasons
-			Quantity
-			Dice face
-			Adjusted value*/
-			//Ctrl+K->Ctrl+D
+			Tlist = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
+			500, 140, 100, 28, hwnd, NULL,
+			((LPCREATESTRUCT)lParam)->hInstance,
+			NULL); */
 
 			bearlib::wreadcfg(0);
 
-			sendCGlobal::ClientVerification();
-			WCHAR strText[512];
-			{
-				//
+		}
+		break;
+	case WM_COMMAND:
+		// 剖析功能表選取項目:
+		switch (LOWORD(wParam))
+		{
+			NumberID  = SendMessage (hList, LB_GETCURSEL, 0, 0) ;
+		case ID_MYBUTTON:
+			{	
+				Sleep(300);
+				sendCGlobal::ClientVerification();
+				WCHAR strText[512];
+
+				char   GetszText[30000]; 
+				SendMessageA(Role_Name,WM_GETTEXT,10,(LPARAM)GetszText); 
+
+				char   GetszText2[30000]; 
+				SendMessageA(Dice_reasons,WM_GETTEXT,200,(LPARAM)GetszText2); 
+
+				char   GetszText3[30000]; 
+				SendMessageA(Quantity,WM_GETTEXT,10,(LPARAM)GetszText3); 
+
+				char   GetszText4[30000]; 
+				SendMessageA(Dice_face,WM_GETTEXT,10,(LPARAM)GetszText4); 
+
+				char   GetszText5[30000]; 
+				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)GetszText5); 
+
+				if(strcmp(GetszText,"") == 0)
+				{
+					break;
+				}
+				if(strcmp(GetszText2,"") == 0)
+				{
+					break;
+				}
+				if(strcmp(GetszText3,"") == 0)
+				{
+					break;
+				}
+				if(strcmp(GetszText4,"") == 0)
+				{
+					break;
+				}
+				if(strcmp(GetszText5,"") == 0)
+				{
+					break;
+				}
 
 				std::string Temporary_str;
 				Temporary_str = "Connection";
+				Temporary_str += " ";
+				Temporary_str += GetszText;
+				Temporary_str += ",";
+				Temporary_str += GetszText2;
+				Temporary_str += ",";
+				Temporary_str += GetszText3;
+				Temporary_str += ",";
+				Temporary_str += GetszText4;
+				Temporary_str += ",";
+				Temporary_str += GetszText5;
+
 				sendCGlobal::CTransfer_instruction(Temporary_str);	
 
 				try
@@ -181,213 +281,53 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
 
 				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 510 );
-				MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
-				//
+				//MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
+
+				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sendCGlobal::CReceive_instructions().c_str());
+
 			}
-			CreateWindowA("STATIC", "Role Name", WS_CHILD | WS_VISIBLE ,
-				20, 24, 100, 28, hwnd, NULL, 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
+			break;
+		case ID_UPDATE:
+			{	
 
-			CreateWindowA("STATIC", "Dice reasons", WS_CHILD | WS_VISIBLE ,
-				140, 24, 100, 28, hwnd, NULL, 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			CreateWindowA("STATIC", "Quantity", WS_CHILD | WS_VISIBLE ,
-				260, 24, 100, 28, hwnd, NULL, 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			CreateWindowA("STATIC", "Dice face", WS_CHILD | WS_VISIBLE ,
-				380, 24, 100, 28, hwnd, NULL, 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			CreateWindowA("STATIC", "Adjusted value", WS_CHILD | WS_VISIBLE ,
-				500, 24, 100, 28, hwnd, NULL, 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-			Role_Name = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-				20, 55, 100, 28, hwnd, NULL,
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			Dice_reasons = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-				140, 55, 100, 28, hwnd, NULL,
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			Quantity = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-				260, 55, 100, 28, hwnd, NULL,
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			Dice_face = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-				380, 55, 100, 28, hwnd, NULL,
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			Adjusted_value = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-				500, 55, 100, 28, hwnd, NULL,
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL); 
-
-			CreateWindow(TEXT("BUTTON"), TEXT("按鈕1"), WS_CHILD | WS_VISIBLE ,
-				500, 100, 100, 28, hwnd, HMENU(ID_MYBUTTON), 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL);
-
-			hList = CreateWindow(L"LISTBOX",NULL,
-				WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
-				LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
-				20, 120, 400, 300, hwnd, HMENU(IDS_LISTBOX), 
-				((LPCREATESTRUCT)lParam)->hInstance,
-				NULL);
-			/*
-			Tlist = CreateWindowA("Edit", "", WS_CHILD | WS_VISIBLE |WS_BORDER,
-			500, 140, 100, 28, hwnd, NULL,
-			((LPCREATESTRUCT)lParam)->hInstance,
-			NULL); */
+				SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
+				sendCGlobal::ClientVerification();
+				WCHAR strText[512];
+				std::string Temporary_str;
+				Temporary_str = "DiceUpdate";
 
 
-		}
-		break;
-	case WM_COMMAND:
-		// 剖析功能表選取項目:
-		switch (LOWORD(wParam))
-		{
-			NumberID  = SendMessage (hList, LB_GETCURSEL, 0, 0) ;
-		case ID_MYBUTTON:
-			{		
+				sendCGlobal::CTransfer_instruction(Temporary_str);	
 
-				char   szText[30000]; 
-				SendMessageA(Quantity,WM_GETTEXT,10,(LPARAM)szText); 
-
-				char   szText2[30000]; 
-				SendMessageA(Dice_face,WM_GETTEXT,10,(LPARAM)szText2); 
-
-				char   szText3[30000]; 
-				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)szText3); 
-
-				int a,b,c;
-				a = atoi(szText);
-				b = atoi(szText2);
-				c = atoi(szText3);
-				//	c = a + b;
-				//	char ch1[256];
-				//sprintf_s(ch1,"%d",c);
-				std::string sbuf = "";
-				//				MessageBoxA(NULL, ch1 ,"Error" , MB_OK);
-
-				base_generator_type generator(42);
-				generator.seed(static_cast<unsigned int>(std::time(0)));
-				base_generator_type saved_generator = generator;
-				typedef boost::uniform_int<> distribution_type;
-				typedef boost::variate_generator<base_generator_type&, distribution_type> gen_type;
-				int face=b;
-				gen_type die_gen(generator, distribution_type(1, face));
-
-				// If you want to use an STL iterator interface, use iterator_adaptors.hpp.
-				boost::generator_iterator<gen_type> die(&die_gen);
-				int cc=0;
-				int sum=0;
-				int teeth=a;
-				int Adjusted=c;
-				int Additional=0;
-				char chbuf[10];
-				std::vector<int> numbers; 
-
-				for(int i = 0; i < teeth+1; i++)
+				try
 				{
-					numbers.push_back(*die++); 
+					boost::asio::io_service io_service;
+					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
+					boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
+					io_service.run();
 				}
-				numbers.erase(numbers.begin());
-
-				sbuf += "X 的「X」 擲了「" ;	
-				_itoa_s(teeth,chbuf,10); 
-				sbuf += chbuf;
-				sbuf +=  " d " ;				
-				_itoa_s(face,chbuf,10); 
-				sbuf +=  chbuf;
-				sbuf += " + ";	
-				_itoa_s(Adjusted,chbuf,10); 
-				sbuf += chbuf;
-				sbuf += "」 ，擲出「";
-				printf("\nX 的「X」 擲了「%d d %d + %d」 ，擲出「",teeth,face,Adjusted);
-
-				int sizz = numbers.size();
-				for(int i=0;i<sizz;i++)
+				catch (std::exception& e)
 				{
-					if(i == sizz-1)
-					{
-						_itoa_s(numbers[i],chbuf,10); 
-						sbuf += chbuf;
-						std::cout <<numbers[i];
-						sum = sum + numbers[i];
-						if(numbers[i] == 6)
-							Additional++;
-					}
-					else
-					{
-						_itoa_s(numbers[i],chbuf,10); 
-						sbuf += chbuf;
-						sbuf += "、";
-						std::cout <<numbers[i]<<"、";
-						sum = sum + numbers[i];
-
-						if(numbers[i] == 6)
-							Additional++;
-					}
-
+					WCHAR strText[512];
+					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
+					OutputDebugString(strText);     
 				}
 
+				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
 
-				boost::generator_iterator<gen_type> die2(&die_gen);
-				if(Additional>0)
-				{
-					sbuf += "追加1d6 ";
-					_itoa_s(Additional,chbuf,10); 
-					sbuf += chbuf;
-					sbuf += "次:";
-					printf("追加1d6 %d次:",Additional);
+				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 510 );
+				//MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
+				/////////split
+
+				std::vector<std::string> vt;
+				split(sendCGlobal::CReceive_instructions().c_str(), vt);
+				for (size_t i = 0; i < vt.size(); ++ i)
+				{ 
+					SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)vt[i].c_str());
 				}
-
-				int sum2=0;
-				int aa=0;
-
-				int Additional2=0;//0304
-				boost::generator_iterator<gen_type> die3(&die_gen);// 0304
-
-				int n = 1;
-				for(int i=0;i<Additional;i++)
-				{	
-					aa = *die2++;
-					sum2 = sum2 + aa;
-					_itoa_s(aa,chbuf,10); 
-					sbuf += chbuf ;
-					sbuf += " ";
-					std::cout<<aa<<" ";
-
-				}
-				sbuf += "」，總合為「";
-				int csum=0;
-				csum =  sum + Adjusted + sum2;				
-				_itoa_s(csum,chbuf,10); 
-				sbuf += chbuf;
-				sbuf += "」。";
-				printf("」，總合為「%d」。\n",sum + Adjusted + sum2);
-
-				sbuf += "";
-				std::cout << '\n';
-
-				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sbuf.c_str());
+				//////////////////////////////////////////
 
 
-				/////////////
-
-
-				///////////////
 			}
 			break;
 		case IDS_LISTBOX:
@@ -482,3 +422,39 @@ void shellgrouoppget(HWND hwnd)
 
 }
 
+
+int split(const std::string& str, std::vector<std::string>& ret_ )
+{
+	std::string sep = "\n";
+
+	if (str.empty())
+	{
+		return 0;
+	}
+
+	string tmp;
+	string::size_type pos_begin = str.find_first_not_of(sep);
+	string::size_type comma_pos = 0;
+
+	while (pos_begin != string::npos)
+	{
+		comma_pos = str.find(sep, pos_begin);
+		if (comma_pos != string::npos)
+		{
+			tmp = str.substr(pos_begin, comma_pos - pos_begin);
+			pos_begin = comma_pos + sep.length();
+		}
+		else
+		{
+			tmp = str.substr(pos_begin);
+			pos_begin = comma_pos;
+		}
+
+		if (!tmp.empty())
+		{
+			ret_.push_back(tmp);
+			tmp.clear();
+		}
+	}
+	return 0;
+}
