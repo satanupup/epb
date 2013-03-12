@@ -317,7 +317,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "class_Friend", "ConsoleAppl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "w_r_w", "ConsoleApplication142\ConsoleApplication142.vcxproj", "{E68F4F3E-5C58-4D67-8AEE-E1DCCE918604}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication143", "ConsoleApplication143\ConsoleApplication143.vcxproj", "{9D04184A-2E34-4928-B57E-44CACA9AF51B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Structure_is_initialized", "ConsoleApplication143\ConsoleApplication143.vcxproj", "{9D04184A-2E34-4928-B57E-44CACA9AF51B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication144", "ConsoleApplication144\ConsoleApplication144.vcxproj", "{1F45B454-296F-4D44-87C2-7D412EA9D0DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1165,6 +1167,12 @@ Global
 		{9D04184A-2E34-4928-B57E-44CACA9AF51B}.Release|Win32.ActiveCfg = Release|Win32
 		{9D04184A-2E34-4928-B57E-44CACA9AF51B}.Release|Win32.Build.0 = Release|Win32
 		{9D04184A-2E34-4928-B57E-44CACA9AF51B}.Release|Win32.Deploy.0 = Release|Win32
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Debug|Win32.Build.0 = Debug|Win32
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Debug|Win32.Deploy.0 = Debug|Win32
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Release|Win32.ActiveCfg = Release|Win32
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Release|Win32.Build.0 = Release|Win32
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1318,5 +1326,6 @@ Global
 		{246475E5-A866-4663-BA6B-5A53EE87C0A8} = {360E4D3C-9D12-4847-9DAE-D6B9C98AB3EB}
 		{FA03247F-F8ED-4870-B3DF-21F35BAE649B} = {F87FFED1-4372-44C2-9B10-9F5E4F39A965}
 		{9D04184A-2E34-4928-B57E-44CACA9AF51B} = {F87FFED1-4372-44C2-9B10-9F5E4F39A965}
+		{1F45B454-296F-4D44-87C2-7D412EA9D0DC} = {F87FFED1-4372-44C2-9B10-9F5E4F39A965}
 	EndGlobalSection
 EndGlobal

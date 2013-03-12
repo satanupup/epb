@@ -3259,7 +3259,7 @@ void clientSessionMeng::fn_DiceUpdate(char *str)
 			if(i!=atoi(azResult[i])*6)
 			{
 				bh++;
-				std::cout<<bh<<":\t"<<azResult[i]<<"\t";		
+			//	std::cout<<bh<<":\t"<<azResult[i]<<"\t";		
 				sprintf_s(ch.Role_Name,"%s",azResult[i-4]);
 				sprintf_s(ch.Dice_reasons,"%s",azResult[i-3]);	
 				sprintf_s(ch.Quantity,"%s",azResult[i-2]);	
@@ -3273,7 +3273,7 @@ void clientSessionMeng::fn_DiceUpdate(char *str)
 			}
 		}
 	}
-	cout<<ch.Role_Name<<" "<<ch.Dice_reasons<<" "<<ch.Quantity<<" "<<ch.Dice_face<<" "<<ch.Adjusted_value<<endl;
+	//cout<<ch.Role_Name<<" "<<ch.Dice_reasons<<" "<<ch.Quantity<<" "<<ch.Dice_face<<" "<<ch.Adjusted_value<<endl;
 	sqlite3_free_table( azResult );
 	sqlite3_close(db);    
 	

@@ -28,6 +28,7 @@ HWND Adjusted_value = NULL;
 HWND Tlist= NULL;
 HWND hList		= NULL;
 
+bool check(std::string str);
 int split(const std::string& str, std::vector<std::string>& ret_ );
 void shellgrouoppget(HWND hwnd);
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM); 
@@ -209,12 +210,11 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 			NumberID  = SendMessage (hList, LB_GETCURSEL, 0, 0) ;
 		case ID_MYBUTTON:
 			{	
-				Sleep(300);
 				sendCGlobal::ClientVerification();
-				WCHAR strText[512];
+				WCHAR strText[2048];
 
 				char   GetszText[30000]; 
-				SendMessageA(Role_Name,WM_GETTEXT,10,(LPARAM)GetszText); 
+				SendMessageA(Role_Name,WM_GETTEXT,30,(LPARAM)GetszText); 
 
 				char   GetszText2[30000]; 
 				SendMessageA(Dice_reasons,WM_GETTEXT,200,(LPARAM)GetszText2); 
@@ -227,7 +227,7 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				char   GetszText5[30000]; 
 				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)GetszText5); 
-
+				
 				if(strcmp(GetszText,"") == 0)
 				{
 					break;
@@ -236,15 +236,15 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				{
 					break;
 				}
-				if(strcmp(GetszText3,"") == 0)
+				if((strcmp(GetszText3,"") == 0) || !check(GetszText3))
 				{
 					break;
 				}
-				if(strcmp(GetszText4,"") == 0)
+				if((strcmp(GetszText4,"") == 0) || !check(GetszText4))
 				{
 					break;
 				}
-				if(strcmp(GetszText5,"") == 0)
+				if((strcmp(GetszText5,"") == 0) || !check(GetszText5))
 				{
 					break;
 				}
@@ -274,13 +274,13 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				catch (std::exception& e)
 				{
 					WCHAR strText[512];
-					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
+					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 2048 );
 					OutputDebugString(strText);     
 				}
 
 				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
 
-				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 510 );
+				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 2048 );
 				//MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
 
 				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sendCGlobal::CReceive_instructions().c_str());
@@ -457,4 +457,17 @@ int split(const std::string& str, std::vector<std::string>& ret_ )
 		}
 	}
 	return 0;
+}
+
+
+bool check(std::string str)
+{
+	int rrnum=str.length();
+	for(int i=0;i<rrnum;i++)
+	{
+		if((str[i]>'9'||str[i]<'0')&&(str[i]!='.'))
+			return false;
+	}
+	return true;
+
 }

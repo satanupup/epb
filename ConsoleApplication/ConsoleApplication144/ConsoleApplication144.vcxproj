@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9D04184A-2E34-4928-B57E-44CACA9AF51B}</ProjectGuid>
+    <ProjectGuid>{1F45B454-296F-4D44-87C2-7D412EA9D0DC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication143</RootNamespace>
-    <ProjectName>Structure_is_initialized</ProjectName>
+    <RootNamespace>ConsoleApplication144</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
