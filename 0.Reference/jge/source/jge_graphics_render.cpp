@@ -1,0 +1,12 @@
+#include "jge_graphics_render.h"
+_JGE_BEGIN
+IRender::IRender()
+{
+
+}
+//////////////////////////////////////////////////////////////////////////
+IRender::~IRender()
+{
+
+}
+_JGE_END

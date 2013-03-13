@@ -1,0 +1,39 @@
+
+class CGlobal{
+public:
+  static std::wstring Getstr;
+  static std::wstring Setstr;
+  static std::wstring GroupGid;
+  static std::wstring GroupName;
+};
+
+
+using boost::asio::ip::tcp;
+
+class client
+{
+public:
+    client(boost::asio::io_service& io_service,tcp::endpoint& endpoint)
+        : socket(io_service)
+    {
+        socket.async_connect(endpoint,
+            boost::bind(&client::handle_connect,this,boost::asio::placeholders::error)
+            );
+		
+        memset(getBuffer,0,65536);
+    }
+    ~client()
+    {
+    }
+private:
+    void handle_connect(const boost::system::error_code& error);    
+	void handle_read(const boost::system::error_code& error);
+
+void handle_write(const boost::system::error_code& error)
+{//µL½a°j°é
+	
+}
+private:
+    tcp::socket socket;
+    char getBuffer[65536];
+};

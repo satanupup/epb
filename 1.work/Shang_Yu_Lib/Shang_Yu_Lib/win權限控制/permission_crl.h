@@ -1,0 +1,1 @@
+#include "..\\applay_entry.h"  //整合使用

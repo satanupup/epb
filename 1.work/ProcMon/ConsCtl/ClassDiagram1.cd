@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CWhatheverYouWantToHold">
+    <Position X="11.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAQAAgAAAA=</HashCode>
+      <FileName>ConsCtl.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMyCallbackHandler">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="CCallbackHandler">
+      <InheritanceModifierLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.096" Y="0.11" Height="0.15" Width="0.5" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>ConsCtl.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CApplicationScope">
+    <Position X="9.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAAgAAAARAAAAAAAAIABAAQQAAAEAAgAIAAQAA=</HashCode>
+      <FileName>ApplicationScope.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCallbackHandler">
+    <Position X="0.5" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABCAAAAAACAAAAAAAAAAAAgAAAAAAAAAAICAQA=</HashCode>
+      <FileName>CallbackHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCustomThread">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACIAIAAJAAEgQAAAAAAAAAAAAAAQBAAAAAAIOAIAAI=</HashCode>
+      <FileName>CustomThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CCSWrapper">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAIAAAAAEMAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>LockMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLockMgr&lt;T&gt;">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>LockMgr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CNtDriverController">
+    <Position X="16" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAIAAAgEIDABAAAAAAAgAAAAAAAAAUAQAACAAAA=</HashCode>
+      <FileName>NtDriverController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CQueueContainer">
+    <Position X="12" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AARAACoAAAAAIAIACAAQAAEAAAAAAQAAggACEAICAAE=</HashCode>
+      <FileName>QueueContainer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRetrievalThread">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="CCustomThread">
+      <InheritanceModifierLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.002" Y="0.11" Height="0.15" Width="0.5" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEI=</HashCode>
+      <FileName>RetrievalThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CProcessThreadMonitor">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <InheritanceLine Type="CCustomThread">
+      <InheritanceModifierLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.06" Y="0.11" Height="0.15" Width="0.563" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAIAACAAEIAAAAAAAAAQAAAAQAAAABAAABAAASAI=</HashCode>
+      <FileName>ThreadMonitor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="_ActivateInfo">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationScope.cpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_QueuedItem">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAABEAAA=</HashCode>
+      <FileName>Common.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_ProcessCallbackInfo">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAABEAAA=</HashCode>
+      <FileName>ThreadMonitor.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="ACTIVATE_INFO" Collapsed="true">
+    <Position X="7" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationScope.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PACTIVATE_INFO" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApplicationScope.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PTHREAD_START" Collapsed="true">
+    <Position X="14.5" Y="4.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomThread.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PFNENUMPROCESSMODULES" Collapsed="true">
+    <Position X="14.5" Y="5" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CallbackHandler.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PFNGETMODULEFILENAMEEX" Collapsed="true">
+    <Position X="14.5" Y="5.75" Width="7" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CallbackHandler.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="QUEUED_ITEM" Collapsed="true">
+    <Position X="7" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PQUEUED_ITEM" Collapsed="true">
+    <Position X="6.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PROCESS_CALLBACK_INFO" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThreadMonitor.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="PPROCESS_CALLBACK_INFO" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ThreadMonitor.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="新細明體" Size="9" />
+</ClassDiagram>

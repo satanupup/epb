@@ -1,0 +1,49 @@
+#include "stdafx.h"
+
+std::wstring CGlobal::Setstr = L"";
+std::wstring CGlobal::Getstr = L"";
+std::wstring CGlobal::GroupGid = L"";
+std::wstring CGlobal::GroupName = L"";
+
+
+void client::handle_connect(const boost::system::error_code& error)
+    {
+        if(!error)
+        {
+			//char line[256];
+			//sprintf_s(line,"cat /etc/group | awk 'BEGIN {FS=\":\"} $3>999 && $3<65533 {print $1\",\"$3}'");
+				
+			char strText[256];
+			WideCharToMultiByte ( CP_ACP, 0, CGlobal::Setstr.c_str(), -1, strText, 256, NULL, NULL );
+												
+            boost::asio::async_write(socket,boost::asio::buffer(strText),
+                boost::bind(&client::handle_write,this,boost::asio::placeholders::error));
+			
+            socket.async_read_some(boost::asio::buffer(getBuffer,65536),
+                boost::bind(&client::handle_read,this,boost::asio::placeholders::error)
+                );
+        }
+        else
+        {
+            socket.close();
+        }
+	}
+void client::handle_read(const boost::system::error_code& error)
+{	
+    if(!error)
+    {			
+		
+		CGlobal::Getstr = boost::lexical_cast<std::wstring>( getBuffer );
+		
+		/*
+		using namespace std;		//debug
+		wstring wTmp = L"";		
+		wTmp = boost::lexical_cast<wstring>( getBuffer );		
+		OutputDebugString(wTmp.c_str());*/
+		
+    }
+    else
+    {
+        socket.close();
+    }
+}

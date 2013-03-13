@@ -1,0 +1,255 @@
+#include "stdafx.h"
+
+
+/*
+void abc(const wchar_t *b)
+{
+	MessageBox(NULL, b ,L"Error" , MB_OK);
+};
+
+void abc2(const char *b)
+{
+	MessageBox(NULL, CA2CT(b) ,L"Error" , MB_OK);
+};
+
+	LPCTSTR a=L"HELLO";
+	char *dd="dd";
+	
+	abc(CA2CT(dd));
+	abc2(CT2CA(a));
+	*/
+std::string& trim(std::string &s) 
+{
+  if (s.empty()) {
+    return s;
+  }
+  s.erase(0,s.find_first_not_of(" "));
+  s.erase(s.find_last_not_of(" ") + 1);
+  return s;
+}
+
+
+// 雙碼轉萬國碼
+WCHAR *ANSItoUNICODE( const std::string &Source )
+{
+    static WCHAR strText[512];
+    MultiByteToWideChar( CP_ACP, 0, Source.c_str(), -1, strText, 510 );
+    return strText;
+}
+/*
+			string test_string="ss";
+			char test_char[]="ss", result_char[20];
+			string result_string1(test_char);
+			string result_string2;
+			result_string2.assign(test_char);
+			strcpy(result_char, test_string.c_str());*/
+
+ // 萬國碼轉雙碼
+std::string UNICODEtoANSI( const WCHAR *Source )
+{
+    char strText[512];
+    WideCharToMultiByte ( CP_ACP, 0, Source, -1, strText, 510, NULL, NULL );
+    return std::string( strText );
+}
+bool readTheWholeFile(const char* fn, std::vector<char>& data)
+{
+	std::ifstream file(fn, std::ios_base::in | std::ios_base::binary);
+	if ( !file ) return false;
+	std::istreambuf_iterator<char> dataBegin(file);		
+	std::istreambuf_iterator<char> dataEnd;
+	data.assign(dataBegin, dataEnd);
+	file.close();
+	return true;
+}
+
+
+
+/*
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+namespace strtool
+{
+string trim(const string& str)
+{
+    string::size_type pos = str.find_first_not_of(' ');
+    if (pos == string::npos)
+    {
+        return str;
+    }
+    string::size_type pos2 = str.find_last_not_of(' ');
+    if (pos2 != string::npos)
+    {
+        return str.substr(pos, pos2 - pos + 1);
+    }
+    return str.substr(pos);
+}
+
+int split(const string& str, vector<string>& ret_, string sep = ",")
+{
+    if (str.empty())
+    {
+        return 0;
+    }
+
+    string tmp;
+    string::size_type pos_begin = str.find_first_not_of(sep);
+    string::size_type comma_pos = 0;
+
+    while (pos_begin != string::npos)
+    {
+        comma_pos = str.find(sep, pos_begin);
+        if (comma_pos != string::npos)
+        {
+            tmp = str.substr(pos_begin, comma_pos - pos_begin);
+            pos_begin = comma_pos + sep.length();
+        }
+        else
+        {
+            tmp = str.substr(pos_begin);
+            pos_begin = comma_pos;
+        }
+
+        if (!tmp.empty())
+        {
+            ret_.push_back(tmp);
+            tmp.clear();
+        }
+    }
+    return 0;
+}
+
+string replace(const string& str, const string& src, const string& dest)
+{
+    string ret;
+
+    string::size_type pos_begin = 0;
+    string::size_type pos       = str.find(src);
+    while (pos != string::npos)
+    {
+        cout <<"replacexxx:" << pos_begin <<" " << pos <<"\n";
+        ret.append(str.data() + pos_begin, pos - pos_begin);
+        ret += dest;
+        pos_begin = pos + 1;
+        pos       = str.find(src, pos_begin);
+    }
+    if (pos_begin < str.length())
+    {
+        ret.append(str.begin() + pos_begin, str.end());
+    }
+    return ret;
+}
+
+template< typename CharT >
+    inline void TrimLeft(std::basic_string<CharT> &str)
+    {
+        str.erase(0, str.find_first_not_of(' '));
+    }
+ 
+    template< typename CharT >
+    inline void TrimRight(std::basic_string<CharT> &str)
+    {
+        str.erase(str.find_last_not_of(' ') + 1);
+    }
+ 
+    template< typename CharT >
+    inline void Trim(std::basic_string<CharT> &str)
+    {
+        str.erase(0, str.find_first_not_of(' '));
+        str.erase(str.find_last_not_of(' ') + 1);
+    }
+
+	template<typename CharT>
+    inline void Erase(std::basic_string<CharT> &str, const CharT &charactor)
+    {
+        str.erase(remove_if(str.begin(), str.end(), 
+            bind2nd(std::equal_to<CharT>(), charactor)), str.end());
+    }
+ 
+    template<typename CharT>
+    inline void Replace(std::basic_string<CharT> &str, const std::basic_string<CharT> &strObj, const std::basic_string<CharT> &strDest)
+    {
+        while(true)
+        {
+            CharT pos = str.find(strObj);
+ 
+            if( pos != std::basic_string<CharT>::npos )
+                str.replace(pos, strObj.size(), strDest);
+            else
+                break;
+        }
+         
+    }
+
+	template<typename T, typename CharT>
+    inline std::vector<T>& Split(std::vector<T> &seq, const std::basic_string<CharT> &str, CharT separator)
+    {
+        if( str.empty() )
+            return seq;
+ 
+        std::basic_stringstream<CharT> iss(str);
+        for(std::basic_string<CharT> s; std::getline(iss, s, separator); )
+        {
+            typename T val;
+            std::basic_stringstream<CharT> isss(s);
+ 
+            isss >> val;
+            seq.push_back(val);
+        }
+ 
+        return seq;    
+    }
+ 
+    template < typename CharT >
+    inline std::basic_string<CharT> Split(const std::basic_string<CharT> &str, CharT separator, size_t index)
+    {
+        if( str.empty() )
+            return std::basic_string<CharT>();
+ 
+        std::basic_stringstream<CharT> iss(str);
+        std::vector<std::basic_string<CharT>> tmp;
+ 
+        for(std::basic_string<CharT> s; std::getline(iss, s, separator); )
+        {
+            std::basic_string<CharT> val;
+            std::basic_stringstream<CharT> isss(s);
+ 
+            isss >> val;
+            tmp.push_back(val);
+        }
+ 
+        if (index >= tmp.size())
+        {
+            assert(index < tmp.size());
+            return std::basic_string<CharT>();
+        }
+         
+        return tmp[index];
+    }
+
+}
+
+
+	
+int main(int argc, char* argv[])
+{	
+    cout << strtool::trim(" nihao ") <<"\n";
+
+    vector<string> vt;
+    strtool::split(",o h,,,nice,,,,,,,", vt);
+    for (size_t i = 0; i < vt.size(); ++ i)
+    {
+        cout <<"out:" << vt[i] <<"\n";
+    }
+
+    string ret = strtool::replace("xxAxxxAxxAxx", "A", "B");
+    cout <<"replace:" << ret <<"\n";
+    
+	
+	system("pause");
+	return 0;
+
+}
+*/

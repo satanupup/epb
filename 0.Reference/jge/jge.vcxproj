@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C22D8C6-EA0E-42ED-BCF0-9718A788CBD4}</ProjectGuid>
+    <RootNamespace>jge</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.51106.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\jge_clientframe.cpp" />
+    <ClCompile Include="source\jge_compressfile_read.cpp" />
+    <ClCompile Include="source\jge_debug.cpp" />
+    <ClCompile Include="source\jge_file_read.cpp" />
+    <ClCompile Include="source\jge_file_write.cpp" />
+    <ClCompile Include="source\jge_graphics.cpp" />
+    <ClCompile Include="source\jge_graphics_render.cpp" />
+    <ClCompile Include="source\jge_input.cpp" />
+    <ClCompile Include="source\jge_input_listener.cpp" />
+    <ClCompile Include="source\jge_key_map.cpp" />
+    <ClCompile Include="source\jge_texture.cpp" />
+    <ClCompile Include="source\jge_time.cpp" />
+    <ClCompile Include="source\jge_timemanager.cpp" />
+    <ClCompile Include="source\jge_timer.cpp" />
+    <ClCompile Include="source\jge_userinterface_manager.cpp" />
+    <ClCompile Include="source\jge_utility.cpp" />
+    <ClCompile Include="source\jge_win_graphics.cpp" />
+    <ClCompile Include="source\jge_win_input.cpp" />
+    <ClCompile Include="source\jge_win_texture.cpp" />
+    <ClCompile Include="source\jge_win_time.cpp" />
+    <ClCompile Include="source\jge_xml_parser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\jge_2dgraphics.h" />
+    <ClInclude Include="header\jge_clientframe.h" />
+    <ClInclude Include="header\jge_compressfile_header.h" />
+    <ClInclude Include="header\jge_compressfile_read.h" />
+    <ClInclude Include="header\jge_containers.h" />
+    <ClInclude Include="header\jge_debug.h" />
+    <ClInclude Include="header\jge_define.h" />
+    <ClInclude Include="header\jge_file_def.h" />
+    <ClInclude Include="header\jge_file_read.h" />
+    <ClInclude Include="header\jge_file_write.h" />
+    <ClInclude Include="header\jge_graphics.h" />
+    <ClInclude Include="header\jge_graphics_render.h" />
+    <ClInclude Include="header\jge_input.h" />
+    <ClInclude Include="header\jge_input_listener.h" />
+    <ClInclude Include="header\jge_input_message.h" />
+    <ClInclude Include="header\jge_key.h" />
+    <ClInclude Include="header\jge_key_map.h" />
+    <ClInclude Include="header\jge_keymap_define.h" />
+    <ClInclude Include="header\jge_singleton.h" />
+    <ClInclude Include="header\jge_stage.h" />
+    <ClInclude Include="header\jge_stream_def.h" />
+    <ClInclude Include="header\jge_texture.h" />
+    <ClInclude Include="header\jge_time.h" />
+    <ClInclude Include="header\jge_timemanager.h" />
+    <ClInclude Include="header\jge_timer.h" />
+    <ClInclude Include="header\jge_type.h" />
+    <ClInclude Include="header\jge_userinterface_manager.h" />
+    <ClInclude Include="header\jge_utility.h" />
+    <ClInclude Include="header\jge_win32_platform.h" />
+    <ClInclude Include="header\jge_win_graphics.h" />
+    <ClInclude Include="header\jge_win_input.h" />
+    <ClInclude Include="header\jge_win_texture.h" />
+    <ClInclude Include="header\jge_win_time.h" />
+    <ClInclude Include="header\jge_win_type.h" />
+    <ClInclude Include="header\jge_xml_parser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

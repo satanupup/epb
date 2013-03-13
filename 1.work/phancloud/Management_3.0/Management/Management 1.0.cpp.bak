@@ -1,0 +1,250 @@
+// Management 1.0.cpp : 定義應用程式的進入點。
+//
+
+#include "stdafx.h"
+#include "Management 1.0.h"
+
+HINSTANCE hinst; 
+HACCEL hAccel ;//加速鍵
+ACCEL Accel[3] ;
+
+LRESULT CALLBACK WndProc (HWND, UINT, WPARAM, LPARAM) ; 
+
+int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, 
+                    PSTR szCmdLine, int iCmdShow) 
+{ 
+    static TCHAR szAppName[] = TEXT ("Management") ; 
+    HWND        hwnd ; 
+    MSG          msg ; 
+    WNDCLASS    wndclass ; 
+	hinst = hInstance; 
+
+	Accel[1].fVirt = 0 ;
+    Accel[1].key = VK_TAB ;
+    Accel[1].cmd = IDC_TAB ;
+    hAccel = CreateAcceleratorTable (Accel, 2) ;
+	
+    wndclass.style        = CS_HREDRAW | CS_VREDRAW ; 
+    wndclass.lpfnWndProc  = WndProc ; 
+    wndclass.cbClsExtra    = 0 ; 
+    wndclass.cbWndExtra    = 0 ; 
+    wndclass.hInstance    = hInstance ; 
+    wndclass.hIcon        = LoadIcon (NULL, IDI_APPLICATION) ; 
+    wndclass.hCursor      = LoadCursor (NULL, IDC_ARROW) ; 
+    wndclass.hbrBackground = (HBRUSH) GetSysColorBrush(COLOR_3DFACE);//GetStockObject (WHITE_BRUSH) ; 
+    wndclass.lpszMenuName  = NULL ; 
+    wndclass.lpszClassName = szAppName ; 
+
+    if (!RegisterClass (&wndclass)) 
+    { 
+        MessageBox (NULL, TEXT ("Program requires Windows NT!"), 
+            szAppName, MB_ICONERROR) ; 
+        return 0 ; 
+    } 
+    hwnd = CreateWindow (szAppName, TEXT ("Management"), 
+        WS_OVERLAPPEDWINDOW, 
+        CW_USEDEFAULT, CW_USEDEFAULT, 
+        CW_USEDEFAULT, CW_USEDEFAULT, 
+        NULL, NULL, hInstance, NULL) ; 
+
+	
+	RECT   rect;   
+	int   ScreenWidth= GetSystemMetrics(SM_CXSCREEN);   
+	int   ScreenHeight=  GetSystemMetrics(SM_CYSCREEN); 
+	GetWindowRect(hwnd,&rect);
+	int width = rect.right-rect.left;
+	int height = rect.bottom-rect.top;
+	MoveWindow(hwnd,ScreenWidth/2-width/2,ScreenHeight/2-height/2,width,height,TRUE);
+
+
+    ShowWindow (hwnd, iCmdShow) ; 
+    UpdateWindow (hwnd) ; 
+
+   
+
+	while (GetMessage(&msg, NULL, 0, 0) > 0)
+	{ 			 
+		if (!TranslateAccelerator(hwnd, hAccel, &msg))
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}			 
+	} 
+
+    return msg.wParam ; 
+} 
+
+LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
+{ 
+    HDC        hdc ; 
+    PAINTSTRUCT  ps;	
+	int wmId, wmEvent;
+	HWND hwndEdit[5] = {NULL};
+	
+	static HMENU hMenu; 
+	POINT pt; 
+		
+    switch (message) 
+    { 
+	case WM_CREATE: 		
+        {
+		//	HMENU hMenu;
+			hMenu = CreateMenu();			
+			//AppendMenu(hMenu, MF_STRING, IDM_EXIT, L"End");	
+			AppendMenu(hMenu, MF_STRING, ID_GROUPUSER_TITLE, L"Group&User");		
+			AppendMenu(hMenu, MF_STRING, ID_PROGRAM_TITLE, L"Program");
+			AppendMenu(hMenu, MF_STRING, ID_CONFIGUATION_TITLE, L"Configuation");
+			
+			SetMenu(hwnd, hMenu);	
+					
+	int   ScreenWidth= GetSystemMetrics(SM_CXSCREEN);   
+	int   ScreenHeight=  GetSystemMetrics(SM_CYSCREEN); 
+	
+	{//title			
+	           
+		hwndEdit[0] =	CreateWindow(L"BUTTON", 
+						L"Currect",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						5, 1, ScreenWidth-400, ScreenHeight-400, hwnd, NULL,//(HMENU)ID_MYBUTTON, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+
+		hwndEdit[1] =  CreateWindow(L"STATIC", 
+						L"Management", 
+						WS_CHILD | WS_VISIBLE ,
+						13, 20, 80, 28, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL); 
+		hwndEdit[2] =  CreateWindow(L"STATIC", 
+						L"Version", 
+						WS_CHILD | WS_VISIBLE ,
+						13, 55, 80, 28, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL); 
+
+		hwndEdit[3] =  CreateWindow(L"Edit", 
+						L"Phancloud",
+						WS_CHILD | WS_VISIBLE |WS_BORDER,
+						100, 20, 200, 28, hwnd, NULL,//(HMENU)ID_ACCOUNTTEXT, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL); 
+		hwndEdit[4] =  CreateWindow(L"Edit", 
+						L"2.7.42",
+						WS_CHILD | WS_VISIBLE |WS_BORDER,
+						100, 55, 200, 28, hwnd, NULL,//(HMENU)ID_ACCOUNTTEXT, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL); 					
+		
+	}  
+
+
+					boost::filesystem3::path p( "Setting.cfg" );
+					  if( exists( p ) && is_regular_file( p ) )
+					  {
+						 // MessageBox(NULL, L"Setting.cfg此文件存在" ,L"Error" , MB_OK);
+					  }
+					  else
+					  {
+						  MessageBox(NULL, L"Setting.cfg此文件不存在,自動創建" ,L"Error" , MB_OK);
+						  
+						  std::ofstream outf("Setting.cfg",std::ios::trunc);
+						  outf <<"IpAddress = 127.0.0.1";
+						  outf.close();
+
+						  //SendMessage (hwnd, WM_DESTROY, 0, 0) ;			
+					  }
+	
+			
+        }
+        break;	
+	case WM_COMMAND:
+        wmId    = LOWORD(wParam);
+        wmEvent = HIWORD(wParam);
+        // 剖析功能表選取項目:
+        
+        
+        switch (wmId)
+        {
+		
+		case IDC_TAB:
+			{							
+				SendMessage(hwnd, WM_DESTROY, NULL, NULL);
+			}
+			break;
+        case IDM_EXIT:
+            {
+                SendMessage (hwnd, WM_DESTROY, 0, 0) ;			
+            }
+            break;		
+		case ID_GROUPUSER_TITLE:
+			{		
+				
+				
+				
+				if(GroupEventer::GroupEventNumber < 1)
+					RegisterDialogGROUPUSER_TITLE(hwnd);	
+
+				
+				/*
+				
+				using namespace std;		
+				wstring wTmp = L"";		
+				wTmp = boost::lexical_cast<wstring>( CGlobal::str );		
+				OutputDebugString(wTmp.c_str());*/
+
+			}
+			break;
+		case ID_PROGRAM_TITLE:
+			{		
+				if(ProgramEventer::ProgramEventNumber < 1)
+					RegisterDialogPROGRAM_TITLE(hwnd);				
+			}
+			break;
+		case ID_CONFIGUATION_TITLE:
+			{										
+				if(ConfiguationEventer::ConfiguationEventNumber < 1)
+					RegisterDialogCONFIGUATION_TITLE(hwnd);				
+			}
+			break;
+        default:
+            return DefWindowProc(hwnd, message, wParam, lParam);
+        }
+        break;
+	
+	case WM_RBUTTONDOWN: 
+		{
+			
+			hMenu = GetMenu(hwnd); 			
+			pt.x = LOWORD(lParam); //從lParam取得滑鼠絕對螢幕X坐標 
+			pt.y = HIWORD(lParam); //從lParam取得滑鼠絕對螢幕Y坐標 
+			ClientToScreen(hwnd, &pt); //將絕對坐標改為以Client左上角為原點的相對坐標 			
+			TrackPopupMenu(hMenu, TPM_RIGHTBUTTON, pt.x, pt.y, 0, hwnd, NULL); //在滑鼠位置顯示選單 
+			
+		}
+		return 0; 
+	case WM_KEYUP:
+		{
+			switch(wParam)
+			{
+				case VK_ESCAPE:
+				{           										 
+					SendMessage(hwnd, WM_DESTROY, NULL, NULL);
+				}          
+				break;			
+			}        
+		}
+		break;
+    case WM_PAINT:         
+        hdc = BeginPaint (hwnd, &ps) ; 
+       //TextOut(hdc,20,20,L"aaaaa",5);
+        EndPaint(hwnd, &ps); 
+        return 0 ; 
+
+    case WM_DESTROY: 
+		DestroyAcceleratorTable (hAccel) ;//加速鍵
+        PostQuitMessage (0) ; 
+        return 0 ; 
+    } 
+    return DefWindowProc (hwnd, message, wParam, lParam) ; 
+}
+

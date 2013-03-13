@@ -1,0 +1,44 @@
+// stdafx.h : 可在此標頭檔中包含標準的系統 Include 檔，
+// 或是經常使用卻很少變更的
+// 專案專用 Include 檔案
+//
+
+#pragma once
+
+#include "targetver.h"
+
+#define WIN32_LEAN_AND_MEAN             // 從 Windows 標頭排除不常使用的成員
+// Windows 標頭檔:
+#include <windows.h>
+
+// C RunTime 標頭檔
+#include <stdlib.h>
+#include <malloc.h>
+#include <memory.h>
+#include <tchar.h>
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+#include <atlbase.h>
+#include <atlconv.h>
+
+#include <CommCtrl.h>
+#pragma comment(lib, "comctl32.lib")
+
+#include <boost/lexical_cast.hpp>
+#include <boost/asio.hpp>
+#include <boost/bind.hpp>
+#include <boost/shared_ptr.hpp>
+
+#include "Management 1.0.h"
+#include "BearLib.h"
+#include "IDNumber.h"
+#include "GroupUser.h"
+#include "Program.h"
+#include "Configuation.h"
+#include "SendMessageGetString.h"
+extern HINSTANCE hinst; 
+using namespace std;
+// TODO: 在此參考您的程式所需要的其他標頭

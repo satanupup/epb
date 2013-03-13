@@ -1,0 +1,1 @@
+BOOL CreateSystemProcess(LPTSTR szProcessName);

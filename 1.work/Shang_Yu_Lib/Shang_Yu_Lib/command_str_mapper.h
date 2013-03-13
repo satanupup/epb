@@ -1,0 +1,1 @@
+int command_str_mapper(std::string str);

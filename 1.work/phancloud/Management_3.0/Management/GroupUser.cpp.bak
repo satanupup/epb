@@ -1,0 +1,990 @@
+#include "stdafx.h"
+ 
+
+int split(const string& str, vector<string>& ret_, string sep = "\n")
+{
+	 if (str.empty())
+	 {
+		return 0;
+	 }
+ 
+	 string tmp;
+	 string::size_type pos_begin = str.find_first_not_of(sep);
+	 string::size_type comma_pos = 0;
+ 
+	 while (pos_begin != string::npos)
+	 {
+		 comma_pos = str.find(sep, pos_begin);
+		 if (comma_pos != string::npos)
+		 {
+			 tmp = str.substr(pos_begin, comma_pos - pos_begin);
+			 pos_begin = comma_pos + sep.length();
+		 }
+		 else
+		 {
+			 tmp = str.substr(pos_begin);
+			 pos_begin = comma_pos;
+		 }
+ 
+		 if (!tmp.empty())
+		 {
+			 ret_.push_back(tmp);
+			 tmp.clear();
+		 }
+	 }
+	 return 0;
+}
+
+int bhja1(const string& str, vector<string>& ret_, string sep = ",")
+{
+	 if (str.empty())
+	 {
+		return 0;
+	 }
+ 
+	 string tmp;
+	 string::size_type pos_begin = str.find_first_not_of(sep);
+	 string::size_type comma_pos = 0;
+ 
+	 while (pos_begin != string::npos)
+	 {
+		 comma_pos = str.find(sep, pos_begin);
+		 if (comma_pos != string::npos)
+		 {
+			 tmp = str.substr(pos_begin, comma_pos - pos_begin);
+			 pos_begin = comma_pos + sep.length();
+		 }
+		 else
+		 {
+			 tmp = str.substr(pos_begin);
+			 pos_begin = comma_pos;
+		 }
+ 
+		 if (!tmp.empty())
+		 {
+			 ret_.push_back(tmp);
+			 tmp.clear();
+		 }
+	 }
+	 return 0;
+}
+int GroupEventer::GroupEventNumber = 0;
+int GroupEventer::GroupNumberID = 0;
+LRESULT CALLBACK DialogProcGROUPUSER_TITLE( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{	
+	static bool GROUPUSERbChangeText = true;
+	PAINTSTRUCT ps;
+	HDC hdc; 
+	HMENU hMenu;
+	
+	int UserNumberID;
+	switch(msg) 
+	{
+		case WM_CREATE:	 
+		{					
+			hMenu = CreateMenu();		
+			AppendMenu(hMenu, MF_STRING, (UINT)ID_MYBUTTON, L"總是顯示在最上層");
+			SetMenu(hwnd, hMenu);	
+			SetWindowPos(hwnd,HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+			
+			{
+				{//group
+					int x = 15;
+ 
+				CreateWindow(L"BUTTON", 
+						L"",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						5, 0, 370, 425, hwnd, NULL,
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+				CreateWindow(L"STATIC", 
+						L"Group", WS_CHILD | WS_VISIBLE,
+						x, 11, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);			
+ 
+				hGroupList = CreateWindow(L"LISTBOX",NULL,
+						WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
+ LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
+						x, 30, 160, 365, hwnd, HMENU(IDS_LISTBOX_GROUP), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+				hGroupText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						x, 395, 160, 20, hwnd, HMENU(ID_LB_GETTEXT), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				}
+				{//user
+					int x = 200;
+				CreateWindow(L"STATIC", 
+						L"User", WS_CHILD | WS_VISIBLE,
+						x, 11, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				hUserList = CreateWindow(L"LISTBOX", 
+						L"User", WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
+ LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL,
+						x, 30, 160, 365, hwnd, HMENU(IDS_LISTBOX_USER), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				hUserText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						x, 395, 160, 20, hwnd, HMENU(ID_LB_USER_GETTEXT), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+				}
+				{//group
+ 
+					CreateWindow(L"BUTTON", 
+						L"",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						380, 0, 250, 140, hwnd, NULL,
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					CreateWindow(L"STATIC", 
+						L"Group", WS_CHILD | WS_VISIBLE,
+						390, 20, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					hGroupEditText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 20, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					CreateWindow(L"BUTTON", 
+						L"GroupAdd", WS_CHILD | WS_VISIBLE ,
+						440, 50, 80, 20, hwnd, HMENU(IDS_LISTBOX_GROUP_ADD), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"BUTTON", 
+						L"GroupDel", WS_CHILD | WS_VISIBLE ,
+						540, 50, 80, 20, hwnd, HMENU(IDS_LISTBOX_GROUP_DEL), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				}
+				{//user
+					CreateWindow(L"STATIC", 
+						L"User", WS_CHILD | WS_VISIBLE ,
+						390, 80, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					hUserEditText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 80, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					CreateWindow(L"BUTTON", 
+						L"UserAdd", WS_CHILD | WS_VISIBLE ,
+						440, 110, 80, 20, hwnd, HMENU(IDS_LISTBOX_USER_ADD), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"BUTTON", 
+						L"UserDel", WS_CHILD | WS_VISIBLE ,
+						540, 110, 80, 20, hwnd, HMENU(IDS_LISTBOX_USER_DEL), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				}
+ 
+				{
+					CreateWindow(L"BUTTON", 
+						L"",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						380, 140, 250, 140, hwnd, NULL,
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					CreateWindow(L"STATIC", 
+						L"User", WS_CHILD | WS_VISIBLE ,
+						390, 160, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"STATIC", 
+						L"Group", WS_CHILD | WS_VISIBLE ,
+						390, 190, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					hUserModText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER |ES_READONLY,
+						440, 160, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					hGroupModText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER |ES_READONLY,
+						440, 190, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					
+					//Enable
+					CreateWindow(L"BUTTON", 
+						L"UserMod", WS_CHILD | WS_VISIBLE ,
+						520, 220, 100, 20, hwnd, HMENU(IDS_USER_MOD),  
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				}
+				{
+					/*
+					CreateWindow(L"BUTTON", 
+						L"",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						380, 140, 250, 140, hwnd, NULL,
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+					CreateWindow(L"STATIC", 
+						L"Header", WS_CHILD | WS_VISIBLE ,
+						390, 160, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"STATIC", 
+						L"From", WS_CHILD | WS_VISIBLE ,
+						390, 190, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"STATIC", 
+						L"To", WS_CHILD | WS_VISIBLE ,
+						390, 220, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 160, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 190, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 220, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"BUTTON", 
+						L"UserBetchAdd", WS_CHILD | WS_VISIBLE ,
+						520, 250, 100, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);*/
+ 
+				}
+				{
+					/*
+					CreateWindow(L"BUTTON", 
+						L"",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						380, 280, 250, 145, hwnd, NULL,
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"STATIC", 
+						L"New", WS_CHILD | WS_VISIBLE ,
+						390, 300, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"STATIC", 
+						L"Check", WS_CHILD | WS_VISIBLE ,
+						390, 330, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 300, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						440, 330, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"BUTTON", 
+						L"PasswordChange", WS_CHILD | WS_VISIBLE ,
+						490, 360, 130, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ */
+ 
+				}
+ 
+				{
+					
+ 
+					shellgrouoppget();				
+					//shelluserpget();
+ 
+					//SetFocus (hGroupList) ;	
+				}
+ 
+			}
+		}
+		break;
+		case WM_COMMAND:
+		// 剖析功能表選取項目:
+		switch (LOWORD(wParam))
+		{
+			GroupEventer::GroupNumberID  = SendMessage (hGroupList, LB_GETCURSEL, 0, 0) ;
+
+		case ID_MYBUTTON:
+			{		
+				if (GROUPUSERbChangeText)
+ { 
+					hMenu = GetMenu(hwnd); 					
+					ModifyMenu(hMenu, ID_MYBUTTON, MF_STRING, ID_MYBUTTON, L"一般層級"); 
+					SetMenu(hwnd, hMenu);	
+					SetWindowPos(hwnd,HWND_TOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);														
+ }
+ else
+ {									
+					hMenu = GetMenu(hwnd); 					
+					ModifyMenu(hMenu, ID_MYBUTTON, MF_STRING, ID_MYBUTTON, L"總是顯示在最上層"); 
+					SetMenu(hwnd, hMenu);					
+					SetWindowPos(hwnd,HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+ }
+ GROUPUSERbChangeText = !GROUPUSERbChangeText;
+			}
+			break;
+			/*
+			hFontList = CreateWindow(L"LISTBOX",NULL,
+						WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
+ LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
+						x, 30, 160, 365, hwnd, HMENU(IDS_LISTBOX_GROUP), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+			hGroupText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						x, 395, 160, 20, hwnd, HMENU(ID_LB_GETTEXT), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+			//if(HIWORD(wParam)==LBN_DBLCLK)
+ 
+ 
+ 
+			hUserText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						x, 395, 160, 20, hwnd, HMENU(ID_LB_USER_GETTEXT), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+			*/
+			
+		case IDS_LISTBOX_GROUP://bear1
+			{	//LBN_DBLCLK
+				if(HIWORD(wParam)==LBN_SELCHANGE)
+				{					
+					if (LB_ERR == (GroupEventer::GroupNumberID = SendMessage (hGroupList, LB_GETCURSEL, 0, 0L)))
+					break ;
+ 
+					shellgrouoppget();
+					/*
+					TCHAR lpString[128]; 
+					//GetWindowText(hUserText,lpString,128); 					
+					SendMessage (hGroupList, LB_GETTEXT, GroupEventer::GroupNumberID, (LPARAM) lpString) ;					 
+					SetWindowText(hGroupText,lpString);	
+					SetWindowText(hGroupModText,lpString);	
+					
+					CGlobal::GroupName = lpString;
+ 
+					//
+					const int NumberMax = 30000;
+					char strText[NumberMax];
+					TCHAR wstrText[128];
+					WCHAR wstrGidText[NumberMax];
+					//SendMessage (hGroupList, LB_RESETCONTENT, 0, 0) ;
+ 
+					CGlobal::Setstr = L"GroupList";
+ 
+					const char* fn = "Setting.cfg";
+					std::vector<char> read;
+					readTheWholeFile(fn, read);	
+					std::string   s(read.begin(),read.end());		
+					std::string gg = "IpAddress = ";
+					int abc = s.find_last_of(gg);	
+					//trim(s.substr(abc)).c_str()
+					boost::asio::io_service io_service;
+					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+					boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+					io_service.run();
+													
+
+					WideCharToMultiByte ( CP_ACP, 0, CGlobal::Getstr.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+ 	
+					std::wstring ad;
+					vector<string> vt;
+					split(strText, vt);
+						for (size_t i = 0; i < vt.size(); ++ i)
+						{ 		
+							std::string gg = ",";
+							int abc = vt[i].find_last_of(gg); 
+							MultiByteToWideChar( CP_ACP, 0, vt[i].substr(0,abc).c_str(), -1, wstrText, NumberMax );
+							
+							if(UNICODEtoANSI(lpString) == UNICODEtoANSI(wstrText))
+							{
+								MultiByteToWideChar( CP_ACP, 0, vt[i].substr(abc + 1).c_str(), -1, wstrGidText, NumberMax );	
+								//OutputDebugString(wstrGidText);
+								ad = wstrGidText;// L"1000";
+							}
+						}						
+					
+					shelluserpget(ad);
+					*/
+ 
+					// ShowScrollBar(hwnd,SB_HORZ, TRUE); 
+					//OutputDebugString(TEXT("IDS_LISTBOX_GROUP\n"));
+				}
+					
+ 
+			}
+			break;	
+		case IDS_LISTBOX_GROUP_ADD:
+			{			
+				TCHAR lpString[128]; 
+				GetWindowText(hGroupEditText,lpString,128); 	
+				GrouopAdd(lpString);		
+			}
+			break;
+		case IDS_LISTBOX_GROUP_DEL:
+			{			
+				TCHAR lpString[128]; 
+				GetWindowText(hGroupEditText,lpString,128); 	
+				GrouopDel(lpString);		
+			}
+			break;	
+					
+		case IDS_LISTBOX_USER_ADD:
+			{			
+				TCHAR lpString[128]; 
+				GetWindowText(hUserEditText,lpString,128); 
+				char bh[128];
+				for(int i=0;i<128;i++)
+					bh[i] = (char)lpString[i];
+				//MessageBox(NULL,lpString,TEXT("test"),MB_OK);
+				
+				if(CGlobal::GroupName.c_str() == L"")
+				{
+				}
+				else
+				{
+					
+					if(strcmp(bh,"") == 0)
+					{
+					}
+					else
+					{
+						UserAdd(lpString);
+					}
+				
+				}
+				
+			}
+			break;			
+		case IDS_LISTBOX_USER_DEL:
+			{			
+				TCHAR lpString[128]; 
+				GetWindowText(hUserEditText,lpString,128); 
+				char bh[128];
+				for(int i=0;i<128;i++)
+					bh[i] = (char)lpString[i];
+				//MessageBox(NULL,lpString,TEXT("test"),MB_OK);
+				
+				if(CGlobal::GroupName.c_str() == L"")
+				{
+				}
+				else
+				{
+					
+					if(strcmp(bh,"") == 0)
+					{
+					}
+					else
+					{
+						UserDel(lpString);
+					}
+				
+				}
+				
+			}
+			break;
+		case IDS_LISTBOX_USER://bear2
+			{	//LBN_DBLCLK
+				if(HIWORD(wParam)==LBN_SELCHANGE)
+				{					
+					if (LB_ERR == (UserNumberID = SendMessage (hUserList,LB_GETCURSEL, 0, 0L)))
+					break ;
+ 
+					TCHAR lpString[128]; 			
+					SendMessage (hUserList, LB_GETTEXT, UserNumberID, (LPARAM) lpString) ;					 
+					SetWindowText(hUserText,lpString);			
+					SetWindowText(hUserModText,lpString);			
+					
+				}
+					
+ 
+			}
+			break;	
+		
+		case IDS_USER_MOD:
+			{	
+				
+				TCHAR lpString[128]; 
+				GetWindowText(hUserModText,lpString,128); 
+				char bh[128];
+				for(int i=0;i<128;i++)
+					bh[i] = (char)lpString[i];
+				//MessageBox(NULL,lpString,TEXT("test"),MB_OK);
+				
+				if(CGlobal::GroupName.c_str() == L"")
+				{
+				}
+				else
+				{
+					
+					if(strcmp(bh,"") == 0)
+					{
+					}
+					else
+					{
+						UserMod(lpString);
+					}
+				
+				}
+				
+			
+			}
+			break;
+		default:
+			return DefWindowProc(hwnd, msg, wParam, lParam);
+		}
+		break;		
+		case WM_LBUTTONDOWN://RBUTTONDOWN: 
+		{			
+			OutputDebugString(TEXT("WM_DESTROY"));
+		}
+		return 0; /*
+		case WM_KEYUP:
+		{						
+			switch(wParam)
+			{
+				case VK_ESCAPE:
+				{ 					
+					SendMessage(hwnd, WM_CLOSE, NULL, NULL);
+				} 
+				break;			
+			} 
+		}
+		break;*/
+		case WM_PAINT:
+			hdc = BeginPaint(hwnd, &ps);
+			// TODO: 在此加入任何繪圖程式碼...
+			//TextOut(hdc,20,20,L"GROUPUSER",9);
+			EndPaint(hwnd, &ps);
+		break;
+		case WM_CLOSE:			
+			GroupEventer::GroupEventNumber = GroupEventer::GroupEventNumber - 1;
+			DestroyWindow(hwnd);
+			break; 
+		default:
+			return DefWindowProc(hwnd, msg, wParam, lParam);
+ }
+ return 0;
+ 
+ 
+}
+ 
+void RegisterDialogGROUPUSER_TITLE(HWND hwnd) 
+{
+ WNDCLASSEX wc = {0};
+ wc.cbSize = sizeof(WNDCLASSEX);
+ wc.lpfnWndProc = (WNDPROC) DialogProcGROUPUSER_TITLE;
+ wc.hInstance = hinst;
+ wc.hbrBackground = GetSysColorBrush(COLOR_3DFACE);
+ wc.lpszClassName = TEXT("DialogProcGROUPUSER_TITLE");
+ RegisterClassEx(&wc);
+ 
+	RECT rect; 
+	int ScreenWidth= GetSystemMetrics(SM_CXSCREEN); 
+	int ScreenHeight= GetSystemMetrics(SM_CYSCREEN); 
+	GetWindowRect(hwnd,&rect);
+	int width = rect.right-rect.left;
+	int height = rect.bottom-rect.top;
+ 
+ //WS_EX_DLGMODALFRAME 去掉視窗小圖示 | WS_EX_TOPMOST 總是在前
+ CreateWindowEx(WS_EX_APPWINDOW |WS_EX_DLGMODALFRAME | WS_EX_TOPMOST, TEXT("DialogProcGROUPUSER_TITLE"), TEXT("GROUPUSER"), 
+ WS_VISIBLE | WS_SYSMENU | WS_CAPTION , ScreenWidth/2-width/2, (ScreenHeight/2-height/2)+50, 640, 480, 
+ NULL, NULL, hinst, NULL);
+ 
+ GroupEventer::GroupEventNumber = GroupEventer::GroupEventNumber + 1; 
+}
+/*
+void GetDlgItemText(HWND a,int b)
+{	
+ int acolen = GetWindowTextLength(GetDlgItem(a, b));	
+ if(acolen > 0 && acolen < 19 )
+ {				
+ LPTSTR acobuf = (LPTSTR)GlobalAlloc(GPTR, acolen + 1);
+ GetDlgItemText(a, b, acobuf, acolen + 1);
+		*/
+ 
+		/*//輸入指令
+		std::wstring wTmp = L"";		
+		wTmp = boost::lexical_cast<wstring>( acobuf );		
+		//OutputDebugString(wTmp.c_str());				
+		CGlobal::Setstr = wTmp.c_str();
+		boost::asio::io_service io_service;
+				tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string("192.168.3.115"),8100);
+				boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+				io_service.run();				
+		shellgrouoppget();
+	*/	
+	/*
+				
+ if(acobuf == NULL){
+ MessageBox(a, L"error" ,L"Error" , MB_OK); 
+ }		
+ }
+ else
+ {
+		MessageBox(a, L"未輸入字元或超過18個字元" ,L"Error" , MB_OK);
+		//PostQuitMessage(0);
+ }	
+}*/
+ 
+void shellgrouoppget()
+{
+	const int NumberMax = 30000;
+	char strText[NumberMax];
+	WCHAR wstrText[NumberMax];
+	WCHAR wstrGidText[NumberMax];
+	SendMessage (hGroupList, LB_RESETCONTENT, 0, 0) ;
+ 
+	CGlobal::Setstr = L"GroupList";
+ 
+	
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+	//trim(s.substr(abc)).c_str()
+
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	WideCharToMultiByte ( CP_ACP, 0, CGlobal::Getstr.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+ 
+	
+	
+	vector<string> vt;
+	split(strText, vt);
+		for (size_t i = 0; i < vt.size(); ++ i)
+		{ 		
+			std::string gg = ",";
+			int abc = vt[i].find_last_of(gg);
+			 
+			MultiByteToWideChar( CP_ACP, 0, vt[i].substr(0,abc).c_str(), -1, wstrText, NumberMax );	 
+			MultiByteToWideChar( CP_ACP, 0, vt[i].substr(abc + 1).c_str(), -1, wstrGidText, NumberMax );			 
+			SendMessage(hGroupList,LB_ADDSTRING,0,(LPARAM)wstrText);		 
+		}	
+
+		
+		{
+			
+					TCHAR lpString[128]; 
+					//GetWindowText(hUserText,lpString,128); 					
+					SendMessage (hGroupList, LB_GETTEXT, GroupEventer::GroupNumberID, (LPARAM) lpString) ;					 
+					SetWindowText(hGroupText,lpString);	
+					SetWindowText(hGroupModText,lpString);	
+					CGlobal::GroupName = lpString;
+ 
+					//
+					const int NumberMax = 30000;
+					char strText[NumberMax];
+					TCHAR wstrText[128];
+					WCHAR wstrGidText[NumberMax];
+					//SendMessage (hGroupList, LB_RESETCONTENT, 0, 0) ;
+ 
+					CGlobal::Setstr = L"GroupList";
+ 
+					const char* fn = "Setting.cfg";
+					std::vector<char> read;
+					readTheWholeFile(fn, read);	
+					std::string   s(read.begin(),read.end());		
+					std::string gg = "IpAddress = ";
+					int abc = s.find_last_of(gg);	
+					//trim(s.substr(abc)).c_str()
+					boost::asio::io_service io_service;
+					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+					boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+					io_service.run();
+					
+					
+
+					WideCharToMultiByte ( CP_ACP, 0, CGlobal::Getstr.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+ 	
+					std::wstring ad;
+					vector<string> vt;
+					split(strText, vt);
+						for (size_t i = 0; i < vt.size(); ++ i)
+						{ 		
+							std::string gg = ",";
+							int abc = vt[i].find_last_of(gg); 
+							MultiByteToWideChar( CP_ACP, 0, vt[i].substr(0,abc).c_str(), -1, wstrText, NumberMax );
+							
+							if(UNICODEtoANSI(lpString) == UNICODEtoANSI(wstrText))
+							{
+								MultiByteToWideChar( CP_ACP, 0, vt[i].substr(abc + 1).c_str(), -1, wstrGidText, NumberMax );	
+								//OutputDebugString(wstrGidText);
+								ad = wstrGidText;// L"1000";
+							}
+						}						
+				//bear00 找不到被d掉的群組gid
+
+						shelluserpget(ad);
+						
+		std::wstring wTmp = L"";		
+		wTmp = boost::lexical_cast<wstring>( ad );		
+		OutputDebugString(wTmp.c_str());		
+
+		}
+		
+			SendMessage (hGroupList, LB_SETCURSEL, GroupEventer::GroupNumberID, 0) ;
+		//	SendMessage (hGroupList, WM_SETREDRAW, TRUE, 0) ;
+		
+ ProgramGetGroupList();
+ 
+}
+	
+void shelluserpget(std::wstring wstr)
+{
+	const int NumberMax = 30000;
+	char strText[NumberMax];
+	WCHAR wstrText[NumberMax];
+	SendMessage (hUserList, LB_RESETCONTENT, 0, 0) ;
+ 
+ //"cat /etc/passwd | awk 'BEGIN {FS=\":\"} $4=="+ wstr  +=" {print $1\",\"$4}'";
+	CGlobal::Setstr = L"UserList";
+	CGlobal::Setstr += wstr;
+ 
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+	//trim(s.substr(abc)).c_str()
+
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	WideCharToMultiByte ( CP_ACP, 0, CGlobal::Getstr.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+
+	vector<string> vt;
+	split(strText, vt);
+	for (size_t i = 0; i < vt.size(); ++ i)
+	{
+		std::string gg = ",";
+		int abc = vt[i].find_last_of(gg); 
+		MultiByteToWideChar( CP_ACP, 0, vt[i].erase(abc).c_str(), -1, wstrText, NumberMax );	
+		//MultiByteToWideChar( CP_ACP, 0, vt[i].c_str(), -1, wstrText, NumberMax );	 
+		//lCount = SendDlgItemMessage(hWnd, IDC_LIST1, LB_GETCOUNT, 0, 0);
+		SendMessage(hUserList,LB_ADDSTRING,0,(LPARAM)wstrText); 		 
+	}	 
+}
+
+
+void GrouopAdd(std::wstring wstr)
+{  	
+		
+	CGlobal::Setstr = L"groupadd";
+
+	vector<string> vt;
+    bhja1("!,@,#,$,%,^,&,*,(,),-,+,=,\",\',{,},[,],\\,|,`,~,\r,\n,\t, ", vt);
+    for (size_t i = 0; i < vt.size(); ++ i)
+    {
+		char bbd;		
+		bbd = boost::lexical_cast<char>( vt[i].c_str() );
+		wstr.erase(remove(wstr.begin(), wstr.end(), bbd), wstr.end());			
+    }
+
+	CGlobal::Setstr += wstr;
+ 	 
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	
+	GroupUserUpdate();
+	shellgrouoppget();	
+	
+}
+
+void GrouopDel(std::wstring wstr)
+{  	
+		
+	CGlobal::Setstr = L"groupdel";
+	
+	vector<string> vt;
+    bhja1("!,@,#,$,%,^,&,*,(,),-,+,=,\",\',{,},[,],\\,|,`,~,\r,\n,\t, ", vt);
+    for (size_t i = 0; i < vt.size(); ++ i)
+    {
+		char bbd;		
+		bbd = boost::lexical_cast<char>( vt[i].c_str() );
+		wstr.erase(remove(wstr.begin(), wstr.end(), bbd), wstr.end());			
+    }
+
+	CGlobal::Setstr += wstr;
+ 	 
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	
+	GroupUserUpdate();
+	shellgrouoppget();	
+	
+}
+
+void UserAdd(std::wstring wstr)
+{  			
+	CGlobal::Setstr = L"UserAdd ";	
+	CGlobal::Setstr += CGlobal::GroupName;
+	CGlobal::Setstr += L" ";
+	
+	vector<string> vt;
+    bhja1("!,@,#,$,%,^,&,*,(,),-,+,=,\",\',{,},[,],\\,|,`,~,\r,\n,\t, ", vt);
+    for (size_t i = 0; i < vt.size(); ++ i)
+    {
+		char bbd;		
+		bbd = boost::lexical_cast<char>( vt[i].c_str() );
+		wstr.erase(remove(wstr.begin(), wstr.end(), bbd), wstr.end());			
+    }
+
+	CGlobal::Setstr += wstr;
+
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	
+	GroupUserUpdate();
+	shellgrouoppget();	
+	
+}
+
+void UserDel(std::wstring wstr)
+{  			
+//	CGlobal::Setstr = L"UserDel";	
+//	CGlobal::Setstr += wstr;
+	
+	vector<string> vt;
+    bhja1("!,@,#,$,%,^,&,*,(,),-,+,=,\",\',{,},[,],\\,|,`,~,\r,\n,\t, ", vt);
+    for (size_t i = 0; i < vt.size(); ++ i)
+    {
+		char bbd;		
+		bbd = boost::lexical_cast<char>( vt[i].c_str() );
+		wstr.erase(remove(wstr.begin(), wstr.end(), bbd), wstr.end());			
+    }
+	
+	CGlobal::Setstr = L"UserDel ";	
+	CGlobal::Setstr += CGlobal::GroupName;
+	CGlobal::Setstr += L" ";
+	CGlobal::Setstr += wstr;
+
+
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	
+	GroupUserUpdate();
+	shellgrouoppget();	
+	
+}
+void GroupUserUpdate()
+{
+	CGlobal::Setstr = L"update"; 
+	
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+}
+
+void UserMod(std::wstring wstr)
+{  		
+	CGlobal::Setstr = L"UserMod ";	
+	CGlobal::Setstr += CGlobal::GroupName;
+	CGlobal::Setstr += L" ";
+	CGlobal::Setstr += wstr;
+
+	//MessageBox(NULL,CGlobal::Setstr.c_str(),TEXT("test"),MB_OK);
+
+	
+
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	
+	GroupUserUpdate();
+	shellgrouoppget();	
+	
+}

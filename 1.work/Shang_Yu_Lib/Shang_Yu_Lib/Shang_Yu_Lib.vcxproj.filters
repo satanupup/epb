@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="原始程式檔">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="computer_Info">
+      <UniqueIdentifier>{ae45528b-4822-4b22-81af-7150e7df77be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Consloe">
+      <UniqueIdentifier>{815fdda8-0698-46f1-b24f-e6b7c609cc3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DeBug_Tools">
+      <UniqueIdentifier>{ef743584-2822-40ac-a6c2-3c0c62c650a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gui">
+      <UniqueIdentifier>{664e2662-51cb-4c98-ae34-ae31c563e3c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hivetst">
+      <UniqueIdentifier>{307dbe2b-f2e8-4085-af93-108e5de3e9fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pross_&amp;_mem">
+      <UniqueIdentifier>{3de1c63e-6ede-4ffd-a2d6-f976761ee655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="reg_crl">
+      <UniqueIdentifier>{6b46a43e-6f6d-4b80-bce9-425a9e0cd54f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_crl">
+      <UniqueIdentifier>{5d9e4106-5ac1-4391-bb29-2dc37df95320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win權限控制">
+      <UniqueIdentifier>{5b3a6d21-84fa-44a5-8287-254cd813f28b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="applay_entry.h">
+      <Filter>原始程式檔</Filter>
+    </ClInclude>
+    <ClInclude Include="cfg_str.h">
+      <Filter>原始程式檔</Filter>
+    </ClInclude>
+    <ClInclude Include="command_str_mapper.h">
+      <Filter>原始程式檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Ph_kernal.h">
+      <Filter>原始程式檔</Filter>
+    </ClInclude>
+    <ClInclude Include="phc_tst.h">
+      <Filter>原始程式檔</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>原始程式檔</Filter>
+    </ClInclude>
+    <ClInclude Include="computer_Info\PH_Get_Info.h">
+      <Filter>computer_Info</Filter>
+    </ClInclude>
+    <ClInclude Include="computer_Info\PH_Get_Info_fun.h">
+      <Filter>computer_Info</Filter>
+    </ClInclude>
+    <ClInclude Include="DeBug_Tools\command.h">
+      <Filter>DeBug_Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="DeBug_Tools\command_func.h">
+      <Filter>DeBug_Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="hivetst\offreg.h">
+      <Filter>hivetst</Filter>
+    </ClInclude>
+    <ClInclude Include="pross_&amp;_mem\pross_mem.h">
+      <Filter>pross_&amp;_mem</Filter>
+    </ClInclude>
+    <ClInclude Include="pross_&amp;_mem\pross_mem_fun.h">
+      <Filter>pross_&amp;_mem</Filter>
+    </ClInclude>
+    <ClInclude Include="reg_crl\Registr_Filter.h">
+      <Filter>reg_crl</Filter>
+    </ClInclude>
+    <ClInclude Include="reg_crl\Registr_Filter_fun.h">
+      <Filter>reg_crl</Filter>
+    </ClInclude>
+    <ClInclude Include="server_crl\server_crl_fun.h">
+      <Filter>server_crl</Filter>
+    </ClInclude>
+    <ClInclude Include="win權限控制\permission_crl.h">
+      <Filter>win權限控制</Filter>
+    </ClInclude>
+    <ClInclude Include="win權限控制\permission_crl_fun.h">
+      <Filter>win權限控制</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="command_mapj.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="LinKToData.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="network_crl.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="startunit.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="加密器.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="computer_Info\PH_Get_Info.cpp">
+      <Filter>computer_Info</Filter>
+    </ClCompile>
+    <ClCompile Include="Consloe\Color_crl.cpp">
+      <Filter>Consloe</Filter>
+    </ClCompile>
+    <ClCompile Include="DeBug_Tools\command.cpp">
+      <Filter>DeBug_Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="DeBug_Tools\Log_out.cpp">
+      <Filter>DeBug_Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\gui_crl.cpp">
+      <Filter>gui</Filter>
+    </ClCompile>
+    <ClCompile Include="hivetst\hivetst.cpp">
+      <Filter>hivetst</Filter>
+    </ClCompile>
+    <ClCompile Include="pross_&amp;_mem\pross_&amp;_mem.cpp">
+      <Filter>pross_&amp;_mem</Filter>
+    </ClCompile>
+    <ClCompile Include="reg_crl\Reg_Input_Output.cpp">
+      <Filter>reg_crl</Filter>
+    </ClCompile>
+    <ClCompile Include="reg_crl\Registr_Filter.cpp">
+      <Filter>reg_crl</Filter>
+    </ClCompile>
+    <ClCompile Include="server_crl\server_crl.cpp">
+      <Filter>server_crl</Filter>
+    </ClCompile>
+    <ClCompile Include="win權限控制\permission_crl.cpp">
+      <Filter>win權限控制</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

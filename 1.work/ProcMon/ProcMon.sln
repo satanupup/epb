@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsCtl", "ConsCtl\ConsCtl.vcxproj", "{28F9AF20-A953-4C15-C611-71387BF92847}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProcObsrv", "ProcObsrv\ProcObsrv.vcxproj", "{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		Template|Win32 = Template|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28F9AF20-A953-4C15-C611-71387BF92847}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28F9AF20-A953-4C15-C611-71387BF92847}.Debug|Win32.Build.0 = Debug|Win32
+		{28F9AF20-A953-4C15-C611-71387BF92847}.Release|Win32.ActiveCfg = Release|Win32
+		{28F9AF20-A953-4C15-C611-71387BF92847}.Release|Win32.Build.0 = Release|Win32
+		{28F9AF20-A953-4C15-C611-71387BF92847}.Template|Win32.ActiveCfg = Release|Win32
+		{28F9AF20-A953-4C15-C611-71387BF92847}.Template|Win32.Build.0 = Release|Win32
+		{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}.Debug|Win32.Build.0 = Debug|Win32
+		{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}.Release|Win32.ActiveCfg = Release|Win32
+		{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}.Release|Win32.Build.0 = Release|Win32
+		{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}.Template|Win32.ActiveCfg = Template|Win32
+		{A4AEB6B8-3CDB-DA70-7D29-5171A3ADA250}.Template|Win32.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

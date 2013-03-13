@@ -1,0 +1,38 @@
+#ifndef _jge_keymap_define_20080207am0304_
+#define _jge_keymap_define_20080207am0304_
+_JGE_BEGIN
+
+//////////////////////////////////////////////////////////////////////////
+namespace KeyMapDefine
+{
+	enum
+	{
+		//鍵盤
+		KB_NULL
+		,KB_ESC,KB_ENTER,KB_NUMENTER,KB_NUMLOCK
+		,KB_F1,KB_F2,KB_F3,KB_F4,KB_F5,KB_F6,KB_F7,KB_F8,KB_F9,KB_F10,KB_F11,KB_F12
+		,KB_1,KB_2,KB_3,KB_4,KB_5,KB_6,KB_7,KB_8,KB_9,KB_0
+		,KB_A,KB_B,KB_C,KB_D,KB_E,KB_F,KB_G,KB_H,KB_I,KB_J,KB_K,KB_L,KB_M,KB_N,KB_O,KB_P,KB_Q
+		,KB_R,KB_S,KB_T,KB_U,KB_V,KB_W,KB_X,KB_Y,KB_Z
+		,KB_SPACE,KB_BACKSPACE,KB_CAPS,KB_TAB
+		,KB_LCTRL,KB_LALT,KB_LSHIFT,KB_LWINDOW,KB_RCTRL,KB_RALT,KB_RSHIFT,KB_RWINDOW
+		,KB_UP,KB_DOWN,KB_LEFT,KB_RIGHT
+		,KB_INS,KB_DEL,KB_HOME,KB_END,KB_PAGEUP,KB_PAGEDOWN
+		,KB_PRINT,KB_SCROLL,KB_PAUSE
+		,KB_NUM0,KB_NUM1,KB_NUM2,KB_NUM3,KB_NUM4,KB_NUM5,KB_NUM6,KB_NUM7,KB_NUM8,KB_NUM9
+		/*
+		還有所有的 + - * / . \ ` ; ' [ ] , =還沒定義...
+		*/
+		//滑鼠
+		,MS_LIFT,MS_CENTER,MS_RIGHT
+		,MS_SCROLL_MUP,MS_SCROLL_MDOWN,MS_SCROLL_PRESS,MS_SCROLL_UP
+		//搖桿
+
+		,Count
+
+	};
+};
+_JGE_END
+
+#define JGEKEY JGE::KeyMapDefine
+#endif

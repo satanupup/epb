@@ -1,0 +1,547 @@
+#include "stdafx.h"
+
+int ProgramEventer::ProgramEventNumber = 0;
+int ProgramEventer::ProgramNumberID = 0;
+int ProgramEventer::ProgramProgramNumberID = 0;
+int ProgramEventer::GetCountSoftware = 0;
+
+std::wstring ProgramEventer::GetAPPNameAPPON = L"";
+std::wstring ProgramEventer::ProgramGroupName = L"";
+std::wstring ProgramEventer::GetAPPName = L"";
+
+int bb(const std::string& str, vector<std::string>& ret_, std::string sep = "\n")
+{
+	 if (str.empty())
+	 {
+		return 0;
+	 }
+ 
+	 string tmp;
+	 string::size_type pos_begin = str.find_first_not_of(sep);
+	 string::size_type comma_pos = 0;
+ 
+	 while (pos_begin != string::npos)
+	 {
+		 comma_pos = str.find(sep, pos_begin);
+		 if (comma_pos != string::npos)
+		 {
+			 tmp = str.substr(pos_begin, comma_pos - pos_begin);
+			 pos_begin = comma_pos + sep.length();
+		 }
+		 else
+		 {
+			 tmp = str.substr(pos_begin);
+			 pos_begin = comma_pos;
+		 }
+ 
+		 if (!tmp.empty())
+		 {
+			 ret_.push_back(tmp);
+			 tmp.clear();
+		 }
+	 }
+	 return 0;
+}
+
+LRESULT CALLBACK DialogProcPROGRAM_TITLE( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+	static bool PROGRAMbChangeText = true;
+	PAINTSTRUCT ps;
+	HDC hdc; 
+	HMENU hMenu, hSubMenu;
+	switch(msg)  
+	{
+		case WM_CREATE:	 
+		{				
+			
+			hMenu = CreateMenu();
+			hSubMenu = CreatePopupMenu();
+			AppendMenu(hSubMenu, MF_SEPARATOR, 0, NULL);			
+			AppendMenu(hMenu, MF_STRING, (UINT)ID_MYBUTTON, L"總是顯示在最上層");
+			SetMenu(hwnd, hMenu);	
+			DestroyMenu(hSubMenu);
+
+			SetWindowPos(hwnd,HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+
+			{//group
+					int x = 15;
+ 
+				CreateWindow(L"BUTTON", 
+						L"",
+						WS_CHILD | WS_VISIBLE |BS_GROUPBOX	,
+						5, 0, 370, 425, hwnd, NULL,
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+				CreateWindow(L"STATIC", 
+						L"Group", WS_CHILD | WS_VISIBLE,
+						x, 11, 60, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);			
+ 
+				hProgramGroupList = CreateWindow(L"LISTBOX",NULL,
+						WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
+ LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
+						x, 30, 160, 365, hwnd, HMENU(IDS_LISTBOX_PROGRAM_GROUP), 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+ 
+				hProgramGroupText = CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+						x, 395, 160, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				}
+				{//user
+					int x = 200;
+				CreateWindow(L"STATIC", 
+						L"Programs", WS_CHILD | WS_VISIBLE,
+						x, 11, 80, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				hProgramView = CreateWindow(WC_LISTVIEW, NULL, 
+					WS_CHILD | WS_VISIBLE | 
+					LVS_TYPEMASK | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP ,
+						x, 30, 160, 355, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				hProgramGroupProgramText = CreateWindow(L"EDIT", 
+							L"", WS_CHILD | WS_VISIBLE | WS_BORDER,
+							x, 395, 160, 20, hwnd, NULL, 
+							((LPCREATESTRUCT)lParam)->hInstance,
+							NULL);
+				/*
+				CreateWindow(L"EDIT", 
+						L"", WS_CHILD | WS_VISIBLE| WS_BORDER |ES_READONLY,
+						400, 30, 180, 20, hwnd, NULL, 
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				*/
+					//Enable
+					CreateWindow(L"BUTTON", 
+						L"儲存勾選結果", WS_CHILD | WS_VISIBLE ,
+						400, 30, 100, 20, hwnd, HMENU(IDS_SAVE_PROGRAM),  
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+					CreateWindow(L"BUTTON", 
+						L"刪除軟體", WS_CHILD | WS_VISIBLE ,
+						400, 60, 100, 20, hwnd, HMENU(IDS_APPDEL_PROGRAM),  
+						((LPCREATESTRUCT)lParam)->hInstance,
+						NULL);
+				}
+				{
+ 
+					ProgramGetGroupList();
+					InitListViewColumns(hProgramView);
+					
+				}
+		}
+		break;
+		case WM_COMMAND:
+		// 剖析功能表選取項目:
+		switch (LOWORD(wParam))
+		{
+			ProgramEventer::ProgramNumberID  = SendMessage (hProgramGroupList, LB_GETCURSEL, 0, 0) ;
+			ProgramEventer::ProgramProgramNumberID  = SendMessage (hProgramGroupProgramList, LB_GETCURSEL, 0, 0) ;
+			
+			
+		case ID_MYBUTTON:
+			{		
+				if (PROGRAMbChangeText)
+               { 
+					hMenu = GetMenu(hwnd); 					
+					ModifyMenu(hMenu, ID_MYBUTTON, MF_STRING, ID_MYBUTTON, L"一般層級"); 
+					SetMenu(hwnd, hMenu);	
+					SetWindowPos(hwnd,HWND_TOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);														
+               }
+               else
+               {									
+					hMenu = GetMenu(hwnd); 					
+					ModifyMenu(hMenu, ID_MYBUTTON, MF_STRING, ID_MYBUTTON, L"總是顯示在最上層"); 
+					SetMenu(hwnd, hMenu);					
+					SetWindowPos(hwnd,HWND_NOTOPMOST,0,0,0,0,SWP_NOMOVE|SWP_NOSIZE);
+               }
+               PROGRAMbChangeText = !PROGRAMbChangeText;
+			}
+			break;			
+		case IDS_SAVE_PROGRAM:
+			{								
+				const int NumberMax = 30000;
+				char strText[NumberMax];
+				WCHAR wstrText[NumberMax];
+				WideCharToMultiByte ( CP_ACP, 0, ProgramEventer::GetAPPNameAPPON.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+ 				
+				//分割伺服器傳來的字串	
+				vector<string> vt;
+				ProgramEventer::bb(strText, vt);
+				for (size_t i = 0; i < vt.size(); ++ i)
+				{ 		
+					std::string gg = ",";
+					int abc = vt[i].find_last_of(gg);
+			 
+					MultiByteToWideChar( CP_ACP, 0, vt[i].substr(0,abc).c_str(), -1, wstrText, NumberMax );	
+				
+					int dd;
+					dd = boost::lexical_cast<int>( vt[i].substr(abc+1).c_str() );		
+					
+					
+					std::wstring wTmp = L"";				
+					wTmp = boost::lexical_cast<wstring>( ListView_GetCheckState(hProgramView,i) );		
+					//MessageBox(NULL, wTmp.c_str() ,L"Error" , MB_OK); 
+					SoftwareTick(ProgramEventer::ProgramGroupName,wstrText,wTmp);
+			
+				}
+			}		
+			break;		
+		case IDS_APPDEL_PROGRAM:
+			{	
+				if(ProgramEventer::GetAPPName == L"")
+				{					
+				}
+				else
+				{
+
+					if(  MessageBox(NULL, ProgramEventer::GetAPPName.c_str() ,L"是否刪除軟體" , MB_OKCANCEL) == IDOK) 
+					{												
+						APPDel(ProgramEventer::GetAPPName);
+					}
+					else
+					{											
+					}
+				}
+			}		
+			break;
+		case IDS_LISTBOX_PROGRAM_GROUP:
+			{	//LBN_DBLCLK
+				if(HIWORD(wParam)==LBN_SELCHANGE)
+				{					
+					if (LB_ERR == (ProgramEventer::ProgramNumberID = SendMessage (hProgramGroupList, LB_GETCURSEL, 0, 0L)))
+					break ;											
+					
+					
+														
+					TCHAR lpString[128]; 				
+					SendMessage (hProgramGroupList, LB_GETTEXT, ProgramEventer::ProgramNumberID, (LPARAM) lpString) ;					 
+					SetWindowText(hProgramGroupText,lpString);										
+					ProgramEventer::ProgramGroupName = lpString;
+					
+					//選擇的群組傳給伺服器
+					//傳回軟體名稱及開關
+					SoftwareView(ProgramEventer::ProgramGroupName);
+				}
+			}
+			break;	
+		default:
+			return DefWindowProc(hwnd, msg, wParam, lParam);
+		}
+		break;	
+		case WM_NOTIFY:
+		{		
+			int nId = ::GetDlgCtrlID(hProgramView); 
+			NMITEMACTIVATE *pListViewState=(NMITEMACTIVATE *)lParam;
+			if(pListViewState->hdr.code==NM_CLICK)//NM_DBLCLK
+			{
+				ProgramEventer::ProgramProgramNumberID = pListViewState->iItem;
+				TCHAR lpString[128];
+				ListView_GetItemText(hProgramView,pListViewState->iItem,0,lpString,128);
+				SetWindowText(hProgramGroupProgramText,lpString);	
+				
+				ProgramEventer::GetAPPName = lpString;
+				//MessageBox(NULL,ProgramEventer::GetAPPName.c_str(),TEXT("test"),MB_OK);
+			} 
+		}
+		break;
+		case WM_PAINT:
+			hdc = BeginPaint(hwnd, &ps);
+			EndPaint(hwnd, &ps);
+		break;
+		case WM_CLOSE:
+			ProgramEventer::ProgramEventNumber = ProgramEventer::ProgramEventNumber - 1;
+			DestroyWindow(hwnd);
+			break;       
+		default:
+			return DefWindowProc(hwnd, msg, wParam, lParam);
+  }
+  return 0;
+  
+
+}
+
+
+void RegisterDialogPROGRAM_TITLE(HWND hwnd) 
+{
+  WNDCLASSEX wc = {0};
+  wc.cbSize           = sizeof(WNDCLASSEX);
+  wc.lpfnWndProc      = (WNDPROC) DialogProcPROGRAM_TITLE;
+  wc.hInstance        = hinst;
+  wc.hbrBackground    = GetSysColorBrush(COLOR_3DFACE);
+  wc.lpszClassName    = TEXT("DialogProcPROGRAM_TITLE");
+  RegisterClassEx(&wc);
+
+  RECT rect; 
+	int ScreenWidth= GetSystemMetrics(SM_CXSCREEN); 
+	int ScreenHeight= GetSystemMetrics(SM_CYSCREEN); 
+	GetWindowRect(hwnd,&rect);
+	int width = rect.right-rect.left;
+	int height = rect.bottom-rect.top;
+	   
+ //WS_EX_DLGMODALFRAME 去掉視窗小圖示 | WS_EX_TOPMOST 總是在前
+ CreateWindowEx(WS_EX_APPWINDOW |WS_EX_DLGMODALFRAME | WS_EX_TOPMOST, TEXT("DialogProcPROGRAM_TITLE"), TEXT("PROGRAM"), 
+ WS_VISIBLE | WS_SYSMENU | WS_CAPTION , ScreenWidth/2-width/2, (ScreenHeight/2-height/2)+50, 640, 480, 
+ NULL, NULL, hinst, NULL);
+
+ InitCommonControls();
+ ProgramEventer::ProgramEventNumber = ProgramEventer::ProgramEventNumber + 1; 
+}
+
+void ProgramGetGroupList()
+{
+	const int NumberMax = 65535;
+	char strText[NumberMax];
+	WCHAR wstrText[NumberMax];
+	SendMessage (hProgramGroupList, LB_RESETCONTENT, 0, 0) ;
+ 
+	CGlobal::Setstr = L"GroupList"; 	
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	WideCharToMultiByte ( CP_ACP, 0, CGlobal::Getstr.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+ 	
+	vector<string> vt;
+	ProgramEventer::bb(strText, vt);
+	for (size_t i = 0; i < vt.size(); ++ i)
+	{ 		
+		std::string gg = ",";
+		int abc = vt[i].find_last_of(gg);
+		 
+		MultiByteToWideChar( CP_ACP, 0, vt[i].substr(0,abc).c_str(), -1, wstrText, NumberMax );	 	 
+		SendMessage(hProgramGroupList,LB_ADDSTRING,0,(LPARAM)wstrText);		 
+	}	
+			 
+}
+
+BOOL InitListViewColumns(HWND hWndListView) 
+{     	
+	ShowWindow(hProgramView, SW_SHOW);
+	ListView_SetExtendedListViewStyle(hProgramView, ListView_GetExtendedListViewStyle(hProgramView)
+		| LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EX_CHECKBOXES);
+
+	
+	LVCOLUMN lvc;
+
+	// Insert column
+	int iCol = 0;	
+	lvc.mask = LVCF_FMT | LVCF_WIDTH | LVCF_SUBITEM;
+	lvc.iSubItem = iCol;	
+	lvc.pszText = L"Software";
+	lvc.fmt = LVCFMT_LEFT;   
+	lvc.cchTextMax=9;
+	lvc.cx = 160;   
+	lvc.iSubItem = 0;
+
+	if (ListView_InsertColumn(hProgramView, 0, &lvc)== -1)
+	{
+	OutputDebugString(L"ListView_InsertColumn failed.");
+	}
+		
+    return TRUE;
+} 
+void SoftwareView(std::wstring a)
+{	
+	const int NumberMax = 65535;	
+	char strText[NumberMax];
+	WCHAR wstrText[NumberMax];
+
+	CGlobal::Setstr = L"GetSoftwareName ";
+	CGlobal::Setstr += a;
+ 	 
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+ 
+	WideCharToMultiByte ( CP_ACP, 0, CGlobal::Getstr.c_str(), -1, strText, NumberMax, NULL, NULL ); 
+ //MessageBox(NULL, CGlobal::Getstr.c_str(),TEXT("test"),MB_OK);
+	ProgramEventer::GetAPPNameAPPON = CGlobal::Getstr.c_str();
+	LVITEM LvItem;
+	SendMessage(hProgramView, LVM_DELETEALLITEMS, 0, LPARAM(&LvItem));
+	//分割伺服器傳來的字串	
+	vector<string> vt;
+	ProgramEventer::bb(strText, vt);
+	ProgramEventer::GetCountSoftware = vt.size();
+		for (size_t i = 0; i < vt.size(); ++ i)
+		{ 		
+			std::string gg = ",";
+			int abc = vt[i].find_last_of(gg);
+			 
+			MultiByteToWideChar( CP_ACP, 0, vt[i].substr(0,abc).c_str(), -1, wstrText, NumberMax );	
+					
+			int dd;
+			dd = boost::lexical_cast<int>( vt[i].substr(abc+1).c_str() );		
+						
+
+			SetView(wstrText,LvItem,i);	
+			ListView_SetCheckState(hProgramView, i, dd);
+			
+		}	
+		
+}
+void SetView(std::wstring a,LVITEM LvItem,int iCol)
+{		
+	// Insert item
+	LvItem.mask = LVIF_TEXT | LVIF_STATE;
+	LvItem.state = 0;   
+	LvItem.stateMask = 0;  
+	LvItem.iSubItem = 0;
+	LvItem.cchTextMax = 64;
+	LvItem.pszText = (LPWSTR)a.c_str();  
+	LvItem.iItem = iCol;
+	
+		//SendMessage(hProgramViw, LVM_INSERTITEM, 0, LPARAM(&item));
+	if (ListView_InsertItem(hProgramView, &LvItem) == -1)
+	{
+	OutputDebugString(L"ListView_InsertItem failed.");
+	}
+}
+
+int crrtest(const string& str, vector<string>& ret_, string sep = ",")
+{
+	 if (str.empty())
+	 {
+		return 0;
+	 }
+ 
+	 string tmp;
+	 string::size_type pos_begin = str.find_first_not_of(sep);
+	 string::size_type comma_pos = 0;
+ 
+	 while (pos_begin != string::npos)
+	 {
+		 comma_pos = str.find(sep, pos_begin);
+		 if (comma_pos != string::npos)
+		 {
+			 tmp = str.substr(pos_begin, comma_pos - pos_begin);
+			 pos_begin = comma_pos + sep.length();
+		 }
+		 else
+		 {
+			 tmp = str.substr(pos_begin);
+			 pos_begin = comma_pos;
+		 }
+ 
+		 if (!tmp.empty())
+		 {
+			 ret_.push_back(tmp);
+			 tmp.clear();
+		 }
+	 }
+	 return 0;
+}
+void SoftwareTick(std::wstring a,std::wstring b,std::wstring c)
+{
+	CGlobal::Setstr = L"SoftwareTick ";
+	CGlobal::Setstr += a;
+	CGlobal::Setstr += L" ";
+	CGlobal::Setstr += b;
+	CGlobal::Setstr += L" ";
+	CGlobal::Setstr += c;
+ 	 
+	
+	vector<string> vt;
+    crrtest("!,@,#,$,%,^,&,*,(,),-,+,=,\",\',{,},[,],\\,|,`,~,\r,\n,\t, ", vt);
+    for (size_t i = 0; i < vt.size(); ++ i)
+    {
+		char bbd;		
+		bbd = boost::lexical_cast<char>( vt[i].c_str() );
+		a.erase(remove(a.begin(), a.end(), bbd), a.end());			
+		b.erase(remove(b.begin(), b.end(), bbd), b.end());			
+		c.erase(remove(c.begin(), c.end(), bbd), c.end());			
+    }
+	
+
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run();
+}
+
+
+void APPDel(std::wstring wstr)
+{  	
+		
+	CGlobal::Setstr = L"APPDel ";	
+	CGlobal::Setstr += wstr;
+	
+	const char* fn = "Setting.cfg";
+	std::vector<char> read;
+	readTheWholeFile(fn, read);	
+	std::string   s(read.begin(),read.end());		
+	std::string gg = "IpAddress = ";
+	int abc = s.find_last_of(gg);	
+					
+	boost::asio::io_service io_service;
+	tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(trim(s.substr(abc)).c_str()),8100);
+	boost::shared_ptr<client> client_ptr(new client(io_service,endpoint));
+	io_service.run(); 
+	
+	SoftwareView(ProgramEventer::ProgramGroupName);
+}
+
+int ProgramEventer::bb(const std::string& str, std::vector<std::string>& ret_)
+{
+	 std::string sep;
+	sep = "\n";
+	 if (str.empty())
+	 {
+		return 0;
+	 }
+ 
+	 string tmp;
+	 string::size_type pos_begin = str.find_first_not_of(sep);
+	 string::size_type comma_pos = 0;
+ 
+	 while (pos_begin != string::npos)
+	 {
+		 comma_pos = str.find(sep, pos_begin);
+		 if (comma_pos != string::npos)
+		 {
+			 tmp = str.substr(pos_begin, comma_pos - pos_begin);
+			 pos_begin = comma_pos + sep.length();
+		 }
+		 else
+		 {
+			 tmp = str.substr(pos_begin);
+			 pos_begin = comma_pos;
+		 }
+ 
+		 if (!tmp.empty())
+		 {
+			 ret_.push_back(tmp);
+			 tmp.clear();
+		 }
+	 }
+	 return 0;
+}

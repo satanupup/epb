@@ -1,0 +1,11 @@
+12-09-2012
+initial OpenGraphLib
+
+TODO:
+1.  provide api for adding lines, triangles and quads, multiple fonts, screen or position texts
+2.  select entities
+3.  chart style drawing - axis
+4.  Win32 client
+5.  COM interface or ActiveX
+6.  C++/CLI wrapper
+7.  .NET client

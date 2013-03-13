@@ -1,0 +1,4 @@
+#ifndef _jge_2dgraphics_20080126pm0532_
+#define _jge_2dgraphics_20080126pm0532_
+
+#endif
