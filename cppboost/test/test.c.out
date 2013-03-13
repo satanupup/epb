@@ -1,0 +1,41 @@
+#include "AddShell.h"
+//=========
+// main.c
+//=========
+
+void main()
+{
+	FILE *infile;
+	infile = fopen(z00000000(), z00000001());
+	if (infile == NULL) 
+	{
+		printf(z00000002());
+		return;
+	}
+
+	const char delim[] = z00000003();
+	char line[LenLong];
+	char str[LenLong];
+	while (!feof(infile))
+	{
+		if (fgets(line, LenLong, infile)!= NULL)
+		{
+			printf(z00000004(), line);
+			printf(z00000005());
+			strcpy(str, line);
+			StrSplit_Gen(str);
+			printf(z00000006());
+		}
+	}
+	fclose(infile);
+
+	char teststr[LenShort];
+	sprintf(teststr,z00000007());
+	printf(teststr, z00000008(), z00000009());
+	
+	char *ppp=(char *)zz00000000();
+	printf(ppp, z00000010());
+	printf((char *)zz00000000(), z00000011());
+	printf((char *)zz00000000(), z00000012());
+	printf(z00000013());
+}

@@ -1,0 +1,11 @@
+g++ -o IronShell main.cpp IronShell.cpp
+
+./IronShell server.cpp
+
+cp server.cpp.out server1.cpp  
+
+g++ -o server server1.cpp AddShell.cpp -I'/root/bearc/boost_1_48_0' -L'/usr/local/lib' -lboost_system-gcc44-mt-1_48 -lboost_date_time-gcc44-mt-1_48 -lboost_thread-gcc44-mt-1_48 -lboost_filesystem-gcc44-mt-1_48 -lsqlite3 -ldl
+
+cp server /root/bearc/cppboost/server
+
+echo OK!

@@ -1,0 +1,12 @@
+g++ -o IronShell main.cpp IronShell.cpp
+
+./IronShell server.cpp
+
+cp server.cpp.out server1.cpp  
+
+g++ -o server server1.cpp AddShell.cpp  -lboost_system -lboost_date_time -lboost_thread -lboost_filesystem -lsqlite3 -ldl
+
+
+cp server /root/bearc/cppboost/server
+
+echo OK!

@@ -1,0 +1,54 @@
+#include <boost/asio.hpp>
+#include <boost/bind.hpp>
+#include <boost/shared_ptr.hpp>
+#include <boost/enable_shared_from_this.hpp>
+#include <iostream>
+
+using boost::asio::ip::tcp;
+#define max_len 1024
+
+class clientSession
+        :public boost::enable_shared_from_this<clientSession>
+{
+public:
+    clientSession(boost::asio::io_service& ioservice):m_socket(ioservice)
+    {
+        memset(data_, 0, sizeof(data_));
+    }
+    ~clientSession()
+    {
+    }
+    tcp::socket& socket()
+    {
+        return m_socket;
+    }
+    void start()
+    {
+        boost::asio::async_write(m_socket,
+        boost::asio::buffer("link successed!"),
+        boost::bind(&clientSession::handle_write,shared_from_this(),
+        boost::asio::placeholders::error));
+
+        m_socket.async_read_some(boost::asio::buffer(data_,max_len),
+            boost::bind(&clientSession::handle_read,shared_from_this(),
+            boost::asio::placeholders::error));
+    }
+private:
+    void handle_write(const boost::system::error_code& error)
+    {
+        if(error)
+        {
+            m_socket.close();
+        }
+    }
+    void handle_read(const boost::system::error_code& error)
+    {
+        if(!error)
+        {
+            std::cout <<  data_ << std::endl;
+			if(strcasecmp(data_, "cls") == 0)
+				system("clear");
+				std::cout << "aaaaaaa" << std::endl;
+			if(strcasecmp(data_, "b") == 0)
+			{
+				std::cout << "

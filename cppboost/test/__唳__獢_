@@ -1,0 +1,2 @@
+
+g++ -o server.cpp -I'/root/bearc/boost_1_48_0' -L'/usr/local/lib' -lboost_system-gcc44-mt-1_48 -lboost_date_time-gcc44-mt-1_48 -lboost_thread-gcc44-mt-1_48 -lboost_filesystem-gcc44-mt-1_48 -lsqlite3 -ldl
