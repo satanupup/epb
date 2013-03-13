@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#">
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"/>
+<title>satanupup 的小屋 - 巴哈姆特</title> 
+<META NAME="keywords" CONTENT="satanupup 的小屋">
+<META NAME="Description" CONTENT="">
+<link href="http://pic.bahamut.com.tw/css/BH.css?v=20121004" rel="stylesheet" type="text/css" /> 
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/sys.js?v=20110826"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/BAHA_EGG.js?v=2012081301"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/dreamweaver.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/rsearch.js?v=20100317"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/breadCrumbs.js?v=2012113001"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/viewGamerCard.js?v=2009121601"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/BH_topBar.js?v=2012112601"></script>
+<link href="http://pic.bahamut.com.tw/css/home_2k10.css?v=2012112101" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://pic.bahamut.com.tw/js/home_new.js?v=2012061901"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/home_acg.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/activeCenter.js?v=20121101"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/forum_lastBoard.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/homeReply.js?v=2011112801"></script>
+<script language="JavaScript" src="http://pic.bahamut.com.tw/js/honorData_utf8.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/movetomobile.js"></script>
+<script type="text/javascript">
+if( '1' != $.cookie.get('ckNOMOBILE') ){
+headertomobile(navigator.userAgent||navigator.vendor||window.opera,'http://m.gamer.com.tw/home/home.php?owner=satanupup');
+}
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-108920-1']);
+_gaq.push(['_setDomainName', 'gamer.com.tw']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</head> 
+<body> 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="TOP-bh"><!--全站內頁天-->
+<div class="TOP-data" id="BH-top-data"><!--全站內頁天中間區塊-->
+<script language="javascript">
+BAHAID = getCookie( 'BAHAID' );
+if(BAHAID){
+BAHAIDlow = BAHAID.toLowerCase();
+document.write('<div class="TOP-my">');
+document.write('<a href="http://home.gamer.com.tw/'+BAHAID+'"><img src="http://avatar2.bahamut.com.tw/avataruserpic/'+BAHAIDlow.substr(0,1) +'/'+BAHAIDlow.substr(1,1)+'/'+BAHAIDlow+'/'+BAHAIDlow+'_s.png" /></a>');
+document.write('<ul>');
+document.write('<li><a href="http://mailbox.gamer.com.tw/">信箱</a></li>');
+document.write('<li><a id="topBar_guild" href="javascript:TOPBAR_show(\'guild\', \'\')">公會</a></li>');
+document.write('<li><a id="topBar_api" href="javascript:TOPBAR_show(\'api\', \'\')">直接玩</a></li>');
+document.write('<li><a id="topBar_forum" href="javascript:TOPBAR_show(\'forum\', \'\')">哈啦板</a></li>');
+document.write('<li><a id="topBar_more" style="font-size:11px;" href="javascript:TOPBAR_show(\'more\', \'\')">▼</a></li>');
+document.write('</ul>');
+document.write('</div>');
+document.write('<p class="TOP-btn">');
+document.write('<a href="javascript:TOPBAR_show(\'light_0\', \'topb1\')" id="topBar_light_0" class="topb1"></a>');
+document.write('<a href="javascript:TOPBAR_show(\'light_1\', \'topb2\')" id="topBar_light_1" class="topb2"></a>');
+document.write('<a href="javascript:TOPBAR_show(\'light_2\', \'topb3\')" id="topBar_light_2" class="topb3"></a>');
+document.write('</p>');
+document.write('<div id="topBarMsg_more" style="display:none"></div>');
+document.write('<div id="topBarMsg_forum" style="display:none"></div>');
+document.write('<div id="topBarMsg_api" style="display:none;"></div>');
+document.write('<div id="topBarMsg_guild" style="display:none"></div>');
+document.write('<div id="topBarMsg_light_0" style="display:none"></div>');
+document.write('<div id="topBarMsg_light_1" style="display:none"></div>');
+document.write('<div id="topBarMsg_light_2" style="display:none"></div>');
+}
+else{
+document.write('<div class="TOP-my">');
+document.write('<a href="https://user.gamer.com.tw/login.php"><img src="http://pic.bahamut.com.tw/none.gif" /></a>');
+document.write('<ul>');
+document.write('<li><a href="https://user.gamer.com.tw/login.php">我要登入</a></li>');
+document.write('<li><a href="https://user.gamer.com.tw/regS1.php">註冊</a></li>');
+document.write('</ul>');
+document.write('</div>');
+}
+document.write('<a href="http://www.gamer.com.tw/"><img src="http://pic.bahamut.com.tw/top_logo.png" /></a><form name="fsearch" method="get" action="http://ref.gamer.com.tw/0000115/*http://search.gamer.com.tw/"><p class="TOP-search"><input id="top_search_q" name="q" type="text" stop_onkeyup="key_s(service, this.value, event);"/><a href="javascript:document.fsearch.submit()">全站搜尋</a></p></form><!--左側-->');
+service = new rsearch('rsearch');
+if( BAHAID ) {
+NOTIFY_getnum();
+run30 = setInterval("NOTIFY_getnum()",30000);
+}
+</script>
+</div><!--全站內頁天中間區塊結束-->
+</div><!--全站內頁天結束-->
+<div id="BH-background">
+<div id="BH-wrapper" style="margin-top:35px;"><!--最外層寬1000包裝--> 
+<!--div id="BH-myfav" style="display:none; z-index:101; max-width:804px;"></div--><!--訂閱資料區塊-->
+<script language="JavaScript" src="http://pic.bahamut.com.tw/JS/ad/h4.js"></script>
+<div id="BH-ad_banner"><!--廣告區塊1000x125--> 
+<script language="JavaScript" src="http://pic.bahamut.com.tw/JS/ad/abanner1000.js"></script>
+</div><!--廣告區塊結束--> 
+<div id="BH-path"><!--麵包屑區塊--> 
+<div id="BH-fbshare"  class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+<div id="BH-pathbox">
+<!--img src="http://pic.bahamut.com.tw/icon_star.gif" /--> 
+<script language="JavaScript">breadCrumbs(120, '', 'homeuid=satanupup')</script>
+</div>
+</div><!--麵包屑區塊結束--> 
+<!--搜尋BAR下拉-->
+<div style="width:0;height:0;position:relative;top:0px;left:0px;z-index:100;"><div style="position:absolute; top:0px; left:730px; width:268px; border: solid 1px #000000; background: #FFFFFF; z-index:100;display:none;" class="rsearch" id="rsearch" align="left"><ol id="suggestol"></ol></div></div><!--搜尋BAR下拉結束-->
+<!--服務選單-->
+<script language="JavaScript">breadCrumbs_listMenu(120, 0, 'homeuid=satanupup')</script>
+<div id="BH-master"><!--內容左側區塊--><script language="JavaScript" type="text/JavaScript" src="http://pic.bahamut.com.tw/js/BH_sayloud.js"></script>
+<!--勇者大聲說-->
+<div id="BH-talk2">
+<a href="http://home.gamer.com.tw/shiowdindone" target="_blank"><img src="http://avatar2.bahamut.com.tw/avataruserpic/s/h/shiowdindone/shiowdindone_s.png"></a>
+<p id="BH-talkmain2" class="BC1">
+<a href="http://user.gamer.com.tw/active/index.php" target="_blank">看更多</a>
+<a href="javascript:void(0)" onclick="location.href='https://user.gamer.com.tw/login.php'">我要大聲說</a><span class="ST1" style="float:right;">11-01 00:00</span>
+<span><a href="http://home.gamer.com.tw/shiowdindone" target="_blank" class="BH-talkman AT1">光Guand</a></span> 給 <span>所有勇者</span>：<br /><a href="http://forum.gamer.com.tw/A.php?bsn=40114" target="_blank" class="BH-talklink">抓住聖誕的尾巴！Fairy Tail 圖片創作大賽～</a></p>
+</div>
+<!--勇者大聲說結束-->
+<div class="MSG-mainpic" style="position:relative;">這傢伙很懶什麼都沒留下</div><!--個人自訂主圖-->
+<p class="BH-space"></p>
+<h4><img src="http://pic.bahamut.com.tw/h1_img.gif" />個人相關資訊</h4>
+<div class="BH-lbox MSG-box4">
+生日：1986-10-26<br>星座：天蠍<br>性別：男<br>學歷：大學<br>職業：程式設計<br>居住地區：嘉義市<br>信箱：evalhero@gmail.com<br>ＭＳＮ：evalhero@gmail.com<br>網站：https://sites.google.com/site/moxingjiazi/shou-ye<br>喜好興趣：程式設計、小說、遊戲<br>遊戲年齡：約2009年<br>擁有主機：PC、任天堂、超級任天堂、PlayStation、PlayStation2、GAMEBOY Color<br>遊戲喜好：角色扮演、策略經營、對戰格鬥、戰略模擬、戀愛養成、驚悚恐怖、冒險解謎<br>動漫喜好： <p></p> 
+</div><h4><img src="http://pic.bahamut.com.tw/h1_img.gif" />創作</h4>
+<div class="BH-lbox MSG-box5">
+<div class="HOME-mainbox1"><!--內容開始--> 
+<div class="HOME-mainbox1a BC5"><span></span><a href="creationDetail.php?sn=1606593"><img src="http://avatar2.bahamut.com.tw/avataruserpic/s/a/satanupup/satanupup.png" /></a></div> 
+<div class="HOME-mainbox1b">
+<span class="HOME-mainbox1c ST3 BC4">1 GP</span>
+<p class="HOME-mainbox1d"></p>
+<h1>
+<img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" />
+<a class="TS1" href="creationDetail.php?sn=1606593">【RPG公會】角色：史平茄</a>
+</h1>
+<span class="ST1">作者：<a href="http://home.gamer.com.tw/satanupup">茄子熊</a>│2012-05-16 15:09:03│贊助：2│人氣：203</span><p><br /><br />稱號：喜愛惡作劇的外星人...(<a href="creationDetail.php?sn=1606593" class="BH-txtmore msggoon">繼續閱讀</a>)</p></div> 
+</div><!--內容結束--> 
+<p class="msgmore" style="padding-top: 10px;"><button type="button" onclick="location.href='creation.php?owner=satanupup'">看更多</button></p> 
+</div><h4><img src="http://pic.bahamut.com.tw/h1_img.gif" />訂閱聯播</h4>
+<div class="BH-lbox MSG-box7">
+<table class="BH-table TB2"> 
+<tr class="TBC2"> 
+<td>標題</td> 
+<td align="center" nowrap="nowrap">作者</td> 
+<td align="center" nowrap="nowrap">發表時間</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C08" /><a href="http://ref.gamer.com.tw/1000023/*http://home.gamer.com.tw/creationDetail.php?sn=1827520">【銀星宮殿的日常】03、新生指導</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=blueking0">blueking0</a></td> 
+<td class="MSG-box7A">12-08 22:58</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" /><a href="http://ref.gamer.com.tw/1000023/*http://home.gamer.com.tw/creationDetail.php?sn=1485429">HS</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=Denev14">Denev14</a></td> 
+<td class="MSG-box7A">12-14 13:40</td> 
+</tr> 
+</table> 
+<p class="msgmore"><button type="button" onclick="location.href='subscribe_creation.php?owner=satanupup&type=subscribe'">看更多</button></p> 
+</div><h4><img src="http://pic.bahamut.com.tw/h1_img.gif" />好友創作</h4>
+<div class="BH-lbox MSG-box7">
+<table class="BH-table TB2"> 
+<tr class="TBC2"> 
+<td>標題</td> 
+<td align="center" nowrap="nowrap">作者</td> 
+<td align="center" nowrap="nowrap">發表時間</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" /><a href="http://ref.gamer.com.tw/1000024/*http://home.gamer.com.tw/creationDetail.php?sn=1831077">【隨興食記】公館排隊小吃攤《劉。古早味蔥蛋餅、蜜地瓜》</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=carollin06">carollin06</a></td> 
+<td class="MSG-box7A">19小時前</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" /><a href="http://ref.gamer.com.tw/1000024/*http://home.gamer.com.tw/creationDetail.php?sn=1829628">繪圖練習02</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=w100386435">w100386435</a></td> 
+<td class="MSG-box7A">前天20:01</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" /><a href="http://ref.gamer.com.tw/1000024/*http://home.gamer.com.tw/creationDetail.php?sn=1825868">討厭林書豪的球迷真是太有才華了</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=leo1984">leo1984</a></td> 
+<td class="MSG-box7A">12-07 12:36</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" /><a href="http://ref.gamer.com.tw/1000024/*http://home.gamer.com.tw/creationDetail.php?sn=1824296">[閒聊] 第100個上傳的plugin</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=rexrainbow">rexrainbow</a></td> 
+<td class="MSG-box7A">12-05 20:15</td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-C09" /><a href="http://ref.gamer.com.tw/1000024/*http://home.gamer.com.tw/creationDetail.php?sn=1821505">公司最近要在西門町開新分店</a></td> 
+<td class="MSG-box7A"><a href="home.php?owner=a33322157">a33322157</a></td> 
+<td class="MSG-box7A">12-02 21:47</td> 
+</tr> 
+</table> 
+<p class="msgmore"><button type="button" onclick="location.href='subscribe_creation.php?owner=satanupup&type=friend'">看更多</button></p> 
+</div><h4><img src="http://pic.bahamut.com.tw/h1_img.gif" />最新收錄精華</h4>
+<div class="BH-lbox MSG-box7">
+<table class="BH-table TB2"> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-E21" /><a href="http://forum.gamer.com.tw/Co.php?bsn=60076&amp;sn=16515224">RE:【問題】畢業了，升上不同的學校  我與妳距離更加遙遠</a></td> 
+<td class="MSG-box7A"><a href="bookmarkDetail.php?owner=satanupup&sn=2572838">看摘要</a></td> 
+<td style="white-space: nowrap;"><a href="javascript:homeBookmarkNew('RE:【問題】畢業了，升上不同的學校  我與妳距離更加遙遠', 'http://forum.gamer.com.tw/Co.php?bsn=60076&amp;sn=16515224', '0', '0', '0', '0', '')" class="AB2">收藏</a><a href="#"></a><a href="bookmarkDetail.php?owner=satanupup&sn=2572838" class="AB3">1</a></td> 
+</tr> 
+<tr> 
+<td><img src="http://pic.bahamut.com.tw/spacer.gif" class="IMG-E21" /><a href="http://home.gamer.com.tw/creationDetail.php?sn=1275367">V+同人誌　ヒジキ-CLiP(很甜的蔥鮪 初音x巡音本)(百合)</a></td> 
+<td class="MSG-box7A"><a href="bookmarkDetail.php?owner=satanupup&sn=2002511">看摘要</a></td> 
+<td style="white-space: nowrap;"><a href="javascript:homeBookmarkNew('V+同人誌　ヒジキ-CLiP(很甜的蔥鮪 初音x巡音本)(百合)', 'http://home.gamer.com.tw/creationDetail.php?sn=1275367', '0', '0', '0', '0', '')" class="AB2">收藏</a><a href="#"></a><a href="bookmarkDetail.php?owner=satanupup&sn=2002511" class="AB3">13</a></td> 
+</tr> 
+</table> 
+<p class="msgmore"><button onclick="location.href='bookmark.php?owner=satanupup'">看更多</button></p> 
+</div></div><!--內容左側區塊結束--> 
+<div id="BH-slave"><!--右側區塊--> 
+<p class="BH-slave_btns"><!--按鈕群-->
+<a href="javascript:topNotify_follow('satanupup')" class="BH-slave_btnA">訂閱</a><a href="javascript:friend_toMakeWith_other2('satanupup')" class="BH-slave_btnA">加為好友</a><a href="javascript:home_say_hello('satanupup');" class="BH-slave_btnA">打招呼</a><a href="http://mailbox.gamer.com.tw/send.php?to=satanupup" target="_blank" class="BH-slave_btnA">寫信</a><a href="http://avatar1.gamer.com.tw/shop.php?reciver=satanupup&settype=2" target="_blank" class="BH-slave_btnA">送禮</a><a href="http://avatar1.gamer.com.tw/photogallery.php?author=satanupup" class="BH-slave_btnA">勇者造型相本</a><a href="javascript:home_give_heart('satanupup')" class="BH-slave_btnA">給屋主紅心</a><a href="javascript:friend_toMakeWith_nxt('satanupup', '', 0)" class="BH-slave_btnA">黑名單</a><a href="homeReplyList.php?owner=satanupup" class="BH-slave_btnA">訪客留言</a><a href="http://home.gamer.com.tw/creationDetail.php?sn=1162660" class="BH-slave_btnA"><img src="http://pic.bahamut.com.tw/spacer.gif" style="margin-left:10px; vertical-align:middle;" class="IMG-E04">小屋使用教學</a>
+</p><!--按鈕群結束-->
+<h5>勇者資訊 <span id="BMW_0"><img src="http://pic.bahamut.com.tw/im/off.gif" align="absmiddle"></span></h5>
+<div class="BH-rbox MSG-list2">
+<a href="http://avatar1.gamer.com.tw/showdress.php?uid=satanupup" target="_blank"><img src="http://avatar2.bahamut.com.tw/avataruserpic/s/a/satanupup/satanupup.png" class="MSG-myavatar" /></a>
+<div class="MSG-mycard"><iframe width="157" height="100" frameborder="0" marginwidth=0 marginheight=0 scrolling=no src="http://gc.bahamut.com.tw/gc/html/s/a/satanupup.html"></iframe></div>
+<ul class="MSG-mydata1">
+<li>LV13 / 人類 / 盜賊</li>
+<li>巴幣：2826</li>
+<li>GP：40</li>
+<li>勇者評價：<a href="heartList.php?owner=satanupup" target="_blank" class="AT2">1</a></li>
+</ul>
+<p class="MSG-mybadge"><!--徽章區塊-->
+<script language="javascript">showHonor("satanupup", ",12,130,");</script>
+</p><!--徽章區塊結束-->
+<table class="MSG-mydata2"><!--style寬度百分比即是色條長度-->
+<tr>
+<td>HP：</td>
+<td><p><span class="MSG-barA" style="width:92.932862190813%;">&nbsp;</span></p></td>
+</tr>
+<tr>
+<td>MP：</td>
+<td><p><span class="MSG-barB" style="width:92.910447761194%;">&nbsp;</span></p></td>
+</tr>
+<tr>
+<td>EXP：</td>
+<td title="449 / 564"><p><span class="MSG-barC" style="width:79.609929078014%;">&nbsp;</span></p></td>
+</tr>
+</table>
+<ul class="MSG-mydata3">
+<li>STR：268</li>
+<li>DEX：325</li>
+<li>INT：268</li>
+<li>LUK：311</li>
+<li>VIT：268</li>
+<li>AGI：325</li>
+<li>MND：268</li>
+</ul>
+<script src="http://im.gamer.com.tw/bmw/jsIson.php?u=satanupup"></script></div><h5>訪客留言</h5>
+<div class="BH-rbox MSG-list18">
+<form name="frm" onsubmit="return newReply('guest', this.getAttribute('other_data'), 'satanupup', 0, '');" other_data="見習勇者">
+<input type="hidden" id="waitForAjaxCompleted" />
+<div class="BC2"><img src="http://pic.bahamut.com.tw/none.gif" /><input id="replytxt" name="txt" type="text" onclick="home_reply_login()"/><button type="submit">送出</button></div>
+</form>
+<em id="newMsgArea"></em>
+<div id="msg_1160877"><p></p><a href="home.php?owner=santos50421"><img src="http://avatar2.bahamut.com.tw/avataruserpic/s/a/santos50421/santos50421_s.png" /></a><a href="home.php?owner=santos50421" class="msgname AT1">Cantos</a>：阿斯嘉特各行各業排行榜是約一年一次的投票,選出有著鮮明風格或是令人喜愛的角色們。希望大家可以踴躍投票,投下自己神聖的一票哦~~~當然有任何問題也隨時可以詢問。 <span class="ST1">12-04 00:27</span></div>
+<div id="msg_1160876"><p></p><a href="home.php?owner=santos50421"><img src="http://avatar2.bahamut.com.tw/avataruserpic/s/a/santos50421/santos50421_s.png" /></a><a href="home.php?owner=santos50421" class="msgname AT1">Cantos</a>：您好 一年一度的阿斯嘉特人氣排行榜開始囉 詳情和投票: http://home.gamer.com.tw/creationDetail.php?sn=1818647<span class="ST1">12-04 00:27</span></div>
+<div id="msg_1070544"><p></p><a href="home.php?owner=w100386435"><img src="http://avatar2.bahamut.com.tw/avataruserpic/w/1/w100386435/w100386435_s.png" /></a><a href="home.php?owner=w100386435" class="msgname AT1">NULL</a>：這傢伙很懶什麼都沒留下<span class="ST1">08-28 05:41</span></div>
+<div id="msg_1068989"><p></p><a href="home.php?owner=satanupup"><img src="http://avatar2.bahamut.com.tw/avataruserpic/s/a/satanupup/satanupup_s.png" /></a><a href="home.php?owner=satanupup" class="msgname AT1">茄子熊</a>：to 幻鳴 :我很好，你呢？<span class="ST1">08-26 22:26</span></div>
+<div id="msg_1068862"><p></p><a href="home.php?owner=jeacily"><img src="http://avatar2.bahamut.com.tw/avataruserpic/j/e/jeacily/jeacily_s.png" /></a><a href="home.php?owner=jeacily" class="msgname AT1">幻鳴</a>：散步中~!你好嗎?XD<span class="ST1">08-26 21:25</span></div>
+<div class="msgmore" style="border-bottom:none;"><button onclick="location.href='homeReplyList.php?owner=satanupup'">看更多</button></div> 
+</div><h5>參加的公會社團</h5>
+<div class="BH-rbox MSG-list4">
+<div class="acgbox"> 
+<div class="acgboximg BC5"><a href="http://guild.gamer.com.tw/guild.php?sn=5713"><span></span><img src="http://pic.bahamut.com.tw/B/GUILD/c/3/0000005713.JPG" /></a></div> 
+<p class="acgboxname"><a href="http://guild.gamer.com.tw/guild.php?sn=5713">程式設計板 精華組</a></p> 
+</div> 
+<div class="acgbox"> 
+<div class="acgboximg BC5"><a href="http://guild.gamer.com.tw/guild.php?sn=3014"><span></span><img src="http://pic.bahamut.com.tw/B/GUILD/c/4/0000003014.JPG" /></a></div> 
+<p class="acgboxname"><a href="http://guild.gamer.com.tw/guild.php?sn=3014">RPG之幻想國度</a></p> 
+</div> 
+<div class="acgbox"> 
+<div class="acgboximg BC5"><a href="http://guild.gamer.com.tw/guild.php?sn=973"><span></span><img src="http://pic.bahamut.com.tw/B/GUILD/c/3/0000000973.JPG" /></a></div> 
+<p class="acgboxname"><a href="http://guild.gamer.com.tw/guild.php?sn=973">自製遊戲</a></p> 
+</div> 
+<div class="acgbox"> 
+<div class="acgboximg BC5"><a href="http://guild.gamer.com.tw/guild.php?sn=686"><span></span><img src="http://pic.bahamut.com.tw/B/GUILD/c/6/0000000686.PNG" /></a></div> 
+<p class="acgboxname"><a href="http://guild.gamer.com.tw/guild.php?sn=686">御宅の年代記 Olteil繪師玩家會</a></p> 
+</div> 
+<cite class="BH-slave_more"><button onclick="location.href='joinGuild.php?owner=satanupup'">看更多</button></cite> 
+</div><h5>小屋統計</h5>
+<div class="BH-rbox MSG-list1">
+<div class="MSG-stat">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="173" height="118" id="Flash_curve" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="http://pic.bahamut.com.tw/home/homePileVisit.swf?piont=4,4,3,3,3,3,4&xstr=11/26,11/29,11/30,12/03,12/04,12/07,12/08" /><param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<param name="wmode" value="transparent" />
+<embed src="http://pic.bahamut.com.tw/home/homePileVisit.swf?piont=4,4,3,3,3,3,4&xstr=11/26,11/29,11/30,12/03,12/04,12/07,12/08" quality="high" bgcolor="#ffffff" width="173" height="118" name="Flash_curve" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent"/>
+</object>
+</div> 
+<ul> 
+<li>今日人氣：0</li> 
+<li>總人氣：1116</li> 
+<li>創作：8篇</li> 
+<li>精華區：2篇</li> 
+<li>好友圈：18</li> 
+<li>被訂閱數：1</li> 
+</ul> 
+</div><h5>個人記錄</h5>
+<div class="BH-rbox BH-list1">
+<ul> 
+<li>更新時間：07-05 14 點</li> 
+<li>上站次數：364</li> 
+<li>手機認證：永久</li> 
+<li>註冊日期：2005-01-16</li> 
+<li>認證時間：2005-01-16</li> 
+<li>上站日期：2012-12-10</li> 
+<li>哈啦篇數：73</li> 
+<li>動漫電玩通：5</li> 
+</ul> 
+</div><h5>今日訪客</h5>
+<div class="BH-rbox BH-list4">
+<cite class="BH-slave_more"><button onClick="location.href='friendMore.php?owner=satanupup'"/>看更多</button></cite></div><h5>小屋新訂戶</h5>
+<div class="BH-rbox BH-list4">
+<a href="home.php?owner=ninja1999"><img src="http://avatar2.bahamut.com.tw/avataruserpic/n/i/ninja1999/ninja1999_s.png" onmouseover="showGamerCard(event,'ninja1999')" onmousemove="moveGamerCard(event)" onmouseout="hideGamerCard()"></a><cite class="BH-slave_more"><button onClick="location.href='broadcastMore.php?owner=satanupup'"/>看更多</button></cite></div><div style="margin-bottom:10px;">
+<script language="JavaScript" src="http://pic.bahamut.com.tw/JS/ad/bigButton_new.js"></script>
+</div>
+</div><!--右側/全版區塊結束--> 
+<br class="clearfloat" /><!--清除浮動--> 
+<div id="BH-footer"><!--最底版權宣告--> 
+<p>本站所有刊載之圖文內容等版權皆屬原廠商或原作者所有，非經同意請勿轉載<br /> 
+巴 哈 姆 特 電 玩 資 訊 站 http://www.gamer.com.tw
+</p> 
+</div><!--最底版權宣告結束--> 
+</div> 
+<!--最外層寬1000包裝結束--> 
+</div> 
+</body> 
+</html> 
+<script>
+if(BAHAID){
+$('#BH-background').click(function(){
+$('#topBarMsg_'+topBarType).css('display','none');
+$('#topBar_'+topBarType).attr('className', topBarClass);
+});
+var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+if(document.getElementById('BH-top-data').attachEvent){ //if IE (and Opera depending on user setting)
+document.getElementById('BH-top-data').attachEvent("on"+mousewheelevt, TOPBAR_stopWheel);
+}
+else if(document.getElementById('BH-top-data').addEventListener){ //WC3 browsers
+document.getElementById('BH-top-data').addEventListener(mousewheelevt, TOPBAR_stopWheel, false);
+}
+}
+if( 'function' == typeof(chpagehotkey) ){
+document.onkeydown = function (evt){
+evt = window.event || evt;
+chpagehotkey(evt.keyCode);
+};
+}
+</script>

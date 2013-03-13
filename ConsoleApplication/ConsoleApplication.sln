@@ -319,7 +319,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "w_r_w", "ConsoleApplication
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Structure_is_initialized", "ConsoleApplication143\ConsoleApplication143.vcxproj", "{9D04184A-2E34-4928-B57E-44CACA9AF51B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication144", "ConsoleApplication144\ConsoleApplication144.vcxproj", "{1F45B454-296F-4D44-87C2-7D412EA9D0DC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "class_rectangle_area", "ConsoleApplication144\ConsoleApplication144.vcxproj", "{1F45B454-296F-4D44-87C2-7D412EA9D0DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{B9C68FBE-1A60-4BE4-8F60-4B9C3E6A46C7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication145", "ConsoleApplication145\ConsoleApplication145.vcxproj", "{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1173,6 +1177,12 @@ Global
 		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Release|Win32.ActiveCfg = Release|Win32
 		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Release|Win32.Build.0 = Release|Win32
 		{1F45B454-296F-4D44-87C2-7D412EA9D0DC}.Release|Win32.Deploy.0 = Release|Win32
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}.Debug|Win32.Build.0 = Debug|Win32
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}.Debug|Win32.Deploy.0 = Debug|Win32
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}.Release|Win32.ActiveCfg = Release|Win32
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}.Release|Win32.Build.0 = Release|Win32
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1327,5 +1337,6 @@ Global
 		{FA03247F-F8ED-4870-B3DF-21F35BAE649B} = {F87FFED1-4372-44C2-9B10-9F5E4F39A965}
 		{9D04184A-2E34-4928-B57E-44CACA9AF51B} = {F87FFED1-4372-44C2-9B10-9F5E4F39A965}
 		{1F45B454-296F-4D44-87C2-7D412EA9D0DC} = {F87FFED1-4372-44C2-9B10-9F5E4F39A965}
+		{8814AB7E-953A-48ED-B8E0-AC58A6CD5D80} = {B9C68FBE-1A60-4BE4-8F60-4B9C3E6A46C7}
 	EndGlobalSection
 EndGlobal
