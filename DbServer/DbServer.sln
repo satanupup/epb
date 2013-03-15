@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DbServer", "DbServer\DbServer.vcxproj", "{F5EBBE8F-A4B8-419A-AAE8-CF5C8A5E1C85}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SqliteLib", "..\SqliteLib\SqliteLib\SqliteLib.vcxproj", "{8C8524E9-1F53-4729-8C43-C101AF738312}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,12 @@ Global
 		{F5EBBE8F-A4B8-419A-AAE8-CF5C8A5E1C85}.Debug|Win32.Build.0 = Debug|Win32
 		{F5EBBE8F-A4B8-419A-AAE8-CF5C8A5E1C85}.Release|Win32.ActiveCfg = Release|Win32
 		{F5EBBE8F-A4B8-419A-AAE8-CF5C8A5E1C85}.Release|Win32.Build.0 = Release|Win32
+		{8C8524E9-1F53-4729-8C43-C101AF738312}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8C8524E9-1F53-4729-8C43-C101AF738312}.Debug|Win32.Build.0 = Debug|Win32
+		{8C8524E9-1F53-4729-8C43-C101AF738312}.Debug|Win32.Deploy.0 = Debug|Win32
+		{8C8524E9-1F53-4729-8C43-C101AF738312}.Release|Win32.ActiveCfg = Release|Win32
+		{8C8524E9-1F53-4729-8C43-C101AF738312}.Release|Win32.Build.0 = Release|Win32
+		{8C8524E9-1F53-4729-8C43-C101AF738312}.Release|Win32.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,7 +41,7 @@ int main()
 	callback = &cbfunc;
 	callback();
 	
-	int a,b;
+	//int a,b;
 	struct_b st_b;
 
 	//Here u r passing higher level function to lower level function through structure

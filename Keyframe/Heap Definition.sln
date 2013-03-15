@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Heap Definition", "Heap Definition\Heap Definition.vcxproj", "{710E2D67-B338-4B80-8F4B-B68796AA705F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{710E2D67-B338-4B80-8F4B-B68796AA705F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{710E2D67-B338-4B80-8F4B-B68796AA705F}.Debug|Win32.Build.0 = Debug|Win32
+		{710E2D67-B338-4B80-8F4B-B68796AA705F}.Release|Win32.ActiveCfg = Release|Win32
+		{710E2D67-B338-4B80-8F4B-B68796AA705F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -14,6 +14,7 @@
     <ProjectGuid>{5D2EA920-F584-4E2B-8283-F74590091BD5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ConsoleApplication88</RootNamespace>
+    <ProjectName>C_write_read_write</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
