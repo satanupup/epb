@@ -23,5 +23,8 @@
     <ClInclude Include="stdafx.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="chat_message.hpp">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

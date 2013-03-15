@@ -42,8 +42,15 @@
 #include <boost/random/variate_generator.hpp>
 #include <boost/generator_iterator.hpp>
 
-#include "epb_BearLib.h"
-#include "epb_SendMessageGetString.h"
+
+#include <cstdlib>
+#include <deque>
+#include <boost/thread/thread.hpp>
+#include "chat_message.hpp"
+
+
+//#include "epb_BearLib.h"
+//#include "epb_SendMessageGetString.h"
 
 #include <Shlobj.h>
 #include <assert.h>

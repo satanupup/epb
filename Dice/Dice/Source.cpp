@@ -1,6 +1,138 @@
 
 #include "stdafx.h"
 
+
+using boost::asio::ip::tcp;
+
+typedef std::deque<chat_message> chat_message_queue;
+
+class chat_client
+{
+public:
+	chat_client(boost::asio::io_service& io_service,
+		tcp::resolver::iterator endpoint_iterator)
+		: io_service_(io_service),
+		socket_(io_service)
+	{
+		boost::asio::async_connect(socket_, endpoint_iterator,
+			boost::bind(&chat_client::handle_connect, this,
+			boost::asio::placeholders::error));
+
+	}
+
+	void write(const chat_message& msg)
+	{
+		io_service_.post(boost::bind(&chat_client::do_write, this, msg));
+	}
+
+	void close()
+	{
+		io_service_.post(boost::bind(&chat_client::do_close, this));
+	}
+
+private:
+
+	void handle_connect(const boost::system::error_code& error)
+	{
+		if (!error)
+		{
+			char ch1[256];
+
+			MessageBoxA(NULL,_itoa(read_msg_.body_length(),ch1,256),"oo",MB_OK ); 
+			boost::asio::async_read(socket_,
+				boost::asio::buffer(read_msg_.data(), chat_message::header_length),
+				boost::bind(&chat_client::handle_read_header, this,
+				boost::asio::placeholders::error));
+		}
+	}
+
+	void handle_read_header(const boost::system::error_code& error)
+	{
+		if (!error && read_msg_.decode_header())
+		{
+			char ch1[256];
+
+			MessageBoxA(NULL,_itoa(read_msg_.body_length(),ch1,256),"oo",MB_OK ); 
+			boost::asio::async_read(socket_,
+				boost::asio::buffer(read_msg_.body(), read_msg_.body_length()),
+				boost::bind(&chat_client::handle_read_body, this,
+				boost::asio::placeholders::error));
+		}
+		else
+		{
+			do_close();
+		}
+	}
+
+	void handle_read_body(const boost::system::error_code& error)
+	{
+		if (!error)
+		{
+			Sleep(10);
+			char ch1[256];
+
+			MessageBoxA(NULL,_itoa(read_msg_.body_length(),ch1,256),"oo2",MB_OK ); 
+
+			std::cout.write(read_msg_.body(), read_msg_.body_length());
+			std::cout << "\n";
+			boost::asio::async_read(socket_,
+				boost::asio::buffer(read_msg_.data(), chat_message::header_length),
+				boost::bind(&chat_client::handle_read_header, this,
+				boost::asio::placeholders::error));
+		}
+		else
+		{
+			do_close();
+		}
+	}
+
+	void do_write(chat_message msg)
+	{
+		bool write_in_progress = !write_msgs_.empty();
+		write_msgs_.push_back(msg);
+		if (!write_in_progress)
+		{
+			boost::asio::async_write(socket_,
+				boost::asio::buffer(write_msgs_.front().data(),
+				write_msgs_.front().length()),
+				boost::bind(&chat_client::handle_write, this,
+				boost::asio::placeholders::error));
+		}
+	}
+
+	void handle_write(const boost::system::error_code& error)
+	{
+		if (!error)
+		{
+			write_msgs_.pop_front();
+			if (!write_msgs_.empty())
+			{
+				boost::asio::async_write(socket_,
+					boost::asio::buffer(write_msgs_.front().data(),
+					write_msgs_.front().length()),
+					boost::bind(&chat_client::handle_write, this,
+					boost::asio::placeholders::error));
+			}
+		}
+		else
+		{
+			do_close();
+		}
+	}
+
+	void do_close()
+	{
+		socket_.close();
+	}
+
+private:
+	boost::asio::io_service& io_service_;
+	tcp::socket socket_;
+	chat_message read_msg_;
+	chat_message_queue write_msgs_;
+};
+
+
 typedef struct dicedate
 {
 	char Role_Name[256];
@@ -20,13 +152,14 @@ const int ID_UPDATE = 60002;
 const int IDS_LISTBOX = 60007;
 int NumberID = 0;
 
+
 HWND Role_Name = NULL;
 HWND Dice_reasons = NULL;
 HWND Quantity = NULL;
 HWND Dice_face = NULL;
 HWND Adjusted_value = NULL;
 HWND Tlist= NULL;
-HWND hList		= NULL;
+static HWND hList		= NULL;
 
 bool check(std::string str);
 int split(const std::string& str, std::vector<std::string>& ret_ );
@@ -117,7 +250,50 @@ int WINAPI WinMain(HINSTANCE hinstance,
 * 功能視窗訊息處理函數，
 對所有的訊息都使用NULL處理函數
 **************************************/
+void hello_world() 
+{
+	MessageBoxA(NULL,"Hello world, I'm a thread!","oo",MB_OK ); 
+	std::string name;
+	try
+	{
+		boost::asio::io_service io_service;
+		tcp::resolver resolver(io_service);
+		tcp::resolver::query query("127.0.0.1","8080");
+		tcp::resolver::iterator iterator = resolver.resolve(query);
 
+		chat_client c(io_service, iterator);
+		boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
+		char line[chat_message::max_body_length + 1];
+		sprintf(line,"apple\napple");
+		char str[256];
+		//while (std::cin.getline(line, chat_message::max_body_length + 1))
+		//	{
+		//std::cin.getline(line, chat_message::max_body_length + 1);
+		
+		Sleep(300);
+		//std::getline (std::cin,name);
+		//	std::cout << name ;
+		//	MessageBoxA(NULL,name.c_str(),"oo",MB_OK ); 
+
+		using namespace std; // For strlen and memcpy.
+		chat_message msg;
+		msg.body_length(strlen(line));
+		memcpy(msg.body(), line, msg.body_length());
+		msg.encode_header();
+		c.write(msg);
+		//	}
+
+		c.close();
+		t.join();
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Exception: " << e.what() << "\n";
+	}
+	SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)name.c_str());
+
+
+}
 LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 {
 	PAINTSTRUCT ps;
@@ -199,7 +375,7 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 			((LPCREATESTRUCT)lParam)->hInstance,
 			NULL); */
 
-			bearlib::wreadcfg(0);
+			//			bearlib::wreadcfg(0);
 
 		}
 		break;
@@ -210,6 +386,50 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 			NumberID  = SendMessage (hList, LB_GETCURSEL, 0, 0) ;
 		case ID_MYBUTTON:
 			{	
+				// 開始一條使用 "hello_world" function 的新執行緒
+				boost::thread my_thread(&hello_world);
+				// 等待執行緒完成工作
+				my_thread.join();
+				/*
+				std::string name;
+				try
+				{
+				boost::asio::io_service io_service;
+				tcp::resolver resolver(io_service);
+				tcp::resolver::query query("127.0.0.1","8080");
+				tcp::resolver::iterator iterator = resolver.resolve(query);
+
+				chat_client c(io_service, iterator);
+				boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
+				char line[chat_message::max_body_length + 1];
+				sprintf(line,"apple\napple");
+
+				//while (std::cin.getline(line, chat_message::max_body_length + 1))
+				//	{
+
+				std::getline (std::cin,name);
+				std::cout << name ;
+				MessageBoxA(NULL,name.c_str(),"oo",MB_OK ); 
+
+				using namespace std; // For strlen and memcpy.
+				chat_message msg;
+				msg.body_length(strlen(line));
+				memcpy(msg.body(), line, msg.body_length());
+				msg.encode_header();
+				c.write(msg);
+				//	}
+
+				c.close();
+				t.join();
+				}
+				catch (std::exception& e)
+				{
+				std::cerr << "Exception: " << e.what() << "\n";
+				}
+				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)name.c_str());
+
+				*/
+				/*
 				sendCGlobal::ClientVerification();
 				WCHAR strText[2048];
 
@@ -227,26 +447,26 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				char   GetszText5[30000]; 
 				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)GetszText5); 
-				
+
 				if(strcmp(GetszText,"") == 0)
 				{
-					break;
+				break;
 				}
 				if(strcmp(GetszText2,"") == 0)
 				{
-					break;
+				break;
 				}
 				if((strcmp(GetszText3,"") == 0) || !check(GetszText3))
 				{
-					break;
+				break;
 				}
 				if((strcmp(GetszText4,"") == 0) || !check(GetszText4))
 				{
-					break;
+				break;
 				}
 				if((strcmp(GetszText5,"") == 0) || !check(GetszText5))
 				{
-					break;
+				break;
 				}
 
 				std::string Temporary_str;
@@ -266,16 +486,16 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				try
 				{
-					boost::asio::io_service io_service;
-					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
-					boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
-					io_service.run();
+				boost::asio::io_service io_service;
+				tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
+				boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
+				io_service.run();
 				}
 				catch (std::exception& e)
 				{
-					WCHAR strText[512];
-					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 2048 );
-					OutputDebugString(strText);     
+				WCHAR strText[512];
+				MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 2048 );
+				OutputDebugString(strText);     
 				}
 
 				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
@@ -284,14 +504,14 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				//MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
 
 				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sendCGlobal::CReceive_instructions().c_str());
-
+				*/
 			}
 			break;
 		case ID_UPDATE:
 			{	
-
+				/*
 				SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
-				sendCGlobal::ClientVerification();
+				//				sendCGlobal::ClientVerification();
 				WCHAR strText[512];
 				std::string Temporary_str;
 				Temporary_str = "DiceUpdate";
@@ -301,16 +521,16 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				try
 				{
-					boost::asio::io_service io_service;
-					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
-					boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
-					io_service.run();
+				boost::asio::io_service io_service;
+				tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
+				boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
+				io_service.run();
 				}
 				catch (std::exception& e)
 				{
-					WCHAR strText[512];
-					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
-					OutputDebugString(strText);     
+				WCHAR strText[512];
+				MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
+				OutputDebugString(strText);     
 				}
 
 				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
@@ -323,10 +543,10 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				split(sendCGlobal::CReceive_instructions().c_str(), vt);
 				for (size_t i = 0; i < vt.size(); ++ i)
 				{ 
-					SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)vt[i].c_str());
+				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)vt[i].c_str());
 				}
 				//////////////////////////////////////////
-
+				*/
 
 			}
 			break;
