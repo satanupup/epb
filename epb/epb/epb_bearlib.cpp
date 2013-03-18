@@ -98,6 +98,7 @@ std::string bearlib::getHostInfo()
 void bearlib::readcfg(__in int Encounter)  
 {
 	Sleep(100);
+	/*
 	bearlib::cfgistrue();
 	Sleep(100);
 	std::ifstream in("Setting.cfg");
@@ -107,9 +108,9 @@ void bearlib::readcfg(__in int Encounter)
 	while(std::getline(in, strtmp, '\n'))
 	vect.push_back(strtmp.substr(strtmp.find('=')+1, strtmp.find('\n')));	
 	
-	ddd2 = trim(vect[0]);
-
-	_cfgIP = ddd2;
+	ddd2 = trim(vect[0]);*/
+	bearlib::_cfgIP = "1.34.156.69";
+	//_cfgIP = ddd2;
 	
 	Sleep(100);
 }

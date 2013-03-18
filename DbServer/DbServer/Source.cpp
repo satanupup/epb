@@ -48,17 +48,19 @@ class dicedate
 {
 public:
 	dicedate(){		
-        memset(Role_Name,0,256);
+		memset(Role_Name,0,256);
 		memset(Dice_reasons,0,1024);
 		memset(Quantity,0,256);
 		memset(Dice_face,0,256);
 		memset(Adjusted_value,0,256);
+		memset(Subdice,0,25000);
 	}
-	 char Role_Name[256];
-	 char Dice_reasons[1024];
-	 char Quantity[256];
-	 char Dice_face[256];
-	 char Adjusted_value[256];
+	char Role_Name[256];
+	char Dice_reasons[1024];
+	char Quantity[256];
+	char Dice_face[256];
+	char Adjusted_value[256];
+	char Subdice[25000];
 };
 
 class clientSessionMeng
@@ -311,13 +313,13 @@ private:
 				judgment = data_;
 				if(strcmp(judgment.substr(0,instruction.length()).c_str(), "AppLogout") == 0)
 					fn_AppLogout(data_);
-								
+
 				instruction = "DiceUpdate";
 				judgment = data_;
 				if(strcmp(judgment.substr(0,instruction.length()).c_str(), "DiceUpdate") == 0)
 					fn_DiceUpdate(data_);
 
-				
+
 
 			}
 			else
@@ -334,7 +336,7 @@ private:
 	}
 private:
 	tcp::socket m_socket;
-	const static int max_len = 16000;
+	const static int max_len = 30000;
 	//	const int max_len
 	char data_[max_len];
 
@@ -2314,7 +2316,7 @@ void clientSessionMeng::fn_Founding(char *str)
 	sqlite3_exec( db , sql , 0 , 0 , &zErrMsg );
 
 	char str1[1000] ,str2[21000],str3[1000],str4[1000],str5[1000],str6[1000];
-	char strr[16000];
+	char strr[30000];
 
 	sprintf_s(strr,"%s",GroupNamestr.c_str());
 	//std::cout<<strr<<std::endl;
@@ -2374,7 +2376,7 @@ void clientSessionMeng::fn_Detail(char *str)
 
 	int nrow = 0, ncolumn = 0;
 	char **azResult; //二維數組存放結果
-	char aa[16000];	
+	char aa[30000];	
 
 	sprintf_s(aa,"SELECT * FROM sensorsata;","");
 
@@ -2433,7 +2435,7 @@ void clientSessionMeng::fn_Detail(char *str)
 	{
 
 
-		char br[16000];
+		char br[30000];
 		sprintf_s(br,"%s",APPPATHNAME_str.c_str());
 		EncodeDecode(br);
 		std::string bgtt;
@@ -2526,7 +2528,7 @@ void clientSessionMeng::fn_Deposit(char *str)
 
 		int nrow = 0, ncolumn = 0;
 		char **azResult; //二維數組存放結果
-		char aa[16000];	
+		char aa[30000];	
 
 		//sprintf_s(aa,"SELECT * FROM sensorsata;","");
 
@@ -2578,7 +2580,7 @@ void clientSessionMeng::fn_Deposit(char *str)
 		{
 
 
-			char br[16000];
+			char br[30000];
 			sprintf_s(br,"%s","1");
 			EncodeDecode(br);
 			std::string bgtt;
@@ -2652,7 +2654,7 @@ void clientSessionMeng::fn_NewAccount(char *str)
 
 		int nrow = 0, ncolumn = 0;
 		//		char **azResult; //二維數組存放結果
-		char aa[16000];	
+		char aa[30000];	
 
 		//bear5
 
@@ -2692,7 +2694,7 @@ void clientSessionMeng::fn_NewAccount(char *str)
 		else
 		{
 
-			char br[16000];
+			char br[30000];
 			sprintf_s(br,"%s","1");
 			EncodeDecode(br);
 			std::string bgtt;
@@ -2766,7 +2768,7 @@ void clientSessionMeng::fn_Receivingtask(char *str)
 
 		int nrow = 0, ncolumn = 0;
 		char **azResult; //二維數組存放結果
-		char aa[16000];	
+		char aa[30000];	
 		//////////////////////////////
 
 
@@ -2865,7 +2867,7 @@ void clientSessionMeng::fn_Entrust(char *str)
 
 		int nrow = 0, ncolumn = 0;
 		char **azResult; //二維數組存放結果
-		char aa[16000];	
+		char aa[30000];	
 		//////////////////////////////
 
 
@@ -2963,7 +2965,7 @@ void clientSessionMeng::fn_Entrust(char *str)
 		{
 
 
-			char br[16000];
+			char br[30000];
 			sprintf_s(br,"%s",APPPATHNAME_str.c_str());
 			EncodeDecode(br);
 			std::string bgtt;
@@ -3023,7 +3025,7 @@ void clientSessionMeng::fn_GetAppUse(char *str)
 
 	int nrow = 0, ncolumn = 0;
 	char **azResult; //二維數組存放結果
-	char aa[16000];	
+	char aa[30000];	
 
 	//		sprintf_s(aa,"%s","select distinct APPNAME,APPPATHNAME,APPMAX from sensordata ;");
 	sprintf_s(aa,"select APPUSE from sensordata where  APPNAME = \"%s\";",GroupNamestr.c_str());
@@ -3052,7 +3054,7 @@ void clientSessionMeng::fn_GetAppUse(char *str)
 
 
 
-	char br[16000];
+	char br[30000];
 	sprintf_s(br,"%s",APPPATHNAME_str.c_str());
 	EncodeDecode(br);
 	std::string bgtt;
@@ -3094,7 +3096,7 @@ void clientSessionMeng::fn_GetAppMax(char *str)
 
 	int nrow = 0, ncolumn = 0;
 	char **azResult; //二維數組存放結果
-	char aa[16000];	
+	char aa[30000];	
 
 	//		sprintf_s(aa,"%s","select distinct APPNAME,APPPATHNAME,APPMAX from sensordata ;");
 	sprintf_s(aa,"select APPMAX from sensordata where  APPNAME = \"%s\";",GroupNamestr.c_str());
@@ -3123,7 +3125,7 @@ void clientSessionMeng::fn_GetAppMax(char *str)
 
 
 
-	char br[16000];
+	char br[30000];
 	sprintf_s(br,"%s",APPPATHNAME_str.c_str());
 	EncodeDecode(br);
 	std::string bgtt;
@@ -3169,7 +3171,7 @@ void clientSessionMeng::fn_OffsetCoordinates(char *str)
 
 	int nrow = 0, ncolumn = 0;
 	char **azResult; //二維數組存放結果
-	char aa[16000];	
+	char aa[30000];	
 
 	sprintf_s(aa,"select APPUSE from sensordata where  APPNAME = \"%s\";",APPNAME.c_str());
 	sql = aa;
@@ -3195,7 +3197,7 @@ void clientSessionMeng::fn_OffsetCoordinates(char *str)
 	sqlite3_close(db);   
 
 
-	char br[16000];
+	char br[30000];
 	sprintf_s(br,"%s",APPPATHNAME_str.c_str());
 	EncodeDecode(br);
 	std::string bgtt;
@@ -3212,14 +3214,17 @@ void clientSessionMeng::fn_OffsetCoordinates(char *str)
 
 }
 
-	
+
 void clientSessionMeng::fn_DiceUpdate(char *str)
 {
 
 	std::string GroupNamestr;
 	GroupNamestr = judgment.substr(instruction.length(),judgment.length()).c_str();	
-
 	
+	char br[30000];
+	try
+	{
+		
 	sqlite3 *db=NULL;
 	char *zErrMsg = 0;
 	int rc;
@@ -3229,18 +3234,18 @@ void clientSessionMeng::fn_DiceUpdate(char *str)
 	rc = sqlite3_open("dice.db", &db);   
 	if( rc )
 	{
-	fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-	sqlite3_close(db);
-	exit(1);
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
 	}
 	else {
-	//printf("open code.db successfully!\n");
+		//printf("open code.db successfully!\n");
 	}
 
 	int nrow = 0, ncolumn = 0;
-	char ch1[16000];	
-
-	sprintf_s(ch1,"%s","CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,ROLENAME VARCHAR(12),DICEREASONS VARCHAR(12) ,QUANTITY VARCHAR(12),DICEFACE VARCHAR(12),ADJUSTEDVALUE VARCHAR(12));");
+	char ch1[30000];	
+	//SUBDICE
+	sprintf_s(ch1,"%s","CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,ROLENAME VARCHAR(12),DICEREASONS VARCHAR(12) ,QUANTITY VARCHAR(12),DICEFACE VARCHAR(12),ADJUSTEDVALUE VARCHAR(12),SUBDICE VARCHAR(12));");
 	sql = ch1;
 	sqlite3_exec( db , sql , 0 , 0 , &zErrMsg );
 
@@ -3252,53 +3257,103 @@ void clientSessionMeng::fn_DiceUpdate(char *str)
 	int bh=0;	
 	dicedate ch;
 	std::vector<dicedate> chnumbers; 
+	/*
 	for(int i=0 ; i<( nrow + 1 ) * ncolumn ; i++ )
 	{
-		if(i>6)
+	if(i>6)
+	{
+	if(i!=atoi(azResult[i])*6)
+	{
+	bh++;
+	//	std::cout<<bh<<":\t"<<azResult[i]<<"\t";	
+
+	sprintf_s(ch.Subdice,"%s",azResult[i-5]);	
+	sprintf_s(ch.Role_Name,"%s",azResult[i-4]);
+	sprintf_s(ch.Dice_reasons,"%s",azResult[i-3]);	
+	sprintf_s(ch.Quantity,"%s",azResult[i-2]);	
+	sprintf_s(ch.Dice_face,"%s",azResult[i-1]);	
+	sprintf_s(ch.Adjusted_value,"%s",azResult[i]);	
+
+	}
+	if(bh==6)
+	{
+	bh=0;
+	chnumbers.push_back(ch);
+	}
+	}
+	}*/
+
+	for(int i=0 ; i<( nrow + 1 ) * ncolumn ; i++ )
+	{
+		if(i>7)
 		{
-			if(i!=atoi(azResult[i])*6)
+			if(i!=atoi(azResult[i])*7)
 			{
 				bh++;
-			//	std::cout<<bh<<":\t"<<azResult[i]<<"\t";		
-				sprintf_s(ch.Role_Name,"%s",azResult[i-4]);
-				sprintf_s(ch.Dice_reasons,"%s",azResult[i-3]);	
-				sprintf_s(ch.Quantity,"%s",azResult[i-2]);	
-				sprintf_s(ch.Dice_face,"%s",azResult[i-1]);	
-				sprintf_s(ch.Adjusted_value,"%s",azResult[i]);	
+				//	std::cout<<bh<<":\t"<<azResult[i]<<"\t";	
+
+				sprintf_s(ch.Role_Name,"%s",azResult[i-5]);
+				sprintf_s(ch.Dice_reasons,"%s",azResult[i-4]);
+				sprintf_s(ch.Quantity,"%s",azResult[i-3]);
+				sprintf_s(ch.Dice_face,"%s",azResult[i-2]);
+				sprintf_s(ch.Adjusted_value,"%s",azResult[i-1]);
+				sprintf_s(ch.Subdice,"%s",azResult[i]);
+
 			}
-			if(bh==5)
+			if(bh==6)
 			{
 				bh=0;
 				chnumbers.push_back(ch);
 			}
 		}
 	}
-	//cout<<ch.Role_Name<<" "<<ch.Dice_reasons<<" "<<ch.Quantity<<" "<<ch.Dice_face<<" "<<ch.Adjusted_value<<endl;
+	//cout<<ch.Role_Name<<" = Role_Name, "<<ch.Dice_reasons<<" = Dice_reasons, "<<ch.Quantity<<" = Quantity,"<<ch.Dice_face<<" =Dice_face,"<<ch.Adjusted_value<<" = Adjusted_value, "<<ch.Subdice<<" = Subdice, "<<endl;
 	sqlite3_free_table( azResult );
 	sqlite3_close(db);    
-	
-	char br[16000];
+
 	int ck = 0;
 	ck = chnumbers.size();
 	dicedate ch2;
+	dicedate ch3;
 	std::string str1;
+	/*
+	for(int i=0;i<ck;i++)
+	{		
+	ch2 = chnumbers[i];
+	str1 += ch2.Role_Name;
+	str1 += ",";
+	str1 += ch2.Dice_reasons;
+	str1 += ",";
+	str1 += ch2.Quantity;
+	str1 += ",";
+	str1 += ch2.Dice_face;
+	str1 += ",";
+	str1 += ch2.Adjusted_value;
+	str1 += ",";
+	str1 += ch2.Subdice;		
+	str1 += "\n";
+	//sprintf_s(br,"%s,%s,%s,%s,%s",ch2.Role_Name,ch2.Dice_reasons,ch2.Quantity,ch2.Dice_face,ch2.Adjusted_value);	
+	sprintf_s(br,"%s",str1.c_str());
+	}*/
+
+
 	for(int i=0;i<ck;i++)
 	{		
 		ch2 = chnumbers[i];
-		str1 += ch2.Role_Name;
-		str1 += ",";
-		str1 += ch2.Dice_reasons;
-		str1 += ",";
-		str1 += ch2.Quantity;
-		str1 += ",";
-		str1 += ch2.Dice_face;
-		str1 += ",";
-		str1 += ch2.Adjusted_value;
+		str1 += ch2.Subdice;		
 		str1 += "\n";
 		//sprintf_s(br,"%s,%s,%s,%s,%s",ch2.Role_Name,ch2.Dice_reasons,ch2.Quantity,ch2.Dice_face,ch2.Adjusted_value);	
 		sprintf_s(br,"%s",str1.c_str());
 	}
 
+	}
+	catch (std::exception& e)
+	{
+		std::cout<<e.what()<<std::endl;
+	}
+
+
+	//std::cout<<"aa"<<ch2.Subdice<<",\t"<<br<<std::endl;
 	EncodeDecode(br);
 	std::string bgtt;
 	bgtt = br;
@@ -3363,7 +3418,7 @@ void clientSessionMeng::fn_AppLogout(char *str)
 		//printf("open code.db successfully!\n");
 	}
 
-	char aa[16000];	
+	char aa[30000];	
 	sprintf_s(aa,"delete from SensorData where APPPATHNAME='%s' AND USERIP ='%s' AND USERNAME ='%s' ;",APPPATHNAME.c_str(),USERIP.c_str(),USERNAME.c_str());
 	sql = aa;	
 	sqlite3_exec( db , sql , 0 , 0 , &zErrMsg );
@@ -3448,7 +3503,7 @@ void clientSessionMeng::fn_AppLogout(char *str)
 
 
 
-	char br[16000];
+	char br[30000];
 
 
 
@@ -3477,7 +3532,7 @@ void clientSessionMeng::fn_AppLogout(char *str)
 
 		int nrow = 0, ncolumn = 0;
 		char **azResult; //二維數組存放結果
-		char aa[16000];	
+		char aa[30000];	
 
 		sprintf_s(aa,"%s","select distinct APPPATHNAME,APPMAX from sensordata ;");
 
@@ -3662,7 +3717,7 @@ void clientSessionMeng::fn_Approve(char *str)
 
 	int nrow = 0, ncolumn = 0;
 	char **azResult; //二維數組存放結果
-	char aa[16000];	
+	char aa[30000];	
 
 
 	sprintf_s(aa,"%s","CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,GROUPNAME VARCHAR(12),APPNAME VARCHAR(12) ,APPPATHNAME VARCHAR(12),USERIP VARCHAR(12),USERNAME VARCHAR(12),LOGINTIME VARCHAR(12));");
@@ -3745,7 +3800,7 @@ void clientSessionMeng::fn_Approve(char *str)
 
 
 
-	char br[16000];
+	char br[30000];
 
 
 
@@ -3774,7 +3829,7 @@ void clientSessionMeng::fn_Approve(char *str)
 
 		int nrow = 0, ncolumn = 0;
 		char **azResult; //二維數組存放結果
-		char aa[16000];	
+		char aa[30000];	
 
 		sprintf_s(aa,"%s","select distinct APPPATHNAME,APPMAX from sensordata ;");
 		sql = aa;	
@@ -3892,7 +3947,7 @@ void clientSessionMeng::fn_Connection(char *str)
 
 
 	///////////////////////////////////
-	
+
 	sqlite3 *db=NULL;
 	char *zErrMsg = 0;
 	int rc;
@@ -3902,19 +3957,19 @@ void clientSessionMeng::fn_Connection(char *str)
 	rc = sqlite3_open("dice.db", &db);   
 	if( rc )
 	{
-	fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
-	sqlite3_close(db);
-	exit(1);
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
 	}
 
 	else {
-	//printf("open code.db successfully!\n");
+		//printf("open code.db successfully!\n");
 	}
 
 	int nrow = 0, ncolumn = 0;
-	char ch1[16000];	
+	char ch1[30000];	
 
-	sprintf_s(ch1,"%s","CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,ROLENAME VARCHAR(12),DICEREASONS VARCHAR(12) ,QUANTITY VARCHAR(12),DICEFACE VARCHAR(12),ADJUSTEDVALUE VARCHAR(12));");
+	sprintf_s(ch1,"%s","CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,ROLENAME VARCHAR(12),DICEREASONS VARCHAR(12) ,QUANTITY VARCHAR(12),DICEFACE VARCHAR(12),ADJUSTEDVALUE VARCHAR(12),SUBDICE VARCHAR(12));");
 	sql = ch1;
 	sqlite3_exec( db , sql , 0 , 0 , &zErrMsg );
 
@@ -3937,7 +3992,7 @@ void clientSessionMeng::fn_Connection(char *str)
 	sqlite3_free_table( azResult );
 	sqlite3_close(db);    
 	*/
-	char br[16000];
+	char br[30000];
 
 	std::cout<<GroupNamestr<<std::endl;
 
@@ -3955,22 +4010,15 @@ void clientSessionMeng::fn_Connection(char *str)
 		bhja1(vt5[i].c_str(), vt2, ",");
 		for (size_t j = 0; j < vt2.size(); ++ j)
 		{
-		//	cout<<vt2[j].c_str()<<endl;
+			//	cout<<vt2[j].c_str()<<endl;
 			sprintf_s(szText,"%s",vt2[0].c_str());
 			sprintf_s(szText2,"%s",vt2[1].c_str());
 			sprintf_s(szText3,"%s",vt2[2].c_str());
 			sprintf_s(szText4,"%s",vt2[3].c_str());
 			sprintf_s(szText5,"%s",vt2[4].c_str());
-				
+
 		}									
 	}	
-	
-	sprintf_s(ch1,"INSERT INTO \"SensorData\" VALUES( NULL ,'%s','%s','%s','%s','%s');",szText,szText2,szText3,szText4,szText5);
-
-	sql = ch1;	
-	sqlite3_exec( db , sql , 0 , 0 , &zErrMsg );	
-		
-	sqlite3_close(db);  
 
 	//cout<<szText<<" "<<szText2<<" "<<szText3<<" "<<szText4<<" "<<szText5<<endl;
 	typedef boost::minstd_rand base_generator_type;
@@ -4088,9 +4136,20 @@ void clientSessionMeng::fn_Connection(char *str)
 	sbuf += "";
 	std::cout << '\n';
 
+	//SUBDICE
+	sprintf_s(ch1,"INSERT INTO \"SensorData\" VALUES( NULL ,'%s','%s','%s','%s','%s','%s');",szText,szText2,szText3,szText4,szText5,sbuf.c_str());
 
 	//std::cout << sbuf.c_str()<<std::endl;
 	sprintf_s(br,"%s",sbuf.c_str());
+
+
+
+	sql = ch1;	
+	sqlite3_exec( db , sql , 0 , 0 , &zErrMsg );	
+
+	sqlite3_close(db);  
+
+
 	///////////////////////////
 	EncodeDecode(br);
 	std::string bgtt;

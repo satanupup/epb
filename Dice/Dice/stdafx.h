@@ -49,8 +49,8 @@
 #include "chat_message.hpp"
 
 
-//#include "epb_BearLib.h"
-//#include "epb_SendMessageGetString.h"
+#include "epb_BearLib.h"
+#include "epb_SendMessageGetString.h"
 
 #include <Shlobj.h>
 #include <assert.h>

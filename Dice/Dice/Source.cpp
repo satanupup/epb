@@ -1,6 +1,6 @@
 
 #include "stdafx.h"
-
+#include <Strsafe.h>
 
 using boost::asio::ip::tcp;
 
@@ -210,7 +210,7 @@ int WINAPI WinMain(HINSTANCE hinstance,
 		WS_OVERLAPPEDWINDOW,// 視窗樣式  
 		100,      // 水準位元置X：使用預設值 
 		100,      // 垂直位元置Y：使用預設值
-		640,       // 寬度：使用預設值
+		800,       // 寬度：使用預設值
 		480,       // 高度：使用預設值
 		(HWND) NULL,         // 父視窗：無 
 		(HMENU) NULL,        // 選單：使用視窗類的選單 
@@ -264,12 +264,12 @@ void hello_world()
 		chat_client c(io_service, iterator);
 		boost::thread t(boost::bind(&boost::asio::io_service::run, &io_service));
 		char line[chat_message::max_body_length + 1];
-		sprintf(line,"apple\napple");
-		char str[256];
+		sprintf_s(line,"apple\napple");
+		//		char str[256];
 		//while (std::cin.getline(line, chat_message::max_body_length + 1))
 		//	{
 		//std::cin.getline(line, chat_message::max_body_length + 1);
-		
+
 		Sleep(300);
 		//std::getline (std::cin,name);
 		//	std::cout << name ;
@@ -298,33 +298,33 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 {
 	PAINTSTRUCT ps;
 	HDC hdc;
-
+	std::vector<std::string> vtsub;	
 	switch (Message) 
 	{ 
 	case WM_CREATE: 
 		{
 
-			CreateWindowA("STATIC", "Role Name", WS_CHILD | WS_VISIBLE ,
+			CreateWindowA("STATIC", "角色名稱", WS_CHILD | WS_VISIBLE ,
 				20, 15, 100, 28, hwnd, NULL, 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL); 
 
-			CreateWindowA("STATIC", "Dice reasons", WS_CHILD | WS_VISIBLE ,
+			CreateWindowA("STATIC", "擲骰原因", WS_CHILD | WS_VISIBLE ,
 				20, 85, 100, 28, hwnd, NULL, 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL); 
 
-			CreateWindowA("STATIC", "Quantity", WS_CHILD | WS_VISIBLE ,
+			CreateWindowA("STATIC", "骰子數量", WS_CHILD | WS_VISIBLE ,
 				140, 15, 100, 28, hwnd, NULL, 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL); 
 
-			CreateWindowA("STATIC", "Dice face", WS_CHILD | WS_VISIBLE ,
+			CreateWindowA("STATIC", "骰子面數", WS_CHILD | WS_VISIBLE ,
 				260, 15, 100, 28, hwnd, NULL, 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL); 
 
-			CreateWindowA("STATIC", "Adjusted value", WS_CHILD | WS_VISIBLE ,
+			CreateWindowA("STATIC", "調整值", WS_CHILD | WS_VISIBLE ,
 				380, 15, 100, 28, hwnd, NULL, 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL); 
@@ -353,20 +353,20 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL); 
 
-			CreateWindow(TEXT("BUTTON"), TEXT("按鈕1"), WS_CHILD | WS_VISIBLE ,
-				500, 100, 100, 28, hwnd, HMENU(ID_MYBUTTON), 
+			CreateWindow(TEXT("BUTTON"), TEXT("擲骰"), WS_CHILD | WS_VISIBLE ,
+				500, 50, 100, 28, hwnd, HMENU(ID_MYBUTTON), 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL);
 
-			CreateWindow(TEXT("BUTTON"), TEXT("Update"), WS_CHILD | WS_VISIBLE ,
-				500, 135, 100, 28, hwnd, HMENU(ID_UPDATE), 
+			CreateWindow(TEXT("BUTTON"), TEXT("刷新"), WS_CHILD | WS_VISIBLE ,
+				500, 85, 100, 28, hwnd, HMENU(ID_UPDATE), 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL);
 
 			hList = CreateWindow(L"LISTBOX",NULL,
 				WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER |
 				LBS_STANDARD & (!LBS_SORT) | LBS_NOTIFY |WS_HSCROLL | WS_VSCROLL ,
-				20, 120, 400, 300, hwnd, HMENU(IDS_LISTBOX), 
+				20, 120, 700, 300, hwnd, HMENU(IDS_LISTBOX), 
 				((LPCREATESTRUCT)lParam)->hInstance,
 				NULL);
 			/*
@@ -375,7 +375,8 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 			((LPCREATESTRUCT)lParam)->hInstance,
 			NULL); */
 
-			//			bearlib::wreadcfg(0);
+
+			bearlib::wreadcfg(0);
 
 		}
 		break;
@@ -387,9 +388,9 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 		case ID_MYBUTTON:
 			{	
 				// 開始一條使用 "hello_world" function 的新執行緒
-				boost::thread my_thread(&hello_world);
+				//	boost::thread my_thread(&hello_world);
 				// 等待執行緒完成工作
-				my_thread.join();
+				//	my_thread.join();
 				/*
 				std::string name;
 				try
@@ -429,44 +430,55 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)name.c_str());
 
 				*/
-				/*
+
 				sendCGlobal::ClientVerification();
 				WCHAR strText[2048];
 
 				char   GetszText[30000]; 
-				SendMessageA(Role_Name,WM_GETTEXT,30,(LPARAM)GetszText); 
 
 				char   GetszText2[30000]; 
-				SendMessageA(Dice_reasons,WM_GETTEXT,200,(LPARAM)GetszText2); 
 
 				char   GetszText3[30000]; 
-				SendMessageA(Quantity,WM_GETTEXT,10,(LPARAM)GetszText3); 
 
 				char   GetszText4[30000]; 
-				SendMessageA(Dice_face,WM_GETTEXT,10,(LPARAM)GetszText4); 
 
 				char   GetszText5[30000]; 
+				
+        memset(strText,0,2048);
+        memset(GetszText,0,30000);
+		memset(GetszText2,0,30000);
+		memset(GetszText3,0,30000);
+		memset(GetszText4,0,30000);
+		memset(GetszText5,0,30000);
+		
+				SendMessageA(Role_Name,WM_GETTEXT,30,(LPARAM)GetszText); 
+				SendMessageA(Dice_reasons,WM_GETTEXT,200,(LPARAM)GetszText2); 
+				SendMessageA(Quantity,WM_GETTEXT,10,(LPARAM)GetszText3); 
+				SendMessageA(Dice_face,WM_GETTEXT,10,(LPARAM)GetszText4); 
 				SendMessageA(Adjusted_value,WM_GETTEXT,10,(LPARAM)GetszText5); 
+
 
 				if(strcmp(GetszText,"") == 0)
 				{
-				break;
+					break;
 				}
 				if(strcmp(GetszText2,"") == 0)
 				{
-				break;
+					break;
 				}
-				if((strcmp(GetszText3,"") == 0) || !check(GetszText3))
+				
+				if((strcmp(GetszText3,"") == 0) || !check(GetszText3) || atoi(GetszText3) >= 30)
 				{
-				break;
+					break;
 				}
-				if((strcmp(GetszText4,"") == 0) || !check(GetszText4))
+				if((strcmp(GetszText4,"") == 0) || !check(GetszText4) || atoi(GetszText3) >= 30)
 				{
-				break;
+					break;
 				}
-				if((strcmp(GetszText5,"") == 0) || !check(GetszText5))
+				
+				if((strcmp(GetszText5,"") == 0) || !check(GetszText5) || atoi(GetszText5) >= 899999999)
 				{
-				break;
+					break;
 				}
 
 				std::string Temporary_str;
@@ -486,67 +498,81 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
 
 				try
 				{
-				boost::asio::io_service io_service;
-				tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
-				boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
-				io_service.run();
+					boost::asio::io_service io_service;
+					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
+					boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
+					io_service.run();
 				}
 				catch (std::exception& e)
 				{
-				WCHAR strText[512];
-				MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 2048 );
-				OutputDebugString(strText);     
+					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 2048 );
+					OutputDebugString(strText);     
+				}
+
+				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
+
+				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 2048 );
+				MessageBox(NULL,strText,L"骰子",MB_OK |MB_ICONINFORMATION); 
+
+				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sendCGlobal::CReceive_instructions().c_str());
+
+				
+							
+				vtsub.push_back(sendCGlobal::CReceive_instructions().c_str());
+				SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
+				std::vector<std::string>::reverse_iterator rIt = vtsub.rbegin();
+				for (size_t i = 0; i < vtsub.size(); ++ i)
+				{ 
+					SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)rIt[i].c_str());
+				}
+			}
+			break;
+		case ID_UPDATE:
+			{	
+				sendCGlobal::ClientVerification();
+				SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
+				//				sendCGlobal::ClientVerification();
+				WCHAR strText[2048];
+				std::string Temporary_str;
+				Temporary_str = "DiceUpdate";
+
+				
+        memset(strText,0,2048);
+				sendCGlobal::CTransfer_instruction(Temporary_str);	
+
+				try
+				{
+					boost::asio::io_service io_service;
+					tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
+					boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
+					io_service.run();
+				}
+				catch (std::exception& e)
+				{
+					MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 2048 );
+					OutputDebugString(strText);     
 				}
 
 				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
 
 				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 2048 );
 				//MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
-
-				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)sendCGlobal::CReceive_instructions().c_str());
-				*/
-			}
-			break;
-		case ID_UPDATE:
-			{	
-				/*
-				SendMessage (hList, LB_RESETCONTENT, 0, 0) ;
-				//				sendCGlobal::ClientVerification();
-				WCHAR strText[512];
-				std::string Temporary_str;
-				Temporary_str = "DiceUpdate";
-
-
-				sendCGlobal::CTransfer_instruction(Temporary_str);	
-
-				try
-				{
-				boost::asio::io_service io_service;
-				tcp::endpoint endpoint(boost::asio::ip::address_v4::from_string(bearlib::readcfg().c_str()),8100);
-				boost::shared_ptr<sendclient> sendclient_ptr(new sendclient(io_service,endpoint));
-				io_service.run();
-				}
-				catch (std::exception& e)
-				{
-				WCHAR strText[512];
-				MultiByteToWideChar( CP_ACP, 0, e.what(), -1, strText, 510 );
-				OutputDebugString(strText);     
-				}
-
-				sendCGlobal::CVerificationNumberR(sendCGlobal::CReceive_instructions().c_str());	
-
-				MultiByteToWideChar( CP_ACP, 0, sendCGlobal::CReceive_instructions().c_str(), -1, strText, 510 );
-				//MessageBox(NULL,strText,L"error",MB_OK |MB_ICONINFORMATION); 
 				/////////split
 
 				std::vector<std::string> vt;
 				split(sendCGlobal::CReceive_instructions().c_str(), vt);
+				/*for (size_t i = 0; i < vt.size(); ++ i)
+				{ 
+					SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)vt[i].c_str());
+				}*/
+
+				std::vector<std::string>::reverse_iterator rIt = vt.rbegin();
 				for (size_t i = 0; i < vt.size(); ++ i)
 				{ 
-				SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)vt[i].c_str());
+					SendMessageA(hList,LB_ADDSTRING,0,(LPARAM)rIt[i].c_str());
 				}
 				//////////////////////////////////////////
-				*/
+
 
 			}
 			break;
@@ -618,13 +644,16 @@ void shellgrouoppget(HWND hwnd)
 	static PTSTR 		pText ;
 	HGLOBAL      		hGlobal ;
 	PTSTR        		pGlobal ;	
-	char cc[2048];
+	char cc[5000];
+	TCHAR bb[5000];
+        memset(cc,0,5000);		
+        memset(bb,0,5000);
 	SendMessageA (hList, LB_GETTEXT, NumberID, (LPARAM)cc);
 	SetWindowTextA(Tlist,cc);
 
-	TCHAR bb[2048];
+	
 
-	MultiByteToWideChar( CP_ACP, 0, cc, -1, bb, 2048 );
+	MultiByteToWideChar( CP_ACP, 0, cc, -1, bb, 5000 );
 
 	pText = (PTSTR)malloc ((lstrlen (bb) + 1) * sizeof (TCHAR)) ;
 	lstrcpy ((LPWSTR)pText, (LPCWSTR)bb) ;
