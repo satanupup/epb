@@ -17,7 +17,10 @@ void dynamically_allocated_memory_buffer()
 	char * buffer;
 	size_t result;
 	size_t i;
-	char data[256];
+	char data[4096];
+	size_t len = 4096;
+	//char src[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\movie.mp4";
+//	char dst[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\movie2.mp4";	
 	char src[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\Hisaishi.mp4";
 	char dst[] = "C:\\c++\\epbgit\\ConsoleApplication\\Debug\\out\\Hisaishi2.mp4";	
 
@@ -45,18 +48,18 @@ void dynamically_allocated_memory_buffer()
 	if (( err = fopen_s(&fp,dst, "wb")) != 0)	
 		 exit(3);
 	
-	for(i=0;i<255;i++)
+	for(i=0;i<len;i++)
 	{	
 		data[i] = buffer[i];		
 	}		
 		
 	EncodeDecode(data);
-	EncodeDecode(data);
+//	EncodeDecode(data);
 	
-	for(i=0;i<255;i++)
+	for(i=0;i<len;i++)
 	{	
 		buffer[i] = data[i];
-	}			
+	}		
 	fwrite (buffer , lSize , 1 , fp );
 	
 	// terminate
@@ -68,30 +71,30 @@ void dynamically_allocated_memory_buffer()
 
 void EncodeDecode(char *str)
 {	
-  char ch;
-  size_t len, i;
-  //if ((len=strlen(str))<=0) return;
-  if ((len=255)<=0) return;  
-  for (i=0; i<len; i++)
-  {
-    switch(i%4)
-    {
-      case 0: case 3:
-        str[i]=str[i]^0xDB;
-        break;
-      default:
-        str[i]=str[i]^0xBD;
-        break;
-    }
-  }
+	char ch;
+	size_t len = 4096, i;
+//	if ((len=strlen(str))<=0) return;
+//	if (len<=0) return;  
+	for (i=0; i<len; i++)
+	{
+		switch(i%4)
+		{
+		case 0: case 3:
+			str[i]=str[i]^0xDB;
+			break;
+		default:
+			str[i]=str[i]^0xBD;
+			break;
+		}
+	}
 
-  for (i=0; i+3<len; i+=4)
-  {
-    ch=str[i];
-    str[i]=str[i+3];
-    str[i+3]=ch;
-    ch=str[i+1];
-    str[i+1]=str[i+2];
-    str[i+2]=ch;
-  }
+	for (i=0; i+3<len; i+=4)
+	{
+		ch=str[i];
+		str[i]=str[i+3];
+		str[i+3]=ch;
+		ch=str[i+1];
+		str[i+1]=str[i+2];
+		str[i+2]=ch;
+	}
 }
