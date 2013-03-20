@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{15E11445-9A16-46D0-A1C0-74AE12960E1F}</ProjectGuid>
+    <ProjectGuid>{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication147</RootNamespace>
-    <ProjectName>test_string_find_last_of_cstr</ProjectName>
+    <RootNamespace>ConsoleApplication149</RootNamespace>
+    <ProjectName>vector_conatiner_for_integer_elements</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -42,8 +42,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Boost\include\boost-1_53;C:\c++\epbgit\ConsoleApplication\ConsoleApplication145;C:\c++\libcstl;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Boost\lib;C:\c++\epbgit\ConsoleApplication\Debug;C:\c++\libcstl\bin;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\c++\libcstl;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\c++\libcstl\bin;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -56,12 +56,11 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SafeArray.lib;libcstl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcstl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

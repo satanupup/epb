@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{15E11445-9A16-46D0-A1C0-74AE12960E1F}</ProjectGuid>
+    <ProjectGuid>{438833E8-F693-496B-A4E7-663FDCDFCC90}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication147</RootNamespace>
-    <ProjectName>test_string_find_last_of_cstr</ProjectName>
+    <RootNamespace>ConsoleApplication148</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -56,12 +55,11 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SafeArray.lib;libcstl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcstl.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

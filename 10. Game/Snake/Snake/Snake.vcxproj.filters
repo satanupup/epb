@@ -15,8 +15,35 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.c">
+    <ClInclude Include="table.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="snake.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="snaker.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
       <Filter>原始程式檔</Filter>
     </ClCompile>
+    <ClCompile Include="snake.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+    <ClCompile Include="table.cpp">
+      <Filter>原始程式檔</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Snake.rc">
+      <Filter>資源檔</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>資源檔</Filter>
+    </Image>
   </ItemGroup>
 </Project>
