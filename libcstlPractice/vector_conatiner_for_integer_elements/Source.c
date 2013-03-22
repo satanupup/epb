@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <cstl/cvector.h>
 
+#ifdef _DEBUG  
 #pragma comment(lib,"..\\Debug\\libcstl.lib")
+#else 
+#pragma comment(lib,"..\\Release\\libcstl.lib")
+#endif // _DEBUG 
+
 int main()
 {
 	//vector conatiner for integer elements

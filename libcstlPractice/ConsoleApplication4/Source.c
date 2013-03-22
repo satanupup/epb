@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <cstl/cset.h>
+
+#ifdef _DEBUG  
 #pragma comment(lib,"..\\Debug\\libcstl.lib")
+#else 
+#pragma comment(lib,"..\\Release\\libcstl.lib")
+#endif // _DEBUG 
+
 int main()
 {
 	//set container for int values

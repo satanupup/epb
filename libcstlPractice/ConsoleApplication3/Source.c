@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <cstl/clist.h>
+
+#ifdef _DEBUG  
 #pragma comment(lib,"..\\Debug\\libcstl.lib")
+#else 
+#pragma comment(lib,"..\\Release\\libcstl.lib")
+#endif // _DEBUG 
+
 int main()
 {
 	//list container for character elements
@@ -20,7 +26,7 @@ int main()
 	{
 		list_push_back(plist_coll, c);
 	}
-
+	
 	// print all elements
 	// - iterate over all elements
 	for(it_pos = list_begin(plist_coll);
