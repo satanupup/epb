@@ -331,7 +331,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_string_find_last_of_cs
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication148", "ConsoleApplication148\ConsoleApplication148.vcxproj", "{438833E8-F693-496B-A4E7-663FDCDFCC90}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication149", "ConsoleApplication149\ConsoleApplication149.vcxproj", "{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vector_conatiner_for_integer_elements", "ConsoleApplication149\ConsoleApplication149.vcxproj", "{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication150", "ConsoleApplication150\ConsoleApplication150.vcxproj", "{737C6159-BA37-4FDA-9FB8-9B9163BFCD65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1215,6 +1217,10 @@ Global
 		{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3}.Release|Win32.ActiveCfg = Release|Win32
 		{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3}.Release|Win32.Build.0 = Release|Win32
 		{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3}.Release|Win32.Deploy.0 = Release|Win32
+		{737C6159-BA37-4FDA-9FB8-9B9163BFCD65}.Debug|Win32.ActiveCfg = Debug|Win32
+		{737C6159-BA37-4FDA-9FB8-9B9163BFCD65}.Debug|Win32.Build.0 = Debug|Win32
+		{737C6159-BA37-4FDA-9FB8-9B9163BFCD65}.Release|Win32.ActiveCfg = Release|Win32
+		{737C6159-BA37-4FDA-9FB8-9B9163BFCD65}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1374,5 +1380,6 @@ Global
 		{15E11445-9A16-46D0-A1C0-74AE12960E1F} = {B9C68FBE-1A60-4BE4-8F60-4B9C3E6A46C7}
 		{438833E8-F693-496B-A4E7-663FDCDFCC90} = {B9C68FBE-1A60-4BE4-8F60-4B9C3E6A46C7}
 		{8CFF5B12-D0A1-4DD1-B831-234D6F4C3BB3} = {B9C68FBE-1A60-4BE4-8F60-4B9C3E6A46C7}
+		{737C6159-BA37-4FDA-9FB8-9B9163BFCD65} = {B9C68FBE-1A60-4BE4-8F60-4B9C3E6A46C7}
 	EndGlobalSection
 EndGlobal

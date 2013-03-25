@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstl/cstring.h>
+
+#ifdef _DEBUG  
+#pragma comment(lib,"..\\Debug\\libcstl.lib")
+#else 
+#pragma comment(lib,"..\\Release\\libcstl.lib")
+#endif // _DEBUG 
+
 int main()
 {
 	size_t t_end = 0;
