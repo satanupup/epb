@@ -166,7 +166,7 @@ private:
 };
 int main()
 {
-	cchar cc;
+//	cchar cc;
 	//cc.title("D:\\c++\\Studies_Wang\\ELearningCRM\\trunk\\");
 	//cc.test2("C:\\Users\\naseem\\Desktop\\test\\ELearningCRM\\");
 	//cc.fileshow();
@@ -182,11 +182,11 @@ int main()
 //		cc.title("D:\\c++\\Studies_Wang\\LearningKing\\trunk\\");
 //		cc.test2("C:\\Users\\naseem\\Desktop\\test\\LearningKing\\");
 //	cc.fileshow();
-
+	/*
 	cc.title("D:\\c++\\Studies_Wang\\WinLearning\\trunk\\");	
 		cc.test2("C:\\Users\\naseem\\Desktop\\test\\WinLearning\\");
 	cc.fileshow();
-
+	*/
 
 	system("pause");
 	return 0;
