@@ -36,7 +36,7 @@
 
 #include <ctime>
 
-#pragma comment(lib,"sqlite3.lib")
+#pragma comment(lib,"..\\..\\SqliteLib\\Release\\sqlite3.lib")
 
 using boost::asio::ip::tcp;
 
