@@ -1,0 +1,102 @@
+// ---------------------------------------------------------------------------
+
+#include <fmx.h>
+#pragma hdrstop
+
+#include "dbMain.h"
+
+#include "sqlite3.h"
+
+#include <string>
+// ---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+TForm1 *Form1;
+
+void btntest();
+void dbview();
+
+// ---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
+{
+}
+
+// ---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+	System::WideChar &KeyChar, TShiftState Shift)
+{
+	if (Key == VK_ESCAPE)
+	{
+		exit(0);
+	}
+}
+
+void btntest()
+{
+
+	sqlite3 *db = NULL;
+	char *zErrMsg = 0;
+	int rc;
+	char *sql;
+
+	rc = sqlite3_open("dice.db", &db);
+	if (rc)
+	{
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
+	}
+	else
+	{
+	}
+
+	int nrow = 0, ncolumn = 0;
+	char ch1[4096] =
+		"CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,ROSENAME VARCHAR(12),ROSEID INTEGER );";
+	sql = ch1;
+	sqlite3_exec(db, sql, 0, 0, &zErrMsg);
+
+	char aa[4096] = "INSERT INTO \"SensorData\" VALUES( NULL ,'1', 2);";
+
+	sql = aa;
+	sqlite3_exec(db, sql, 0, 0, &zErrMsg);
+
+	sqlite3_close(db);
+
+}
+
+void dbview()
+{
+	sqlite3 *db = NULL;
+	char *zErrMsg = 0;
+	int rc;
+	char *sql;
+
+	rc = sqlite3_open("dice.db", &db);
+	if (rc)
+	{
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
+	}
+	else
+	{
+	}
+
+	char aa[1024] = "select * from SensorData;";
+	int nrow = 0, ncolumn = 0;
+	char **azResult; // 二維數組存放結果
+
+	sql = aa;
+	// MessageBoxA(NULL, "cc", "oo", MB_OK);
+	sqlite3_get_table(db, sql, &azResult, &nrow, &ncolumn, &zErrMsg);
+	for (int i = 0; i < (nrow + 1) * ncolumn; i++)
+	{
+		// std::cout << azResult[i] << std::endl;
+		MessageBoxA(NULL, azResult[i], "oo", MB_OK);
+	}
+	sqlite3_free_table(azResult);
+	sqlite3_close(db);
+}
+// ---------------------------------------------------------------------------
+

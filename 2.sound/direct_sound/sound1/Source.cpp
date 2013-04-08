@@ -99,11 +99,12 @@ LRESULT CALLBACK WndProc (HWND hwnd, UINT message, WPARAM wParam,LPARAM lParam)
 		{
 			case ID_MYBUTTON:
 			{
-				SoundPlay(0);				
+				SoundPlay(1);				
 				Sleep(1000);				
-				Sound[0].pMediaControl->Stop(); 
+				Sound[1].pMediaControl->Stop(); 
 				
-				SoundPlay(1);
+				SoundPlay(0);
+			//	Sound[0].pMediaControl->Run(); 
 			}
 			break;
 			default:
@@ -140,7 +141,7 @@ return 0;
 int Load_WAV()
 {
 	HRESULT hr;
-	char * str[2] = {"122821.mp3","122857.mp3"};
+	char * str[2] = {"annu6.wav","gtitle.wav"};
 		
 	Sound=new sound[2];	 
 	for(int i=0;i<2;i++){

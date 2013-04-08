@@ -1,0 +1,146 @@
+// ---------------------------------------------------------------------------
+
+#include <fmx.h>
+#pragma hdrstop
+
+#include "dbMain.h"
+
+// ---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+TForm1 *Form1;
+
+// ---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
+{
+}
+
+// ---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+	System::WideChar &KeyChar, TShiftState Shift)
+{
+	if (Key == VK_ESCAPE)
+	{
+		exit(0);
+	}
+}
+
+// ---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+	// btntest();
+
+	ListBox1->Columns = 3;
+	dbview();
+
+}
+// ---------------------------------------------------------------------------
+
+void TForm1::btntest()
+{
+
+	sqlite3 *db = NULL;
+	char *zErrMsg = 0;
+	int rc;
+	char *sql;
+
+	rc = sqlite3_open("dice.db", &db);
+	if (rc)
+	{
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
+	}
+	else
+	{
+	}
+
+	int nrow = 0, ncolumn = 0;
+	char ch1[4096] =
+		"CREATE TABLE SensorData(ID INTEGER PRIMARY KEY,ROSENAME VARCHAR(12),ROSEID INTEGER );";
+	//
+	// 指揮官名稱		Commander Name
+	// 職業				Profession
+	// 指揮官HP			Commander HP
+	// 行動狀態			Action Status
+	// 地圖上形象		Map image
+	// Y軸坐標			Y-axis coordinate
+	// X軸坐標			X coordinate
+	// 裝備武器			Equipped with weapons
+	// 輔助魔法效果		Auxiliary magic effect
+	// 裝備飾物			Equipment accessories
+	// 裝備防具	      	Equipment and armor
+	// 傭兵所屬	      	Mercenary belongs
+	// 傭兵兵種	      	Mercenary arms
+	// 傭兵HP	      	Mercenary HP
+	// 傭兵行動狀態    	Mercenary action status
+	// 傭兵		       	Mercenary
+	// 部隊序號	       	Force serial number
+	// 傭兵Y軸坐標     	The mercenary Y axis coordinates
+	// 傭兵X軸坐標     	The mercenary X axis coordinates
+	// 指令		       	Instruction
+	// 所屬勢力	       	Belongs forces
+	// 指揮官經驗      	Commander of experience
+	// 指揮官等級      	Commander Level
+	// 最大MP	       	Max MP
+	// MP		       	MP
+	// 防禦力	       	Defense
+	// 攻擊力	       	ATK
+	// 移動力	       	Moving force
+	// 指揮範圍	       	Command range
+	// 防禦修正	       	Defense correction
+	// 攻擊修正	       	Attack modifier
+	// 魔法16-23		Magic 16-23
+	// 職業魔法防禦		Occupational magic defense
+	// 魔法1-7			Magic 1-7
+	// 魔法8-15	       	Magic 8-15
+	// 召喚獸MP	       	Summon MP
+	// 魅惑前所屬		Charm of before they
+	// 指揮官肖像		Commander Portrait
+	sql = ch1;
+	sqlite3_exec(db, sql, 0, 0, &zErrMsg);
+
+	char aa[4096] = "INSERT INTO \"SensorData\" VALUES( NULL ,'我愛羅', 3);";
+
+	sql = aa;
+	sqlite3_exec(db, sql, 0, 0, &zErrMsg);
+
+	sqlite3_close(db);
+
+}
+
+void TForm1::dbview()
+{
+	sqlite3 *db = NULL;
+	char *zErrMsg = 0;
+	int rc;
+	char *sql;
+
+	rc = sqlite3_open("dice.db", &db);
+	if (rc)
+	{
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
+	}
+	else
+	{
+	}
+
+	char aa[1024] = "select * from SensorData;";
+	int nrow = 0, ncolumn = 0;
+	char **azResult; // 二維數組存放結果
+
+	sql = aa;
+	// MessageBoxA(NULL, "cc", "oo", MB_OK);
+	sqlite3_get_table(db, sql, &azResult, &nrow, &ncolumn, &zErrMsg);
+	for (int i = 0; i < (nrow + 1) * ncolumn; i++)
+	{
+		// std::cout << azResult[i] << std::endl;
+		// MessageBoxA(NULL, azResult[i], "oo", MB_OK);
+		ListBox1->Items->Add(azResult[i]);
+	}
+	sqlite3_free_table(azResult);
+	sqlite3_close(db);
+}
