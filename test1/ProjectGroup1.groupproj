@@ -1,15 +1,12 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{8597E041-C0DB-4CD2-9047-ACB172A951B5}</ProjectGuid>
+        <ProjectGuid>{E3EC83C0-92F2-4F19-9DB0-0701457D549A}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="DBManagement.cbproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="GameMain.cbproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\Users\USER\Desktop\Scrollbar\scrollba.cbproj">
+        <Projects Include="DBManagement.cbproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -20,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="DBManagement">
-        <MSBuild Projects="DBManagement.cbproj"/>
-    </Target>
-    <Target Name="DBManagement:Clean">
-        <MSBuild Projects="DBManagement.cbproj" Targets="Clean"/>
-    </Target>
-    <Target Name="DBManagement:Make">
-        <MSBuild Projects="DBManagement.cbproj" Targets="Make"/>
-    </Target>
     <Target Name="GameMain">
         <MSBuild Projects="GameMain.cbproj"/>
     </Target>
@@ -38,23 +26,23 @@
     <Target Name="GameMain:Make">
         <MSBuild Projects="GameMain.cbproj" Targets="Make"/>
     </Target>
-    <Target Name="scrollba">
-        <MSBuild Projects="C:\Users\USER\Desktop\Scrollbar\scrollba.cbproj"/>
+    <Target Name="DBManagement">
+        <MSBuild Projects="DBManagement.cbproj"/>
     </Target>
-    <Target Name="scrollba:Clean">
-        <MSBuild Projects="C:\Users\USER\Desktop\Scrollbar\scrollba.cbproj" Targets="Clean"/>
+    <Target Name="DBManagement:Clean">
+        <MSBuild Projects="DBManagement.cbproj" Targets="Clean"/>
     </Target>
-    <Target Name="scrollba:Make">
-        <MSBuild Projects="C:\Users\USER\Desktop\Scrollbar\scrollba.cbproj" Targets="Make"/>
+    <Target Name="DBManagement:Make">
+        <MSBuild Projects="DBManagement.cbproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="DBManagement;GameMain;scrollba"/>
+        <CallTarget Targets="GameMain;DBManagement"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="DBManagement:Clean;GameMain:Clean;scrollba:Clean"/>
+        <CallTarget Targets="GameMain:Clean;DBManagement:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="DBManagement:Make;GameMain:Make;scrollba:Make"/>
+        <CallTarget Targets="GameMain:Make;DBManagement:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

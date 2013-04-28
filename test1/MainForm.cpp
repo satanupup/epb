@@ -75,6 +75,18 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	Timer1->Interval = 41000;
 	Timer1->OnTimer = Timer1Timer;
 	Timer1->Enabled = true;
+
+	Image2->Visible = false;
+	Image3->Visible = false;
+	Image4->Visible = false;
+	Image5->Visible = false;
+
+	// BitmapListAnimation1->Stop();
+
+	// Role1_1->Start();
+
+	// Edit1->Visible = false;
+	// Edit2->Visible = false;
 	// boost::progress_timer t;
 	// t.restart();
 	// wchar_t *wav_handle;
@@ -116,6 +128,76 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 				// Timer1->Enabled = true;
 				// btntest();
 				gameState = GAME_STATE_TRAILER;
+
+			}
+
+			if (Key == VK_ESCAPE)
+			{
+				SoundPlay(2);
+				BitmapListAnimation1->Stop();
+				// BitmapListAnimation2->Start();
+				// Timer1->Enabled = true;
+				// btntest();
+				gameState = GAME_STATE_TRAILER;
+
+				Sleep(100);
+
+				// dbview();
+				Timer1->Enabled = false;
+				Sound[1].pMediaControl->Stop();
+				SoundPlay(2);
+
+				Sleep(100);
+
+				BitmapListAnimation2->Stop();
+				BitmapListAnimation3->Stop();
+				// BitmapListAnimation4->Start();
+				gameState = GAME_STATE_MAIN_MENU;
+
+				Sleep(100);
+
+				SoundPlay(3);
+				SoundPlay(2);
+				BitmapListAnimation4->Stop();
+				// BitmapAnimation1->Start();
+				gameState = GAME_STATE_INGAME;
+
+				Sleep(100);
+
+				Sound[3].pMediaControl->Stop();
+				SoundPlay(4);
+				BitmapAnimation1->Stop();
+				// shop1->Start();
+				gameState = GAME_STATE_SETTINGS_MENU;
+
+				Sleep(100);
+				SoundPlay(2);
+				// Configuration1_1->Start();
+				shopslect = 6;
+
+				SoundPlay(2);
+				Sound[4].pMediaControl->Stop();
+				Configuration1_5->Stop();
+				Sleep(100);
+
+				// map1->Start();
+				gameState = GAME_STATE_MAP_MAP1;
+				SoundPlay(5);
+
+				Image1->Visible = false;
+				Image5->Visible = true;
+
+				Image6->Visible = true;
+
+
+				Image6->Position->X = 510;
+				Image6->Position->Y = 850;
+
+				Role1_1->Start();
+
+
+				Image5->Position->X = -230;
+				Image5->Position->Y = -630;
 
 			}
 
@@ -421,7 +503,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 								Configuration1_5->Stop();
 								map1->Start();
 								gameState = GAME_STATE_MAP_MAP1;
-								 SoundPlay(5);
+								SoundPlay(5);
 							}
 
 						} break;
@@ -443,6 +525,28 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 	case GAME_STATE_MAP_MAP1:
 		{
 
+			if (Key == VK_UP)
+			{
+				if (Image5->Position->Y < 0)
+					Image5->Position->Y += 10;
+			}
+			if (Key == VK_DOWN)
+			{
+				if (Image5->Position->Y > -700)
+					Image5->Position->Y -= 10;
+			}
+			if (Key == VK_LEFT)
+			{
+				if (Image5->Position->X < 0)
+					Image5->Position->X += 10;
+			}
+			if (Key == VK_RIGHT)
+			{
+				if (Image5->Position->X > -870)
+					Image5->Position->X -= 10;
+			}
+			Edit1->Text = Image5->Position->X;
+			Edit2->Text = Image5->Position->Y;
 
 		} break;
 	default:
@@ -461,10 +565,11 @@ int Load_WAV()
 
 	HRESULT hr;
 	char * str[6] =
-		// {"annu6.wav", "gtitle.wav", "ko1.wav", "title1.wav", "shop1.wav"};
+		// {"annu6.wav", "gtitle.wav", "ko1.wav", "title1.wav", "shop1.wav","map1.wav"};
 	{"C:\\c++\\epbgit\\test1\\annu6.wav", "C:\\c++\\epbgit\\test1\\gtitle.wav",
 		"C:\\c++\\epbgit\\test1\\ko1.wav", "C:\\c++\\epbgit\\test1\\title1.wav",
-		"C:\\c++\\epbgit\\test1\\shop1.wav","C:\\c++\\epbgit\\test1\\map1.wav"};
+		"C:\\c++\\epbgit\\test1\\shop1.wav", "C:\\c++\\epbgit\\test1\\map1.wav"
+	};
 
 	// char *wav_handle[2];
 	// HRSRC h = FindResource(HInstance, L"IDR_WAVE1", L"WAV");
@@ -615,4 +720,5 @@ void dbview()
 	sqlite3_free_table(azResult);
 	sqlite3_close(db);
 }
+
 // ---------------------------------------------------------------------------

@@ -29,7 +29,7 @@
 // 指揮範圍			Command_range                          VARCHAR(12)
 // 防禦修正			Defense_correction                     VARCHAR(12)
 // 攻擊修正			Attack_modifier                        VARCHAR(12)
-// 魔法16-23			Magic_16-23                            VARCHAR(12)
+// 魔法16-23		Magic_16-23                            VARCHAR(12)
 // 職業魔法防禦		Occupational_magic_defense              VARCHAR(12)
 // 魔法1-7			Magic_1-7                               VARCHAR(12)
 // 魔法8-15			Magic_8-15                             VARCHAR(12)
@@ -54,17 +54,251 @@ TForm1 *Form1;
 // ---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 {
+
 	this->Caption = "Test";
 	this->ClientHeight = 768;
 	this->ClientWidth = 1380;
 	this->ListBox1->Width = 1280;
 	this->ListBox1->Height = 500;
-	this->Edit1->Position->Y = 600;
-	this->Edit1->Position->X = 20;
-	this->Edit2->Position->Y = 600;
-	this->Edit2->Position->X = 400;
+	this->Selectch->Position->Y = 700;
+	this->Selectch->Position->X = 20;
 	this->chadd->Position->Y = 700;
 	this->chdelete->Position->Y = 700;
+
+	this->chupdate->Position->Y = 700;
+
+	this->TabControl1->Position->X = 20;
+	this->TabControl1->Position->Y = 520;
+
+	this->Label1->Position->X = 10;
+	this->Label1->Position->Y = 6;
+	this->Label1->Text = "指揮官名稱";
+	this->Commander_Name_edit->Position->X = 10;
+	this->Commander_Name_edit->Position->Y = 30;
+
+	this->Label2->Position->X = 70 * 1;
+	this->Label2->Position->Y = 6;
+	this->Label2->Text = "職業";
+	this->Profession_edit->Position->X = 70 * 1;
+	this->Profession_edit->Position->Y = 30;
+
+	this->Label3->Position->X = 70 * 2;
+	this->Label3->Position->Y = 6;
+	this->Label3->Text = "指揮官HP";
+	this->Commander_HP_edit->Position->X = 70 * 2;
+	this->Commander_HP_edit->Position->Y = 30;
+
+	this->Label4->Position->X = 70 * 3;
+	this->Label4->Position->Y = 6;
+	this->Label4->Text = "行動狀態";
+	this->Action_Status_edit->Position->X = 70 * 3;
+	this->Action_Status_edit->Position->Y = 30;
+
+	this->Label5->Position->X = 70 * 4;
+	this->Label5->Position->Y = 6;
+	this->Label5->Text = "地圖上形象";
+	this->Map_image_edit->Position->X = 70 * 4;
+	this->Map_image_edit->Position->Y = 30;
+
+	//
+	this->Label6->Position->X = 10;
+	this->Label6->Position->Y = 6;
+	this->Label6->Text = "Y軸坐標";
+	this->Y_axis_coordinate_edit->Position->X = 10;
+	this->Y_axis_coordinate_edit->Position->Y = 30;
+
+	this->Label7->Position->X = 70 * 1;
+	this->Label7->Position->Y = 6;
+	this->Label7->Text = "X軸坐標";
+	this->X_coordinate_edit->Position->X = 70 * 1;
+	this->X_coordinate_edit->Position->Y = 30;
+
+	this->Label8->Position->X = 70 * 2;
+	this->Label8->Position->Y = 6;
+	this->Label8->Text = "裝備武器";
+	this->Equipped_with_weapons_edit->Position->X = 70 * 2;
+	this->Equipped_with_weapons_edit->Position->Y = 30;
+
+	this->Label9->Position->X = 70 * 3;
+	this->Label9->Position->Y = 6;
+	this->Label9->Text = "輔助魔法效果";
+	this->Auxiliary_magic_effect_edit->Position->X = 70 * 3;
+	this->Auxiliary_magic_effect_edit->Position->Y = 30;
+
+	this->Label10->Position->X = 70 * 4;
+	this->Label10->Position->Y = 6;
+	this->Label10->Text = "裝備飾物";
+	this->Equipment_accessories_edit->Position->X = 70 * 4;
+	this->Equipment_accessories_edit->Position->Y = 30;
+
+	this->Label11->Position->X = 10;
+	this->Label11->Position->Y = 6;
+	this->Label11->Text = "裝備防具";
+	this->Equipment_and_armor_edit->Position->X = 10;
+	this->Equipment_and_armor_edit->Position->Y = 30;
+
+	this->Label12->Position->X = 70 * 1;
+	this->Label12->Position->Y = 6;
+	this->Label12->Text = "傭兵所屬";
+	this->Mercenary_belongs_edit->Position->X = 70 * 1;
+	this->Mercenary_belongs_edit->Position->Y = 30;
+
+	this->Label13->Position->X = 70 * 2;
+	this->Label13->Position->Y = 6;
+	this->Label13->Text = "傭兵兵種";
+	this->Mercenary_arms_edit->Position->X = 70 * 2;
+	this->Mercenary_arms_edit->Position->Y = 30;
+
+	this->Label14->Position->X = 70 * 3;
+	this->Label14->Position->Y = 6;
+	this->Label14->Text = "傭兵HP";
+	this->Mercenary_HP_edit->Position->X = 70 * 3;
+	this->Mercenary_HP_edit->Position->Y = 30;
+
+	this->Label15->Position->X = 70 * 4;
+	this->Label15->Position->Y = 6;
+	this->Label15->Text = "傭兵行動狀態";
+	this->Mercenary_action_status_edit->Position->X = 70 * 4;
+	this->Mercenary_action_status_edit->Position->Y = 30;
+
+	this->Label16->Position->X = 10;
+	this->Label16->Position->Y = 6;
+	this->Label16->Text = "傭兵";
+	this->Mercenary_edit->Position->X = 10;
+	this->Mercenary_edit->Position->Y = 30;
+
+	this->Label17->Position->X = 70 * 1;
+	this->Label17->Position->Y = 6;
+	this->Label17->Text = "部隊序號";
+	this->Force_serial_number_edit->Position->X = 70 * 1;
+	this->Force_serial_number_edit->Position->Y = 30;
+
+	this->Label18->Position->X = 70 * 2;
+	this->Label18->Position->Y = 6;
+	this->Label18->Text = "傭兵Y軸坐標";
+	this->The_mercenary_Y_axis_coordinates_edit->Position->X = 70 * 2;
+	this->The_mercenary_Y_axis_coordinates_edit->Position->Y = 30;
+
+	this->Label19->Position->X = 70 * 3;
+	this->Label19->Position->Y = 6;
+	this->Label19->Text = "傭兵X軸坐標";
+	this->The_mercenary_X_axis_coordinates_edit->Position->X = 70 * 3;
+	this->The_mercenary_X_axis_coordinates_edit->Position->Y = 30;
+
+	this->Label20->Position->X = 70 * 4;
+	this->Label20->Position->Y = 6;
+	this->Label20->Text = "指令";
+	this->Instruction_edit->Position->X = 70 * 4;
+	this->Instruction_edit->Position->Y = 30;
+
+	this->Label21->Position->X = 10;
+	this->Label21->Position->Y = 6;
+	this->Label21->Text = "所屬勢力";
+	this->Belongs_forces_edit->Position->X = 10;
+	this->Belongs_forces_edit->Position->Y = 30;
+
+	this->Label22->Position->X = 70 * 1;
+	this->Label22->Position->Y = 6;
+	this->Label22->Text = "指揮官經驗";
+	this->Commander_of_experience_edit->Position->X = 70 * 1;
+	this->Commander_of_experience_edit->Position->Y = 30;
+
+	this->Label23->Position->X = 70 * 2;
+	this->Label23->Position->Y = 6;
+	this->Label23->Text = "指揮官等級";
+	this->Commander_Level_edit->Position->X = 70 * 2;
+	this->Commander_Level_edit->Position->Y = 30;
+
+	this->Label24->Position->X = 70 * 3;
+	this->Label24->Position->Y = 6;
+	this->Label24->Text = "最大MP";
+	this->Max_MP_edit->Position->X = 70 * 3;
+	this->Max_MP_edit->Position->Y = 30;
+
+	this->Label25->Position->X = 70 * 4;
+	this->Label25->Position->Y = 6;
+	this->Label25->Text = "MP";
+	this->MP_edit->Position->X = 70 * 4;
+	this->MP_edit->Position->Y = 30;
+
+	this->Label26->Position->X = 10;
+	this->Label26->Position->Y = 6;
+	this->Label26->Text = "防禦力";
+	this->Defense_edit->Position->X = 10;
+	this->Defense_edit->Position->Y = 30;
+
+	this->Label27->Position->X = 70 * 1;
+	this->Label27->Position->Y = 6;
+	this->Label27->Text = "攻擊力";
+	this->ATK_edit->Position->X = 70 * 1;
+	this->ATK_edit->Position->Y = 30;
+
+	this->Label28->Position->X = 70 * 2;
+	this->Label28->Position->Y = 6;
+	this->Label28->Text = "移動力";
+	this->Moving_force_edit->Position->X = 70 * 2;
+	this->Moving_force_edit->Position->Y = 30;
+
+	this->Label29->Position->X = 70 * 3;
+	this->Label29->Position->Y = 6;
+	this->Label29->Text = "指揮範圍";
+	this->Command_range_edit->Position->X = 70 * 3;
+	this->Command_range_edit->Position->Y = 30;
+
+	this->Label30->Position->X = 70 * 4;
+	this->Label30->Position->Y = 6;
+	this->Label30->Text = "防禦修正";
+	this->Defense_correction_edit->Position->X = 70 * 4;
+	this->Defense_correction_edit->Position->Y = 30;
+
+	this->Label31->Position->X = 10;
+	this->Label31->Position->Y = 6;
+	this->Label31->Text = "攻擊修正";
+	this->Attack_modifier_edit->Position->X = 10;
+	this->Attack_modifier_edit->Position->Y = 30;
+
+	this->Label32->Position->X = 70 * 1;
+	this->Label32->Position->Y = 6;
+	this->Label32->Text = "魔法16-23";
+	this->Magic_16_23_edit->Position->X = 70 * 1;
+	this->Magic_16_23_edit->Position->Y = 30;
+
+	this->Label33->Position->X = 70 * 2;
+	this->Label33->Position->Y = 6;
+	this->Label33->Text = "職業魔法防禦";
+	this->Occupational_magic_defense_edit->Position->X = 70 * 2;
+	this->Occupational_magic_defense_edit->Position->Y = 30;
+
+	this->Label34->Position->X = 70 * 3;
+	this->Label34->Position->Y = 6;
+	this->Label34->Text = "魔法1-7";
+	this->Magic_1_7_edit->Position->X = 70 * 3;
+	this->Magic_1_7_edit->Position->Y = 30;
+
+	this->Label35->Position->X = 70 * 4;
+	this->Label35->Position->Y = 6;
+	this->Label35->Text = "魔法8-15";
+	this->Magic_8_15_edit->Position->X = 70 * 4;
+	this->Magic_8_15_edit->Position->Y = 30;
+
+	this->Label36->Position->X = 10;
+	this->Label36->Position->Y = 6;
+	this->Label36->Text = "召喚獸MP";
+	this->Summon_MP_edit->Position->X = 10;
+	this->Summon_MP_edit->Position->Y = 30;
+
+	this->Label37->Position->X = 70 * 1;
+	this->Label37->Position->Y = 6;
+	this->Label37->Text = "魅惑前所屬";
+	this->Charm_of_before_they_edit->Position->X = 70 * 1;
+	this->Charm_of_before_they_edit->Position->Y = 30;
+
+	this->Label38->Position->X = 70 * 2;
+	this->Label38->Position->Y = 6;
+	this->Label38->Text = "指揮官肖像";
+	this->Commander_Portrait_edit->Position->X = 70 * 2;
+	this->Commander_Portrait_edit->Position->Y = 30;
+
 }
 
 // ---------------------------------------------------------------------------
@@ -81,8 +315,9 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
-	ListBox1->Columns = 39;
+	// StringsValuesList1->Strings->Add("123");
 
+	ListBox1->Columns = 39;
 	dbview();
 }
 // ---------------------------------------------------------------------------
@@ -178,17 +413,98 @@ void TForm1::dbview()
 void __fastcall TForm1::ListBox1Click(TObject *Sender)
 {
 	// ScrollBar1 = ListBox1->VScrollBar ;
+	int j1;
 
-	Edit1->Text = ListBox1->ItemByIndex(ListBox1->ItemIndex)->Text;
+	j1 = (ListBox1->ItemIndex % 39);
+
+	Selectch->Text = ListBox1->ItemByIndex(ListBox1->ItemIndex)->Text;
+
+	Commander_Name_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 1)->Text;
+
+	Profession_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 2)->Text;
+	Commander_HP_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 3)->Text;
+
+	Action_Status_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 4)->Text;
+	Map_image_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 5)->Text;
+	Y_axis_coordinate_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 6)->Text;
+	X_coordinate_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 7)->Text;
+	Equipped_with_weapons_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 8)->Text;
+	Auxiliary_magic_effect_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 9)->Text;
+	Equipment_accessories_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 10)->Text;
+	Equipment_and_armor_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 11)->Text;
+	Mercenary_belongs_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 12)->Text;
+	Mercenary_arms_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 13)->Text;
+	Mercenary_HP_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 14)->Text;
+	Mercenary_action_status_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 15)->Text;
+	Mercenary_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 16)->Text;
+	Force_serial_number_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 17)->Text;
+	The_mercenary_Y_axis_coordinates_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 18)->Text;
+	The_mercenary_X_axis_coordinates_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 19)->Text;
+	Instruction_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 20)->Text;
+	Belongs_forces_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 21)->Text;
+	Commander_of_experience_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 22)->Text;
+	Commander_Level_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 23)->Text;
+	Max_MP_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 24)->Text;
+	MP_edit->Text = ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 25)->Text;
+	Defense_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 26)->Text;
+	ATK_edit->Text = ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 27)->Text;
+	Moving_force_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 28)->Text;
+	Command_range_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 29)->Text;
+	Defense_correction_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 30)->Text;
+	Attack_modifier_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 31)->Text;
+	Magic_16_23_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 32)->Text;
+	Occupational_magic_defense_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 33)->Text;
+	Magic_1_7_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 34)->Text;
+	Magic_8_15_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 35)->Text;
+	Summon_MP_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 36)->Text;
+	Charm_of_before_they_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 37)->Text;
+	Commander_Portrait_edit->Text =
+		ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 38)->Text;
+
 }
 // ---------------------------------------------------------------------------
 
 void __fastcall TForm1::chaddClick(TObject *Sender)
 {
-	ListBox1->Clear();
+	// ListBox1->Clear();
 
-	dbcharadd(Edit2->Text);
-	dbview();
+	dbcharadd(Commander_Name_edit->Text);
+	// dbview();
 }
 // ---------------------------------------------------------------------------
 
@@ -240,8 +556,10 @@ void TForm1::dbcharadd(System::UnicodeString str1)
 	WideCharToMultiByte(CP_ACP, 0, wstr1.c_str(), -1, strText, 510, NULL, NULL);
 
 	sprintf(aa,
-		"INSERT INTO \"SensorData\" VALUES( NULL ,'%s','職業','指揮官HP','行動狀態','地圖上形象','Y軸坐標','X軸坐標','裝備武器','輔助魔法效果','裝備飾物','裝備防具','傭兵所屬','傭兵兵種','傭兵HP','傭兵行動狀態','傭兵','部隊序號','傭兵Y軸坐標','傭兵X軸坐標','指令','所屬勢力','指揮官經驗','指揮官等級','最大MP','MP','防禦力','攻擊力','移動力','指揮範圍','防禦修正','攻擊修正','魔法16-23','職業魔法防禦','魔法1-7','魔法8-15','召喚獸MP','魅惑前所屬','指揮官肖像');",
+		// "INSERT INTO \"SensorData\" VALUES( NULL ,'%s','職業','指揮官HP','行動狀態','地圖上形象','Y軸坐標','X軸坐標','裝備武器','輔助魔法效果','裝備飾物','裝備防具','傭兵所屬','傭兵兵種','傭兵HP','傭兵行動狀態','傭兵','部隊序號','傭兵Y軸坐標','傭兵X軸坐標','指令','所屬勢力','指揮官經驗','指揮官等級','最大MP','MP','防禦力','攻擊力','移動力','指揮範圍','防禦修正','攻擊修正','魔法16-23','職業魔法防禦','魔法1-7','魔法8-15','召喚獸MP','魅惑前所屬','指揮官肖像');",
+		"INSERT INTO \"SensorData\" VALUES( NULL ,'%s','0','10','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');",
 		strText);
+	// "INSERT INTO \"SensorData\" VALUES( NULL ,'%s','0','10','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');",
 
 	// MessageBox(NULL, wstr1.c_str(), L"oo", MB_OK);
 	sql = aa;
@@ -282,11 +600,230 @@ void TForm1::dbchardelete(System::UnicodeString str1)
 	sqlite3_close(db);
 }
 
+// sprint(a,"update sensordata set APPON = %s where GROUPNAME = "%s" and APPNAME = "%s";",1,group02,office);
+void TForm1::dbcharupdate(System::UnicodeString str1,
+	System::UnicodeString str2, System::UnicodeString str3,
+	System::UnicodeString str4)
+{
+	sqlite3 *db = NULL;
+	char *zErrMsg = 0;
+	int rc;
+	char *sql;
+
+	rc = sqlite3_open("dice.db", &db);
+	if (rc)
+	{
+		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		exit(1);
+	}
+	else
+	{
+	}
+	char aa[10000];
+	std::wstring wstr1 = str1.w_str();
+	std::wstring wstr2 = str2.w_str();
+	std::wstring wstr3 = str3.w_str();
+	std::wstring wstr4 = str4.w_str();
+	char strText1[512];
+	char strText2[512];
+	char strText3[512];
+	char strText4[512];
+	WideCharToMultiByte(CP_ACP, 0, wstr1.c_str(), -1, strText1, 510,
+		NULL, NULL);
+	WideCharToMultiByte(CP_ACP, 0, wstr2.c_str(), -1, strText2, 510,
+		NULL, NULL);
+	WideCharToMultiByte(CP_ACP, 0, wstr3.c_str(), -1, strText3, 510,
+		NULL, NULL);
+	WideCharToMultiByte(CP_ACP, 0, wstr4.c_str(), -1, strText4, 510,
+		NULL, NULL);
+
+	// sprint(aa,"update SensorData set APPON = %s where ID = \"%s\" and sprint(a,"update sensordata set APPON = %s where GROUPNAME = "%s" and APPNAME = "%s";",1,group02,office); = \"%s\";","1",group02,office);
+
+	sprintf(aa,
+		"update sensordata set %s = \"%s\" where ID = %s and COMMANDER_NAME = \"%s\"",
+		strText1, strText2, strText3, strText4);
+
+	// MessageBox(NULL, wstr1.c_str(), L"oo", MB_OK);
+	sql = aa;
+	sqlite3_exec(db, sql, 0, 0, &zErrMsg);
+
+	sqlite3_close(db);
+}
+
 void __fastcall TForm1::chdeleteClick(TObject *Sender)
 {
 
-	ListBox1->Clear();
-	dbchardelete(Edit1->Text);
-	dbview();
+	// ListBox1->Clear();
+	dbchardelete(Selectch->Text);
+	// dbview();
+}
+
+// ---------------------------------------------------------------------------
+void __fastcall TForm1::chupdateClick(TObject *Sender)
+{
+	// ListBox1->Clear();
+	// "update sensordata set %s = \"%s\" where ID = %s and COMMANDER_NAME = \"%s\"",
+
+	int j1;
+
+	j1 = (ListBox1->ItemIndex % 39);
+
+	if (ListBox1->ItemByIndex(j1)->Text == "ID")
+	{
+		MessageBox(NULL, TEXT("請勿修改ID"), TEXT("error"),
+			MB_OK | MB_ICONINFORMATION);
+	}
+	else if (ListBox1->ItemIndex < 39)
+	{
+		MessageBox(NULL, TEXT("請勿修改tabel"), TEXT("error"),
+			MB_OK | MB_ICONINFORMATION);
+	}
+	else
+	{
+
+		// dbcharupdate(ListBox1->ItemByIndex(j1)->Text, Selectch->Text,
+		// ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+		// Commander_Name_edit->Text);
+
+		// Commander_Name_edit->Text =
+		// ListBox1->ItemByIndex(ListBox1->ItemIndex - j1 + 1)->Text;
+
+		dbcharupdate(ListBox1->ItemByIndex(1)->Text, Commander_Name_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(2)->Text, Profession_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(3)->Text, Commander_HP_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(4)->Text, Action_Status_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(5)->Text, Map_image_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(6)->Text,
+			Y_axis_coordinate_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(7)->Text, X_coordinate_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(8)->Text,
+			Equipped_with_weapons_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(9)->Text,
+			Auxiliary_magic_effect_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(10)->Text,
+			Equipment_accessories_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(11)->Text,
+			Equipment_and_armor_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(12)->Text,
+			Mercenary_belongs_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(13)->Text, Mercenary_arms_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(14)->Text, Mercenary_HP_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(15)->Text,
+			Mercenary_action_status_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(16)->Text, Mercenary_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(17)->Text,
+			Force_serial_number_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(18)->Text,
+			The_mercenary_Y_axis_coordinates_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(19)->Text,
+			The_mercenary_X_axis_coordinates_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(20)->Text, Instruction_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(21)->Text, Belongs_forces_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(22)->Text,
+			Commander_of_experience_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(23)->Text,
+			Commander_Level_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(24)->Text, Max_MP_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(25)->Text, MP_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(26)->Text, Defense_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(27)->Text, ATK_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(28)->Text, Moving_force_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(29)->Text, Command_range_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(30)->Text,
+			Defense_correction_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(31)->Text,
+			Attack_modifier_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(32)->Text, Magic_16_23_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(33)->Text,
+			Occupational_magic_defense_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(34)->Text, Magic_1_7_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(35)->Text, Magic_8_15_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(36)->Text, Summon_MP_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(37)->Text,
+			Charm_of_before_they_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+		dbcharupdate(ListBox1->ItemByIndex(38)->Text,
+			Commander_Portrait_edit->Text,
+			ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,
+			Commander_Name_edit->Text);
+
+	}
+
+	// dbview();
+	// MessageBox(NULL,TEXT("qq"),TEXT("bb"),MB_OK |MB_ICONINFORMATION);
 }
 // ---------------------------------------------------------------------------

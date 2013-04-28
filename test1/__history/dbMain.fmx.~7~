@@ -1,0 +1,661 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 893
+  ClientWidth = 757
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [dkDesktop]
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  object ListBox1: TListBox
+    Touch.InteractiveGestures = [igPan]
+    Height = 129.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 16.000000000000000000
+    Width = 721.000000000000000000
+    OnClick = ListBox1Click
+  end
+  object Selectch: TEdit
+    DisableFocusEffect = False
+    KeyboardType = vktDefault
+    Password = False
+    Position.X = 16.000000000000000000
+    Position.Y = 152.000000000000000000
+    Width = 281.000000000000000000
+    Height = 49.000000000000000000
+  end
+  object chadd: TButton
+    DisableFocusEffect = False
+    Height = 22.000000000000000000
+    Position.X = 320.000000000000000000
+    Position.Y = 160.000000000000000000
+    Text = 'chadd'
+    Width = 80.000000000000000000
+    OnClick = chaddClick
+  end
+  object chdelete: TButton
+    DisableFocusEffect = False
+    Height = 22.000000000000000000
+    Position.X = 424.000000000000000000
+    Position.Y = 160.000000000000000000
+    Text = 'chdelete'
+    Width = 80.000000000000000000
+    OnClick = chdeleteClick
+  end
+  object Panel1: TPanel
+    Height = 105.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 232.000000000000000000
+    Width = 1000.000000000000000000
+    object Label1: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label10: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label11: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label12: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label13: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label14: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label15: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label16: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label17: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label18: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label19: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label2: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label20: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label21: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label22: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label23: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label24: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label25: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label26: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label27: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label28: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label29: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label3: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label30: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label31: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label32: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label33: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label34: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label35: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label36: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label37: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label38: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label4: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label5: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label6: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label7: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label8: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Label9: TLabel
+      Height = 30.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Text = 'Label1'
+      Width = 70.000000000000000000
+    end
+    object Commander_Name_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Profession_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Commander_HP_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Action_Status_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Map_image_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Y_axis_coordinate_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object X_coordinate_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Equipped_with_weapons_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Auxiliary_magic_effect_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Equipment_accessories_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Equipment_and_armor_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Mercenary_belongs_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Mercenary_arms_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Mercenary_HP_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Mercenary_action_status_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Mercenary_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Force_serial_number_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object The_mercenary_Y_axis_coordinates_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object The_mercenary_X_axis_coordinates_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Instruction_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Belongs_forces_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Commander_of_experience_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Commander_Level_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Max_MP_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object MP_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Defense_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object ATK_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Moving_force_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Command_range_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Defense_correction_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Attack_modifier_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Magic_16_23_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Occupational_magic_defense_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Magic_1_7_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Magic_8_15_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Summon_MP_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Charm_of_before_they_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+    object Commander_Portrait_edit: TEdit
+      DisableFocusEffect = False
+      KeyboardType = vktDefault
+      Password = False
+      Position.X = 10.000000000000000000
+      Position.Y = 30.000000000000000000
+      Width = 50.000000000000000000
+      Height = 20.000000000000000000
+    end
+  end
+end

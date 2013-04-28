@@ -10,6 +10,9 @@
 #include <FMX.Objects.hpp>
 #include <FMX.Types.hpp>
 #include <FMX.Media.hpp>
+#include <FMX.Objects3D.hpp>
+#include <FMX.Types3D.hpp>
+#include <FMX.Edit.hpp>
 
 
 // ---------------------------------------------------------------------------
@@ -19,7 +22,6 @@ __published: // IDE-managed Components
 
 	TImage *Image1;
 	TBitmapListAnimation *BitmapListAnimation1;
-	TMediaPlayer *MediaPlayer1;
 	TBitmapListAnimation *BitmapListAnimation2;
 	TBitmapListAnimation *BitmapListAnimation3;
 	TBitmapListAnimation *BitmapListAnimation4;
@@ -37,6 +39,14 @@ __published: // IDE-managed Components
 	TBitmapListAnimation *Configuration1_4;
 	TBitmapListAnimation *Configuration1_5;
 	TBitmapListAnimation *map1;
+	TImage *Image2;
+	TImage *Image3;
+	TImage *Image4;
+	TImage *Image5;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TBitmapListAnimation *Role1_1;
+	TImage *Image6;
 
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
