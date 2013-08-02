@@ -25,8 +25,7 @@ int Load_WAV();
 void btntest();
 void dbview();
 
-struct sound
-{
+struct sound {
 	IGraphBuilder *pGraphBuilder;
 	IMediaControl *pMediaControl;
 	IMediaSeeking *pMediaSeeking;
@@ -43,8 +42,7 @@ struct sound
 sound *Sound;
 
 // ---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
-{
+__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner) {
 	CoInitialize(NULL);
 	if (Load_WAV() != 0)
 		exit(0);
@@ -52,24 +50,21 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 }
 // ---------------------------------------------------------------------------
 
-void hello_world()
-{
+void hello_world() {
 	boost::progress_timer t;
 	int elapsed_time = t.elapsed();
 
 	// std::string thing = boost::lexical_cast <std::string> (elapsed_time);
 	// MessageBoxA(NULL,thing.c_str() , "oo", MB_OK);
 	// MessageBoxA(NULL, "c", "oo", MB_OK);
-	if (elapsed_time == 0)
-	{
+	if (elapsed_time == 0) {
 		SoundPlay(0);
 		MessageBoxA(NULL, "c", "oo", MB_OK);
 	}
 
 }
 
-void __fastcall TForm1::FormCreate(TObject *Sender)
-{
+void __fastcall TForm1::FormCreate(TObject *Sender) {
 	SoundPlay(1);
 	Timer1 = new TTimer(this);
 	Timer1->Interval = 41000;
@@ -80,6 +75,9 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 	Image3->Visible = false;
 	Image4->Visible = false;
 	Image5->Visible = false;
+
+	Edit1->Visible = false;
+	Edit2->Visible = false;
 
 	// BitmapListAnimation1->Stop();
 
@@ -103,8 +101,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 
 // ---------------------------------------------------------------------------
 
-enum GameState
-{
+enum GameState {
 	GAME_STATE_LOGO = 0, GAME_STATE_TRAILER, GAME_STATE_MAIN_MENU,
 	GAME_STATE_INGAME, GAME_STATE_SETTINGS_MENU, GAME_STATE_MAP_MAP1,
 };
@@ -112,16 +109,12 @@ enum GameState
 static int gameState = GAME_STATE_LOGO;
 
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
-	System::WideChar &KeyChar, TShiftState Shift)
-{
+	System::WideChar &KeyChar, TShiftState Shift) {
 	static int shopslect = 1;
-	switch (gameState)
-	{
+	switch (gameState) {
 
-	case GAME_STATE_LOGO:
-		{
-			if (Key == VK_RETURN)
-			{
+	case GAME_STATE_LOGO: {
+			if (Key == VK_RETURN) {
 				SoundPlay(2);
 				BitmapListAnimation1->Stop();
 				BitmapListAnimation2->Start();
@@ -131,8 +124,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
 			}
 
-			if (Key == VK_ESCAPE)
-			{
+			if (Key == VK_ESCAPE) {
 				SoundPlay(2);
 				BitmapListAnimation1->Stop();
 				// BitmapListAnimation2->Start();
@@ -189,12 +181,10 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
 				Image6->Visible = true;
 
-
 				Image6->Position->X = 510;
 				Image6->Position->Y = 850;
 
 				Role1_1->Start();
-
 
 				Image5->Position->X = -230;
 				Image5->Position->Y = -630;
@@ -210,23 +200,19 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
 		} break;
 
-	case GAME_STATE_TRAILER:
-		{
+	case GAME_STATE_TRAILER: {
 
-			if (Key == VK_UP)
-			{
+			if (Key == VK_UP) {
 				SoundPlay(0);
 				BitmapListAnimation3->Stop();
 				BitmapListAnimation2->Start();
 			}
-			if (Key == VK_DOWN)
-			{
+			if (Key == VK_DOWN) {
 				SoundPlay(0);
 				BitmapListAnimation2->Stop();
 				BitmapListAnimation3->Start();
 			}
-			if (Key == VK_RETURN)
-			{
+			if (Key == VK_RETURN) {
 				// dbview();
 				Timer1->Enabled = false;
 				Sound[1].pMediaControl->Stop();
@@ -240,10 +226,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
 			break;
 		}
-	case GAME_STATE_MAIN_MENU:
-		{
-			if (Key == VK_RETURN)
-			{
+	case GAME_STATE_MAIN_MENU: {
+			if (Key == VK_RETURN) {
 				SoundPlay(3);
 				SoundPlay(2);
 				BitmapListAnimation4->Stop();
@@ -252,10 +236,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 			}
 			break;
 		}
-	case GAME_STATE_INGAME:
-		{
-			if (Key == VK_RETURN)
-			{
+	case GAME_STATE_INGAME: {
+			if (Key == VK_RETURN) {
 				Sound[3].pMediaControl->Stop();
 				SoundPlay(4);
 				BitmapAnimation1->Stop();
@@ -265,104 +247,84 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 
 			break;
 		}
-	case GAME_STATE_SETTINGS_MENU:
-		{
+	case GAME_STATE_SETTINGS_MENU: {
 			static int Configurationselect = 1;
-			switch (shopslect)
-			{
-			case 1:
-				{
-					if (Key == VK_UP)
-					{
+			switch (shopslect) {
+			case 1: {
+					if (Key == VK_UP) {
 						SoundPlay(0);
 						shopslect = 1;
 					}
-					if (Key == VK_DOWN)
-					{
+					if (Key == VK_DOWN) {
 						SoundPlay(0);
 						shop1->Stop();
 						shop2->Start();
 						shopslect = 2;
 					}
-					if (Key == VK_RETURN)
-					{
+					if (Key == VK_RETURN) {
 						SoundPlay(2);
 						Rose1->Start();
 						shopslect = 5;
 					}
 
 				} break;
-			case 2:
-				{
-					if (Key == VK_UP)
-					{
+			case 2: {
+					if (Key == VK_UP) {
 						SoundPlay(0);
 						shop2->Stop();
 						shop1->Start();
 						shopslect = 1;
 					}
-					if (Key == VK_DOWN)
-					{
+					if (Key == VK_DOWN) {
 						SoundPlay(0);
 						shop2->Stop();
 						shop3->Start();
 						shopslect = 3;
 					}
 				} break;
-			case 3:
-				{
-					if (Key == VK_UP)
-					{
+			case 3: {
+					if (Key == VK_UP) {
 						SoundPlay(0);
 						shop3->Stop();
 						shop2->Start();
 						shopslect = 2;
 					}
-					if (Key == VK_DOWN)
-					{
+					if (Key == VK_DOWN) {
 						SoundPlay(0);
 						shop3->Stop();
 						shop4->Start();
 						shopslect = 4;
 					}
 				} break;
-			case 4:
-				{
-					if (Key == VK_UP)
-					{
+			case 4: {
+					if (Key == VK_UP) {
 						SoundPlay(0);
 						shop4->Stop();
 						shop3->Start();
 						shopslect = 3;
 					}
-					if (Key == VK_DOWN)
-					{
+					if (Key == VK_DOWN) {
 						SoundPlay(0);
 						shopslect = 4;
 					}
-					if (Key == VK_RETURN)
-					{
+					if (Key == VK_RETURN) {
 						SoundPlay(2);
 						Configuration1_1->Start();
 						shopslect = 6;
 					}
 				} break;
-			case 5:
-				{
-					if (Key == VK_UP)
-					{
+			case 5: {
+					if (Key == VK_UP) {
 						SoundPlay(0);
 						Rose1->Start();
 						Rose2->Stop();
 					}
-					if (Key == VK_DOWN)
-					{
+					if (Key == VK_DOWN) {
 						SoundPlay(0);
 						Rose1->Stop();
 						Rose2->Start();
 					}
-					if (Key == VK_ESCAPE)
-					{
+					if (Key == VK_ESCAPE) {
 						SoundPlay(0);
 						Rose1->Stop();
 						Rose2->Stop();
@@ -370,27 +332,21 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 						shopslect = 1;
 					}
 				} break;
-			case 6:
-				{
-					switch (Configurationselect)
-					{
-					case 1:
-						{
-							if (Key == VK_UP)
-							{
+			case 6: {
+					switch (Configurationselect) {
+					case 1: {
+							if (Key == VK_UP) {
 								SoundPlay(0);
 								Configurationselect = 1;
 							}
-							if (Key == VK_DOWN)
-							{
+							if (Key == VK_DOWN) {
 								SoundPlay(0);
 								Configuration1_1->Stop();
 								Configuration1_2->Start();
 								Configurationselect = 2;
 							}
 
-							if (Key == VK_ESCAPE)
-							{
+							if (Key == VK_ESCAPE) {
 								SoundPlay(0);
 								Configuration1_1->Stop();
 								shop1->Start();
@@ -398,24 +354,20 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 							}
 
 						} break;
-					case 2:
-						{
-							if (Key == VK_UP)
-							{
+					case 2: {
+							if (Key == VK_UP) {
 								SoundPlay(0);
 								Configuration1_1->Start();
 								Configuration1_2->Stop();
 								Configurationselect = 1;
 							}
-							if (Key == VK_DOWN)
-							{
+							if (Key == VK_DOWN) {
 								SoundPlay(0);
 								Configuration1_2->Stop();
 								Configuration1_3->Start();
 								Configurationselect = 3;
 							}
-							if (Key == VK_ESCAPE)
-							{
+							if (Key == VK_ESCAPE) {
 								SoundPlay(0);
 								Configuration1_1->Stop();
 								shop1->Start();
@@ -423,24 +375,20 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 							}
 
 						} break;
-					case 3:
-						{
-							if (Key == VK_UP)
-							{
+					case 3: {
+							if (Key == VK_UP) {
 								SoundPlay(0);
 								Configuration1_2->Start();
 								Configuration1_3->Stop();
 								Configurationselect = 2;
 							}
-							if (Key == VK_DOWN)
-							{
+							if (Key == VK_DOWN) {
 								SoundPlay(0);
 								Configuration1_3->Stop();
 								Configuration1_4->Start();
 								Configurationselect = 4;
 							}
-							if (Key == VK_ESCAPE)
-							{
+							if (Key == VK_ESCAPE) {
 								SoundPlay(0);
 								Configuration1_1->Stop();
 								shop1->Start();
@@ -448,24 +396,20 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 							}
 
 						} break;
-					case 4:
-						{
-							if (Key == VK_UP)
-							{
+					case 4: {
+							if (Key == VK_UP) {
 								SoundPlay(0);
 								Configuration1_3->Start();
 								Configuration1_4->Stop();
 								Configurationselect = 3;
 							}
-							if (Key == VK_DOWN)
-							{
+							if (Key == VK_DOWN) {
 								SoundPlay(0);
 								Configuration1_4->Stop();
 								Configuration1_5->Start();
 								Configurationselect = 5;
 							}
-							if (Key == VK_ESCAPE)
-							{
+							if (Key == VK_ESCAPE) {
 								SoundPlay(0);
 								Configuration1_1->Stop();
 								shop1->Start();
@@ -473,31 +417,26 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 							}
 
 						} break;
-					case 5:
-						{
-							if (Key == VK_UP)
-							{
+					case 5: {
+							if (Key == VK_UP) {
 								SoundPlay(0);
 								Configuration1_4->Start();
 								Configuration1_5->Stop();
 								Configurationselect = 4;
 							}
-							if (Key == VK_DOWN)
-							{
+							if (Key == VK_DOWN) {
 								SoundPlay(0);
 								Configuration1_5->Stop();
 								Configurationselect = 5;
 							}
-							if (Key == VK_ESCAPE)
-							{
+							if (Key == VK_ESCAPE) {
 								SoundPlay(0);
 								Configuration1_1->Stop();
 								shop1->Start();
 								shopslect = 1;
 							}
 
-							if (Key == VK_RETURN)
-							{
+							if (Key == VK_RETURN) {
 								SoundPlay(2);
 								Sound[4].pMediaControl->Stop();
 								Configuration1_5->Stop();
@@ -507,41 +446,34 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 							}
 
 						} break;
-					default:
-						{
+					default: {
 
 						} break;
 					}
 
 				} break;
-			default:
-				{
+			default: {
 
 				} break;
 			}
 
 			break;
 		}
-	case GAME_STATE_MAP_MAP1:
-		{
+	case GAME_STATE_MAP_MAP1: {
 
-			if (Key == VK_UP)
-			{
+			if (Key == VK_UP) {
 				if (Image5->Position->Y < 0)
 					Image5->Position->Y += 10;
 			}
-			if (Key == VK_DOWN)
-			{
+			if (Key == VK_DOWN) {
 				if (Image5->Position->Y > -700)
 					Image5->Position->Y -= 10;
 			}
-			if (Key == VK_LEFT)
-			{
+			if (Key == VK_LEFT) {
 				if (Image5->Position->X < 0)
 					Image5->Position->X += 10;
 			}
-			if (Key == VK_RIGHT)
-			{
+			if (Key == VK_RIGHT) {
 				if (Image5->Position->X > -870)
 					Image5->Position->X -= 10;
 			}
@@ -549,8 +481,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 			Edit2->Text = Image5->Position->Y;
 
 		} break;
-	default:
-		{
+	default: {
 			break;
 		}
 	}
@@ -560,8 +491,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 }
 // ---------------------------------------------------------------------------
 
-int Load_WAV()
-{
+int Load_WAV() {
 
 	HRESULT hr;
 	char * str[6] =
@@ -579,14 +509,12 @@ int Load_WAV()
 
 	Sound = new sound[6];
 
-	for (int i = 0; i < 6; i++)
-	{
+	for (int i = 0; i < 6; i++) {
 		strcpy_s(Sound[i].szFileName, 256, str[i]);
 		// strcpy_s(Sound[i].szFileName, 256, wav_handle[i]);
 	}
 	wchar_t wFileName[256];
-	for (int i = 0; i < 6; i++)
-	{
+	for (int i = 0; i < 6; i++) {
 		mbstowcs(wFileName, Sound[i].szFileName, 256);
 		Sound[i].pGraphBuilder = NULL;
 		Sound[i].pMediaControl = NULL;
@@ -595,8 +523,7 @@ int Load_WAV()
 
 		hr = CoCreateInstance(CLSID_FilterGraph, NULL, CLSCTX_INPROC_SERVER,
 			IID_IGraphBuilder, (void**)&Sound[i].pGraphBuilder);
-		if (SUCCEEDED(hr))
-		{
+		if (SUCCEEDED(hr)) {
 			hr = Sound[i].pGraphBuilder->QueryInterface(IID_IMediaControl,
 				(void **)&Sound[i].pMediaControl);
 			hr = Sound[i].pGraphBuilder->QueryInterface(IID_IMediaSeeking,
@@ -607,8 +534,7 @@ int Load_WAV()
 			Sound[i].pMediaSeeking->GetDuration(&Sound[i].lDuration100NanoSecs);
 			Sound[i].totalDuration = Sound[i].lDuration100NanoSecs / 10000000;
 			Sound[i].temporary = (long)Sound[i].totalDuration;
-			if (Sound[i].temporary == 0)
-			{
+			if (Sound[i].temporary == 0) {
 			}
 			else
 				Sound[i].step = (float)100 / Sound[i].temporary;
@@ -619,11 +545,9 @@ int Load_WAV()
 	return 0;
 }
 
-void SoundPlay(long index)
-{
+void SoundPlay(long index) {
 	LONGLONG start = 0;
-	if (Sound[index].pMediaSeeking)
-	{
+	if (Sound[index].pMediaSeeking) {
 		Sound[index].pMediaSeeking->SetPositions(&start,
 			AM_SEEKING_AbsolutePositioning, &Sound[index].lDuration100NanoSecs,
 			AM_SEEKING_AbsolutePositioning);
@@ -633,10 +557,8 @@ void SoundPlay(long index)
 }
 
 // ---------------------------------------------------------------------------
-void __fastcall TForm1::Timer1Timer(TObject *Sender)
-{
-	try
-	{
+void __fastcall TForm1::Timer1Timer(TObject *Sender) {
+	try {
 		// int ccc = t.elapsed();
 		// std::string thing = boost::lexical_cast<std::string>(ccc);
 		// MessageBox(NULL, thing.c_str(), L"oo", MB_OK);
@@ -647,14 +569,12 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 		// my_thread.join();
 
 	}
-	catch (Exception &e)
-	{
+	catch (Exception &e) {
 		ShowMessage(e.Message);
 	}
 }
 
-void btntest()
-{
+void btntest() {
 
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
@@ -662,14 +582,12 @@ void btntest()
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 
 	int nrow = 0, ncolumn = 0;
@@ -687,22 +605,19 @@ void btntest()
 
 }
 
-void dbview()
-{
+void dbview() {
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
 	int rc;
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 
 	char aa[1024] = "select * from SensorData;";
@@ -712,8 +627,7 @@ void dbview()
 	sql = aa;
 	// MessageBoxA(NULL, "cc", "oo", MB_OK);
 	sqlite3_get_table(db, sql, &azResult, &nrow, &ncolumn, &zErrMsg);
-	for (int i = 0; i < (nrow + 1) * ncolumn; i++)
-	{
+	for (int i = 0; i < (nrow + 1) * ncolumn; i++) {
 		// std::cout << azResult[i] << std::endl;
 		MessageBoxA(NULL, azResult[i], "oo", MB_OK);
 	}

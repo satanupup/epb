@@ -52,8 +52,7 @@
 TForm1 *Form1;
 
 // ---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
-{
+__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner) {
 
 	this->Caption = "Test";
 	this->ClientHeight = 768;
@@ -303,18 +302,15 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 
 // ---------------------------------------------------------------------------
 void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
-	System::WideChar &KeyChar, TShiftState Shift)
-{
-	if (Key == VK_ESCAPE)
-	{
+	System::WideChar &KeyChar, TShiftState Shift) {
+	if (Key == VK_ESCAPE) {
 		exit(0);
 	}
 }
 
 // ---------------------------------------------------------------------------
 
-void __fastcall TForm1::FormCreate(TObject *Sender)
-{
+void __fastcall TForm1::FormCreate(TObject *Sender) {
 	// StringsValuesList1->Strings->Add("123");
 
 	ListBox1->Columns = 39;
@@ -322,8 +318,7 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 }
 // ---------------------------------------------------------------------------
 
-void TForm1::btntest()
-{
+void TForm1::btntest() {
 
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
@@ -331,14 +326,12 @@ void TForm1::btntest()
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 
 	int nrow = 0, ncolumn = 0;
@@ -375,22 +368,19 @@ void TForm1::btntest()
 
 }
 
-void TForm1::dbview()
-{
+void TForm1::dbview() {
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
 	int rc;
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 
 	char aa[1024] = "select * from SensorData;";
@@ -400,8 +390,7 @@ void TForm1::dbview()
 	sql = aa;
 	// MessageBoxA(NULL, "cc", "oo", MB_OK);
 	sqlite3_get_table(db, sql, &azResult, &nrow, &ncolumn, &zErrMsg);
-	for (int i = 0; i < (nrow + 1) * ncolumn; i++)
-	{
+	for (int i = 0; i < (nrow + 1) * ncolumn; i++) {
 		// std::cout << azResult[i] << std::endl;
 		// MessageBoxA(NULL, azResult[i], "oo", MB_OK);
 		ListBox1->Items->Add(azResult[i]);
@@ -410,8 +399,7 @@ void TForm1::dbview()
 	sqlite3_close(db);
 }
 
-void __fastcall TForm1::ListBox1Click(TObject *Sender)
-{
+void __fastcall TForm1::ListBox1Click(TObject *Sender) {
 	// ScrollBar1 = ListBox1->VScrollBar ;
 	int j1;
 
@@ -499,8 +487,7 @@ void __fastcall TForm1::ListBox1Click(TObject *Sender)
 }
 // ---------------------------------------------------------------------------
 
-void __fastcall TForm1::chaddClick(TObject *Sender)
-{
+void __fastcall TForm1::chaddClick(TObject *Sender) {
 	// ListBox1->Clear();
 
 	dbcharadd(Commander_Name_edit->Text);
@@ -508,8 +495,7 @@ void __fastcall TForm1::chaddClick(TObject *Sender)
 }
 // ---------------------------------------------------------------------------
 
-void TForm1::dbcharadd(System::UnicodeString str1)
-{
+void TForm1::dbcharadd(System::UnicodeString str1) {
 
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
@@ -517,14 +503,12 @@ void TForm1::dbcharadd(System::UnicodeString str1)
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 
 	int nrow = 0, ncolumn = 0;
@@ -569,22 +553,19 @@ void TForm1::dbcharadd(System::UnicodeString str1)
 }
 
 // sprintf_s(aa,"delete from SensorData where GROUPNAME='%s';",GroupNamestr.c_str());
-void TForm1::dbchardelete(System::UnicodeString str1)
-{
+void TForm1::dbchardelete(System::UnicodeString str1) {
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
 	int rc;
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 	char aa[10000];
 	std::wstring wstr1 = str1.w_str();
@@ -603,22 +584,19 @@ void TForm1::dbchardelete(System::UnicodeString str1)
 // sprint(a,"update sensordata set APPON = %s where GROUPNAME = "%s" and APPNAME = "%s";",1,group02,office);
 void TForm1::dbcharupdate(System::UnicodeString str1,
 	System::UnicodeString str2, System::UnicodeString str3,
-	System::UnicodeString str4)
-{
+	System::UnicodeString str4) {
 	sqlite3 *db = NULL;
 	char *zErrMsg = 0;
 	int rc;
 	char *sql;
 
 	rc = sqlite3_open("dice.db", &db);
-	if (rc)
-	{
+	if (rc) {
 		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
 		sqlite3_close(db);
 		exit(1);
 	}
-	else
-	{
+	else {
 	}
 	char aa[10000];
 	std::wstring wstr1 = str1.w_str();
@@ -651,8 +629,7 @@ void TForm1::dbcharupdate(System::UnicodeString str1,
 	sqlite3_close(db);
 }
 
-void __fastcall TForm1::chdeleteClick(TObject *Sender)
-{
+void __fastcall TForm1::chdeleteClick(TObject *Sender) {
 
 	// ListBox1->Clear();
 	dbchardelete(Selectch->Text);
@@ -660,8 +637,7 @@ void __fastcall TForm1::chdeleteClick(TObject *Sender)
 }
 
 // ---------------------------------------------------------------------------
-void __fastcall TForm1::chupdateClick(TObject *Sender)
-{
+void __fastcall TForm1::chupdateClick(TObject *Sender) {
 	// ListBox1->Clear();
 	// "update sensordata set %s = \"%s\" where ID = %s and COMMANDER_NAME = \"%s\"",
 
@@ -669,18 +645,15 @@ void __fastcall TForm1::chupdateClick(TObject *Sender)
 
 	j1 = (ListBox1->ItemIndex % 39);
 
-	if (ListBox1->ItemByIndex(j1)->Text == "ID")
-	{
+	if (ListBox1->ItemByIndex(j1)->Text == "ID") {
 		MessageBox(NULL, TEXT("請勿修改ID"), TEXT("error"),
 			MB_OK | MB_ICONINFORMATION);
 	}
-	else if (ListBox1->ItemIndex < 39)
-	{
+	else if (ListBox1->ItemIndex < 39) {
 		MessageBox(NULL, TEXT("請勿修改tabel"), TEXT("error"),
 			MB_OK | MB_ICONINFORMATION);
 	}
-	else
-	{
+	else {
 
 		// dbcharupdate(ListBox1->ItemByIndex(j1)->Text, Selectch->Text,
 		// ListBox1->ItemByIndex(ListBox1->ItemIndex - j1)->Text,

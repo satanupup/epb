@@ -3,11 +3,11 @@
 	<Transactions>
     <Transaction>2013/03/31 16:45:00.000.216,=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>2013/03/31 16:45:00.000.203,=C:\Users\USER\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2013/03/31 16:45:14.000.826,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.h=C:\c++\test1\Unit1.h</Transaction>
-    <Transaction>2013/03/31 16:45:14.000.826,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.fmx=C:\c++\test1\Unit1.fmx</Transaction>
-    <Transaction>2013/03/31 16:45:14.000.826,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.cpp=C:\c++\test1\Unit1.cpp</Transaction>
-    <Transaction>2013/03/31 16:45:15.000.763,C:\Users\USER\Documents\RAD Studio\Projects\Project1PCH1.h=C:\c++\test1\Project1PCH1.h</Transaction>
-    <Transaction>2013/03/31 16:45:16.000.771,C:\Users\USER\Documents\RAD Studio\Projects\Project1.cbproj=C:\c++\test1\Project1.cbproj</Transaction>
+    <Transaction>2013/03/31 16:45:14.000.826,C:\c++\test1\Unit1.fmx=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2013/03/31 16:45:14.000.826,C:\c++\test1\Unit1.cpp=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2013/03/31 16:45:14.000.826,C:\c++\test1\Unit1.h=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2013/03/31 16:45:15.000.763,C:\c++\test1\Project1PCH1.h=C:\Users\USER\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2013/03/31 16:45:16.000.771,C:\c++\test1\Project1.cbproj=C:\Users\USER\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
     <Transaction>2013/03/31 21:22:22.000.495,=C:\c++\test1\src1.rc</Transaction>
     <Transaction>2013/03/31 21:23:17.000.324,C:\c++\test1\src1.rc=</Transaction>
     <Transaction>2013/03/31 21:23:35.000.619,=C:\c++\test1\Project1.res</Transaction>
@@ -16,8 +16,8 @@
     <Transaction>2013/03/31 21:26:47.000.497,=C:\c++\test1\gtitle.wav</Transaction>
     <Transaction>2013/03/31 21:27:00.000.681,C:\c++\test1\src1.rc=</Transaction>
     <Transaction>2013/03/31 21:29:04.000.616,=C:\c++\test1\src1.rc</Transaction>
-    <Transaction>2013/03/31 22:15:52.000.084,C:\c++\test1\src1.rc=C:\c++\test1\Project.rc</Transaction>
-    <Transaction>2013/03/31 22:16:46.000.135,C:\c++\test1\Project.rc=C:\c++\test1\src1.rc</Transaction>
+    <Transaction>2013/03/31 22:15:52.000.084,C:\c++\test1\Project.rc=C:\c++\test1\src1.rc</Transaction>
+    <Transaction>2013/03/31 22:16:46.000.135,C:\c++\test1\src1.rc=C:\c++\test1\Project.rc</Transaction>
     <Transaction>2013/03/31 22:22:00.000.962,=C:\c++\test1\src1.RES</Transaction>
     <Transaction>2013/03/31 22:38:05.000.184,C:\c++\test1\src1.RES=</Transaction>
     <Transaction>2013/04/03 23:14:02.000.179,=C:\c++\epbgit\2.sound\direct_sound\Debug\annu6.wav</Transaction>
@@ -34,10 +34,10 @@
     <Transaction>2013/04/04 16:08:17.000.639,C:\c++\epbgit\test1\gtitle.wav=</Transaction>
     <Transaction>2013/04/04 16:08:17.000.638,C:\c++\epbgit\test1\annu6.wav=</Transaction>
     <Transaction>2013/04/04 16:08:22.000.720,C:\c++\epbgit\test1\src1.rc=</Transaction>
-    <Transaction>2013/04/05 14:58:38.000.440,C:\c++\epbgit\test1\Project1.cbproj=C:\c++\epbgit\test1\GameMain.cbproj</Transaction>
-    <Transaction>2013/04/05 14:58:38.000.427,C:\c++\epbgit\test1\Project1PCH1.h=C:\c++\epbgit\test1\GameMainPCH1.h</Transaction>
-    <Transaction>2013/04/05 14:59:25.000.837,C:\c++\epbgit\test1\Unit1.cpp=C:\c++\epbgit\test1\MainForm.cpp</Transaction>
-    <Transaction>2013/04/05 14:59:25.000.837,C:\c++\epbgit\test1\Unit1.fmx=C:\c++\epbgit\test1\MainForm.fmx</Transaction>
-    <Transaction>2013/04/05 14:59:25.000.837,C:\c++\epbgit\test1\Unit1.h=C:\c++\epbgit\test1\MainForm.h</Transaction>
+    <Transaction>2013/04/05 14:58:38.000.427,C:\c++\epbgit\test1\GameMainPCH1.h=C:\c++\epbgit\test1\Project1PCH1.h</Transaction>
+    <Transaction>2013/04/05 14:58:38.000.440,C:\c++\epbgit\test1\GameMain.cbproj=C:\c++\epbgit\test1\Project1.cbproj</Transaction>
+    <Transaction>2013/04/05 14:59:25.000.837,C:\c++\epbgit\test1\MainForm.fmx=C:\c++\epbgit\test1\Unit1.fmx</Transaction>
+    <Transaction>2013/04/05 14:59:25.000.837,C:\c++\epbgit\test1\MainForm.cpp=C:\c++\epbgit\test1\Unit1.cpp</Transaction>
+    <Transaction>2013/04/05 14:59:25.000.837,C:\c++\epbgit\test1\MainForm.h=C:\c++\epbgit\test1\Unit1.h</Transaction>
   </Transactions>
 </BorlandProject>

@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{E3EC83C0-92F2-4F19-9DB0-0701457D549A}</ProjectGuid>
+        <ProjectGuid>{217925EE-9D5E-478B-8734-5406390D74CB}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="GameMain.cbproj">

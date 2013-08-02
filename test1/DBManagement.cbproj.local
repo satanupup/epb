@@ -3,15 +3,15 @@
 	<Transactions>
     <Transaction>2013/04/05 14:57:06.000.158,=C:\Users\USER\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>2013/04/05 14:57:06.000.189,=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2013/04/05 14:57:39.000.888,C:\Users\USER\Documents\RAD Studio\Projects\DBM.cbproj=C:\Users\USER\Documents\RAD Studio\Projects\Project1.cbproj</Transaction>
-    <Transaction>2013/04/05 14:57:39.000.887,C:\Users\USER\Documents\RAD Studio\Projects\DBMPCH1.h=C:\Users\USER\Documents\RAD Studio\Projects\Project1PCH1.h</Transaction>
-    <Transaction>2013/04/05 14:57:48.000.904,C:\Users\USER\Documents\RAD Studio\Projects\DBManagement.cbproj=C:\Users\USER\Documents\RAD Studio\Projects\DBM.cbproj</Transaction>
-    <Transaction>2013/04/05 14:57:48.000.904,C:\Users\USER\Documents\RAD Studio\Projects\DBManagementPCH1.h=C:\Users\USER\Documents\RAD Studio\Projects\DBMPCH1.h</Transaction>
-    <Transaction>2013/04/05 14:58:12.000.683,C:\c++\epbgit\test1\dbMain.fmx=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2013/04/05 14:58:12.000.683,C:\c++\epbgit\test1\dbMain.h=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.h</Transaction>
-    <Transaction>2013/04/05 14:58:12.000.683,C:\c++\epbgit\test1\dbMain.cpp=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>2013/04/05 14:58:20.000.362,C:\c++\epbgit\test1\DBManagementPCH1.h=C:\Users\USER\Documents\RAD Studio\Projects\DBManagementPCH1.h</Transaction>
-    <Transaction>2013/04/05 14:58:22.000.897,C:\c++\epbgit\test1\DBManagement.cbproj=C:\Users\USER\Documents\RAD Studio\Projects\DBManagement.cbproj</Transaction>
+    <Transaction>2013/04/05 14:57:39.000.887,C:\Users\USER\Documents\RAD Studio\Projects\Project1PCH1.h=C:\Users\USER\Documents\RAD Studio\Projects\DBMPCH1.h</Transaction>
+    <Transaction>2013/04/05 14:57:39.000.888,C:\Users\USER\Documents\RAD Studio\Projects\Project1.cbproj=C:\Users\USER\Documents\RAD Studio\Projects\DBM.cbproj</Transaction>
+    <Transaction>2013/04/05 14:57:48.000.904,C:\Users\USER\Documents\RAD Studio\Projects\DBMPCH1.h=C:\Users\USER\Documents\RAD Studio\Projects\DBManagementPCH1.h</Transaction>
+    <Transaction>2013/04/05 14:57:48.000.904,C:\Users\USER\Documents\RAD Studio\Projects\DBM.cbproj=C:\Users\USER\Documents\RAD Studio\Projects\DBManagement.cbproj</Transaction>
+    <Transaction>2013/04/05 14:58:12.000.683,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.cpp=C:\c++\epbgit\test1\dbMain.cpp</Transaction>
+    <Transaction>2013/04/05 14:58:12.000.683,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.fmx=C:\c++\epbgit\test1\dbMain.fmx</Transaction>
+    <Transaction>2013/04/05 14:58:12.000.683,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.h=C:\c++\epbgit\test1\dbMain.h</Transaction>
+    <Transaction>2013/04/05 14:58:20.000.362,C:\Users\USER\Documents\RAD Studio\Projects\DBManagementPCH1.h=C:\c++\epbgit\test1\DBManagementPCH1.h</Transaction>
+    <Transaction>2013/04/05 14:58:22.000.897,C:\Users\USER\Documents\RAD Studio\Projects\DBManagement.cbproj=C:\c++\epbgit\test1\DBManagement.cbproj</Transaction>
     <Transaction>2013/04/05 15:16:52.000.180,=C:\c++\epbgit\test1\shell.c</Transaction>
     <Transaction>2013/04/05 15:16:52.000.562,=C:\c++\epbgit\test1\sqlite3.c</Transaction>
     <Transaction>2013/04/05 15:17:03.000.773,=C:\c++\epbgit\test1\sqlite3.h</Transaction>
