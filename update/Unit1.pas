@@ -1,0 +1,77 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.OleCtrls, SHDocVw, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.StdCtrls, ShellAPI, JvExControls, JvLabel, JvExExtCtrls, JvExtComponent,
+  JvPanel, HTMLUn2, FramView, FramBrwz, HtmlView;
+
+type
+  TForm1 = class(TForm)
+    JvPanel1: TJvPanel;
+    Image1: TImage;
+    Image2: TImage;
+    Image4: TImage;
+    Image3: TImage;
+    JvLabel1: TJvLabel;
+    JvLabel2: TJvLabel;
+    WebBrowser1: TWebBrowser;
+    procedure FormCreate(Sender: TObject);
+    procedure WebBrowser1NewWindow2(ASender: TObject; var ppDisp: IDispatch;
+      var Cancel: WordBool);
+    procedure WebBrowser1NavigateComplete2(ASender: TObject;
+      const pDisp: IDispatch; const URL: OleVariant);
+    procedure JvLabel1Click(Sender: TObject);
+    procedure JvLabel2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+  Set8087CW(Longword($133F));
+
+  Self.Left := (Screen.Width - Self.Width) div 2;
+  Self.Top := (Screen.Height - Self.Height) div 2;
+
+  WebBrowser1.Navigate('http://epb.idv.tw/CSS3/BorderRadius.php');
+
+end;
+
+procedure TForm1.JvLabel1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TForm1.JvLabel2Click(Sender: TObject);
+begin
+  ShellExecute(Handle, 'open', 'http://epb.idv.tw', nil, nil, SW_SHOWNORMAL)
+end;
+
+procedure TForm1.WebBrowser1NavigateComplete2(ASender: TObject;
+  const pDisp: IDispatch; const URL: OleVariant);
+begin
+  WebBrowser1.Silent := True;
+end;
+
+procedure TForm1.WebBrowser1NewWindow2(ASender: TObject; var ppDisp: IDispatch;
+  var Cancel: WordBool);
+begin
+  Cancel := True;
+end;
+
+end.
