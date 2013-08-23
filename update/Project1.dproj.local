@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2013/07/03 21:46:12.000.746,=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2013/07/03 21:46:27.000.347,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.dfm=H:\delphi\update\Unit1.dfm</Transaction>
-    <Transaction>2013/07/03 21:46:27.000.347,C:\Users\USER\Documents\RAD Studio\Projects\Unit1.pas=H:\delphi\update\Unit1.pas</Transaction>
-    <Transaction>2013/07/03 21:46:28.000.231,C:\Users\USER\Documents\RAD Studio\Projects\Project1.dproj=H:\delphi\update\Project1.dproj</Transaction>
+    <Transaction>2013/07/03 21:46:27.000.347,H:\delphi\update\Unit1.pas=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/07/03 21:46:27.000.347,H:\delphi\update\Unit1.dfm=C:\Users\USER\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2013/07/03 21:46:28.000.231,H:\delphi\update\Project1.dproj=C:\Users\USER\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
