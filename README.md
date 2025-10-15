@@ -1,3 +1,32 @@
+# Project Overview
+
+This repository is a collection of C++ projects and learning materials. Below is a brief overview of the main directories:
+
+*   **0.Reference**: Contains reference materials and documentation.
+*   **1.work**: Main directory for work-related projects.
+*   **2.sound**: Projects related to sound and audio processing.
+*   **3.opengl**: Projects related to OpenGL and graphics programming.
+*   **4.Encryption_and_decryption**: Projects related to cryptography.
+*   **5.http**: Projects related to HTTP and networking.
+*   **6.Software**: Various software projects.
+*   **7.Algorithm**: Implementations of various algorithms.
+*   **8.server**: Server-side applications.
+*   **9.client**: Client-side applications.
+*   **10. Game**: Game development projects.
+*   **ConsoleApplication**: Console-based applications.
+*   **DbServer**: Database server projects.
+*   **Dice**: A dice-related project.
+*   **Keyframe**: Projects related to keyframe animation.
+*   **SqliteLib**: Libraries for working with SQLite.
+*   **epb**: Likely related to a specific project or protocol (e.g., Electronic Parts Catalog).
+*   **git 教學**: Git tutorials.
+*   **libcstl**: A C library for standard containers.
+*   **libcstlPractice**: Practice projects for `libcstl`.
+*   **test1**: General testing directory.
+*   **update**: Files related to updating the project.
+
+---
+
 epb
 ===
 
